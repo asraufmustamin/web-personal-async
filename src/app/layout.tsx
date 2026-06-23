@@ -15,8 +15,19 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ASYNC - Portfolio",
-  description: "Muhammad Asrauf Mustamin | Signature Portfolio Edition",
+  title: "Muhammad Asrauf Mustamin | ASYNC Studio",
+  description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional di bawah payung ASYNC Studio.",
+  keywords: ["Muhammad Asrauf Mustamin", "ASYNC", "Portfolio", "Web Developer", "UI/UX Designer", "Website Makassar", "Freelance Developer"],
+  authors: [{ name: "Muhammad Asrauf Mustamin" }],
+  creator: "Muhammad Asrauf Mustamin",
+  openGraph: {
+    title: "Muhammad Asrauf Mustamin | ASYNC Studio",
+    description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional.",
+    url: "https://web-personal-async.vercel.app/", // Bisa diganti dengan domain asli nanti
+    siteName: "ASYNC Portfolio",
+    locale: "id_ID",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
