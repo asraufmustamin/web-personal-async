@@ -51,20 +51,20 @@ export default function HeroSection() {
         <div className="w-full flex flex-col items-center justify-center z-10 relative mt-0 lg:mt-16">
           
           <div className="flex flex-col items-center gap-0 md:gap-8 max-w-4xl">
+            {/* Mobile Nav: Icons only, above logo (Outside animation for zero jitter) */}
+            <div className="md:hidden flex justify-between items-center w-full bg-white shadow-sm border border-black/5 rounded-3xl p-2 mb-6 z-40 relative">
+              {tabs.map((tab) => (
+                <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/5 p-2 sm:p-3 rounded-2xl transition-colors active:scale-95">
+                  <tab.icon size={22} />
+                </a>
+              ))}
+            </div>
+
             <motion.div variants={itemVariants} className="flex flex-col items-center w-full relative z-30">
               
-              {/* Mobile Only: Logo ASYNC above the nav */}
-              <div className="md:hidden flex justify-center mb-0 mt-0 w-full z-10">
-                 <img src="/logo async gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-md" />
-              </div>
-
-              {/* Mobile Nav: Icons only, below logo */}
-              <div className="md:hidden flex justify-between items-center w-full bg-white/60 backdrop-blur-md border border-black/5 shadow-sm rounded-3xl p-2 mb-8 z-10">
-                {tabs.map((tab) => (
-                  <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/5 p-2 sm:p-3 rounded-2xl transition-colors active:scale-95">
-                    <tab.icon size={22} />
-                  </a>
-                ))}
+              {/* Mobile Only: Logo ASYNC below the nav */}
+              <div className="md:hidden flex justify-center mb-8 mt-0 w-full z-10">
+                 <img src="/logo async gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-sm" />
               </div>
 
               {/* Name Subtitle (Desktop & Mobile) */}
