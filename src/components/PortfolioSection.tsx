@@ -1,0 +1,364 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Typewriter } from "@/components/ui/typewriter";
+
+// --- PORTFOLIO DATA ---
+const categories = ["Sistem & Web", "Design", "Manajemen Data", "Lainnya"];
+
+const allPortfolios = [
+  // Sistem & Web
+  {
+    id: 1,
+    title: "Sistem Informasi Terpadu Desa Cenrana",
+    desc: "Solusi digital berbasis website desa (desacenrana.id) untuk mendukung informasi publik, layanan administrasi digital, dan transparansi tata kelola bagi masyarakat setempat.",
+    category: "Sistem & Web",
+    image: "https://s0.wp.com/mshots/v1/https://desacenrana.id/?w=1200&h=800",
+    link: "https://desacenrana.id/"
+  },
+  {
+    id: 2,
+    title: "Sistem Prediksi Kelulusan Mahasiswa",
+    desc: "Sistem analisis berbasis data yang membantu memprediksi potensi kelulusan mahasiswa berdasarkan indikator akademik.",
+    category: "Sistem & Web",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    title: "Sistem Prediksi Menggunakan Metode TOPSIS",
+    desc: "Sistem pendukung keputusan (makassarauto.my.id) yang mengimplementasikan metode TOPSIS untuk menganalisis data, memberikan rekomendasi, dan membantu pengambilan keputusan secara sistematis.",
+    category: "Sistem & Web",
+    image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
+    link: "https://makassarauto.my.id/"
+  },
+  {
+    id: 4,
+    title: "Landing Page",
+    desc: "Halaman promosi atau personal branding yang dirancang untuk menyampaikan informasi secara ringkas, jelas, dan menarik.",
+    category: "Sistem & Web",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+  },
+  // Design
+  {
+    id: 5,
+    title: "Desain Feed Instagram UKM Pencinta Pasar Modal",
+    desc: "Kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital.",
+    category: "Design",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+  },
+  // Manajemen Data
+  {
+    id: 6,
+    title: "Pengelolaan & Input Data Administratif",
+    desc: "Pekerjaan yang berkaitan dengan input, validasi, dan penyusunan data agar lebih tertata dan mudah digunakan.",
+    category: "Manajemen Data",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: 7,
+    title: "Perapihan Dataset & Dokumentasi Digital",
+    desc: "Penyusunan dan penataan data serta dokumen digital agar lebih rapi, efisien, dan siap diproses.",
+    category: "Manajemen Data",
+    image: "https://images.unsplash.com/photo-1618044733300-9472054094ee?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: 8,
+    title: "Visualisasi Data",
+    desc: "Penyajian data dalam bentuk visual yang membantu pembaca memahami informasi dengan lebih cepat.",
+    category: "Manajemen Data",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+  },
+  // Lainnya
+  {
+    id: 9,
+    title: "Dokumentasi Video & Konten Visual",
+    desc: "Hasil kerja yang berfokus pada dokumentasi kegiatan, editing video, dan materi visual digital.",
+    category: "Lainnya",
+    image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: 10,
+    title: "Kolaborasi Freelance & Project-Based",
+    desc: "Berbagai bentuk kerja sama dengan individu dan kebutuhan proyek digital secara fleksibel.",
+    category: "Lainnya",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: 11,
+    title: "Eksplorasi Solusi Digital Lainnya",
+    desc: "Ruang untuk karya tambahan dan pengembangan baru yang akan terus bertambah.",
+    category: "Lainnya",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+  },
+];
+
+export default function PortfolioSection() {
+  const [activeCategory, setActiveCategory] = useState("Sistem & Web");
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+
+  // Filter items based on selected category
+  const filteredItems = allPortfolios.filter(item => item.category === activeCategory);
+
+  // Handle category change
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    setActiveItemIndex(0); // Reset active item to first when changing category
+  };
+
+  return (
+    <section id="proyek" className="py-10 md:py-24 bg-white relative overflow-hidden">
+      {/* Background Ornaments */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-primary/5 via-transparent to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-7xl">
+        
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Portofolio / Karya Terbaik</span>
+          <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-black font-serif mb-6 text-text-main">
+            Karya{" "}
+            {isHeadingInView ? (
+              <Typewriter 
+                text={["Terbaik."]} 
+                speed={70} 
+                cursorChar="_" 
+                className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
+              />
+            ) : (
+              <span className="invisible">Terbaik.</span>
+            )}
+          </h2>
+          <p className="text-text-muted text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            Kumpulan proyek dan hasil kerja yang saya bangun, mulai dari sistem dan website, desain visual, pengelolaan data, hingga kebutuhan digital lainnya.
+          </p>
+        </motion.div>
+
+        {/* Category Selector */}
+        <motion.div 
+          className="flex overflow-x-auto md:flex-wrap justify-start md:justify-center gap-3 md:gap-4 mb-8 md:mb-16 pb-4 px-4 md:px-0 w-full scrollbar-hide"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              className={`shrink-0 px-6 py-2.5 md:px-8 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 border ${
+                activeCategory === category 
+                  ? 'bg-primary border-primary text-white shadow-md shadow-primary/20 scale-105' 
+                  : 'bg-white border-gray-200 text-text-muted hover:text-text-main hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Interactive Album Showcase */}
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {/* We use an AnimatePresence wrapper for category changes, but internally we map the filtered items to avoid remounting issues if we want layout animations */}
+          <div className="h-[600px] md:h-[500px] lg:h-[600px] w-full flex flex-col md:flex-row gap-4 p-2">
+            <AnimatePresence mode="wait">
+              {filteredItems.map((item, index) => {
+                const isActive = activeItemIndex === index;
+                
+                return (
+                  <motion.div
+                    layout
+                    key={item.id}
+                    onClick={() => setActiveItemIndex(index)}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ 
+                      layout: { type: "spring", stiffness: 200, damping: 25 },
+                      opacity: { duration: 0.3 }
+                    }}
+                    className={`relative rounded-[2rem] overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-shadow ${
+                      isActive ? 'flex-[10] md:flex-[8] shadow-2xl' : 'flex-1 md:flex-[1] min-h-[70px] md:min-h-0 min-w-0 md:min-w-[80px]'
+                    }`}
+                  >
+                    {/* Background Image Wrapper */}
+                    <div className="absolute inset-0 w-full h-full">
+                      {/* Image element placeholder, you can swap with Next Image later */}
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-100' : 'scale-110 group-hover:scale-105'} filter ${isActive ? 'brightness-[0.4]' : 'brightness-[0.6] grayscale-[0.3] group-hover:grayscale-0 group-hover:brightness-[0.5]'}`}
+                      />
+                      {/* Optional Overlay Gradient for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    </div>
+
+                    {/* Content Layer */}
+                    <div className="absolute inset-0 w-full h-full flex items-end">
+                      {/* Inactive State Content (Vertical/Narrow text) */}
+                      {!isActive && (
+                        <div className="w-full h-full flex md:flex-col items-center justify-center md:justify-end md:pb-8">
+                          {/* Desktop: rotate text */}
+                          <div className="hidden md:flex h-full flex-col items-center justify-end pb-10">
+                            <h3 className="text-white font-bold whitespace-nowrap -rotate-90 origin-bottom pb-4 tracking-wider text-sm opacity-60 group-hover:opacity-100 transition-opacity">
+                              {item.title.length > 25 ? item.title.substring(0, 25) + '...' : item.title}
+                            </h3>
+                          </div>
+                          {/* Mobile: horizontal text */}
+                          <div className="md:hidden flex items-center justify-center w-full h-full px-4">
+                            <h3 className="text-white font-bold text-sm text-center drop-shadow-md">
+                              {item.title.length > 30 ? item.title.substring(0, 30) + '...' : item.title}
+                            </h3>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Active State Content (Full Detail) */}
+                      {isActive && (
+                        <motion.div 
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: 0.2 }}
+                          className="p-6 md:p-10 lg:p-12 w-full max-w-4xl"
+                        >
+                          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                            <div className="flex-1">
+                              <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary font-medium text-[10px] md:text-sm mb-2 md:mb-4">
+                                {item.category}
+                              </span>
+                              <h3 className="text-xl md:text-4xl font-bold text-white mb-2 md:mb-4 font-serif leading-tight line-clamp-2 md:line-clamp-none">
+                                {item.title}
+                              </h3>
+                              <p className="text-white/80 text-xs md:text-base leading-relaxed max-w-2xl line-clamp-2 md:line-clamp-none">
+                                {item.desc}
+                              </p>
+                            </div>
+                            
+                            <div className="shrink-0 flex items-center gap-3 mt-2 md:mt-0">
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedProject(item);
+                                }}
+                                className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors group/btn text-xs md:text-base"
+                              >
+                                <span>Lihat Detail</span>
+                                <span className="material-symbols-outlined text-[16px] md:text-[20px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                              </button>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </motion.div>
+
+      </div>
+
+      {/* Project Detail Modal */}
+      {mounted && createPortal(
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm"
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div 
+                initial={{ y: 50, opacity: 0, scale: 0.9 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                exit={{ y: 20, opacity: 0, scale: 0.9 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+                style={{ scrollbarWidth: 'none' }}
+              >
+                {/* Close Button */}
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 bg-black/40 hover:bg-black/60 rounded-full flex items-center justify-center backdrop-blur-md transition-colors z-10 shadow-sm"
+                >
+                  <span className="material-symbols-outlined text-white">close</span>
+                </button>
+
+                {/* Gallery Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+                  <div className="md:col-span-2 md:row-span-2">
+                    <img src={selectedProject.image} alt="Main" className="w-full h-[250px] md:h-[408px] object-cover rounded-2xl" />
+                  </div>
+                  <div className="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Gallery 1" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
+                  </div>
+                  <div className="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Gallery 2" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
+                  </div>
+                </div>
+
+                {/* Detail Content */}
+                <div className="p-6 md:p-10">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+                    <div>
+                      <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
+                        {selectedProject.category}
+                      </span>
+                      <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 font-serif">{selectedProject.title}</h2>
+                      <p className="text-text-muted text-lg leading-relaxed">{selectedProject.desc}</p>
+                    </div>
+                    
+                    <div className="shrink-0 flex gap-3">
+                      {selectedProject.link ? (
+                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-text-main rounded-full font-medium transition-colors">
+                          <span className="material-symbols-outlined text-[20px]">link</span>
+                          <span>Kunjungi</span>
+                        </a>
+                      ) : (
+                        <a href="#" className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-text-main rounded-full font-medium transition-colors">
+                          <span className="material-symbols-outlined text-[20px]">link</span>
+                          <span>Kunjungi</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="prose max-w-none text-text-muted pt-6 border-t border-gray-100">
+                    <p>Berikut adalah detail tambahan mengenai proyek <strong>{selectedProject.title}</strong>. Proyek ini dibangun dengan fokus pada fungsionalitas, desain antarmuka yang modern, serta pengalaman pengguna yang optimal.</p>
+                    <p>Konsep pengerjaannya diawali dengan analisis kebutuhan, dilanjutkan dengan perancangan arsitektur dan eksekusi visual, sebelum akhirnya di-deploy sebagai solusi fungsional yang siap digunakan.</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </section>
+  );
+}
