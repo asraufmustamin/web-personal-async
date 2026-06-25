@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, User, Sparkles, Briefcase, Folder, Mail, Menu, X } from 'lucide-react';
+import { Home, User, Sparkles, Briefcase, Folder, Mail, Menu, X, Settings } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 
 export default function Navbar() {
@@ -23,6 +23,7 @@ export default function Navbar() {
     { title: 'Keahlian', icon: Sparkles, href: '#keahlian' },
     { title: 'Pengalaman', icon: Briefcase, href: '#pengalaman' },
     { title: 'Proyek', icon: Folder, href: '#proyek' },
+    { title: 'Layanan', icon: Settings, href: '#layanan' },
     { title: 'Kontak', icon: Mail, href: '#kontak' },
   ];
 

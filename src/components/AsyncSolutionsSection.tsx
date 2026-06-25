@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
+import { Typewriter } from "@/components/ui/typewriter";
 
 export default function AsyncSolutionsSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function AsyncSolutionsSection() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         
         {/* Header Text */}
-        <motion.div variants={fadeUpBlur} className="mb-12 md:mb-20">
+        <motion.div variants={fadeUpBlur} className="mb-4 md:mb-8">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
@@ -61,14 +62,19 @@ export default function AsyncSolutionsSection() {
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-text-main tracking-tight leading-[1.2]">
             Hadirkan Solusi Digital Bersama <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 font-black">
-              ASYNC Solutions.
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 font-black h-[1.2em] inline-block">
+              <Typewriter 
+                text={["ASYNC Solutions."]} 
+                speed={70} 
+                className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
+                cursorClassName="text-primary"
+              />
             </span>
           </h2>
         </motion.div>
 
         {/* Interactive Radial Hub Area */}
-        <div className="relative w-full max-w-[800px] h-[500px] md:h-[600px] flex items-center justify-center mt-8 md:mt-0">
+        <div className="relative w-full max-w-[800px] h-[500px] md:h-[600px] flex items-center justify-center mt-2 md:mt-4">
           
           {/* Connector Lines (Visible only when open) */}
           <AnimatePresence>
@@ -140,7 +146,7 @@ export default function AsyncSolutionsSection() {
             <img 
               src="/no_bg_logo_async.png" 
               alt="ASYNC Solutions Center" 
-              className="w-[200px] h-[200px] md:w-[320px] md:h-[320px] object-contain relative z-10 drop-shadow-[0_20px_30px_rgba(248,157,10,0.25)] filter"
+              className="w-[200px] h-[200px] md:w-[320px] md:h-[320px] object-contain relative z-10 drop-shadow-[0_0_25px_rgba(0,0,0,0.6)] filter"
             />
             
             <div className="absolute -bottom-8 md:-bottom-12 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity">
@@ -158,9 +164,9 @@ export default function AsyncSolutionsSection() {
             href="https://async-id.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-text-main text-white rounded-full font-bold text-base md:text-lg overflow-hidden transition-transform hover:scale-105 shadow-xl hover:shadow-2xl"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-base md:text-lg overflow-hidden transition-transform hover:scale-105 shadow-xl hover:shadow-2xl"
           >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10">Kunjungi Website Utama ASYNC Solutions</span>
             <span className="relative z-10 material-symbols-outlined group-hover:translate-x-1 transition-transform">open_in_new</span>
           </a>

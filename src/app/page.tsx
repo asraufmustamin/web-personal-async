@@ -22,11 +22,11 @@ export default function Home() {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <AsyncSolutionsSection />
         <ToolsSection />
         <SkillsSection />
         <ExperienceSection />
         <PortfolioSection />
+        <AsyncSolutionsSection />
         <ContactSection />
         <Footer />
       </div>
