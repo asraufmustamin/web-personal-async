@@ -52,7 +52,7 @@ export default function AsyncSolutionsSection() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         
         {/* Header Text */}
-        <motion.div variants={fadeUpBlur} className="mb-4 md:mb-8">
+        <motion.div variants={fadeUpBlur} className="mb-0 md:mb-4 relative z-20">
           <div className="flex items-center gap-3 mb-4 justify-center">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
@@ -74,7 +74,7 @@ export default function AsyncSolutionsSection() {
         </motion.div>
 
         {/* Interactive Radial Hub Area */}
-        <div className="relative w-full max-w-[800px] h-[500px] md:h-[600px] flex items-center justify-center mt-2 md:mt-4">
+        <div className="relative w-full max-w-[800px] h-[400px] md:h-[500px] flex items-center justify-center -mt-8 md:-mt-12 z-10">
           
           {/* Connector Lines (Visible only when open) */}
           <AnimatePresence>
@@ -141,16 +141,17 @@ export default function AsyncSolutionsSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className={`absolute inset-0 bg-primary/20 rounded-full blur-[40px] transition-all duration-700 w-[200px] h-[200px] md:w-[300px] md:h-[300px] m-auto ${isOpen ? 'scale-150 opacity-50' : 'scale-100 opacity-80 animate-pulse'}`}></div>
+            {/* Elegant glass/glow background instead of black shadow */}
+            <div className={`absolute inset-0 bg-primary/10 backdrop-blur-md rounded-full transition-all duration-700 w-[200px] h-[200px] md:w-[320px] md:h-[320px] m-auto ${isOpen ? 'scale-125 opacity-0' : 'scale-100 opacity-100 shadow-[0_0_50px_rgba(248,157,10,0.15)] border border-white/50'}`}></div>
             
             <img 
               src="/no_bg_logo_async.png" 
               alt="ASYNC Solutions Center" 
-              className="w-[200px] h-[200px] md:w-[320px] md:h-[320px] object-contain relative z-10 drop-shadow-[0_0_25px_rgba(0,0,0,0.6)] filter"
+              className="w-[220px] h-[220px] md:w-[360px] md:h-[360px] object-contain relative z-10 drop-shadow-xl"
             />
             
-            <div className="absolute -bottom-8 md:-bottom-12 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity">
-              <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm border border-black/5">
+            <div className="absolute -bottom-4 md:-bottom-8 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity">
+              <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-primary/10">
                 {isOpen ? 'Tutup Layanan' : 'Klik untuk Membuka Jaring'}
               </span>
             </div>
