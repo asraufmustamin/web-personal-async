@@ -109,10 +109,10 @@ export default function SkillsSection() {
                 key={skill.id}
                 className="relative cursor-pointer transition-all duration-300 ease-out border rounded-2xl group overflow-hidden bg-white hover:shadow-xl hover:-translate-y-1 h-full border-black/5 hover:border-primary/20 flex flex-col"
                 onClick={() => setSelectedSkill(skill)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, scale: 0.8, y: 40 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.15 }}
+                viewport={{ once: true, margin: "-50px" }}
               >
                 <div className="p-6 md:p-8 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">

@@ -201,12 +201,14 @@ export default function PortfolioSection() {
                     layout
                     key={item.id}
                     onClick={() => setActiveItemIndex(index)}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.8, y: 50 }}
                     transition={{ 
                       layout: { type: "spring", stiffness: 200, damping: 25 },
-                      opacity: { duration: 0.3 }
+                      opacity: { duration: 0.4, delay: index * 0.1 },
+                      scale: { duration: 0.4, delay: index * 0.1 },
+                      y: { type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }
                     }}
                     className={`relative rounded-[2rem] overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-shadow ${
                       isActive ? 'flex-[10] md:flex-[8] shadow-2xl' : 'flex-1 md:flex-[1] min-h-[70px] md:min-h-0 min-w-0 md:min-w-[80px]'
