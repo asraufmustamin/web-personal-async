@@ -70,8 +70,10 @@ export default function HeroSection() {
               {/* Name Subtitle Hook (Desktop & Mobile) */}
               <div className="relative w-full flex flex-col items-center">
                 <a 
-                  href="#layanan"
-                  className="group flex text-primary font-sans tracking-[0.05em] md:tracking-[0.1em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-2 md:gap-3 text-center px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
+                  href="https://async-id.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex text-primary font-sans tracking-wider md:tracking-widest uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-2 md:gap-3 text-center px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
                 >
                   <span className="relative flex h-2 w-2 md:mr-1">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
