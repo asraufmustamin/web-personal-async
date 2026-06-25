@@ -127,7 +127,7 @@ export default function AboutSection() {
                 </span>
               </h2>
               
-              <div className="flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-start gap-2 md:gap-3 mt-3 w-full">
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-start gap-2 md:gap-3 mt-3 w-full">
                 <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-3 py-2 rounded-[3px] text-[11px] font-bold tracking-wider uppercase shadow-sm whitespace-nowrap">
                   Digital Solution Partner
                 </div>
