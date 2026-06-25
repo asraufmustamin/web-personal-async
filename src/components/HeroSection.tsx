@@ -79,6 +79,7 @@ export default function HeroSection() {
                     text={[
                       "Digital Solution Partner.",
                       "System Information.",
+                      "Visual Designer.",
                       "Data Specialist."
                     ]}
                     speed={70}
