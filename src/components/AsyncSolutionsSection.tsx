@@ -14,24 +14,24 @@ export default function AsyncSolutionsSection() {
       icon: "web",
       title: "Web Development",
       desc: "Sistem & Website",
-      position: { x: -350, y: -180 }, // Top Left (pushed further out)
-      mobilePos: { x: -120, y: -220 }
+      position: { x: -340, y: -20 }, // Placed to the side, below the title
+      mobilePos: { x: -120, y: -80 }
     },
     {
       id: "data",
       icon: "database",
       title: "Manajemen Data",
       desc: "Analisis & Visualisasi",
-      position: { x: 350, y: -180 }, // Top Right (pushed further out)
-      mobilePos: { x: 120, y: -220 }
+      position: { x: 340, y: -20 }, // Placed to the side, below the title
+      mobilePos: { x: 120, y: -80 }
     },
     {
       id: "design",
       icon: "design_services",
       title: "UI/UX & Desain",
       desc: "Antarmuka Digital",
-      position: { x: 0, y: 300 }, // Bottom Center (pushed further down)
-      mobilePos: { x: 0, y: 260 }
+      position: { x: 0, y: 250 }, // Precise distance below the logo
+      mobilePos: { x: 0, y: 200 }
     }
   ];
 
@@ -88,9 +88,9 @@ export default function AsyncSolutionsSection() {
               >
                 {/* Lines simulating a net/web connecting to the cards */}
                 <svg className="absolute inset-0 w-full h-full overflow-visible" style={{ zIndex: 0 }}>
-                  <line x1="50%" y1="50%" x2="15%" y2="25%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
-                  <line x1="50%" y1="50%" x2="85%" y2="25%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
-                  <line x1="50%" y1="50%" x2="50%" y2="85%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
+                  <line x1="50%" y1="50%" x2="8%" y2="45%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
+                  <line x1="50%" y1="50%" x2="92%" y2="45%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
+                  <line x1="50%" y1="50%" x2="50%" y2="90%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
                   <defs>
                     <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#F89D0A" />
@@ -150,7 +150,7 @@ export default function AsyncSolutionsSection() {
               className="w-[220px] h-[220px] md:w-[360px] md:h-[360px] object-contain relative z-10 drop-shadow-xl"
             />
             
-            <div className="absolute -bottom-8 md:-bottom-12 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity z-40">
+            <div className="absolute bottom-0 md:bottom-4 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity z-40">
               <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-primary/10">
                 {isOpen ? 'Tutup Layanan' : 'Klik untuk Membuka Jaring'}
               </span>
@@ -161,7 +161,7 @@ export default function AsyncSolutionsSection() {
 
         {/* Dynamic Spacer for Bottom Card */}
         <motion.div 
-          animate={{ height: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 260 : 300) : 0 }}
+          animate={{ height: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 250) : 0 }}
           transition={{ type: "spring", stiffness: 80, damping: 15 }}
           className="w-full"
         />
