@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
+import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
 const skills = [
   {
@@ -59,20 +60,17 @@ export default function SkillsSection() {
     <motion.section 
       className="py-10 md:py-28 px-4 md:px-8 bg-bg-main relative overflow-hidden" 
       id="keahlian"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.15 }}
     >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
         
         {/* Top: Centered Title */}
         <motion.div
           className="flex flex-col items-center text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          variants={fadeUpBlur}
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
@@ -109,10 +107,7 @@ export default function SkillsSection() {
                 key={skill.id}
                 className="relative cursor-pointer transition-all duration-300 ease-out border rounded-2xl group overflow-hidden bg-white hover:shadow-xl hover:-translate-y-1 h-full border-black/5 hover:border-primary/20 flex flex-col"
                 onClick={() => setSelectedSkill(skill)}
-                initial={{ opacity: 0, scale: 0.8, y: 40 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.15 }}
-                viewport={{ once: true, margin: "-50px" }}
+                variants={popIn}
               >
                 <div className="p-6 md:p-8 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">

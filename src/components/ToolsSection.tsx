@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Typewriter } from "@/components/ui/typewriter";
 import { useRef } from "react";
+import { Typewriter } from "@/components/ui/typewriter";
+import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
 const toolsRow1 = [
   { name: "Next.js", icon: "/tools/Nextjs.svg" },
@@ -57,22 +58,19 @@ export default function ToolsSection() {
 
   return (
     <motion.section 
-      className="py-10 md:py-32 bg-bg-main relative overflow-hidden border-t border-black/5" 
-      id="tools"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
+      id="tools" 
+      className="py-10 md:py-20 bg-bg-card border-t border-black/5"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.15 }}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center">
         <motion.div 
-          className="flex flex-col items-center text-center gap-4 mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          className="text-center mb-10"
+          variants={fadeUpBlur}
         >
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2 justify-center">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
               TEKNOLOGI & TOOLS

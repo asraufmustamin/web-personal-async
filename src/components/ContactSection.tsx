@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
+import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 
 export default function ContactSection() {
   const [hoveredContact, setHoveredContact] = useState<string | null>(null);
@@ -98,13 +99,13 @@ export default function ContactSection() {
   return (
     <motion.section 
       id="kontak" 
-      className="relative min-h-screen py-10 md:py-20 flex flex-col items-center justify-center overflow-hidden bg-[#FAFAFA]"
+      className="py-10 md:py-24 bg-bg-main relative overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.15 }}
     >
       {/* Giant Character Watermark */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.06] overflow-hidden z-0">
@@ -125,11 +126,8 @@ export default function ContactSection() {
         
         {/* Massive Typography Hero */}
         <motion.div 
-          className="text-center mb-16 md:mb-24 mt-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
+          variants={fadeUpBlur}
         >
           <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Tertarik Berkolaborasi?</span>
           <h2 ref={headingRef} className="text-4xl md:text-7xl lg:text-[7.5rem] font-black text-text-main font-serif tracking-tight leading-[1.1] md:leading-none mb-6 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] md:drop-shadow-[0_30px_30px_rgba(0,0,0,0.2)] px-2">
@@ -146,9 +144,11 @@ export default function ContactSection() {
               <span className="invisible">Wujudkan.</span>
             )}
           </h2>
-          <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow-sm">
-            Singkirkan formulir kaku. Pilih jalur komunikasi favorit Anda dan mari mulai diskusi proyek impian Anda hari ini.
-          </p>
+          <motion.div className="flex flex-col gap-6 w-full max-w-md lg:max-w-none mx-auto" variants={fadeUpBlur}>
+            <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow-sm">
+              Singkirkan formulir kaku. Pilih jalur komunikasi favorit Anda dan mari mulai diskusi proyek impian Anda hari ini.
+            </p>
+          </motion.div>
         </motion.div>
 
         {/* Interactive Character Arena */}

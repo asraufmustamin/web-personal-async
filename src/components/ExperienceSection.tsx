@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
+import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 
 const allExperiences = [
   {
@@ -210,20 +211,17 @@ export default function ExperienceSection() {
     <motion.section 
       className="py-10 md:py-24 px-4 md:px-8 bg-bg-card relative overflow-hidden border-t border-black/5" 
       id="pengalaman"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.15 }}
     >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col">
         
         {/* Header */}
         <motion.div
           className="flex flex-col items-center text-center mb-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          variants={fadeUpBlur}
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
@@ -253,7 +251,11 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* Card Fan Carousel */}
-        <div ref={cardsContainerRef} className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden perspective-[1000px] mt-2 select-none">
+        <motion.div 
+          ref={cardsContainerRef}
+          className="relative w-full max-w-[500px] md:max-w-4xl mx-auto h-[600px] md:h-[600px] flex items-center justify-center mt-10 perspective-[1000px]"
+          variants={fadeUpBlur}
+        >
           {allExperiences.map((item, index) => {
             const offset = index - currentIndex;
             const absOffset = Math.abs(offset);
@@ -301,7 +303,7 @@ export default function ExperienceSection() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Carousel Navigation */}
         <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-6">

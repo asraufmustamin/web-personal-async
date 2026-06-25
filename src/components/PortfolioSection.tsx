@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
+import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
 // --- PORTFOLIO DATA ---
 const categories = ["Sistem & Web", "Design", "Manajemen Data", "Lainnya"];
@@ -120,10 +121,10 @@ export default function PortfolioSection() {
     <motion.section 
       id="proyek" 
       className="py-10 md:py-24 bg-white relative overflow-hidden"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.15 }}
     >
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-primary/5 via-transparent to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
@@ -132,11 +133,8 @@ export default function PortfolioSection() {
         
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          className="flex flex-col items-center text-center mb-10"
+          variants={fadeUpBlur}
         >
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Portofolio / Karya Terbaik</span>
           <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-black font-serif mb-6 text-text-main">
@@ -160,12 +158,8 @@ export default function PortfolioSection() {
 
         {/* Category Selector */}
         <motion.div 
-          className="flex overflow-x-auto md:flex-wrap justify-start md:justify-center gap-3 md:gap-4 mb-8 md:mb-16 pb-4 px-4 md:px-0 w-full scrollbar-hide"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-8 md:mb-12 relative z-20"
+          variants={fadeUpBlur}
         >
           {categories.map((category) => (
             <button
@@ -184,11 +178,8 @@ export default function PortfolioSection() {
 
         {/* Interactive Album Showcase */}
         <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="relative z-10 w-full"
+          variants={fadeUpBlur}
         >
           {/* We use an AnimatePresence wrapper for category changes, but internally we map the filtered items to avoid remounting issues if we want layout animations */}
           <div className="h-[600px] md:h-[500px] lg:h-[600px] w-full flex flex-col md:flex-row gap-4 p-2">
