@@ -109,26 +109,36 @@ const Typewriter = ({
     loop,
   ])
 
+  const longestText = texts.reduce((a, b) => (a.length > b.length ? a : b), "");
+
   return (
-    <div className={`inline whitespace-pre-wrap tracking-tight ${className}`}>
-      <span>{displayText}</span>
-      {showCursor && (
-        <motion.span
-          variants={cursorAnimationVariants}
-          className={cn(
-            cursorClassName,
-            hideCursorOnType &&
-              (currentIndex < texts[currentTextIndex].length || isDeleting)
-              ? "hidden"
-              : ""
-          )}
-          initial="initial"
-          animate="animate"
-        >
-          {cursorChar}
-        </motion.span>
-      )}
-    </div>
+    <span className={`inline-grid ${className}`}>
+      {/* Invisible placeholder to reserve layout space */}
+      <span className="invisible col-start-1 row-start-1 whitespace-pre-wrap tracking-tight pointer-events-none">
+        {longestText}
+        {showCursor && <span className={cn(cursorClassName)}>{cursorChar}</span>}
+      </span>
+      {/* Visible typing text */}
+      <span className="col-start-1 row-start-1 whitespace-pre-wrap tracking-tight text-left">
+        <span>{displayText}</span>
+        {showCursor && (
+          <motion.span
+            variants={cursorAnimationVariants}
+            className={cn(
+              cursorClassName,
+              hideCursorOnType &&
+                (currentIndex < texts[currentTextIndex].length || isDeleting)
+                ? "hidden"
+                : ""
+            )}
+            initial="initial"
+            animate="animate"
+          >
+            {cursorChar}
+          </motion.span>
+        )}
+      </span>
+    </span>
   )
 }
 
