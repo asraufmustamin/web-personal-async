@@ -253,7 +253,7 @@ export default function ExperienceSection() {
         {/* Card Fan Carousel */}
         <motion.div 
           ref={cardsContainerRef}
-          className="relative w-full max-w-[500px] md:max-w-4xl mx-auto h-[600px] md:h-[600px] flex items-center justify-center mt-10 perspective-[1000px]"
+          className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden perspective-[1000px] mt-2 select-none"
           variants={fadeUpBlur}
         >
           {allExperiences.map((item, index) => {
@@ -274,7 +274,7 @@ export default function ExperienceSection() {
                   zIndex: 50 - absOffset,
                   opacity: isCardsInView ? (absOffset > 3 ? 0 : 1) : 0, // Sembunyikan kartu yang terlalu jauh
                 }}
-                transition={{ type: "spring", stiffness: 260, damping: 25 }}
+                transition={{ type: "spring", stiffness: 120, damping: 20, mass: 0.8 }}
                 onClick={() => setCurrentIndex(index)}
               >
                 {/* Logo Watermark Overlay */}

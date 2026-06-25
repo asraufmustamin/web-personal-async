@@ -130,18 +130,18 @@ export default function ContactSection() {
           variants={fadeUpBlur}
         >
           <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Tertarik Berkolaborasi?</span>
-          <h2 ref={headingRef} className="text-4xl md:text-7xl lg:text-[7.5rem] font-black text-text-main font-serif tracking-tight leading-[1.1] md:leading-none mb-6 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] md:drop-shadow-[0_30px_30px_rgba(0,0,0,0.2)] px-2">
-            Mari{" "}
+          <h2 ref={headingRef} className="text-4xl md:text-7xl lg:text-[7.5rem] font-black text-text-main font-serif tracking-tight leading-[1.1] md:leading-none mb-6 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] md:drop-shadow-[0_30px_30px_rgba(0,0,0,0.2)] px-2 flex justify-center items-center flex-wrap md:flex-nowrap gap-2 md:gap-4">
+            <span className="whitespace-nowrap">Mari</span>
             {isHeadingInView ? (
               <Typewriter 
                 text={["Wujudkan."]} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 whitespace-nowrap pb-1 md:pb-3"
               />
             ) : (
-              <span className="invisible">Wujudkan.</span>
+              <span className="invisible whitespace-nowrap">Wujudkan.</span>
             )}
           </h2>
           <motion.div className="flex flex-col gap-6 w-full max-w-md lg:max-w-none mx-auto" variants={fadeUpBlur}>

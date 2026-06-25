@@ -192,14 +192,17 @@ export default function PortfolioSection() {
                     layout
                     key={item.id}
                     onClick={() => setActiveItemIndex(index)}
-                    initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.8, y: 50 }}
+                    initial={{ opacity: 0, scale: 0.5, y: 100, rotateX: -30, rotateY: index % 2 === 0 ? -20 : 20, filter: "blur(20px)" }}
+                    animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0, rotateY: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 0.5, y: 100, rotateX: 30, filter: "blur(20px)" }}
                     transition={{ 
                       layout: { type: "spring", stiffness: 200, damping: 25 },
-                      opacity: { duration: 0.4, delay: index * 0.1 },
-                      scale: { duration: 0.4, delay: index * 0.1 },
-                      y: { type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }
+                      opacity: { duration: 0.6, delay: index * 0.1 },
+                      scale: { duration: 0.6, delay: index * 0.1 },
+                      rotateX: { type: "spring", stiffness: 150, damping: 20, delay: index * 0.1 },
+                      rotateY: { type: "spring", stiffness: 150, damping: 20, delay: index * 0.1 },
+                      y: { type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 },
+                      filter: { duration: 0.6, delay: index * 0.1 }
                     }}
                     className={`relative rounded-[2rem] overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-shadow ${
                       isActive ? 'flex-[10] md:flex-[8] shadow-2xl' : 'flex-1 md:flex-[1] min-h-[70px] md:min-h-0 min-w-0 md:min-w-[80px]'

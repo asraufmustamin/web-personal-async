@@ -3,7 +3,7 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
-import { staggerContainer, slideInLeftBlur, slideInRightBlur, fadeUpBlur } from "@/lib/animations";
+import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 
 const images = [
   "/foto_aboutus.jpeg",
@@ -24,22 +24,21 @@ export default function AboutSection() {
 
   return (
     <motion.section 
-      className="py-10 md:py-32 bg-bg-main overflow-hidden" 
       id="tentang" 
+      className="py-10 md:py-32 bg-bg-main"
       variants={staggerContainer}
-      initial="hidden" 
-      whileInView="show" 
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: false, amount: 0.15 }}
     >
       <div className="container mx-auto px-4 md:px-12 max-w-6xl">
         <div className="grid lg:grid-cols-12 gap-12 md:gap-16 lg:gap-20 items-stretch">
           
           {/* Left Column - Photo Carousel (Interactive Fanning Stack) */}
-          <motion.div 
+          <div 
             className="lg:col-span-5 flex justify-center items-center py-4"
             onMouseEnter={() => setIsPhotoHovered(true)}
             onMouseLeave={() => { setIsPhotoHovered(false); setIsMobileFanned(false); }}
-            variants={slideInLeftBlur}
           >
             <div 
               className="relative group w-full max-w-[400px] aspect-[4/5] cursor-pointer"
@@ -105,25 +104,22 @@ export default function AboutSection() {
                 style={{ display: "none" }} /* Hidden by default, let users use dots to avoid hijacking hover too much */
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column - Content */}
-          <motion.div 
-            className="lg:col-span-7 flex flex-col justify-center"
-            variants={slideInRightBlur}
-          >
+          <div className={`lg:col-span-7 flex flex-col items-start gap-6 h-full py-4 justify-center transition-transform duration-500 ${isPhotoHovered ? "lg:translate-x-6" : "translate-x-0"}`}>
             
             {/* Header Section */}
-            <motion.div variants={fadeUpBlur} className="flex flex-col gap-1 w-full mt-8 lg:mt-0 items-center lg:items-start text-center lg:text-left">
-              <div className="flex items-center gap-3 mb-2">
+            <div className="flex flex-col gap-1 w-full mt-8 lg:mt-0 items-center lg:items-start text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-1 w-full">
                 <span className="w-8 h-[2px] bg-primary rounded-full"></span>
-                <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
-                  TENTANG SAYA
+                <span className="text-primary font-bold tracking-widest uppercase text-xs">
+                  Kenali Lebih Dekat
                 </span>
                 <span className="w-8 h-[2px] bg-primary rounded-full lg:hidden"></span>
               </div>
               
-              <h2 ref={headingRef} className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold font-serif text-text-main tracking-tight leading-tight lg:leading-[1.1] flex flex-col lg:block items-center">
+              <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-text-main tracking-tight leading-[1.2] lg:leading-[1.1] flex flex-col lg:block items-center">
                 <span className="font-light">Saya</span>{" "}
                 <span className="whitespace-nowrap mt-1 md:mt-0 md:ml-2">
                   {isHeadingInView ? (
@@ -140,40 +136,41 @@ export default function AboutSection() {
                 </span>
               </h2>
               
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mt-4 w-full">
-                <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-3 py-2.5 md:py-3 rounded-[3px] font-bold gap-1.5 shadow-sm text-center">
-                  <span className="material-symbols-outlined text-[16px] md:text-[18px]">verified</span>
-                  <span className="text-[12px] md:text-[13px] leading-tight">Digital Partner</span>
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-start gap-2 md:gap-3 mt-3 w-full">
+                <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-3 py-2 rounded-[3px] font-bold gap-1.5 shadow-sm whitespace-nowrap">
+                  <span className="material-symbols-outlined text-[16px]">verified</span>
+                  <span className="text-[13px]">Digital Solution Partner</span>
                 </div>
                 
-                <a href="#proyek" className="group relative px-3 py-2.5 md:py-3 bg-primary text-white rounded-[3px] font-bold flex items-center justify-center gap-1.5 overflow-hidden shadow-md hover:shadow-primary/30 transition-all duration-300 text-center">
+                <a href="#proyek" className="group relative px-3 py-2 bg-primary text-white rounded-[3px] font-bold flex items-center justify-center gap-1.5 overflow-hidden shadow-md hover:shadow-primary/30 transition-all duration-300">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  <span className="relative z-10 flex items-center gap-1.5 text-[12px] md:text-[13px]">
-                    <span className="material-symbols-outlined text-[16px] md:text-[18px]">cases</span> Lihat Karya
+                  <span className="relative z-10 flex items-center gap-1.5 text-[13px] whitespace-nowrap">
+                    <span className="material-symbols-outlined text-[16px]">cases</span> Lihat Karya
                   </span>
                 </a>
                 
-                <a href="/cv_asrauf.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2.5 md:py-3 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300 text-center">
-                  <span className="material-symbols-outlined text-[16px] md:text-[18px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[12px] md:text-[13px]">Unduh CV</span>
+                <a href="/cv_asrauf.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                  <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
                 </a>
                 
-                <a href="#kontak" className="group px-3 py-2.5 md:py-3 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300 text-center">
-                  <span className="material-symbols-outlined text-[16px] md:text-[18px]">mail</span> <span className="text-[12px] md:text-[13px]">Hubungi</span>
+                <a href="#kontak" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">Hubungi</span>
                 </a>
               </div>
-            </motion.div>
+            </div>
             
             {/* Description Section */}
-            <motion.div variants={fadeUpBlur} className="border-l-[3px] border-primary/40 pl-4 md:pl-6 flex flex-col gap-3 mt-4 relative z-10 text-justify w-full max-w-2xl mx-auto lg:mx-0">
+            <div className="border-l-[3px] border-primary/40 pl-4 md:pl-6 flex flex-col gap-3 mt-4 relative z-10 text-justify w-full max-w-2xl mx-auto lg:mx-0">
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
                 Sebagai lulusan Sarjana Komputer dengan <strong className="text-primary font-bold">IPK 3.93</strong>, saya berfokus membantu individu, bisnis, organisasi, maupun instansi dalam membangun solusi digital yang lebih terarah dan fungsional.
               </p>
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
                 Fokus saya mencakup pengembangan website, sistem informasi, pengelolaan data, desain visual, serta dukungan digital yang disesuaikan dengan kebutuhan. Saya percaya bahwa teknologi yang baik harus mampu menyederhanakan proses, memperjelas informasi, dan memberikan nilai nyata bagi penggunanya.
               </p>
-            </motion.div>
+            </div>
 
-          </motion.div>
+          </div>
+
         </div>
       </div>
     </motion.section>
