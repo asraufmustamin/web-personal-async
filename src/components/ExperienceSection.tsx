@@ -456,7 +456,7 @@ export default function ExperienceSection() {
                   <div
                     onClick={() => setActiveHighlight(isFocused ? null : i)}
                     onMouseEnter={() => setHoveredHighlight(i)}
-                    className={`p-6 border rounded-2xl transition-all duration-500 ease-out cursor-pointer flex flex-col items-start relative overflow-hidden h-full ${scaleClass} ${bgClass}`}
+                    className={`p-6 md:p-8 border rounded-2xl md:rounded-3xl transition-all duration-500 ease-out cursor-pointer flex flex-col items-start relative overflow-hidden h-full min-h-[220px] md:min-h-0 ${scaleClass} ${bgClass}`}
                   >
                     <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isFocused ? 'bg-white/20 scale-110' : 'bg-primary/10'}`}>
                        <span className={`material-symbols-outlined transition-colors duration-500 text-[24px] ${isFocused ? 'text-white' : 'text-primary'}`}>star</span>
