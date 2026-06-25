@@ -74,12 +74,12 @@ export default function HeroSection() {
                 </span>
               </div>
               
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[90px] md:min-h-[120px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20">
+              <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[70px] sm:min-h-[90px] md:min-h-[120px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
-                      "Digital Solution Partner.",
-                      "System Information.",
-                      "Visual Designer.",
+                      "Digital Partner.",
+                      "System Analyst.",
+                      "UI/UX Designer.",
                       "Data Specialist."
                     ]}
                     speed={70}

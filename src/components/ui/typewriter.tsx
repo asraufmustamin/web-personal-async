@@ -119,7 +119,7 @@ const Typewriter = ({
         {showCursor && <span className={cn(cursorClassName)}>{cursorChar}</span>}
       </span>
       {/* Visible typing text */}
-      <span className="col-start-1 row-start-1 whitespace-pre-wrap tracking-tight text-left">
+      <span className="col-start-1 row-start-1 whitespace-pre-wrap tracking-tight">
         <span>{displayText}</span>
         {showCursor && (
           <motion.span
