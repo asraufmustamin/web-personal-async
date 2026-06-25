@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
@@ -253,32 +253,38 @@ export default function ExperienceSection() {
         {/* Card Fan Carousel */}
         <motion.div 
           ref={cardsContainerRef}
-          className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden perspective-[1000px] mt-2 select-none"
+          className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden mt-2 select-none"
           variants={fadeUpBlur}
         >
           {allExperiences.map((item, index) => {
             const offset = index - currentIndex;
             const absOffset = Math.abs(offset);
             const isActive = offset === 0;
+            const isVisible = absOffset <= 3;
 
             return (
               <motion.div
                 key={index}
-                className={`absolute w-[220px] h-[300px] md:w-[260px] md:h-[360px] rounded-2xl md:rounded-[2rem] shadow-2xl cursor-pointer flex flex-col justify-between p-6 md:p-7 text-white bg-gradient-to-br ${item.theme} border border-white/20 overflow-hidden group hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] transition-shadow duration-300`}
-                initial={{ x: 0, y: 0, rotateZ: 0, scale: 0.8, opacity: 0 }}
+                className={`absolute w-[220px] h-[300px] md:w-[260px] md:h-[360px] rounded-2xl md:rounded-[2rem] shadow-2xl cursor-pointer flex flex-col justify-between p-6 md:p-7 text-white bg-gradient-to-br ${item.theme} border border-white/20 overflow-hidden group hover:shadow-[0_0_35px_rgba(255,255,255,0.15)] transition-shadow duration-500`}
                 animate={{
-                  x: isCardsInView ? offset * (isMobile ? 70 : 130) : 0,
-                  y: isCardsInView ? absOffset * (isMobile ? 15 : 25) : 0,
-                  rotateZ: isCardsInView ? offset * (isMobile ? 8 : 10) : 0,
-                  scale: isCardsInView ? (isActive ? 1 : Math.max(1 - absOffset * 0.15, 0.6)) : 0.8,
-                  zIndex: 50 - absOffset,
-                  opacity: isCardsInView ? (absOffset > 3 ? 0 : 1) : 0, // Sembunyikan kartu yang terlalu jauh
+                  x: isCardsInView ? offset * (isMobile ? 65 : 120) : 0,
+                  y: isCardsInView ? absOffset * (isMobile ? 12 : 20) : 0,
+                  rotateZ: isCardsInView ? offset * (isMobile ? 7 : 9) : 0,
+                  scale: isCardsInView ? (isActive ? 1 : Math.max(1 - absOffset * 0.12, 0.65)) : 0.85,
+                  opacity: isCardsInView ? (isVisible ? 1 : 0) : 0,
                 }}
-                transition={{ type: "spring", stiffness: 120, damping: 20, mass: 0.8 }}
+                transition={{
+                  x: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
+                  y: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
+                  rotateZ: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
+                  scale: { type: "spring", stiffness: 100, damping: 20, mass: 0.5 },
+                  opacity: { duration: 0.3, ease: "easeOut" },
+                }}
+                style={{ zIndex: 50 - absOffset, willChange: "transform, opacity" }}
                 onClick={() => setCurrentIndex(index)}
               >
                 {/* Logo Watermark Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] group-hover:opacity-20 transition-opacity duration-500 pointer-events-none mix-blend-overlay">
+                <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
                   <img src={item.logo} alt="" className="w-40 h-40 object-contain filter grayscale brightness-0 invert pointer-events-none" />
                 </div>
 
@@ -296,10 +302,8 @@ export default function ExperienceSection() {
                   <p className="text-[11px] text-white/80 mt-1.5 font-mono bg-black/20 inline-block px-2 py-1 rounded-md backdrop-blur-sm">{item.date}</p>
                 </div>
 
-                {/* Overlay Hitam Transparan untuk kartu tidak aktif */}
-                {!isActive && (
-                  <div className="absolute inset-0 bg-black/30 rounded-2xl md:rounded-[2rem] transition-opacity duration-300" />
-                )}
+                {/* Overlay for inactive cards */}
+                <div className={`absolute inset-0 rounded-2xl md:rounded-[2rem] transition-opacity duration-500 ${isActive ? 'bg-transparent opacity-0' : 'bg-black/30 opacity-100'}`} />
               </motion.div>
             );
           })}
@@ -323,14 +327,14 @@ export default function ExperienceSection() {
         </div>
 
         {/* Detailed Information (Compact & Rectangular Split Layout) */}
-        <div className="max-w-5xl mx-auto mt-8 w-full bg-white rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 border border-black/5 p-6 md:p-8 relative overflow-hidden group">
+        <div className="max-w-5xl mx-auto mt-8 w-full bg-white rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-500 ease-out border border-black/5 p-6 md:p-8 relative overflow-hidden group">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+              initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -10, filter: "blur(6px)" }}
+              transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="flex flex-col md:flex-row gap-6 md:gap-10"
             >
               {/* Left Column: Core Info & Description */}
@@ -394,10 +398,10 @@ export default function ExperienceSection() {
         {/* Highlights Section */}
         <motion.div 
           className="mt-28 relative group/section"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif">Professional <span className="text-primary">Highlights</span></h3>
@@ -444,10 +448,10 @@ export default function ExperienceSection() {
                 <motion.div 
                   key={i} 
                   className="w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   <div
                     onClick={() => setActiveHighlight(isFocused ? null : i)}

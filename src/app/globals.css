@@ -93,6 +93,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-bg-main text-text-main font-sans antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
   }
@@ -113,8 +116,10 @@
 
 .animate-marquee {
   animation: marquee 35s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-reverse {
   animation: marquee-reverse 45s linear infinite;
+  will-change: transform;
 }
