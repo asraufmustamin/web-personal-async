@@ -73,11 +73,18 @@ export default function HeroSection() {
                   href="https://async-id.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-2 md:gap-4 text-center hover:text-orange-400 transition-colors cursor-pointer group"
+                  className="group flex text-primary font-sans tracking-[0.1em] md:tracking-[0.2em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-3 md:gap-5 text-center transition-all cursor-pointer overflow-hidden py-2"
                 >
-                  <span className="w-6 md:w-10 h-[2px] bg-primary group-hover:bg-orange-400 transition-colors"></span> 
-                  <span className="animate-pulse">JELAJAHI LAYANAN ASYNC SOLUTIONS</span> 
-                  <span className="w-6 md:w-10 h-[2px] bg-primary group-hover:bg-orange-400 transition-colors"></span>
+                  <span className="w-8 md:w-16 h-[1px] bg-primary/40 group-hover:bg-primary group-hover:w-12 md:group-hover:w-24 transition-all duration-500 ease-out"></span> 
+                  
+                  <span className="relative flex items-center gap-2 group-hover:text-orange-500 transition-colors duration-300">
+                    <span className="animate-pulse group-hover:animate-none">JELAJAHI LAYANAN ASYNC SOLUTIONS</span>
+                    <span className="material-symbols-outlined text-[14px] md:text-[18px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                      arrow_forward
+                    </span>
+                  </span>
+
+                  <span className="w-8 md:w-16 h-[1px] bg-primary/40 group-hover:bg-primary group-hover:w-12 md:group-hover:w-24 transition-all duration-500 ease-out"></span>
                 </a>
               </div>
               

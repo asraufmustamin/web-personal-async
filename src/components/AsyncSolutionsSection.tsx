@@ -74,7 +74,7 @@ export default function AsyncSolutionsSection() {
         </motion.div>
 
         {/* Interactive Radial Hub Area */}
-        <div className="relative w-full max-w-[800px] h-[400px] md:h-[500px] flex items-center justify-center -mt-8 md:-mt-12 z-10">
+        <div className="relative w-full max-w-[800px] h-[400px] md:h-[500px] flex items-center justify-center -mt-8 md:-mt-12 z-10 mb-16 md:mb-20">
           
           {/* Connector Lines (Visible only when open) */}
           <AnimatePresence>
@@ -150,7 +150,7 @@ export default function AsyncSolutionsSection() {
               className="w-[220px] h-[220px] md:w-[360px] md:h-[360px] object-contain relative z-10 drop-shadow-xl"
             />
             
-            <div className="absolute -bottom-4 md:-bottom-8 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity">
+            <div className="absolute -top-8 md:-top-12 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity z-40">
               <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-primary/10">
                 {isOpen ? 'Tutup Layanan' : 'Klik untuk Membuka Jaring'}
               </span>
@@ -160,7 +160,7 @@ export default function AsyncSolutionsSection() {
         </div>
 
         {/* Global CTA */}
-        <motion.div variants={fadeUpBlur} className="mt-8 md:mt-16 z-20">
+        <motion.div variants={fadeUpBlur} className="mt-8 md:mt-12 z-20">
           <a 
             href="https://async-id.vercel.app/"
             target="_blank"
