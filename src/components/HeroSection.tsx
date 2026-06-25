@@ -79,7 +79,7 @@ export default function HeroSection() {
                   
                   <span className="relative flex items-center gap-2 group-hover:text-orange-500 transition-colors duration-300">
                     <span className="animate-pulse group-hover:animate-none">JELAJAHI LAYANAN ASYNC SOLUTIONS</span>
-                    <span className="material-symbols-outlined text-[14px] md:text-[18px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    <span className="material-symbols-outlined text-[14px] md:text-[18px] opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                       arrow_forward
                     </span>
                   </span>

@@ -397,7 +397,7 @@ export default function ExperienceSection() {
 
         {/* Highlights Section */}
         <motion.div 
-          className="mt-28 relative group/section"
+          className="mt-12 md:mt-28 relative group/section"
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -447,7 +447,7 @@ export default function ExperienceSection() {
               return (
                 <motion.div 
                   key={i} 
-                  className="w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start"
+                  className="w-[90vw] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start"
                   initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}

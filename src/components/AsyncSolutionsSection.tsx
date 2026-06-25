@@ -15,7 +15,7 @@ export default function AsyncSolutionsSection() {
       title: "Web Development",
       desc: "Sistem & Website",
       position: { x: -340, y: -20 }, 
-      mobilePos: { x: -105, y: -140 } // Adjusted for mobile screen width and logo clearance
+      mobilePos: { x: -95, y: -110 } // Adjusted for mobile screen width and logo clearance
     },
     {
       id: "data",
@@ -23,7 +23,7 @@ export default function AsyncSolutionsSection() {
       title: "Manajemen Data",
       desc: "Analisis & Visualisasi",
       position: { x: 340, y: -20 }, 
-      mobilePos: { x: 105, y: -140 }
+      mobilePos: { x: 95, y: -110 }
     },
     {
       id: "design",
@@ -31,7 +31,7 @@ export default function AsyncSolutionsSection() {
       title: "UI/UX & Desain",
       desc: "Antarmuka Digital",
       position: { x: 0, y: 250 }, 
-      mobilePos: { x: 0, y: 170 } // Safely below mobile logo
+      mobilePos: { x: 0, y: 140 } // Safely below mobile logo
     }
   ];
 
@@ -176,7 +176,7 @@ export default function AsyncSolutionsSection() {
             href="https://async-id.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-base md:text-lg overflow-hidden transition-transform hover:scale-105 shadow-xl hover:shadow-2xl"
+            className="group relative inline-flex items-center justify-center gap-2 md:gap-3 px-5 py-2.5 md:px-8 md:py-4 bg-primary text-white rounded-md md:rounded-xl font-bold text-sm md:text-lg overflow-hidden transition-transform hover:scale-105 shadow-md md:shadow-xl hover:shadow-lg md:hover:shadow-2xl"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10">Kunjungi Website Utama ASYNC Solutions</span>
