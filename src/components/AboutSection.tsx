@@ -118,6 +118,7 @@ export default function AboutSection() {
                     <Typewriter 
                       text={["Asrauf Mustamin."]} 
                       speed={70} 
+                      waitTime={15000}
                       cursorChar="_" 
                       className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-dark"
                     />

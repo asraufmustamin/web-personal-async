@@ -96,11 +96,15 @@ export default function ContactSection() {
   ];
 
   return (
-    <section 
+    <motion.section 
       id="kontak" 
       className="relative min-h-screen py-10 md:py-20 flex flex-col items-center justify-center overflow-hidden bg-[#FAFAFA]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
     >
       {/* Giant Character Watermark */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.06] overflow-hidden z-0">
@@ -134,6 +138,7 @@ export default function ContactSection() {
               <Typewriter 
                 text={["Wujudkan."]} 
                 speed={70} 
+                waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
               />
@@ -242,9 +247,6 @@ export default function ContactSection() {
         </div>
 
       </div>
-
-
-
-    </section>
+    </motion.section>
   );
 }

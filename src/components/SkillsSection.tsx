@@ -56,7 +56,14 @@ export default function SkillsSection() {
   const isHeadingInView = useInView(headingRef, { once: true });
 
   return (
-    <section className="py-10 md:py-28 px-4 md:px-8 bg-bg-main relative overflow-hidden" id="keahlian">
+    <motion.section 
+      className="py-10 md:py-28 px-4 md:px-8 bg-bg-main relative overflow-hidden" 
+      id="keahlian"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col gap-12 md:gap-16">
         
         {/* Top: Centered Title */}
@@ -81,6 +88,7 @@ export default function SkillsSection() {
               <Typewriter 
                 text={["Utama."]} 
                 speed={70} 
+                waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-dark"
               />
@@ -199,6 +207,6 @@ export default function SkillsSection() {
         </AnimatePresence>,
         document.body
       )}
-    </section>
+    </motion.section>
   );
 }

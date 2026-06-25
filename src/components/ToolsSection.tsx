@@ -56,9 +56,15 @@ export default function ToolsSection() {
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-10 md:py-32 bg-bg-main relative overflow-hidden border-t border-black/5" id="tools">
-      
-      <div className="container mx-auto px-4 md:px-12 max-w-6xl relative z-10">
+    <motion.section 
+      className="py-10 md:py-32 bg-bg-main relative overflow-hidden border-t border-black/5" 
+      id="tools"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center">
         <motion.div 
           className="flex flex-col items-center text-center gap-4 mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -80,6 +86,7 @@ export default function ToolsSection() {
               <Typewriter 
                 text={["Gunakan."]} 
                 speed={70} 
+                waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
               />
@@ -119,6 +126,6 @@ export default function ToolsSection() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

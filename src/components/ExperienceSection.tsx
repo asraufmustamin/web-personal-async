@@ -179,6 +179,8 @@ export default function ExperienceSection() {
   const highlightsRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const cardsContainerRef = useRef(null);
+  const isCardsInView = useInView(cardsContainerRef, { once: true, margin: "-50px" });
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -205,7 +207,14 @@ export default function ExperienceSection() {
   const activeItem = allExperiences[currentIndex];
 
   return (
-    <section className="py-10 md:py-24 px-4 md:px-8 bg-bg-card relative overflow-hidden border-t border-black/5" id="pengalaman">
+    <motion.section 
+      className="py-10 md:py-24 px-4 md:px-8 bg-bg-card relative overflow-hidden border-t border-black/5" 
+      id="pengalaman"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col">
         
         {/* Header */}
@@ -230,6 +239,7 @@ export default function ExperienceSection() {
               <Typewriter 
                 text={["Profesional & Organisasi."]} 
                 speed={70} 
+                waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-dark"
               />
@@ -243,7 +253,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* Card Fan Carousel */}
-        <div className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden perspective-[1000px] mt-2 select-none">
+        <div ref={cardsContainerRef} className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden perspective-[1000px] mt-2 select-none">
           {allExperiences.map((item, index) => {
             const offset = index - currentIndex;
             const absOffset = Math.abs(offset);
@@ -253,13 +263,14 @@ export default function ExperienceSection() {
               <motion.div
                 key={index}
                 className={`absolute w-[220px] h-[300px] md:w-[260px] md:h-[360px] rounded-2xl md:rounded-[2rem] shadow-2xl cursor-pointer flex flex-col justify-between p-6 md:p-7 text-white bg-gradient-to-br ${item.theme} border border-white/20 overflow-hidden group hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] transition-shadow duration-300`}
+                initial={{ x: 0, y: 0, rotateZ: 0, scale: 0.8, opacity: 0 }}
                 animate={{
-                  x: offset * (isMobile ? 70 : 130),
-                  y: absOffset * (isMobile ? 15 : 25),
-                  rotateZ: offset * (isMobile ? 8 : 10),
-                  scale: isActive ? 1 : Math.max(1 - absOffset * 0.15, 0.6),
+                  x: isCardsInView ? offset * (isMobile ? 70 : 130) : 0,
+                  y: isCardsInView ? absOffset * (isMobile ? 15 : 25) : 0,
+                  rotateZ: isCardsInView ? offset * (isMobile ? 8 : 10) : 0,
+                  scale: isCardsInView ? (isActive ? 1 : Math.max(1 - absOffset * 0.15, 0.6)) : 0.8,
                   zIndex: 50 - absOffset,
-                  opacity: absOffset > 3 ? 0 : 1, // Sembunyikan kartu yang terlalu jauh
+                  opacity: isCardsInView ? (absOffset > 3 ? 0 : 1) : 0, // Sembunyikan kartu yang terlalu jauh
                 }}
                 transition={{ type: "spring", stiffness: 260, damping: 25 }}
                 onClick={() => setCurrentIndex(index)}
@@ -459,6 +470,6 @@ export default function ExperienceSection() {
         </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

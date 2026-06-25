@@ -117,7 +117,14 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section id="proyek" className="py-10 md:py-24 bg-white relative overflow-hidden">
+    <motion.section 
+      id="proyek" 
+      className="py-10 md:py-24 bg-white relative overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-primary/5 via-transparent to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
@@ -138,6 +145,7 @@ export default function PortfolioSection() {
               <Typewriter 
                 text={["Terbaik."]} 
                 speed={70} 
+                waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
               />
@@ -359,6 +367,6 @@ export default function PortfolioSection() {
         </AnimatePresence>,
         document.body
       )}
-    </section>
+    </motion.section>
   );
 }
