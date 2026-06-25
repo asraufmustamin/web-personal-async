@@ -67,11 +67,19 @@ export default function HeroSection() {
                  <img src="/logo async gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-sm" />
               </div>
 
-              {/* Name Subtitle (Desktop & Mobile) */}
+              {/* Name Subtitle Hook (Desktop & Mobile) */}
               <div className="relative w-full flex flex-col items-center">
-                <span className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.2em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-2 md:gap-4 text-center">
-                  <span className="w-6 md:w-10 h-[2px] bg-primary"></span> MUHAMMAD ASRAUF MUSTAMIN <span className="w-6 md:w-10 h-[2px] bg-primary"></span>
-                </span>
+                <a 
+                  href="#layanan"
+                  className="group flex text-primary font-sans tracking-[0.05em] md:tracking-[0.1em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-2 md:gap-3 text-center px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
+                >
+                  <span className="relative flex h-2 w-2 md:mr-1">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                  Jelajahi Layanan ASYNC Solutions
+                  <span className="material-symbols-outlined text-[14px] md:text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
               </div>
               
               <div className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[50px] sm:min-h-[60px] md:min-h-[100px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
