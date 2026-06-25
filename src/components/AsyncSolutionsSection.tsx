@@ -14,24 +14,24 @@ export default function AsyncSolutionsSection() {
       icon: "web",
       title: "Web Development",
       desc: "Sistem & Website",
-      position: { x: -280, y: -120 }, // Top Left
-      mobilePos: { x: -100, y: -180 }
+      position: { x: -350, y: -180 }, // Top Left (pushed further out)
+      mobilePos: { x: -120, y: -220 }
     },
     {
       id: "data",
       icon: "database",
       title: "Manajemen Data",
       desc: "Analisis & Visualisasi",
-      position: { x: 280, y: -120 }, // Top Right
-      mobilePos: { x: 100, y: -180 }
+      position: { x: 350, y: -180 }, // Top Right (pushed further out)
+      mobilePos: { x: 120, y: -220 }
     },
     {
       id: "design",
       icon: "design_services",
       title: "UI/UX & Desain",
       desc: "Antarmuka Digital",
-      position: { x: 0, y: 220 }, // Bottom Center
-      mobilePos: { x: 0, y: 180 }
+      position: { x: 0, y: 300 }, // Bottom Center (pushed further down)
+      mobilePos: { x: 0, y: 260 }
     }
   ];
 
@@ -161,7 +161,7 @@ export default function AsyncSolutionsSection() {
 
         {/* Dynamic Spacer for Bottom Card */}
         <motion.div 
-          animate={{ height: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 180 : 220) : 0 }}
+          animate={{ height: isOpen ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 260 : 300) : 0 }}
           transition={{ type: "spring", stiffness: 80, damping: 15 }}
           className="w-full"
         />
