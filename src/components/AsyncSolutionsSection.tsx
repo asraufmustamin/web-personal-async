@@ -90,7 +90,7 @@ export default function AsyncSolutionsSection() {
                 <svg className="absolute inset-0 w-full h-full overflow-visible" style={{ zIndex: 0 }}>
                   <line x1="50%" y1="50%" x2="8%" y2="45%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
                   <line x1="50%" y1="50%" x2="92%" y2="45%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
-                  <line x1="50%" y1="50%" x2="50%" y2="90%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
+                  <line x1="50%" y1="50%" x2="50%" y2="130%" stroke="url(#line-grad)" strokeWidth="2" strokeDasharray="4 4" className="hidden md:block opacity-40 animate-pulse" />
                   <defs>
                     <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#F89D0A" />
@@ -150,8 +150,8 @@ export default function AsyncSolutionsSection() {
               className="w-[220px] h-[220px] md:w-[360px] md:h-[360px] object-contain relative z-10 drop-shadow-xl"
             />
             
-            <div className="absolute bottom-0 md:bottom-4 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity z-40">
-              <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest bg-white/90 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-primary/10">
+            <div className="absolute bottom-2 md:bottom-6 flex flex-col items-center opacity-80 group-hover:opacity-100 transition-opacity z-40">
+              <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-widest drop-shadow-md animate-pulse">
                 {isOpen ? 'Tutup Layanan' : 'Klik untuk Membuka Jaring'}
               </span>
             </div>
