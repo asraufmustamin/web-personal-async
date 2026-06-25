@@ -127,25 +127,25 @@ export default function AboutSection() {
                 </span>
               </h2>
               
-              <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-3 mt-3 w-full">
-                <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-[3px] text-xs font-bold tracking-wider uppercase shadow-sm whitespace-nowrap">
+              <div className="flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-start gap-2 md:gap-3 mt-3 w-full">
+                <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-3 py-2 rounded-[3px] text-[11px] font-bold tracking-wider uppercase shadow-sm whitespace-nowrap">
                   Digital Solution Partner
                 </div>
                 
-                <div className="flex flex-row flex-wrap items-center justify-center gap-3 mt-0">
-                  <a href="#proyek" className="group relative px-4 py-2 bg-primary text-white rounded-[3px] font-bold flex items-center justify-center gap-2 overflow-hidden shadow-md hover:shadow-primary/30 transition-all duration-300">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative z-10 flex items-center gap-2 text-sm whitespace-nowrap">
-                      <span className="material-symbols-outlined text-[18px]">cases</span> Lihat Karya
-                    </span>
-                  </a>
-                  <a href="/cv_asrauf.pdf" target="_blank" rel="noopener noreferrer" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-2 hover:bg-primary/5 transition-all duration-300">
-                    <span className="material-symbols-outlined text-[18px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-sm whitespace-nowrap">Unduh CV</span>
-                  </a>
-                  <a href="#kontak" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-2 hover:bg-primary/5 transition-all duration-300">
-                    <span className="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">mail</span> <span className="text-sm whitespace-nowrap">Hubungi</span>
-                  </a>
-                </div>
+                <a href="#proyek" className="group relative px-3 py-2 bg-primary text-white rounded-[3px] font-bold flex items-center justify-center gap-1.5 overflow-hidden shadow-md hover:shadow-primary/30 transition-all duration-300">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="relative z-10 flex items-center gap-1.5 text-[13px] whitespace-nowrap">
+                    <span className="material-symbols-outlined text-[16px]">cases</span> Lihat Karya
+                  </span>
+                </a>
+                
+                <a href="/cv_asrauf.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                  <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
+                </a>
+                
+                <a href="#kontak" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">Hubungi</span>
+                </a>
               </div>
             </div>
             
