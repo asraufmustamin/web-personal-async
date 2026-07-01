@@ -77,6 +77,21 @@ const allPortfolios = [
       "/ppm (5).png"
     ]
   },
+  {
+    id: 12,
+    title: "Desain Media Sosial POSKO KKN Desa Cenrana",
+    desc: "Kumpulan desain konten media sosial yang mendukung publikasi kegiatan dan program kerja Posko KKN selama periode pengabdian di Desa Cenrana.",
+    category: "Design",
+    image: "/cenranice (1).png",
+    link: "https://www.instagram.com/cenranice.genk/",
+    gallery: [
+      "/cenranice (1).png",
+      "/cenranice (2).png",
+      "/cenranice (3).png",
+      "/cenranice (4).png",
+      "/cenranice (5).png"
+    ]
+  },
   // Manajemen Data
   {
     id: 6,
