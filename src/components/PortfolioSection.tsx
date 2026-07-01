@@ -65,9 +65,10 @@ const allPortfolios = [
   {
     id: 5,
     title: "Desain Feed Instagram UKM Pencinta Pasar Modal",
-    desc: "Kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital.",
+    desc: "Kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital untuk kepengurusan periode 2024-2025.",
     category: "Design",
     image: "/ppm (1).png",
+    link: "https://www.instagram.com/ppm.nobel/",
     gallery: [
       "/ppm (1).png",
       "/ppm (2).png",
