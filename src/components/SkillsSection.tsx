@@ -17,13 +17,13 @@ const skills = [
     id: "02",
     title: "Website & System Development",
     desc: "Merancang dan membangun website maupun sistem informasi yang disesuaikan dengan kebutuhan pengguna dan tujuan bisnis. Fokus pada solusi yang tidak hanya berjalan secara teknis, tetapi juga mudah digunakan, mudah dikelola, dan mampu mendukung proses kerja yang lebih efisien.",
-    tags: ["Company Profile Website", "Personal Website", "Landing Page", "Dashboard System", "Information System", "Frontend Development", "Backend Integration", "Database Implementation", "Responsive Design", "API Integration", "Deployment & Maintenance", "System Improvement"]
+    tags: ["Company Profile Website", "Personal Website", "Landing Page", "Dashboard System", "Information System", "Frontend Development", "Backend Integration", "Database Implementation", "Responsive Design", "API Integration", "Deployment & Maintenance", "SDLC End-to-End", "User Acceptance Testing (UAT)", "Monitoring Performa Aplikasi", "Python", "GitHub"]
   },
   {
     id: "03",
     title: "Data Management & Digital Administration",
     desc: "Membantu mengelola data agar lebih rapi, terstruktur, dan siap digunakan untuk kebutuhan operasional maupun pengambilan keputusan. Mulai dari input data, validasi, perapihan dataset, hingga penyajian informasi dalam bentuk yang lebih mudah dipahami.",
-    tags: ["Data Entry", "Data Validation", "Data Cleaning", "Data Organization", "Spreadsheet Management", "Data Processing", "Reporting", "Data Visualization", "Digital Documentation", "Digital Archiving", "Administrative Support", "Information Structuring"]
+    tags: ["Data Entry", "Data Validation", "Data Cleaning", "Data Organization", "Spreadsheet Management", "Data Processing", "Reporting", "Data Visualization", "Digital Documentation", "Digital Archiving", "Administrative Support", "Information Structuring", "Data Integrity", "Validasi Data Massal", "Pelaporan Manajemen", "Google Workspace", "Microsoft Office"]
   },
   {
     id: "04",
@@ -35,13 +35,13 @@ const skills = [
     id: "05",
     title: "Digital Research & Solution Planning",
     desc: "Setiap solusi yang baik dimulai dari pemahaman masalah yang tepat. Saya terbiasa melakukan analisis kebutuhan, menyusun alur kerja, memetakan proses, dan merancang pendekatan yang paling sesuai sebelum pengembangan dimulai.",
-    tags: ["Requirement Analysis", "Workflow Design", "User Flow", "Feature Planning", "System Mapping", "Problem Solving", "Solution Design", "Digital Strategy", "Project Planning", "Business Process Understanding"]
+    tags: ["Requirement Analysis", "Workflow Design", "User Flow", "Feature Planning", "System Mapping", "Problem Solving", "Solution Design", "Digital Strategy", "Project Planning", "Business Process Understanding", "Business Process Mapping", "Requirement Gathering", "Dokumentasi Sistem (SOP, UAT)", "Analisis Proses Bisnis"]
   },
   {
     id: "06",
     title: "Communication & Project Coordination",
     desc: "Menjadi penghubung antara kebutuhan teknis dan non-teknis agar setiap proses dapat berjalan lebih jelas dan terarah. Terbiasa berkoordinasi dengan berbagai pihak, menyusun kebutuhan proyek, dan menjaga komunikasi agar tujuan dapat dicapai secara efektif.",
-    tags: ["Project Coordination", "Stakeholder Communication", "Team Collaboration", "Information Management", "Requirement Gathering", "Project Documentation", "Operational Support", "Digital Communication", "Task Coordination", "Process Alignment"]
+    tags: ["Project Coordination", "Stakeholder Communication", "Team Collaboration", "Information Management", "Requirement Gathering", "Project Documentation", "Operational Support", "Digital Communication", "Task Coordination", "Process Alignment", "Stakeholder Management", "IT Project Management", "Koordinasi Lintas Fungsi", "TOEFL Score 537"]
   }
 ];
 

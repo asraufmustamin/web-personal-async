@@ -149,7 +149,7 @@ export default function AboutSection() {
                   </span>
                 </a>
                 
-                <a href="/cv_asrauf.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                <a href="/CV_Muhammad Asrauf Mustamin_Intern.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
                 </a>
                 
@@ -162,10 +162,10 @@ export default function AboutSection() {
             {/* Description Section */}
             <div className="border-l-[3px] border-primary/40 pl-4 md:pl-6 flex flex-col gap-3 mt-4 relative z-10 text-justify w-full max-w-2xl mx-auto lg:mx-0">
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Sebagai lulusan Sarjana Komputer dengan <strong className="text-primary font-bold">IPK 3.93</strong>, saya berfokus membantu individu, bisnis, organisasi, maupun instansi dalam membangun solusi digital yang lebih terarah dan fungsional.
+                Sarjana Komputer dengan <strong className="text-primary font-bold">IPK 3,93/4,00 — Cumlaude</strong>. Berpengalaman dalam analisis proses bisnis, pengembangan sistem informasi, pengelolaan data, serta koordinasi lintas fungsi di lingkungan institusional dan pemerintahan.
               </p>
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Fokus saya mencakup pengembangan website, sistem informasi, pengelolaan data, desain visual, serta dukungan digital yang disesuaikan dengan kebutuhan. Saya percaya bahwa teknologi yang baik harus mampu menyederhanakan proses, memperjelas informasi, dan memberikan nilai nyata bagi penggunanya.
+                Memimpin siklus pengembangan (SDLC) dan implementasi solusi digital yang mendukung operasional layanan publik. Berkomitmen memberikan kontribusi nyata melalui penguasaan teknologi, pendekatan berbasis data, dan kemampuan memimpin proyek digital secara end-to-end.
               </p>
             </div>
 

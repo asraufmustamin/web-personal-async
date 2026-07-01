@@ -10,12 +10,12 @@ const allExperiences = [
     role: "Ketua OSIS",
     company: "SMAN 2 Enrekang",
     location: "Enrekang",
-    date: "2020 – 2021",
-    description: "Memimpin organisasi siswa dalam perencanaan, pelaksanaan, dan evaluasi berbagai program sekolah. Bertanggung jawab mengoordinasikan pengurus OSIS, menjalin komunikasi dengan pihak sekolah, serta memastikan kegiatan berjalan dengan baik.",
+    date: "2021 – 2022",
+    description: "Memimpin organisasi siswa intra sekolah — mengkoordinasikan program kerja, mengelola komunikasi antara siswa dan pihak sekolah, serta merencanakan dan mengevaluasi seluruh kegiatan OSIS selama masa jabatan.",
     activities: [
-      "Memimpin dan mengoordinasikan pengurus.",
-      "Menyusun program kerja tahunan.",
-      "Mengelola pelaksanaan kegiatan sekolah."
+      "Mengkoordinasikan program kerja tahunan OSIS.",
+      "Mengelola komunikasi antara siswa dan pihak sekolah.",
+      "Merencanakan dan mengevaluasi seluruh kegiatan OSIS."
     ],
     competencies: ["Leadership", "Public Speaking", "Team Management", "Decision Making"],
     label: "Organisasi",
@@ -58,68 +58,51 @@ const allExperiences = [
     theme: "from-[#7c2d12] to-[#ea580c]"
   },
   {
-    role: "Peserta Magang MBKM",
+    role: "Staf Pengelolaan & Validasi Data",
     company: "BPJS Ketenagakerjaan",
     location: "Makassar",
     date: "Okt 2024 – Jan 2025",
-    description: "Berperan dalam validasi dan pengelolaan data peserta dalam skala besar, mendukung komunikasi digital kepada peserta aktif, serta membantu proses digitalisasi dokumen administrasi.",
+    description: "Memvalidasi dan mengoreksi 5.000+ entri data peserta dalam SIM BPJS Ketenagakerjaan dengan akurasi 99%+. Mengelola program komunikasi digital terjadwal kepada 3.000+ peserta aktif serta melaksanakan digitalisasi dokumen administrasi fisik ke sistem digital.",
     activities: [
-      "Validasi dan verifikasi data peserta.",
-      "Pengelolaan data dalam jumlah besar.",
-      "WhatsApp Blasting untuk komunikasi digital."
+      "Memvalidasi dan mengoreksi 5.000+ entri data peserta.",
+      "Mengelola komunikasi digital kepada 3.000+ peserta aktif.",
+      "Melaksanakan digitalisasi dan pengarsipan dokumen."
     ],
-    competencies: ["Data Validation", "Data Administration", "Digital Archiving"],
+    competencies: ["Data Validation", "Data Integrity", "Digital Archiving", "Stakeholder Communication"],
     label: "MBKM",
     category: "Profesional",
     logo: "/bpjs-ketenagakerjaan-logo-png_seeklogo-406885.png",
     theme: "from-[#0f172a] to-[#334155]"
   },
   {
-    role: "Peserta Magang MBKM",
+    role: "Analis Sistem & Staf Administrasi Digital",
     company: "Kanwil Bea Cukai Sulbagsel",
     location: "Makassar",
     date: "Mar 2025 – Jul 2025",
-    description: "Terlibat dalam aktivitas operasional internal instansi, pengelolaan data, hingga pelayanan front office. Saya juga mengembangkan prototipe Sistem Informasi Manajemen Rumah Tangga.",
+    description: "Menganalisis kebutuhan operasional instansi dan merancang prototipe SIM Rumah Tangga — mencakup requirement gathering, business process mapping, dokumentasi proses bisnis, dan perancangan alur sistem. Merancang 20+ aset komunikasi visual yang disetujui tanpa revisi mayor.",
     activities: [
-      "Menganalisis kebutuhan operasional kantor.",
-      "Mengembangkan prototipe Sistem Informasi.",
-      "Mengelola input, verifikasi, dan analisis data."
+      "Requirement gathering & business process mapping.",
+      "Merancang prototipe Sistem Informasi Manajemen.",
+      "Memproduksi 20+ aset komunikasi visual instansi."
     ],
-    competencies: ["System Analysis", "Administrative Management", "Data Processing"],
-    label: "MBKM",
+    competencies: ["Business Process Mapping", "Requirement Gathering", "System Analysis", "Visual Communication"],
+    label: "MBKM Flagship",
     category: "Profesional",
     logo: "/logobeacukai.png",
     theme: "from-[#0f172a] to-[#334155]"
   },
   {
-    role: "Data Management Support",
-    company: "Kolaborasi Instansi",
-    location: "Indonesia",
-    date: "Freelance",
-    description: "Terlibat dalam pekerjaan pengelolaan data untuk kebutuhan administrasi pelayanan masyarakat. Berfokus pada proses input data, validasi, perapihan data, dan digitalisasi dokumen.",
+    role: "Freelance Designer & Data Entry",
+    company: "ASYNC Solutions",
+    location: "Makassar",
+    date: "2023 – Sekarang",
+    description: "Menangani 5+ proyek desain grafis untuk klien dari berbagai sektor — mencakup logo & brand identity, materi visual media sosial, poster/flyer event, dan konten visual UMKM. Juga melaksanakan proyek data entry ke Sistem Kusuka milik Kementerian Kelautan dan Perikanan (KKP).",
     activities: [
-      "Input data masyarakat dan administrasi.",
-      "Perapihan dataset dan dokumen digital.",
-      "Penyusunan laporan berbasis data."
+      "Mendesain logo, brand identity, dan konten media sosial.",
+      "Membuat poster, flyer event, dan materi visual UMKM.",
+      "Data entry ke Sistem Kusuka KKP."
     ],
-    competencies: ["Data Entry", "Data Validation", "Data Organization"],
-    label: "Freelance",
-    category: "Profesional",
-    logo: "/logo-async.png",
-    theme: "from-[#0f172a] to-[#334155]"
-  },
-  {
-    role: "Freelance Design",
-    company: "Media Documentation",
-    location: "Remote & On Site",
-    date: "Project-Based",
-    description: "Membantu kebutuhan desain visual dan dokumentasi digital untuk individu, organisasi, dan kegiatan. Terlibat dalam produksi konten, desain publikasi, dan materi promosi digital.",
-    activities: [
-      "Mendesain konten media sosial.",
-      "Membuat desain presentasi profesional.",
-      "Dokumentasi kegiatan dan editing reels."
-    ],
-    competencies: ["Graphic Design", "Branding", "Content Creation"],
+    competencies: ["Graphic Design", "Brand Identity", "Data Entry", "Content Creation"],
     label: "Freelance",
     category: "Profesional",
     logo: "/logo-async.png",
@@ -129,14 +112,14 @@ const allExperiences = [
     role: "Project Lead",
     company: "Sistem Desa Cenrana",
     location: "Kabupaten Maros",
-    date: "Nov 2025 – Apr 2026",
-    description: "Memimpin pengembangan website dan sistem informasi desa yang dirancang untuk mendukung transparansi informasi, layanan administrasi, serta kebutuhan digital masyarakat.",
+    date: "Jul 2025 – Apr 2026",
+    description: "Memimpin pengembangan end-to-end (SDLC) dan deployment Sistem Informasi Desa Terpadu (desacenrana.id) — mencakup 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
     activities: [
-      "Analisis kebutuhan pengguna dan pemerintah.",
-      "Perancangan alur sistem dan struktur fitur.",
-      "Implementasi modul e-Surat & transparansi."
+      "Memimpin SDLC end-to-end hingga deployment.",
+      "Mengembangkan 3 modul utama sistem desa.",
+      "Implementasi keamanan data (enkripsi NIK)."
     ],
-    competencies: ["Project Leadership", "System Planning", "Website Development"],
+    competencies: ["Project Leadership", "SDLC", "Website Development", "UI/UX Design"],
     label: "Proyek Desa",
     category: "Proyek",
     logo: "/logonobel.png",

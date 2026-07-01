@@ -14,7 +14,7 @@ const allPortfolios = [
   {
     id: 1,
     title: "Sistem Informasi Terpadu Desa Cenrana",
-    desc: "Solusi digital berbasis website desa (desacenrana.id) untuk mendukung informasi publik, layanan administrasi digital, dan transparansi tata kelola bagi masyarakat setempat.",
+    desc: "Sistem Informasi Desa Terpadu (desacenrana.id) yang dikembangkan end-to-end (SDLC) dengan 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
     category: "Sistem & Web",
     image: "https://s0.wp.com/mshots/v1/https://desacenrana.id/?w=1200&h=800",
     link: "https://desacenrana.id/"
@@ -22,14 +22,14 @@ const allPortfolios = [
   {
     id: 2,
     title: "Sistem Prediksi Kelulusan Mahasiswa",
-    desc: "Sistem analisis berbasis data yang membantu memprediksi potensi kelulusan mahasiswa berdasarkan indikator akademik.",
+    desc: "Model machine learning berbasis Python untuk memprediksi ketepatan waktu kelulusan mahasiswa — menganalisis data historis akademik multi-variabel dengan akurasi 93% pada data uji.",
     category: "Sistem & Web",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: 3,
     title: "Sistem Prediksi Menggunakan Metode TOPSIS",
-    desc: "Sistem pendukung keputusan (makassarauto.my.id) yang mengimplementasikan metode TOPSIS untuk menganalisis data, memberikan rekomendasi, dan membantu pengambilan keputusan secara sistematis.",
+    desc: "Sistem Pendukung Keputusan berbasis TOPSIS (makassarauto.my.id) untuk optimasi pemilihan motor bekas — mengolah data dari 3 dealer di Kota Makassar dengan 7 kriteria penilaian. Sistem live dan dapat diakses publik.",
     category: "Sistem & Web",
     image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
     link: "https://makassarauto.my.id/"
