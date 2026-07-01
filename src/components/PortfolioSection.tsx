@@ -29,7 +29,12 @@ const allPortfolios = [
     title: "Sistem Prediksi Kelulusan Mahasiswa",
     desc: "Model machine learning berbasis Python untuk memprediksi ketepatan waktu kelulusan mahasiswa — menganalisis data historis akademik multi-variabel dengan akurasi 93% pada data uji.",
     category: "Sistem & Web",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    image: "/prediksi (1).png",
+    gallery: [
+      "/prediksi (1).png",
+      "/prediksi (2).png",
+      "/prediksi (3).png"
+    ]
   },
   {
     id: 3,
