@@ -67,7 +67,14 @@ const allPortfolios = [
     title: "Desain Feed Instagram UKM Pencinta Pasar Modal",
     desc: "Kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital.",
     category: "Design",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+    image: "/ppm (1).png",
+    gallery: [
+      "/ppm (1).png",
+      "/ppm (2).png",
+      "/ppm (3).png",
+      "/ppm (4).png",
+      "/ppm (5).png"
+    ]
   },
   // Manajemen Data
   {
@@ -333,17 +340,38 @@ export default function PortfolioSection() {
                   <span className="material-symbols-outlined text-white">close</span>
                 </button>
 
-                {/* Gallery Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
-                  <div className="md:col-span-2 md:row-span-2">
-                    <img src={selectedProject.gallery?.[0] || selectedProject.image} alt="Main" className="w-full h-[250px] md:h-[408px] object-cover rounded-2xl" />
-                  </div>
-                  <div className="hidden md:block">
-                    <img src={selectedProject.gallery?.[1] || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"} alt="Gallery 1" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
-                  </div>
-                  <div className="hidden md:block">
-                    <img src={selectedProject.gallery?.[2] || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"} alt="Gallery 2" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
-                  </div>
+                {/* Gallery Grid Dynamic Layout */}
+                <div className={`grid grid-cols-2 ${selectedProject.gallery?.length >= 5 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-2 md:gap-3 p-2`}>
+                  {selectedProject.gallery ? (
+                    selectedProject.gallery.map((img: string, idx: number) => (
+                      <div 
+                        key={idx} 
+                        className={`${
+                          idx === 0 
+                            ? 'col-span-2 md:col-span-2 row-span-2' 
+                            : 'col-span-1 md:col-span-1'
+                        } overflow-hidden rounded-2xl group shadow-sm`}
+                      >
+                        <img 
+                          src={img} 
+                          alt={`Gallery ${idx}`} 
+                          className={`w-full ${idx === 0 ? 'h-[250px] md:h-[408px]' : 'h-[120px] md:h-[200px]'} object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110`} 
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <>
+                      <div className="col-span-2 md:col-span-2 row-span-2 overflow-hidden rounded-2xl group shadow-sm">
+                        <img src={selectedProject.image} alt="Main" className="w-full h-[250px] md:h-[408px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" />
+                      </div>
+                      <div className="hidden md:block overflow-hidden rounded-2xl group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Gallery 1" className="w-full h-[200px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" />
+                      </div>
+                      <div className="hidden md:block overflow-hidden rounded-2xl group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Gallery 2" className="w-full h-[200px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" />
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Detail Content */}
