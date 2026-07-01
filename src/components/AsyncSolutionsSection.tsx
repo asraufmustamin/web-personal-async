@@ -1,12 +1,24 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 import { Typewriter } from "@/components/ui/typewriter";
 
 export default function AsyncSolutionsSection() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    const checkHidden = () => {
+      setIsHidden(localStorage.getItem('hide_services') === 'true');
+    };
+    checkHidden();
+    window.addEventListener('services-toggled', checkHidden);
+    return () => window.removeEventListener('services-toggled', checkHidden);
+  }, []);
+
+  if (isHidden) return null;
 
   const services = [
     {

@@ -1,6 +1,6 @@
 'use client';
-
 import { Footer as FooterComponent } from "@/components/ui/footer";
+import { useState, useRef } from "react";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -15,6 +15,30 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Footer() {
+  const [clickCount, setClickCount] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleSecretClick = () => {
+    const newCount = clickCount + 1;
+    if (newCount === 3) {
+      const isHidden = localStorage.getItem('hide_services') === 'true';
+      if (isHidden) {
+        localStorage.removeItem('hide_services');
+        alert('Ninja mode deactivated! Layanan section is now VISIBLE.');
+      } else {
+        localStorage.setItem('hide_services', 'true');
+        alert('Ninja mode activated! Layanan section is now HIDDEN.');
+      }
+      window.dispatchEvent(new Event('services-toggled'));
+      setClickCount(0);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    } else {
+      setClickCount(newCount);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setClickCount(0), 1000);
+    }
+  };
+
   return (
     <FooterComponent
       logo={<img src="/logo async gold.png" alt="ASYNC Logo" className="w-[140px] md:w-[180px] h-auto object-contain" />}
@@ -51,6 +75,7 @@ export default function Footer() {
         text: `© ${new Date().getFullYear()} ASYNC. Built with passion.`,
         license: "All rights reserved",
       }}
+      onCopyrightClick={handleSecretClick}
     />
   );
 }

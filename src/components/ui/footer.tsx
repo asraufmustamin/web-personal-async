@@ -20,6 +20,7 @@ interface FooterProps {
     text: string
     license?: string
   }
+  onCopyrightClick?: () => void
 }
 
 export function Footer({
@@ -29,6 +30,7 @@ export function Footer({
   mainLinks,
   legalLinks,
   copyright,
+  onCopyrightClick,
 }: FooterProps) {
   return (
     <footer className="pb-4 pt-6 lg:pb-6 lg:pt-8 bg-white border-t border-black/5">
@@ -88,7 +90,12 @@ export function Footer({
             </ul>
           </div>
           <div className="mt-4 text-sm leading-6 text-text-muted whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
-            <div>{copyright.text}</div>
+            <div 
+              onClick={onCopyrightClick} 
+              className={onCopyrightClick ? "cursor-pointer select-none" : ""}
+            >
+              {copyright.text}
+            </div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>
         </div>
