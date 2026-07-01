@@ -98,10 +98,10 @@ const allPortfolios = [
     title: "Optimasi Template Rekapitulasi & Validasi Data",
     desc: "Pembuatan template spreadsheet terstruktur untuk merekapitulasi 200+ dokumen harian. Sistem sederhana ini berhasil mempercepat proses pembuatan laporan operasional dari 3 jam menjadi 1 jam, serta memudahkan validasi data dengan sistem CEISA (Studi Kasus: DJBC Sulbagsel).",
     category: "Manajemen Data",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
     gallery: [
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
+      "/async_placeholder.png",
+      "/async_placeholder.png"
     ]
   },
   {
@@ -109,10 +109,10 @@ const allPortfolios = [
     title: "Manajemen Arsip Digital Kepesertaan (SIPP)",
     desc: "Proses verifikasi dan validasi data kepesertaan secara presisi, dilanjutkan dengan pengarsipan dokumen digital yang terstruktur. Fokus pada akurasi pencocokan data fisik dengan database pada Sistem Informasi Pelayanan Peserta (Studi Kasus: BPJS Kesehatan).",
     category: "Manajemen Data",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
     gallery: [
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1568225367159-0dbed2769de6?q=80&w=1000&auto=format&fit=crop"
+      "/async_placeholder.png",
+      "/async_placeholder.png"
     ]
   },
   {
@@ -128,10 +128,10 @@ const allPortfolios = [
     title: "Technical Support & Troubleshooting Aplikasi",
     desc: "Penanganan keluhan dan penyelesaian masalah teknis secara langsung bagi pengguna aplikasi layanan masyarakat. Mengelola 50-70 antrean per hari, memastikan kendala penggunaan aplikasi Mobile JKN dapat diselesaikan dengan cepat dan tepat.",
     category: "Lainnya",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
     gallery: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1000&auto=format&fit=crop"
+      "/async_placeholder.png",
+      "/async_placeholder.png"
     ]
   },
   {
