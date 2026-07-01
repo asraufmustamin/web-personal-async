@@ -37,7 +37,12 @@ const allPortfolios = [
     desc: "Sistem Pendukung Keputusan berbasis TOPSIS (makassarauto.my.id) untuk optimasi pemilihan motor bekas — mengolah data dari 3 dealer di Kota Makassar dengan 7 kriteria penilaian. Sistem live dan dapat diakses publik.",
     category: "Sistem & Web",
     image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
-    link: "https://makassarauto.my.id/"
+    link: "https://makassarauto.my.id/",
+    gallery: [
+      "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
+      "/topsis (1).png",
+      "/topsis (2).png"
+    ]
   },
   {
     id: 4,
