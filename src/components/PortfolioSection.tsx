@@ -16,8 +16,13 @@ const allPortfolios = [
     title: "Sistem Informasi Terpadu Desa Cenrana",
     desc: "Sistem Informasi Desa Terpadu (desacenrana.id) yang dikembangkan end-to-end (SDLC) dengan 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
     category: "Sistem & Web",
-    image: "https://s0.wp.com/mshots/v1/https://desacenrana.id/?w=1200&h=800",
-    link: "https://desacenrana.id/"
+    image: "/desacenrana1 (1).png",
+    link: "https://desacenrana.id/",
+    gallery: [
+      "/desacenrana1 (2).png",
+      "/desacenrana1 (3).png",
+      "/desacenrana1 (4).png"
+    ]
   },
   {
     id: 2,
@@ -316,13 +321,13 @@ export default function PortfolioSection() {
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
                   <div className="md:col-span-2 md:row-span-2">
-                    <img src={selectedProject.image} alt="Main" className="w-full h-[250px] md:h-[408px] object-cover rounded-2xl" />
+                    <img src={selectedProject.gallery?.[0] || selectedProject.image} alt="Main" className="w-full h-[250px] md:h-[408px] object-cover rounded-2xl" />
                   </div>
                   <div className="hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Gallery 1" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
+                    <img src={selectedProject.gallery?.[1] || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"} alt="Gallery 1" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
                   </div>
                   <div className="hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Gallery 2" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
+                    <img src={selectedProject.gallery?.[2] || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"} alt="Gallery 2" className="w-full h-[200px] object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-300" />
                   </div>
                 </div>
 
