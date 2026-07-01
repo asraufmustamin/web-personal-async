@@ -16,7 +16,7 @@ const allPortfolios = [
     title: "Sistem Informasi Terpadu Desa Cenrana",
     desc: "Sistem Informasi Desa Terpadu (desacenrana.id) yang dikembangkan end-to-end (SDLC) dengan 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
     category: "Sistem & Web",
-    image: "/desacenrana1 (1).png",
+    image: "/Screenshot (3910).png",
     link: "https://desacenrana.id/",
     gallery: [
       "/desacenrana1 (2).png",
