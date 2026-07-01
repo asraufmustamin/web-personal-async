@@ -120,7 +120,11 @@ const allPortfolios = [
     title: "Visualisasi Data",
     desc: "Penyajian data dalam bentuk visual yang membantu pembaca memahami informasi dengan lebih cepat.",
     category: "Manajemen Data",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
+    gallery: [
+      "/async_placeholder.png",
+      "/async_placeholder.png"
+    ]
   },
   // Lainnya
   {
@@ -139,14 +143,22 @@ const allPortfolios = [
     title: "Kolaborasi Freelance & Project-Based",
     desc: "Berbagai bentuk kerja sama dengan individu dan kebutuhan proyek digital secara fleksibel.",
     category: "Lainnya",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
+    gallery: [
+      "/async_placeholder.png",
+      "/async_placeholder.png"
+    ]
   },
   {
     id: 11,
     title: "Eksplorasi Solusi Digital Lainnya",
     desc: "Ruang untuk karya tambahan dan pengembangan baru yang akan terus bertambah.",
     category: "Lainnya",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+    image: "/async_placeholder.png",
+    gallery: [
+      "/async_placeholder.png",
+      "/async_placeholder.png"
+    ]
   },
 ];
 
