@@ -95,17 +95,25 @@ const allPortfolios = [
   // Manajemen Data
   {
     id: 6,
-    title: "Pengelolaan & Input Data Administratif",
-    desc: "Pekerjaan yang berkaitan dengan input, validasi, dan penyusunan data agar lebih tertata dan mudah digunakan.",
+    title: "Optimasi Template Rekapitulasi & Validasi Data",
+    desc: "Pembuatan template spreadsheet terstruktur untuk merekapitulasi 200+ dokumen harian. Sistem sederhana ini berhasil mempercepat proses pembuatan laporan operasional dari 3 jam menjadi 1 jam, serta memudahkan validasi data dengan sistem CEISA (Studi Kasus: DJBC Sulbagsel).",
     category: "Manajemen Data",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop",
+    image: "/excel_template_main_1782922479118.png",
+    gallery: [
+      "/excel_template_main_1782922479118.png",
+      "/excel_template_gallery1_1782922490894.png"
+    ]
   },
   {
     id: 7,
-    title: "Perapihan Dataset & Dokumentasi Digital",
-    desc: "Penyusunan dan penataan data serta dokumen digital agar lebih rapi, efisien, dan siap diproses.",
+    title: "Manajemen Arsip Digital Kepesertaan (SIPP)",
+    desc: "Proses verifikasi dan validasi data kepesertaan secara presisi, dilanjutkan dengan pengarsipan dokumen digital yang terstruktur. Fokus pada akurasi pencocokan data fisik dengan database pada Sistem Informasi Pelayanan Peserta (Studi Kasus: BPJS Kesehatan).",
     category: "Manajemen Data",
-    image: "https://images.unsplash.com/photo-1618044733300-9472054094ee?q=80&w=1000&auto=format&fit=crop",
+    image: "/digital_archive_main_1782922500056.png",
+    gallery: [
+      "/digital_archive_main_1782922500056.png",
+      "/digital_archive_gallery1_1782922509764.png"
+    ]
   },
   {
     id: 8,
