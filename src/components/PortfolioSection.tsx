@@ -54,7 +54,12 @@ const allPortfolios = [
     title: "Landing Page",
     desc: "Halaman promosi atau personal branding yang dirancang untuk menyampaikan informasi secara ringkas, jelas, dan menarik.",
     category: "Sistem & Web",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop",
+    image: "/asyn (3).png",
+    gallery: [
+      "/asyn (3).png",
+      "/asyn (1).png",
+      "/asyn (2).png"
+    ]
   },
   // Design
   {
