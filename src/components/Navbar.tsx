@@ -46,7 +46,7 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`hidden md:block fixed left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
           isScrolled 
-            ? 'top-3 lg:top-5 mx-4 lg:mx-auto max-w-[95%] lg:max-w-6xl rounded-full py-2.5 lg:py-3 bg-white/80 backdrop-blur-md shadow-lg shadow-black/5 ring-1 ring-black/5' 
+            ? 'top-3 lg:top-5 mx-4 lg:mx-auto max-w-[95%] lg:max-w-6xl rounded-full py-2.5 lg:py-3 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-md shadow-lg shadow-black/5 ring-1 ring-black/5 dark:ring-white/5'
             : 'top-4 lg:top-8 py-4 lg:py-6 bg-transparent ring-1 ring-transparent'
         }`}
       >

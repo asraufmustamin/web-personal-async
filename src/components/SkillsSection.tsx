@@ -105,7 +105,7 @@ export default function SkillsSection() {
             return (
               <motion.div 
                 key={skill.id}
-                className="relative cursor-pointer transition-all duration-300 ease-out border rounded-2xl group overflow-hidden bg-white hover:shadow-xl hover:-translate-y-1 h-full border-black/5 hover:border-primary/20 flex flex-col"
+                className="relative cursor-pointer transition-all duration-300 ease-out border rounded-2xl group overflow-hidden bg-bg-card hover:shadow-xl hover:-translate-y-1 h-full border-black/5 dark:border-white/5 hover:border-primary/20 flex flex-col"
                 onClick={() => setSelectedSkill(skill)}
                 variants={popIn}
               >
@@ -154,7 +154,7 @@ export default function SkillsSection() {
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-xl max-h-[90vh] overflow-hidden flex flex-col bg-white rounded-[2rem] shadow-2xl border border-gray-100"
+                className="relative w-full max-w-xl max-h-[90vh] overflow-hidden flex flex-col bg-bg-card rounded-[2rem] shadow-2xl border border-black/5 dark:border-white/5"
               >
                 <div className="h-2 w-full bg-gradient-to-r from-primary via-accent to-primary-dark"></div>
                 

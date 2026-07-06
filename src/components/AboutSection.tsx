@@ -88,7 +88,7 @@ export default function AboutSection() {
                     <button 
                       key={idx}
                       onClick={(e) => { e.stopPropagation(); setCurrentImage(idx); }}
-                      className={`h-2.5 rounded-full transition-all duration-300 shadow-[0_2px_4px_rgba(0,0,0,0.5)] ${idx === currentImage ? "bg-primary w-8" : "bg-white hover:bg-primary/80 w-2.5"}`}
+                      className={`h-2.5 rounded-full transition-all duration-300 shadow-[0_2px_4px_rgba(0,0,0,0.5)] ${idx === currentImage ? "bg-primary w-8" : "bg-bg-card/50 hover:bg-primary/80 w-2.5"}`}
                       aria-label={`Lihat foto ${idx + 1}`}
                     />
                   ))}

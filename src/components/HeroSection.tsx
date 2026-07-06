@@ -53,7 +53,7 @@ export default function HeroSection() {
           
           <div className="flex flex-col items-center gap-0 md:gap-8 max-w-4xl">
             {/* Mobile Nav: Icons only, above logo (Outside animation for zero jitter) */}
-            <div className="md:hidden flex justify-between items-center w-full bg-white dark:bg-[#141414] shadow-sm border border-black/5 dark:border-white/5 rounded-3xl p-2 mb-6 z-40 relative">
+            <div className="md:hidden flex justify-between items-center w-full bg-bg-card shadow-sm border border-black/5 dark:border-white/5 rounded-3xl p-2 mb-6 z-40 relative">
               {tabs.map((tab) => (
                 <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/5 p-2 sm:p-3 rounded-2xl transition-colors active:scale-95">
                   <tab.icon size={22} />

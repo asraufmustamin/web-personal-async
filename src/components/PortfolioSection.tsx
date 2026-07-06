@@ -187,7 +187,7 @@ export default function PortfolioSection() {
   return (
     <motion.section 
       id="proyek" 
-      className="py-10 md:py-24 bg-white relative overflow-hidden"
+      className="py-10 md:py-24 bg-bg-main relative overflow-hidden"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -235,7 +235,7 @@ export default function PortfolioSection() {
               className={`shrink-0 px-6 py-2.5 md:px-8 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 border ${
                 activeCategory === category 
                   ? 'bg-primary border-primary text-white shadow-md shadow-primary/20 scale-105' 
-                  : 'bg-white border-gray-200 text-text-muted hover:text-text-main hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
+                  : 'bg-bg-card border-black/10 dark:border-white/10 text-text-muted hover:text-text-main hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm'
               }`}
             >
               {category}
@@ -369,7 +369,7 @@ export default function PortfolioSection() {
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 exit={{ y: 20, opacity: 0, scale: 0.9 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+                className="bg-bg-card rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
                 style={{ scrollbarWidth: 'none' }}
               >
                 {/* Close Button */}

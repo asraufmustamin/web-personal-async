@@ -294,7 +294,7 @@ export default function ExperienceSection() {
 
         {/* Carousel Navigation */}
         <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-6">
-          <button onClick={handlePrev} className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === 0}>
+          <button onClick={handlePrev} className="w-12 h-12 rounded-full bg-bg-card shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 dark:border-white/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === 0}>
             <span className="material-symbols-outlined text-2xl">chevron_left</span>
           </button>
           
@@ -304,13 +304,13 @@ export default function ExperienceSection() {
              ))}
           </div>
 
-          <button onClick={handleNext} className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === allExperiences.length - 1}>
+          <button onClick={handleNext} className="w-12 h-12 rounded-full bg-bg-card shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 dark:border-white/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === allExperiences.length - 1}>
             <span className="material-symbols-outlined text-2xl">chevron_right</span>
           </button>
         </div>
 
         {/* Detailed Information (Compact & Rectangular Split Layout) */}
-        <div className="max-w-5xl mx-auto mt-8 w-full bg-white rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-500 ease-out border border-black/5 p-6 md:p-8 relative overflow-hidden group">
+        <div className="max-w-5xl mx-auto mt-8 w-full bg-bg-card rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-500 ease-out border border-black/5 dark:border-white/5 p-6 md:p-8 relative overflow-hidden group">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -393,14 +393,14 @@ export default function ExperienceSection() {
           {/* Carousel Arrows (Hover Reveal) */}
           <button 
             onClick={() => scrollHighlights('left')} 
-            className="absolute left-0 top-1/2 mt-5 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 hidden md:flex"
+            className="absolute left-0 top-1/2 mt-5 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
           >
             <span className="material-symbols-outlined text-2xl pr-0.5">chevron_left</span>
           </button>
           
           <button 
             onClick={() => scrollHighlights('right')} 
-            className="absolute right-0 top-1/2 mt-5 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 hidden md:flex"
+            className="absolute right-0 top-1/2 mt-5 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
           >
             <span className="material-symbols-outlined text-2xl pl-0.5">chevron_right</span>
           </button>
@@ -425,7 +425,7 @@ export default function ExperienceSection() {
               const isAnyFocused = currentHighlight !== null;
               
               const scaleClass = isFocused ? 'scale-105 md:scale-110 z-10 shadow-2xl' : (isAnyFocused ? 'scale-95 opacity-50 blur-[1px]' : 'scale-100 hover:shadow-lg');
-              const bgClass = isFocused ? 'bg-gradient-to-br from-primary to-primary-dark border-transparent shadow-primary/30' : 'bg-white border-black/5 hover:border-primary/20';
+              const bgClass = isFocused ? 'bg-gradient-to-br from-primary to-primary-dark border-transparent shadow-primary/30' : 'bg-bg-card border-black/5 dark:border-white/5 hover:border-primary/20';
 
               return (
                 <motion.div 

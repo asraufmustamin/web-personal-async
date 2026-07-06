@@ -123,7 +123,7 @@ export default function AsyncSolutionsSection() {
             {isOpen && services.map((service, i) => (
               <motion.div
                 key={service.id}
-                className="absolute z-20 flex flex-col items-center justify-center bg-white p-3 md:p-6 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl border border-primary/20 w-[140px] md:w-[220px] text-center cursor-pointer hover:scale-105 hover:shadow-primary/20 transition-transform duration-300 group"
+                className="absolute z-20 flex flex-col items-center justify-center bg-bg-card p-3 md:p-6 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl border border-primary/20 dark:border-primary/40 w-[140px] md:w-[220px] text-center cursor-pointer hover:scale-105 hover:shadow-primary/20 transition-transform duration-300 group"
                 initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
                 animate={{ 
                   opacity: 1, 

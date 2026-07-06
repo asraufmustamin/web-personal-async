@@ -33,7 +33,7 @@ export function Footer({
   onCopyrightClick,
 }: FooterProps) {
   return (
-    <footer className="pb-4 pt-6 lg:pb-6 lg:pt-8 bg-white border-t border-black/5">
+    <footer className="pb-4 pt-6 lg:pb-6 lg:pt-8 bg-bg-main border-t border-black/5 dark:border-white/5">
       <div className="px-4 lg:px-8 max-w-7xl mx-auto">
         <div className="md:flex md:items-center md:justify-between">
           <a

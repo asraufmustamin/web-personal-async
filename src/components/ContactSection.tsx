@@ -170,12 +170,12 @@ export default function ContactSection() {
               key={hoveredContact || "default"}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              <div className="bg-white px-6 py-4 rounded-3xl rounded-br-none shadow-xl border border-black/5 relative">
+              <div className="bg-bg-card px-6 py-4 rounded-3xl rounded-br-none shadow-xl border border-black/5 dark:border-white/5 relative">
                 <p className="text-text-main font-medium text-center whitespace-nowrap">
                   {getSpeechText()}
                 </p>
                 {/* Bubble Tail */}
-                <div className="absolute -bottom-3 right-6 w-6 h-6 bg-white border-b border-r border-black/5 transform rotate-45"></div>
+                <div className="absolute -bottom-3 right-6 w-6 h-6 bg-bg-card border-b border-r border-black/5 dark:border-white/5 transform rotate-45"></div>
               </div>
             </motion.div>
 
@@ -201,7 +201,7 @@ export default function ContactSection() {
                 rel="noreferrer"
                 onMouseEnter={() => setHoveredContact(contact.id)}
                 onMouseLeave={() => setHoveredContact(null)}
-                className={`absolute pointer-events-auto flex items-center gap-3 p-2 pr-5 bg-white/80 backdrop-blur-xl border border-white/50 shadow-xl rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:bg-white group ${contact.position}`}
+                className={`absolute pointer-events-auto flex items-center gap-3 p-2 pr-5 bg-bg-card/80 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-xl rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:bg-bg-card group ${contact.position}`}
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ 
@@ -231,7 +231,7 @@ export default function ContactSection() {
                 href={contact.link}
                 target={contact.id !== "location" ? "_blank" : undefined}
                 rel="noreferrer"
-                className="flex items-center gap-3 p-2 pr-5 bg-white/90 backdrop-blur-md border border-white/50 shadow-md rounded-full w-full max-w-[280px]"
+                className="flex items-center gap-3 p-2 pr-5 bg-bg-card/90 backdrop-blur-md border border-black/10 dark:border-white/10 shadow-md rounded-full w-full max-w-[280px]"
               >
                 <div className={`w-12 h-12 flex items-center justify-center rounded-full ${contact.color} text-white shadow-inner`}>
                   <span className="material-symbols-outlined text-[24px]">{contact.icon}</span>
