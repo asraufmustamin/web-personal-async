@@ -299,10 +299,11 @@ export default function PortfolioSection() {
                             </h3>
                           </div>
                           {/* Mobile: horizontal text */}
-                          <div className="md:hidden flex items-center justify-center w-full h-full px-4">
-                            <h3 className="text-white font-bold text-sm text-center drop-shadow-md">
-                              {item.title.length > 30 ? item.title.substring(0, 30) + '...' : item.title}
+                          <div className="md:hidden flex items-center justify-between w-full h-full px-4 py-2">
+                            <h3 className="text-white/90 font-semibold text-xs text-left line-clamp-1 drop-shadow-md">
+                              {item.title}
                             </h3>
+                            <span className="material-symbols-outlined text-white/70 text-[16px] shrink-0">unfold_more</span>
                           </div>
                         </div>
                       )}

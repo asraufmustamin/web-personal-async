@@ -79,7 +79,7 @@ export default function AsyncSolutionsSection() {
                 text={["ASYNC Solutions."]} 
                 speed={70} 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
-                cursorClassName="text-primary"
+                showCursor={false}
               />
             </span>
           </h2>

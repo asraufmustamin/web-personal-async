@@ -145,14 +145,14 @@ const allExperiences = [
 ];
 
 const highlights = [
-  { title: "Project Leadership", desc: "Memimpin pengembangan Sistem Informasi Desa Cenrana dari tahap analisis kebutuhan hingga implementasi." },
-  { title: "Experience in Government & Public Service", desc: "Berpengalaman bekerja di lingkungan instansi pemerintah dan pelayanan publik melalui program MBKM." },
-  { title: "Data Management", desc: "Terbiasa mengelola, memvalidasi, merapikan, dan menyajikan data untuk kebutuhan administrasi maupun sistem informasi." },
-  { title: "Design & Digital Communication", desc: "Memiliki pengalaman dalam desain visual, branding digital, dokumentasi media, dan komunikasi organisasi." },
-  { title: "System & Website Development", desc: "Mengembangkan website, sistem informasi, sistem prediksi, dan sistem pendukung keputusan berbasis kebutuhan pengguna." },
-  { title: "Leadership & Organization", desc: "Memiliki pengalaman memimpin organisasi sekolah dan mengelola komunikasi organisasi tingkat perguruan tinggi." },
-  { title: "Digital Solution Mindset", desc: "Terbiasa memahami kebutuhan, melakukan riset, dan merancang solusi yang sesuai dengan konteks pengguna." },
-  { title: "Continuous Learning", desc: "Aktif mempelajari teknologi, tools, dan pendekatan baru untuk meningkatkan kualitas solusi digital." },
+  { title: "Kepemimpinan Proyek", desc: "Memimpin pengembangan Sistem Informasi Desa Cenrana dari tahap analisis kebutuhan hingga implementasi." },
+  { title: "Pengalaman Instansi & Layanan Publik", desc: "Berpengalaman bekerja di lingkungan instansi pemerintah dan pelayanan publik melalui program MBKM." },
+  { title: "Manajemen Data", desc: "Terbiasa mengelola, memvalidasi, merapikan, dan menyajikan data untuk kebutuhan administrasi maupun sistem informasi." },
+  { title: "Desain & Komunikasi Digital", desc: "Memiliki pengalaman dalam desain visual, branding digital, dokumentasi media, dan komunikasi organisasi." },
+  { title: "Pengembangan Sistem & Website", desc: "Mengembangkan website, sistem informasi, sistem prediksi, dan sistem pendukung keputusan berbasis kebutuhan pengguna." },
+  { title: "Kepemimpinan & Organisasi", desc: "Memiliki pengalaman memimpin organisasi sekolah dan mengelola komunikasi organisasi tingkat perguruan tinggi." },
+  { title: "Pola Pikir Solusi Digital", desc: "Terbiasa memahami kebutuhan, melakukan riset, dan merancang solusi yang sesuai dengan konteks pengguna." },
+  { title: "Pembelajaran Berkelanjutan", desc: "Aktif mempelajari teknologi, tools, dan pendekatan baru untuk meningkatkan kualitas solusi digital." },
 ];
 
 export default function ExperienceSection() {

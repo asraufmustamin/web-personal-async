@@ -97,16 +97,16 @@ export default function HeroSection() {
               <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[50px] sm:min-h-[60px] md:min-h-[100px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
-                      "Mitra Solusi Digital.",
-                      "Sistem Informasi.",
-                      "Desainer Visual.",
-                      "Spesialis Data."
+                      "Mitra Solusi Digital",
+                      "Sistem Informasi",
+                      "Desainer Visual",
+                      "Spesialis Data"
                     ]}
                     speed={70}
                     className="whitespace-nowrap gradient-text"
                     waitTime={2000}
                     deleteSpeed={40}
-                    cursorChar={"_"}
+                    cursorChar={"|"}
                   />
               </h1>
             </motion.div>

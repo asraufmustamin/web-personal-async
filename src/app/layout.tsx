@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   keywords: ["Muhammad Asrauf Mustamin", "ASYNC", "Portfolio", "Web Developer", "UI/UX Designer", "Website Makassar", "Freelance Developer"],
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
+  alternates: {
+    canonical: "https://asraufmustamin.vercel.app/",
+  },
   openGraph: {
     title: "Muhammad Asrauf Mustamin | ASYNC by Asrauf Mustamin",
     description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional.",
@@ -42,6 +45,28 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Muhammad Asrauf Mustamin",
+              url: "https://asraufmustamin.vercel.app/",
+              jobTitle: "Digital Solution Partner & Systems Analyst",
+              sameAs: [
+                "https://www.linkedin.com/in/asrauf-mustamin",
+                "https://github.com/asraufmustamin"
+              ],
+              knowsAbout: [
+                "Web Development",
+                "System Analysis",
+                "Data Management",
+                "UI/UX Design"
+              ]
+            })
+          }}
         />
       </head>
       <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden`}>
