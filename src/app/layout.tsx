@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   keywords: ["Muhammad Asrauf Mustamin", "ASYNC", "Portfolio", "Web Developer", "UI/UX Designer", "Website Makassar", "Freelance Developer"],
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
+  verification: {
+    google: "google50e68acf3aa5623b",
+  },
   alternates: {
     canonical: "https://asraufmustamin.vercel.app/",
   },
