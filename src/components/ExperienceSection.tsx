@@ -71,7 +71,7 @@ const allExperiences = [
     competencies: ["Data Validation", "Data Integrity", "Digital Archiving", "Stakeholder Communication"],
     label: "MBKM",
     category: "Profesional",
-    logo: "/bpjs-ketenagakerjaan-logo-png_seeklogo-406885.png",
+    logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",
     theme: "from-[#0f172a] to-[#334155]"
   },
   {

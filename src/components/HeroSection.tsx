@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Home, User, Sparkles, Briefcase, Folder, Mail } from 'lucide-react';
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 import { Typewriter } from '@/components/ui/typewriter';
 
@@ -52,19 +53,21 @@ export default function HeroSection() {
           
           <div className="flex flex-col items-center gap-0 md:gap-8 max-w-4xl">
             {/* Mobile Nav: Icons only, above logo (Outside animation for zero jitter) */}
-            <div className="md:hidden flex justify-between items-center w-full bg-white shadow-sm border border-black/5 rounded-3xl p-2 mb-6 z-40 relative">
+            <div className="md:hidden flex justify-between items-center w-full bg-white dark:bg-[#141414] shadow-sm border border-black/5 dark:border-white/5 rounded-3xl p-2 mb-6 z-40 relative">
               {tabs.map((tab) => (
                 <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/5 p-2 sm:p-3 rounded-2xl transition-colors active:scale-95">
                   <tab.icon size={22} />
                 </a>
               ))}
+              <div className="mx-1 border-l border-gray-200 dark:border-gray-800 h-6"></div>
+              <ThemeToggle />
             </div>
 
             <motion.div variants={itemVariants} className="flex flex-col items-center w-full relative z-30">
               
               {/* Mobile Only: Logo ASYNC below the nav */}
               <div className="md:hidden flex justify-center mb-8 mt-0 w-full z-10">
-                 <img src="/logo async gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-sm" />
+                 <img src="/logo-async-gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-sm" />
               </div>
 
               {/* Name Subtitle Hook (Desktop & Mobile) */}
@@ -91,13 +94,13 @@ export default function HeroSection() {
                 </a>
               </div>
               
-              <div className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[50px] sm:min-h-[60px] md:min-h-[100px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[50px] sm:min-h-[60px] md:min-h-[100px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
-                      "Digital Solution Partner.",
-                      "System Information.",
-                      "Visual Designer.",
-                      "Data Specialist."
+                      "Mitra Solusi Digital.",
+                      "Sistem Informasi.",
+                      "Desainer Visual.",
+                      "Spesialis Data."
                     ]}
                     speed={70}
                     className="whitespace-nowrap gradient-text"
@@ -105,11 +108,11 @@ export default function HeroSection() {
                     deleteSpeed={40}
                     cursorChar={"_"}
                   />
-              </div>
+              </h1>
             </motion.div>
             
             <motion.div variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4">
-              <p><span className="text-primary font-medium">Membantu merancang solusi digital yang rapi, fungsional, dan sesuai kebutuhan</span> melalui sistem informasi, data management, desain visual, dan komunikasi digital.</p>
+              <p>Halo, saya Muhammad Asrauf Mustamin. Melalui <span className="text-primary font-medium">ASYNC by Asrauf Mustamin</span>, saya membantu merancang solusi digital yang rapi dan fungsional berbasis sistem informasi, manajemen data, dan desain visual.</p>
             </motion.div>
           </div>
         </div>

@@ -161,7 +161,7 @@ export default function AsyncSolutionsSection() {
             <div className={`absolute inset-0 bg-primary/10 backdrop-blur-md rounded-full transition-all duration-700 w-[180px] h-[180px] md:w-[320px] md:h-[320px] m-auto ${isOpen ? 'scale-125 opacity-0' : 'scale-100 opacity-100 shadow-[0_0_50px_rgba(248,157,10,0.15)] border border-white/50'}`}></div>
             
             <img 
-              src="/no_bg_logo_async.png" 
+              src="/no-bg-logo-async.png" 
               alt="ASYNC Solutions Center" 
               className="w-[200px] h-[200px] md:w-[360px] md:h-[360px] object-contain relative z-10 drop-shadow-xl"
             />

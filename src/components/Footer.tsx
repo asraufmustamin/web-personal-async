@@ -41,7 +41,7 @@ export default function Footer() {
 
   return (
     <FooterComponent
-      logo={<img src="/logo async gold.png" alt="ASYNC Logo" className="w-[140px] md:w-[180px] h-auto object-contain" />}
+      logo={<img src="/logo-async-gold.png" alt="ASYNC Logo" className="w-[140px] md:w-[180px] h-auto object-contain" />}
       brandName=""
       socialLinks={[
         {
@@ -49,16 +49,16 @@ export default function Footer() {
           href: "https://instagram.com/asrfmst22_",
           label: "Instagram",
         },
-        {
-          icon: <FacebookIcon className="h-5 w-5 text-gray-600" />,
-          href: "#",
-          label: "Facebook",
-        },
-        {
-          icon: <XIcon className="h-5 w-5 text-gray-600" />,
-          href: "#",
-          label: "X",
-        },
+        // {
+        //   icon: <FacebookIcon className="h-5 w-5 text-gray-600" />,
+        //   href: "#",
+        //   label: "Facebook",
+        // },
+        // {
+        //   icon: <XIcon className="h-5 w-5 text-gray-600" />,
+        //   href: "#",
+        //   label: "X",
+        // },
       ]}
       mainLinks={[
         { href: "#beranda", label: "Beranda" },
@@ -68,11 +68,11 @@ export default function Footer() {
         { href: "#kontak", label: "Kontak" },
       ]}
       legalLinks={[
-        { href: "#", label: "Privacy Policy" },
-        { href: "#", label: "Terms of Service" },
+        // { href: "#", label: "Privacy Policy" },
+        // { href: "#", label: "Terms of Service" },
       ]}
       copyright={{
-        text: `© ${new Date().getFullYear()} ASYNC. Built with passion.`,
+        text: `© ${new Date().getFullYear()} ASYNC by Asrauf Mustamin. Built with passion.`,
         license: "All rights reserved",
       }}
       onCopyrightClick={handleSecretClick}

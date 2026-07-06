@@ -1,16 +1,32 @@
 @import "tailwindcss";
 
+:root {
+  --bg-main: #FFFFFF;
+  --bg-card: #F9F9F9;
+  --text-main: #111111;
+  --text-muted: #555555;
+}
+
+.dark {
+  --bg-main: #0A0A0A;
+  --bg-card: #141414;
+  --text-main: #EDEDED;
+  --text-muted: #A1A1A1;
+}
+
 @theme {
-  /* Light Theme Palette */
-  --color-bg-main: #FFFFFF;
-  --color-bg-card: #F9F9F9;
+  /* Dynamic Theme Variables */
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Shared Palette */
   --color-primary: #F89D0A;
   --color-primary-dark: #DD6202;
   --color-accent: #FCD560;
   --color-accent-soft: #FCE99D;
   --color-bronze-dark: #621501;
-  --color-text-main: #111111;
-  --color-text-muted: #555555;
 
   /* Keep legacy colors temporarily to prevent build errors during transition */
   --color-burgundy-50: #faebeb;

@@ -6,7 +6,7 @@ import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 
 const images = [
-  "/foto_aboutus.jpeg",
+  "/foto-aboutus.jpeg",
   "/about-1.jpeg",
   "/about-2.jpeg",
   "/about-4.jpeg",
@@ -149,7 +149,7 @@ export default function AboutSection() {
                   </span>
                 </a>
                 
-                <a href="/CV_Muhammad Asrauf Mustamin_Intern.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                <a href="/cv-muhammad-asrauf-mustamin-intern.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
                   <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
                 </a>
                 

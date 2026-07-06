@@ -16,12 +16,12 @@ const allPortfolios = [
     title: "Sistem Informasi Terpadu Desa Cenrana",
     desc: "Sistem Informasi Desa Terpadu (desacenrana.id) yang dikembangkan end-to-end (SDLC) dengan 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
     category: "Sistem & Web",
-    image: "/Screenshot (3910).png",
+    image: "/screenshot-3910.png",
     link: "https://desacenrana.id/",
     gallery: [
-      "/desacenrana1 (2).png",
-      "/desacenrana1 (3).png",
-      "/desacenrana1 (4).png"
+      "/desacenrana1-2.png",
+      "/desacenrana1-3.png",
+      "/desacenrana1-4.png"
     ]
   },
   {
@@ -29,11 +29,11 @@ const allPortfolios = [
     title: "Sistem Prediksi Kelulusan Mahasiswa",
     desc: "Model machine learning berbasis Python untuk memprediksi ketepatan waktu kelulusan mahasiswa — menganalisis data historis akademik multi-variabel dengan akurasi 93% pada data uji.",
     category: "Sistem & Web",
-    image: "/prediksi (1).png",
+    image: "/prediksi-1.png",
     gallery: [
-      "/prediksi (1).png",
-      "/prediksi (2).png",
-      "/prediksi (3).png"
+      "/prediksi-1.png",
+      "/prediksi-2.png",
+      "/prediksi-3.png"
     ]
   },
   {
@@ -41,12 +41,12 @@ const allPortfolios = [
     title: "Sistem Prediksi Menggunakan Metode TOPSIS",
     desc: "Sistem Pendukung Keputusan berbasis TOPSIS (makassarauto.my.id) untuk optimasi pemilihan motor bekas — mengolah data dari 3 dealer di Kota Makassar dengan 7 kriteria penilaian. Sistem live dan dapat diakses publik.",
     category: "Sistem & Web",
-    image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
+    image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800", // TODO: ganti dengan screenshot manual dari user
     link: "https://makassarauto.my.id/",
     gallery: [
-      "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
-      "/topsis (1).png",
-      "/topsis (2).png"
+      "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800", // TODO: ganti dengan screenshot manual dari user
+      "/topsis-1.png",
+      "/topsis-2.png"
     ]
   },
   {
@@ -54,11 +54,11 @@ const allPortfolios = [
     title: "Landing Page",
     desc: "Halaman promosi atau personal branding yang dirancang untuk menyampaikan informasi secara ringkas, jelas, dan menarik.",
     category: "Sistem & Web",
-    image: "/asyn (3).png",
+    image: "/asyn-3.png",
     gallery: [
-      "/asyn (3).png",
-      "/asyn (1).png",
-      "/asyn (2).png"
+      "/asyn-3.png",
+      "/asyn-1.png",
+      "/asyn-2.png"
     ]
   },
   // Design
@@ -67,14 +67,14 @@ const allPortfolios = [
     title: "Desain Feed Instagram UKM Pencinta Pasar Modal",
     desc: "Kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital untuk kepengurusan periode 2024-2025.",
     category: "Design",
-    image: "/ppm (1).png",
+    image: "/ppm-1.png",
     link: "https://www.instagram.com/ppm.nobel/",
     gallery: [
-      "/ppm (1).png",
-      "/ppm (2).png",
-      "/ppm (3).png",
-      "/ppm (4).png",
-      "/ppm (5).png"
+      "/ppm-1.png",
+      "/ppm-2.png",
+      "/ppm-3.png",
+      "/ppm-4.png",
+      "/ppm-5.png"
     ]
   },
   {
@@ -82,14 +82,14 @@ const allPortfolios = [
     title: "Desain Media Sosial POSKO KKN Desa Cenrana",
     desc: "Kumpulan desain konten media sosial yang mendukung publikasi kegiatan dan program kerja Posko KKN selama periode pengabdian di Desa Cenrana.",
     category: "Design",
-    image: "/cenranice (1).png",
+    image: "/cenranice-1.png",
     link: "https://www.instagram.com/cenranice.genk/",
     gallery: [
-      "/cenranice (1).png",
-      "/cenranice (2).png",
-      "/cenranice (3).png",
-      "/cenranice (4).png",
-      "/cenranice (5).png"
+      "/cenranice-1.png",
+      "/cenranice-2.png",
+      "/cenranice-3.png",
+      "/cenranice-4.png",
+      "/cenranice-5.png"
     ]
   },
   // Manajemen Data
@@ -98,10 +98,10 @@ const allPortfolios = [
     title: "Optimasi Template Rekapitulasi & Validasi Data",
     desc: "Pembuatan template spreadsheet terstruktur untuk merekapitulasi 200+ dokumen harian. Sistem sederhana ini berhasil mempercepat proses pembuatan laporan operasional dari 3 jam menjadi 1 jam, serta memudahkan validasi data dengan sistem CEISA (Studi Kasus: DJBC Sulbagsel).",
     category: "Manajemen Data",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
   {
@@ -109,10 +109,10 @@ const allPortfolios = [
     title: "Manajemen Arsip Digital Kepesertaan (SIPP)",
     desc: "Proses verifikasi dan validasi data kepesertaan secara presisi, dilanjutkan dengan pengarsipan dokumen digital yang terstruktur. Fokus pada akurasi pencocokan data fisik dengan database pada Sistem Informasi Pelayanan Peserta (Studi Kasus: BPJS Kesehatan).",
     category: "Manajemen Data",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
   {
@@ -120,10 +120,10 @@ const allPortfolios = [
     title: "Visualisasi Data",
     desc: "Penyajian data dalam bentuk visual yang membantu pembaca memahami informasi dengan lebih cepat.",
     category: "Manajemen Data",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
   // Lainnya
@@ -132,10 +132,10 @@ const allPortfolios = [
     title: "Technical Support & Troubleshooting Aplikasi",
     desc: "Penanganan keluhan dan penyelesaian masalah teknis secara langsung bagi pengguna aplikasi layanan masyarakat. Mengelola 50-70 antrean per hari, memastikan kendala penggunaan aplikasi Mobile JKN dapat diselesaikan dengan cepat dan tepat.",
     category: "Lainnya",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
   {
@@ -143,10 +143,10 @@ const allPortfolios = [
     title: "Kolaborasi Freelance & Project-Based",
     desc: "Berbagai bentuk kerja sama dengan individu dan kebutuhan proyek digital secara fleksibel.",
     category: "Lainnya",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
   {
@@ -154,10 +154,10 @@ const allPortfolios = [
     title: "Eksplorasi Solusi Digital Lainnya",
     desc: "Ruang untuk karya tambahan dan pengembangan baru yang akan terus bertambah.",
     category: "Lainnya",
-    image: "/async_placeholder.png",
+    image: "/async-placeholder.png",
     gallery: [
-      "/async_placeholder.png",
-      "/async_placeholder.png"
+      "/async-placeholder.png",
+      "/async-placeholder.png"
     ]
   },
 ];
@@ -426,13 +426,8 @@ export default function PortfolioSection() {
                     </div>
                     
                     <div className="shrink-0 flex gap-3">
-                      {selectedProject.link ? (
+                      {selectedProject.link && (
                         <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-text-main rounded-full font-medium transition-colors">
-                          <span className="material-symbols-outlined text-[20px]">link</span>
-                          <span>Kunjungi</span>
-                        </a>
-                      ) : (
-                        <a href="#" className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-text-main rounded-full font-medium transition-colors">
                           <span className="material-symbols-outlined text-[20px]">link</span>
                           <span>Kunjungi</span>
                         </a>

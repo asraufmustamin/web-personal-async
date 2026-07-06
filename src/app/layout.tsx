@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -15,16 +16,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asrauf Mustamin | ASYNC Studio",
-  description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional di bawah payung ASYNC Studio.",
+  title: "Muhammad Asrauf Mustamin | ASYNC by Asrauf Mustamin",
+  description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional di bawah payung ASYNC by Asrauf Mustamin.",
   keywords: ["Muhammad Asrauf Mustamin", "ASYNC", "Portfolio", "Web Developer", "UI/UX Designer", "Website Makassar", "Freelance Developer"],
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
   openGraph: {
-    title: "Muhammad Asrauf Mustamin | ASYNC Studio",
+    title: "Muhammad Asrauf Mustamin | ASYNC by Asrauf Mustamin",
     description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional.",
-    url: "https://web-personal-async.vercel.app/", // Bisa diganti dengan domain asli nanti
-    siteName: "ASYNC Portfolio",
+    url: "https://asraufmustamin.vercel.app/",
+    siteName: "ASYNC by Asrauf Mustamin",
     locale: "id_ID",
     type: "website",
   },
@@ -44,7 +45,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

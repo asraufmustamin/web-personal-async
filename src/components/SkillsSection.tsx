@@ -112,7 +112,7 @@ export default function SkillsSection() {
                 <div className="p-6 md:p-8 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="h-8 md:h-10 w-auto flex items-center justify-start group-hover:scale-105 transition-transform duration-300 origin-left">
-                      <img src="/logo async gold.png" alt="ASYNC" className="h-full w-auto object-contain object-left scale-125 md:scale-150 origin-left" />
+                      <img src="/logo-async-gold.png" alt="ASYNC" className="h-full w-auto object-contain object-left scale-125 md:scale-150 origin-left" />
                     </div>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center text-gray-300 group-hover:text-primary transition-colors group-hover:bg-primary/5">
                       <span className="material-symbols-outlined text-xl -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
@@ -161,7 +161,7 @@ export default function SkillsSection() {
                 <div className="p-6 md:p-8 flex flex-col overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
                   <div className="flex justify-between items-start mb-4">
                     <div className="w-24 md:w-32">
-                      <img src="/logo async gold.png" alt="ASYNC" className="w-full h-auto object-contain object-left" />
+                      <img src="/logo-async-gold.png" alt="ASYNC" className="w-full h-auto object-contain object-left" />
                     </div>
                     <button 
                       onClick={() => setSelectedSkill(null)}
