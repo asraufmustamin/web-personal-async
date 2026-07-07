@@ -8,11 +8,7 @@ import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 const images = [
   "/foto-aboutus.jpeg",
   "/about-1.jpeg",
-  "/about-2.jpeg",
-  "/about-4.jpeg",
-  "/about-5.jpeg",
-  "/about-6.jpeg",
-  "/about-7.jpeg"
+  "/about-2.jpeg"
 ];
 
 export default function AboutSection() {
