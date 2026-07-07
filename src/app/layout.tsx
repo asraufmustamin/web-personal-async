@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
   verification: {
-    google: "google50e68acf3aa5623b",
+    google: "google6b3a1b8073277a94",
   },
   alternates: {
     canonical: "https://asraufmustamin.vercel.app/",
