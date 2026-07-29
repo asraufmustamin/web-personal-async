@@ -175,6 +175,80 @@ const caseStudies: Record<string, CaseStudy> = {
         desc: "Pusat pengelolaan 18 modul operasional sistem secara mandiri." 
       },
     ],
+    fieldPhotos: [
+      {
+        title: "Observasi & Penggalian Kebutuhan",
+        image: "/foto/observasi.jpeg",
+        category: "1. Analysis & Elicitation",
+        desc: "Wawancara langsung & observasi alur kerja manual bersama perangkat desa."
+      },
+      {
+        title: "Diskusi Arsitektur & Kolaborasi Tim",
+        image: "/foto/kerjasama (1).jpeg",
+        category: "2. System Modeling",
+        desc: "Sesi koordinasi perancangan diagram arsitektur & pemodelan basis data."
+      },
+      {
+        title: "Review Diagram & Business Logic",
+        image: "/foto/kerjasama (2).jpeg",
+        category: "2. System Modeling",
+        desc: "Validasi alur Use Case & spesifikasi keamanan NIK terenkripsi SHA-256."
+      },
+      {
+        title: "Implementasi Kode & Fitur Utama",
+        image: "/foto/build.jpeg",
+        category: "3. Development",
+        desc: "Proses coding & pengintegrasian 18 modul admin serta portal publik."
+      },
+      {
+        title: "Deployment & Konfigurasi Server",
+        image: "/foto/build dan deploy.jpeg",
+        category: "3. Deployment",
+        desc: "Penyetelan domain resmi desacenrana.id & konfigurasi enkripsi SSL."
+      },
+      {
+        title: "Pengujian UAT Langsung di Lapangan",
+        image: "/foto/prosesuat.jpeg",
+        category: "4. Testing & UAT",
+        desc: "Uji coba langsung skenario pengajuan pengaduan oleh sampel warga desa."
+      },
+      {
+        title: "Evaluasi UAT & System Usability Scale",
+        image: "/foto/uatdansus.jpeg",
+        category: "4. Testing & UAT",
+        desc: "Pengisian kuesioner kelayakan sistem & validasi fitur oleh aparatur desa."
+      },
+      {
+        title: "Pelatihan Penggunaan Platform Desa",
+        image: "/foto/pelatihan.jpeg",
+        category: "5. Handover & Training",
+        desc: "Sosialisasi & pelatihan pengoperasian sistem mandiri untuk perangkat desa."
+      },
+      {
+        title: "Bimbingan Teknis Admin Dashboard",
+        image: "/foto/pelatihanadmin.jpeg",
+        category: "5. Handover & Training",
+        desc: "Pelatihan mendalam pengelolaan modul CMS & penerbitan e-Surat."
+      },
+      {
+        title: "Penandatanganan Dokumen Kemitraan",
+        image: "/foto/surat pernyatan mitra kontrak.jpeg",
+        category: "5. Handover & Training",
+        desc: "Legalitas penandatanganan kesepakatan kemitraan pengembangan sistem."
+      },
+      {
+        title: "Penyerahan Simbolis Sistem Desa",
+        image: "/foto/serahterima.jpeg",
+        category: "5. Handover & Training",
+        desc: "Serah terima resmi aplikasi & Buku Panduan Pengguna ke Kepala Desa."
+      },
+      {
+        title: "Serah Terima Lengkap Aset Digital",
+        image: "/foto/serahtrima.jpeg",
+        category: "5. Handover & Training",
+        desc: "Handover repositori, akun domain desacenrana.id, & akses admin penuh."
+      },
+    ],
   },
   topsis: {
     id: "topsis",
@@ -260,6 +334,7 @@ interface CaseStudy {
   phases: { title: string; period: string; icon: string; status: string; roleFocus?: string; desc: string; outputs: string[]; image: string | null }[];
   diagrams: { title: string; image: string }[];
   screenshots: { title: string; image: string; category?: string; desc?: string }[];
+  fieldPhotos?: { title: string; image: string; category: string; desc: string }[];
 }
 
 function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
@@ -663,6 +738,64 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
             ))}
           </div>
         </motion.div>
+
+        {/* Field Activity Documentation Gallery */}
+        {study.fieldPhotos && study.fieldPhotos.length > 0 && (
+          <motion.div
+            className="mt-16 pt-16 border-t border-black/5 dark:border-white/5"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-10">
+              <span className="px-3 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-full uppercase tracking-wider mb-3 inline-block">
+                Dokumentasi Lapangan SDLC
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif mb-2">
+                Jejak Aktivitas & <span className="text-primary">Implementasi</span>
+              </h3>
+              <p className="text-text-muted text-xs md:text-sm max-w-xl mx-auto">
+                Dokumentasi perjalanan nyata peran IT Business Analyst & System Analyst di lapangan, mulai dari analisis, perancangan, pengujian UAT, hingga pelatihan & serah terima resmi.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {study.fieldPhotos.map((photo, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 shadow-md overflow-hidden group cursor-pointer hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                  whileHover={{ y: -4 }}
+                  onClick={() => setLightboxImg(photo.image)}
+                >
+                  <div>
+                    <div className="relative h-[180px] overflow-hidden bg-black/5 dark:bg-white/5">
+                      <img 
+                        src={photo.image} 
+                        alt={photo.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg">zoom_in</span>
+                      </div>
+                      <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-black/75 backdrop-blur-md text-white text-[9px] font-bold rounded-md uppercase tracking-wider shadow-md">
+                        {photo.category}
+                      </span>
+                    </div>
+                    <div className="p-4">
+                      <h4 className="text-xs font-bold text-text-main mb-1 group-hover:text-primary transition-colors line-clamp-1">{photo.title}</h4>
+                      <p className="text-text-muted text-[11px] leading-relaxed line-clamp-2">{photo.desc}</p>
+                    </div>
+                  </div>
+                  <div className="px-4 pb-4 pt-0">
+                    <span className="text-primary text-[10px] font-bold inline-flex items-center gap-1">
+                      Perbesar Foto <span className="material-symbols-outlined text-[12px]">open_in_full</span>
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );
