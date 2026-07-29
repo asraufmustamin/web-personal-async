@@ -16,33 +16,53 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asrauf Mustamin | ASYNC by Asrauf Mustamin",
-  description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional di bawah payung ASYNC by Asrauf Mustamin.",
-  keywords: ["Muhammad Asrauf Mustamin", "ASYNC", "Portfolio", "Web Developer", "UI/UX Designer", "Website Makassar", "Freelance Developer"],
+  title: "Asrauf Mustamin — IT Business Analyst & System Analyst Portfolio",
+  description: "Portfolio profesional Muhammad Asrauf Mustamin. Aspiring IT Business Analyst & System Analyst dengan studi kasus nyata: Sistem Informasi Desa Cenrana & SPK TOPSIS. Menguasai analisis kebutuhan, pemodelan sistem, UAT, dan manajemen proyek end-to-end.",
+  keywords: [
+    "Muhammad Asrauf Mustamin",
+    "IT Business Analyst",
+    "System Analyst",
+    "Portfolio BA",
+    "Business Analyst Indonesia",
+    "System Analyst Makassar",
+    "Analisis Kebutuhan Sistem",
+    "UAT Testing",
+    "SDLC",
+    "Studi Kasus Sistem Informasi",
+    "SPK TOPSIS",
+    "Sistem Informasi Desa",
+    "Project Management",
+    "Requirements Engineering",
+  ],
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
+  publisher: "Muhammad Asrauf Mustamin",
   verification: {
     google: "google6b3a1b8073277a94",
   },
+  metadataBase: new URL("https://asraufmustamin.site"),
   alternates: {
-    canonical: "https://asraufmustamin.vercel.app/",
+    canonical: "/",
   },
   openGraph: {
-    title: "Muhammad Asrauf Mustamin | ASYNC by Asrauf Mustamin",
-    description: "Portfolio resmi Muhammad Asrauf Mustamin. Menampilkan proyek unggulan, keahlian desain web, dan pengalaman profesional.",
-    url: "https://asraufmustamin.vercel.app/",
-    siteName: "ASYNC by Asrauf Mustamin",
+    title: "Asrauf Mustamin — IT Business Analyst & System Analyst",
+    description: "Aspiring IT BA & System Analyst. Studi kasus nyata end-to-end: dari analisis kebutuhan, pemodelan ERD & arsitektur, hingga UAT dan serah terima sistem.",
+    url: "https://asraufmustamin.site",
+    siteName: "Asrauf Mustamin | IT BA & SA Portfolio",
     locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asrauf Mustamin — IT Business Analyst & System Analyst",
+    description: "Portfolio profesional dengan studi kasus nyata Sistem Informasi Desa Cenrana & SPK TOPSIS.",
   },
   robots: {
     index: true,
     follow: true,
-    noimageindex: true,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: true,
     },
   },
 };
@@ -69,16 +89,23 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Muhammad Asrauf Mustamin",
-              url: "https://asraufmustamin.vercel.app/",
-              jobTitle: "Digital Solution Partner & Systems Analyst",
+              url: "https://asraufmustamin.site",
+              jobTitle: "Aspiring IT Business Analyst & System Analyst",
+              description: "Fresh graduate Sistem Informasi dengan pengalaman nyata dalam analisis kebutuhan, pemodelan sistem, UAT, dan manajemen proyek end-to-end.",
               sameAs: [
                 "https://www.linkedin.com/in/asrauf-mustamin",
-                "https://github.com/asraufmustamin"
+                "https://github.com/asraufmustamin",
+                "https://www.instagram.com/asrfmst22_/"
               ],
               knowsAbout: [
-                "Web Development",
+                "Business Analysis",
                 "System Analysis",
-                "Data Management",
+                "Requirements Engineering",
+                "User Acceptance Testing (UAT)",
+                "SDLC Management",
+                "ERD & Database Modeling",
+                "Stakeholder Management",
+                "Web Development",
                 "UI/UX Design"
               ]
             })

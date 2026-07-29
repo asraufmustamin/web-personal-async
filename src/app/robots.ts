@@ -7,11 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
-      {
-        userAgent: 'Googlebot-Image',
-        disallow: '/',
-      },
     ],
-    sitemap: 'https://asraufmustamin.vercel.app/sitemap.xml',
+    sitemap: 'https://asraufmustamin.site/sitemap.xml',
   }
 }
