@@ -209,7 +209,7 @@ interface CaseStudy {
   problems: { icon: string; title: string; desc: string }[];
   metrics: { label: string; value: number; suffix: string; icon: string }[];
   techStack: { name: string; category: string }[];
-  phases: { title: string; period: string; icon: string; status: string; desc: string; outputs: string[]; image: string | null }[];
+  phases: { title: string; period: string; icon: string; status: string; roleFocus?: string; desc: string; outputs: string[]; image: string | null }[];
   diagrams: { title: string; image: string }[];
   screenshots: { title: string; image: string }[];
 }
