@@ -177,76 +177,76 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     fieldPhotos: [
       {
-        title: "Observasi & Penggalian Kebutuhan",
+        title: "Penandatanganan Kerjasama Mitra",
+        image: "/foto/kerjasama (1).jpeg",
+        category: "1. Inisiasi & Kerja Sama",
+        desc: "Proses penandatanganan dokumen kerja sama pengembangan sistem bersama mitra desa."
+      },
+      {
+        title: "Kesepakatan Inisiasi Proyek",
+        image: "/foto/kerjasama (2).jpeg",
+        category: "1. Inisiasi & Kerja Sama",
+        desc: "Diskusi alur inisiasi proyek & penetapan komitmen bersama mitra pemerintah desa."
+      },
+      {
+        title: "Observasi & Analisis Kebutuhan",
         image: "/foto/observasi.jpeg",
-        category: "1. Analysis & Elicitation",
+        category: "2. Elicitation & Analisis",
         desc: "Wawancara langsung & observasi alur kerja manual bersama perangkat desa."
       },
       {
-        title: "Diskusi Arsitektur & Kolaborasi Tim",
-        image: "/foto/kerjasama (1).jpeg",
-        category: "2. System Modeling",
-        desc: "Sesi koordinasi perancangan diagram arsitektur & pemodelan basis data."
-      },
-      {
-        title: "Review Diagram & Business Logic",
-        image: "/foto/kerjasama (2).jpeg",
-        category: "2. System Modeling",
-        desc: "Validasi alur Use Case & spesifikasi keamanan NIK terenkripsi SHA-256."
-      },
-      {
-        title: "Implementasi Kode & Fitur Utama",
+        title: "Implementasi Kode & Development",
         image: "/foto/build.jpeg",
         category: "3. Development",
-        desc: "Proses coding & pengintegrasian 18 modul admin serta portal publik."
+        desc: "Pengembangan kode kustom 18 modul admin & portal publik terintegrasi PWA."
       },
       {
-        title: "Deployment & Konfigurasi Server",
+        title: "Deployment & Konfigurasi Hosting",
         image: "/foto/build dan deploy.jpeg",
         category: "3. Deployment",
-        desc: "Penyetelan domain resmi desacenrana.id & konfigurasi enkripsi SSL."
+        desc: "Penyetelan domain desacenrana.id, konfigurasi server, & enkripsi SSL."
       },
       {
-        title: "Pengujian UAT Langsung di Lapangan",
+        title: "Pengujian UAT Langsung Warga",
         image: "/foto/prosesuat.jpeg",
         category: "4. Testing & UAT",
         desc: "Uji coba langsung skenario pengajuan pengaduan oleh sampel warga desa."
       },
       {
-        title: "Evaluasi UAT & System Usability Scale",
+        title: "Evaluasi UAT & SUS Score",
         image: "/foto/uatdansus.jpeg",
         category: "4. Testing & UAT",
         desc: "Pengisian kuesioner kelayakan sistem & validasi fitur oleh aparatur desa."
       },
       {
-        title: "Pelatihan Penggunaan Platform Desa",
+        title: "Sosialisasi & Pelatihan Desa",
         image: "/foto/pelatihan.jpeg",
-        category: "5. Handover & Training",
+        category: "5. Pelatihan & Handover",
         desc: "Sosialisasi & pelatihan pengoperasian sistem mandiri untuk perangkat desa."
       },
       {
         title: "Bimbingan Teknis Admin Dashboard",
         image: "/foto/pelatihanadmin.jpeg",
-        category: "5. Handover & Training",
-        desc: "Pelatihan mendalam pengelolaan modul CMS & penerbitan e-Surat."
+        category: "5. Pelatihan & Handover",
+        desc: "Pelatihan mendalam pengelolaan modul CMS, data bansos, & e-Surat."
       },
       {
-        title: "Penandatanganan Dokumen Kemitraan",
+        title: "Surat Pernyataan Website Diterima",
         image: "/foto/surat pernyatan mitra kontrak.jpeg",
-        category: "5. Handover & Training",
-        desc: "Legalitas penandatanganan kesepakatan kemitraan pengembangan sistem."
+        category: "6. Legalitas & Acceptance",
+        desc: "Dokumen resmi Surat Pernyataan Penerimaan Sistem & Berita Acara (BAST)."
       },
       {
-        title: "Penyerahan Simbolis Sistem Desa",
+        title: "Serah Terima Resmi Platform Desa",
         image: "/foto/serahterima.jpeg",
-        category: "5. Handover & Training",
-        desc: "Serah terima resmi aplikasi & Buku Panduan Pengguna ke Kepala Desa."
+        category: "6. Serah Terima Resmi",
+        desc: "Penyerahan simbolis sistem informasi desa & Buku Panduan ke Kepala Desa."
       },
       {
-        title: "Serah Terima Lengkap Aset Digital",
+        title: "Penyerahan Lengkap Aset Digital",
         image: "/foto/serahtrima.jpeg",
-        category: "5. Handover & Training",
-        desc: "Handover repositori, akun domain desacenrana.id, & akses admin penuh."
+        category: "6. Serah Terima Resmi",
+        desc: "Handover repositori kode, kredensial domain desacenrana.id, & akses admin."
       },
     ],
   },
