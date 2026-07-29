@@ -53,7 +53,7 @@ const caseStudies: Record<string, CaseStudy> = {
           "Pemetaan Proses As-Is vs To-Be",
           "Matriks Pemangku Kepentingan (Stakeholder Mapping)"
         ],
-        image: "/whatsapp-image-2026-06-23-at-16.39.32-1.jpeg",
+        image: null,
       },
       {
         title: "2. Pemodelan & Arsitektur Sistem",
@@ -110,7 +110,7 @@ const caseStudies: Record<string, CaseStudy> = {
           "Berita Acara Serah Terima (BAST) Sistem",
           "Peluncuran Resmi Domain desacenrana.id"
         ],
-        image: "/whatsapp-image-2026-06-23-at-16.39.29-1.jpeg",
+        image: null,
       },
     ],
     diagrams: [
@@ -414,57 +414,95 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
               transition={{ duration: 0.35 }}
               className="bg-bg-card rounded-[2rem] border border-black/5 dark:border-white/5 shadow-xl overflow-hidden"
             >
-              <div className="flex flex-col lg:flex-row">
-                {/* Image */}
-                <div className="lg:w-1/2 relative min-h-[250px] md:min-h-[350px] bg-bg-main flex items-center justify-center">
-                  {study.phases[activePhase].image ? (
+              {study.phases[activePhase].image ? (
+                /* Split Layout for Phase with Technical Diagram/Screenshot */
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-1/2 relative min-h-[250px] md:min-h-[350px] bg-bg-main flex items-center justify-center p-4">
                     <img 
                       src={study.phases[activePhase].image!} 
                       alt={study.phases[activePhase].title}
-                      className="w-full h-full object-contain p-4 cursor-pointer hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-500 rounded-xl"
                       onClick={() => setLightboxImg(study.phases[activePhase].image)}
                     />
-                  ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-text-muted gap-3 p-8 border-2 border-dashed border-amber-500/20 rounded-2xl m-4 bg-amber-500/5">
-                      <span className="material-symbols-outlined text-[40px] text-amber-500">no_photography</span>
-                      <div className="text-center">
-                        <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider block mb-1">Dokumentasi Belum Diunggah</span>
-                        <span className="text-[12px] text-text-muted opacity-80 max-w-xs block">Silakan unggah foto/screenshot pendukung untuk tahap ini</span>
+                  </div>
+                  <div className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <span className="material-symbols-outlined text-primary text-[20px]">{study.phases[activePhase].icon}</span>
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-text-main">{study.phases[activePhase].title}</h4>
+                          <span className="text-text-muted text-xs font-mono">{study.phases[activePhase].period}</span>
+                        </div>
                       </div>
+                      {(study.phases[activePhase] as any).roleFocus && (
+                        <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider shrink-0">
+                          {(study.phases[activePhase] as any).roleFocus}
+                        </span>
+                      )}
                     </div>
-                  )}
+                    <p className="text-text-muted leading-relaxed text-[14px] mb-6">{study.phases[activePhase].desc}</p>
+                    
+                    <h5 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-3">Output / Deliverables</h5>
+                    <ul className="space-y-2">
+                      {study.phases[activePhase].outputs.map((out, i) => (
+                        <li key={i} className="flex items-center gap-2.5 text-[13px] text-text-muted">
+                          <span className="material-symbols-outlined text-emerald-500 text-[16px]">check_circle</span>
+                          {out}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                {/* Content */}
-                <div className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <span className="material-symbols-outlined text-primary text-[20px]">{study.phases[activePhase].icon}</span>
+              ) : (
+                /* Full-Width Text Layout for Text/Deliverable-focused Phases */
+                <div className="p-8 md:p-10 lg:p-12">
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5 dark:border-white/5">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                        <span className="material-symbols-outlined text-primary text-[24px]">{study.phases[activePhase].icon}</span>
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-text-main">{study.phases[activePhase].title}</h4>
+                        <h4 className="text-2xl font-bold text-text-main leading-tight">{study.phases[activePhase].title}</h4>
                         <span className="text-text-muted text-xs font-mono">{study.phases[activePhase].period}</span>
                       </div>
                     </div>
                     {(study.phases[activePhase] as any).roleFocus && (
-                      <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider shrink-0">
+                      <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-[12px] font-bold uppercase tracking-wider border border-primary/20">
                         {(study.phases[activePhase] as any).roleFocus}
                       </span>
                     )}
                   </div>
-                  <p className="text-text-muted leading-relaxed text-[14px] mb-6">{study.phases[activePhase].desc}</p>
-                  
-                  <h5 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-3">Output / Deliverables</h5>
-                  <ul className="space-y-2">
-                    {study.phases[activePhase].outputs.map((out, i) => (
-                      <li key={i} className="flex items-center gap-2.5 text-[13px] text-text-muted">
-                        <span className="material-symbols-outlined text-emerald-500 text-[16px]">check_circle</span>
-                        {out}
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    <div className="space-y-3">
+                      <h5 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2">
+                        <span className="material-symbols-outlined text-[18px]">psychology</span>
+                        Fokus & Deskripsi Analis
+                      </h5>
+                      <p className="text-text-muted leading-relaxed text-[15px]">{study.phases[activePhase].desc}</p>
+                    </div>
+
+                    <div className="bg-bg-main/60 p-6 rounded-2xl border border-black/5 dark:border-white/5">
+                      <h5 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span className="material-symbols-outlined text-[18px]">task_alt</span>
+                        Hasil / Artefak Deliverables
+                      </h5>
+                      <ul className="space-y-3">
+                        {study.phases[activePhase].outputs.map((out, i) => (
+                          <li key={i} className="flex items-center gap-3 text-[14px] text-text-main font-medium">
+                            <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                              <span className="material-symbols-outlined text-[16px]">check</span>
+                            </span>
+                            {out}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </motion.div>
