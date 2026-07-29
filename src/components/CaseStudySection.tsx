@@ -120,12 +120,60 @@ const caseStudies: Record<string, CaseStudy> = {
       { title: "Flowchart Metode Pengembangan", image: "/case-study/cenrana/flowchart-metode.png" },
     ],
     screenshots: [
-      { title: "Homepage / Beranda", image: "/case-study/cenrana/screenshot-homepage.png" },
-      { title: "Etalase Lapak Warga", image: "/case-study/cenrana/screenshot-lapak.png" },
-      { title: "Detail Produk + WhatsApp", image: "/case-study/cenrana/screenshot-detail-produk.png" },
-      { title: "Layanan Aspirasi", image: "/case-study/cenrana/screenshot-aspirasi.png" },
-      { title: "Dashboard Admin", image: "/case-study/cenrana/Picture4.png" },
-      { title: "Layanan Administrasi", image: "/case-study/cenrana/Picture5.png" },
+      { 
+        title: "Beranda Utama (Homepage)", 
+        image: "/cenrana_sc/beranda.png",
+        category: "1. Beranda",
+        desc: "Portal utama informasi terpadu & pintu masuk seluruh layanan desa." 
+      },
+      { 
+        title: "Portal Profil & Identitas Desa", 
+        image: "/cenrana_sc/profil.png",
+        category: "2. Profil Desa",
+        desc: "Informasi demografi, wilayah, struktur organisasi, dan sejarah desa." 
+      },
+      { 
+        title: "Pusat Informasi Publik", 
+        image: "/cenrana_sc/informasi.png",
+        category: "3. Informasi",
+        desc: "Portal transparansi berita desa, pengumuman resmi, dan agenda kegiatan." 
+      },
+      { 
+        title: "Hub Layanan Digital Warga", 
+        image: "/cenrana_sc/layanan.png",
+        category: "4. Layanan Warga",
+        desc: "Portal pusat akses layanan mandiri bagi seluruh masyarakat desa." 
+      },
+      { 
+        title: "Layanan Aspirasi Warga", 
+        image: "/cenrana_sc/layananaspirasi.png",
+        category: "4. Layanan Warga",
+        desc: "Formulir pengaduan publik dengan proteksi enkripsi NIK SHA-256." 
+      },
+      { 
+        title: "Layanan e-Surat Digital", 
+        image: "/cenrana_sc/layanansurat.png",
+        category: "4. Layanan Warga",
+        desc: "Permohonan surat keterangan administrasi online otomatis." 
+      },
+      { 
+        title: "Lapak Warga (Ekonomi UMKM)", 
+        image: "/cenrana_sc/lapakwarga.png",
+        category: "4. Layanan Warga",
+        desc: "Etalase pemasaran digital UMKM desa terhubung WhatsApp pengrajin." 
+      },
+      { 
+        title: "Dashboard Ringkasan Admin", 
+        image: "/cenrana_sc/dashboard.png",
+        category: "5. Admin & Panel",
+        desc: "Ringkasan statistik data warga, aspirasi, bansos, dan aktivitas." 
+      },
+      { 
+        title: "Panel Kontrol Admin (CMS)", 
+        image: "/cenrana_sc/panel.png",
+        category: "5. Admin & Panel",
+        desc: "Pusat pengelolaan 18 modul operasional sistem secara mandiri." 
+      },
     ],
   },
   topsis: {
@@ -211,7 +259,7 @@ interface CaseStudy {
   techStack: { name: string; category: string }[];
   phases: { title: string; period: string; icon: string; status: string; roleFocus?: string; desc: string; outputs: string[]; image: string | null }[];
   diagrams: { title: string; image: string }[];
-  screenshots: { title: string; image: string }[];
+  screenshots: { title: string; image: string; category?: string; desc?: string }[];
 }
 
 function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
@@ -566,30 +614,53 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif text-center mb-10">
-            Screenshot <span className="text-primary">Aplikasi</span>
-          </h3>
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif mb-2">
+              Screenshot <span className="text-primary">Aplikasi & Modul</span>
+            </h3>
+            <p className="text-text-muted text-xs md:text-sm max-w-xl mx-auto">
+              5 Modul Utama Sistem Terpadu Desa Cenrana: Beranda, Profil Desa, Informasi Publik, Layanan Warga (Aspirasi, e-Surat, Lapak UMKM), dan Panel Admin.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {study.screenshots.map((s, i) => (
               <motion.div
                 key={i}
-                className="bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 shadow-lg overflow-hidden group cursor-pointer"
+                className="bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 shadow-lg overflow-hidden group cursor-pointer hover:border-primary/30 transition-all duration-300 flex flex-col justify-between"
                 whileHover={{ y: -4 }}
                 onClick={() => setLightboxImg(s.image)}
               >
-                <div className="relative h-[180px] overflow-hidden">
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div>
+                  <div className="relative h-[200px] overflow-hidden bg-black/5 dark:bg-white/5">
+                    <img 
+                      src={s.image} 
+                      alt={s.title} 
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <span className="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg">zoom_in</span>
+                    </div>
+                    {s.category && (
+                      <span className="absolute top-3 left-3 px-2.5 py-1 bg-black/75 backdrop-blur-md text-white text-[10px] font-bold rounded-lg uppercase tracking-wider shadow-md">
+                        {s.category}
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <h4 className="text-sm font-bold text-text-main mb-1.5 group-hover:text-primary transition-colors">{s.title}</h4>
+                    {s.desc && (
+                      <p className="text-text-muted text-[12px] leading-relaxed line-clamp-2">{s.desc}</p>
+                    )}
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h4 className="text-sm font-bold text-text-main">{s.title}</h4>
+                <div className="px-5 pb-5 pt-0">
+                  <span className="text-primary text-[11px] font-bold inline-flex items-center gap-1">
+                    Lihat Ukuran Penuh <span className="material-symbols-outlined text-[14px]">open_in_full</span>
+                  </span>
                 </div>
               </motion.div>
             ))}
-            {/* Placeholder for more screenshots */}
-            <div className="bg-bg-card rounded-2xl border-2 border-dashed border-black/10 dark:border-white/10 overflow-hidden flex flex-col items-center justify-center text-text-muted gap-2 min-h-[220px] p-6">
-              <span className="material-symbols-outlined text-[32px] opacity-30">add_photo_alternate</span>
-              <span className="text-xs font-medium text-center opacity-50">PLACEHOLDER: Screenshot tambahan</span>
-            </div>
           </div>
         </motion.div>
       </div>
