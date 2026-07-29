@@ -96,7 +96,7 @@ const caseStudies: Record<string, CaseStudy> = {
           "Evaluasi System Usability Scale (SUS: 75.6)",
           "Google Lighthouse & Audit Keamanan Web"
         ],
-        image: "/skor.png",
+        image: "/cenrana_sc/Screenshot (3938).png",
       },
       {
         title: "5. Pelatihan & Serah Terima",
@@ -114,10 +114,14 @@ const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     diagrams: [
-      { title: "Arsitektur Sistem Full-Stack", image: "/case-study/cenrana/arsitektur-sistem.png" },
-      { title: "Entity Relationship Diagram (ERD)", image: "/case-study/cenrana/erd-diagram.png" },
-      { title: "Sequence Diagram — Validasi NIK", image: "/case-study/cenrana/sequence-diagram.png" },
-      { title: "Flowchart Metode Pengembangan", image: "/case-study/cenrana/flowchart-metode.png" },
+      { title: "Cetak Biru Arsitektur Sistem Full-Stack", image: "/case-study/cenrana/arsitektur-sistem.png" },
+      { title: "Entity Relationship Diagram (ERD 20+ Tabel)", image: "/case-study/cenrana/erd-diagram.png" },
+      { title: "Struktur Basis Data MySQL (20+ Tabel Data)", image: "/cenrana_sc/Screenshot (4403).png" },
+      { title: "Cloud Media Storage (Supabase Storage Buckets)", image: "/cenrana_sc/Screenshot (4404).png" },
+      { title: "Laporan Evaluasi Sistem (Skor UAT 93.8% & SUS)", image: "/cenrana_sc/Screenshot (3938).png" },
+      { title: "Infrastruktur Production Hosting (Hostinger VPS)", image: "/cenrana_sc/Screenshot (4402).png" },
+      { title: "Sequence Diagram — Validasi & Hashing NIK", image: "/case-study/cenrana/sequence-diagram.png" },
+      { title: "Flowchart Metode Pengembangan SDLC", image: "/case-study/cenrana/flowchart-metode.png" },
     ],
     screenshots: [
       { 
