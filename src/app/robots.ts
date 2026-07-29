@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://asraufmustamin.site/sitemap.xml',
+    sitemap: 'https://www.asraufmustamin.site/sitemap.xml',
   }
 }
