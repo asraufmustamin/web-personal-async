@@ -484,7 +484,7 @@ export default function ExperienceSection() {
               </div>
               
               {/* Modal Body (Scrollable) */}
-              <div className="flex-1 overflow-y-auto p-5 md:p-8 lg:p-12">
+              <div className="flex-1 overflow-y-auto p-5 md:p-8 lg:p-12" data-lenis-prevent="true">
                 <div className="max-w-4xl mx-auto">
                   
                   {/* Top Info Banner */}
