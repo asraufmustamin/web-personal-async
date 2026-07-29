@@ -42,57 +42,74 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     phases: [
       {
-        title: "Analisis Kebutuhan",
+        title: "1. Analisis Kebutuhan Bisnis",
         period: "Oktober 2025",
-        icon: "search",
+        icon: "travel_explore",
         status: "complete",
-        desc: "Wawancara semi-terstruktur dengan Kepala Desa, Sekretaris Desa, dan Kaur. Observasi partisipatif selama KKN untuk memahami alur kerja manual di kantor desa.",
-        outputs: ["Dokumen Spesifikasi Kebutuhan", "Identifikasi 3 masalah utama", "Stakeholder mapping"],
+        roleFocus: "IT Business Analyst (BA)",
+        desc: "Melakukan wawancara semi-terstruktur dengan Perangkat Desa (Kepala Desa, Sekdes, Kaur) untuk menggali kebutuhan operasional. Memetakan alur kerja manual (As-Is Process) dan mengidentifikasi 3 masalah utama: keterlambatan papan pengumuman fisik, keluhan warga tak terdata, dan stagnasi UMKM.",
+        outputs: [
+          "Dokumen Spesifikasi Kebutuhan Sistem (SRS)",
+          "Pemetaan Proses As-Is vs To-Be",
+          "Matriks Pemangku Kepentingan (Stakeholder Mapping)"
+        ],
         image: "/whatsapp-image-2026-06-23-at-16.39.32-1.jpeg",
       },
       {
-        title: "Desain UI/UX & Arsitektur",
+        title: "2. Pemodelan & Arsitektur Sistem",
         period: "November 2025",
-        icon: "design_services",
+        icon: "schema",
         status: "complete",
-        desc: "Merancang wireframe antarmuka, arsitektur sistem full-stack, dan Entity Relationship Diagram (ERD) untuk 20+ tabel database.",
-        outputs: ["Wireframe UI/UX", "Arsitektur Sistem", "ERD (20+ tabel)", "Sequence Diagram"],
+        roleFocus: "System Analyst (SA)",
+        desc: "Mentranslasikan kebutuhan bisnis menjadi blueprint teknis yang siap dieksekusi. Merancang Entity Relationship Diagram (ERD) 20+ tabel database, Use Case Diagram, dan Sequence Diagram untuk alur enkripsi NIK serta penanganan pengaduan.",
+        outputs: [
+          "Entity Relationship Diagram (ERD 20+ Tabel)",
+          "Cetak Biru Arsitektur Sistem Full-Stack",
+          "Sequence Diagram Validasi NIK (SHA-256)",
+          "Flowchart Alur Pengaduan & Layanan Warga"
+        ],
         image: "/case-study/cenrana/arsitektur-sistem.png",
       },
       {
-        title: "Implementasi Fitur Utama",
+        title: "3. Desain Prototipe & Logika Bisnis",
         period: "Nov 2025 – Jan 2026",
-        icon: "code",
+        icon: "design_services",
         status: "complete",
-        desc: "Membangun tiga pilar layanan: Pusat Informasi, Layanan Aspirasi Warga (dengan validasi NIK terenkripsi), dan Lapak Warga (etalase digital terintegrasi WhatsApp).",
-        outputs: ["Pusat Informasi + Profil Desa", "Sistem Aspirasi + NIK Hashing", "Lapak Warga + WhatsApp Gateway", "Versi Beta 1.0"],
+        roleFocus: "UI/UX & System Analyst",
+        desc: "Merancang Wireframe & High-Fidelity Prototype untuk 18 modul admin dan portal publik. Merancang logika proteksi privasi warga (SHA-256 NIK Hashing) dan alur bisnis Lapak Warga terintegrasi WhatsApp Gateway.",
+        outputs: [
+          "Wireframe & High-Fidelity UI Prototype",
+          "Spesifikasi Alur Bisnis WhatsApp Gateway",
+          "Protokol Keamanan Data NIK Terenkripsi"
+        ],
         image: "/case-study/cenrana/screenshot-homepage.png",
       },
       {
-        title: "Fitur Tambahan",
-        period: "Jan – Feb 2026",
-        icon: "add_circle",
-        status: "complete",
-        desc: "Menambahkan modul e-Surat Digital, Cek Bantuan Sosial (Bansos), Layanan Kesehatan Desa, dan Dashboard Admin Komprehensif dengan 18 modul.",
-        outputs: ["e-Surat Digital (PDF otomatis)", "Cek Bansos", "Kesehatan Desa", "Dashboard Admin (18 modul)", "Versi Beta 2.0"],
-        image: "/case-study/cenrana/Picture4.png",
-      },
-      {
-        title: "Pengujian & Optimasi",
+        title: "4. Pengujian Kelayakan (UAT & QA)",
         period: "Feb – Mar 2026",
-        icon: "bug_report",
+        icon: "fact_check",
         status: "complete",
-        desc: "Melaksanakan User Acceptance Testing (UAT), System Usability Scale (SUS), Google Lighthouse Audit, dan security audit menyeluruh.",
-        outputs: ["UAT 93.8% success", "SUS Score: Good (≥68)", "Lighthouse Audit", "Security Audit"],
+        roleFocus: "IT BA / QA Analyst",
+        desc: "Menyusun matriks skenario User Acceptance Testing (UAT) dan menguji kelayakan sistem langsung bersama aparatur desa dan sampel warga. Mengukur System Usability Scale (SUS) dan mengaudit performa web.",
+        outputs: [
+          "Matriks & Laporan UAT Success (93.8%)",
+          "Evaluasi System Usability Scale (SUS: 75.6)",
+          "Google Lighthouse & Audit Keamanan Web"
+        ],
         image: "/skor.png",
       },
       {
-        title: "Deployment & Pelatihan",
+        title: "5. Pelatihan & Serah Terima",
         period: "Mar – Mei 2026",
         icon: "rocket_launch",
         status: "complete",
-        desc: "Deploy ke Hostinger Business dengan SSL, melakukan pelatihan langsung kepada perangkat desa untuk pengoperasian mandiri sistem.",
-        outputs: ["Sistem live di desacenrana.id", "Pelatihan admin desa", "Buku Panduan Pengguna", "Serah terima sistem"],
+        roleFocus: "IT Project Lead & BA",
+        desc: "Menyusun Buku Panduan Penggunaan Sistem (User Manual) versi PDF, mengadakan sosialisasi & pelatihan langsung pengoperasian dashboard admin bagi aparatur desa, serta serah terima domain desacenrana.id.",
+        outputs: [
+          "Buku Panduan Penggunaan Sistem (User Manual PDF)",
+          "Berita Acara Serah Terima (BAST) Sistem",
+          "Peluncuran Resmi Domain desacenrana.id"
+        ],
         image: "/whatsapp-image-2026-06-23-at-16.39.29-1.jpeg",
       },
     ],
@@ -283,9 +300,9 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
             <img 
               src={study.heroImage} 
               alt={study.title} 
-              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+              className="w-full h-full object-cover object-top blur-[2px] scale-[1.03] group-hover:scale-105 transition-transform duration-700" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40 backdrop-blur-[2px]" />
             
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
               <span className="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-full uppercase tracking-wider mb-4 inline-block">
@@ -365,7 +382,7 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif text-center mb-10">
-            Proses <span className="text-primary">Pengembangan</span>
+            Proses <span className="text-primary">Pengembangan (SDLC)</span>
           </h3>
 
           {/* Phase Navigation */}
@@ -399,7 +416,7 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
             >
               <div className="flex flex-col lg:flex-row">
                 {/* Image */}
-                <div className="lg:w-1/2 relative min-h-[250px] md:min-h-[350px] bg-bg-main">
+                <div className="lg:w-1/2 relative min-h-[250px] md:min-h-[350px] bg-bg-main flex items-center justify-center">
                   {study.phases[activePhase].image ? (
                     <img 
                       src={study.phases[activePhase].image!} 
@@ -408,22 +425,32 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
                       onClick={() => setLightboxImg(study.phases[activePhase].image)}
                     />
                   ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-text-muted gap-3 p-8">
-                      <span className="material-symbols-outlined text-[48px] opacity-30">add_photo_alternate</span>
-                      <span className="text-sm font-medium text-center opacity-50">PLACEHOLDER: Screenshot / Dokumentasi untuk tahap ini</span>
+                    <div className="w-full h-full flex flex-col items-center justify-center text-text-muted gap-3 p-8 border-2 border-dashed border-amber-500/20 rounded-2xl m-4 bg-amber-500/5">
+                      <span className="material-symbols-outlined text-[40px] text-amber-500">no_photography</span>
+                      <div className="text-center">
+                        <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider block mb-1">Dokumentasi Belum Diunggah</span>
+                        <span className="text-[12px] text-text-muted opacity-80 max-w-xs block">Silakan unggah foto/screenshot pendukung untuk tahap ini</span>
+                      </div>
                     </div>
                   )}
                 </div>
                 {/* Content */}
                 <div className="lg:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary text-[20px]">{study.phases[activePhase].icon}</span>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <span className="material-symbols-outlined text-primary text-[20px]">{study.phases[activePhase].icon}</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-text-main">{study.phases[activePhase].title}</h4>
+                        <span className="text-text-muted text-xs font-mono">{study.phases[activePhase].period}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-text-main">{study.phases[activePhase].title}</h4>
-                      <span className="text-text-muted text-xs font-mono">{study.phases[activePhase].period}</span>
-                    </div>
+                    {(study.phases[activePhase] as any).roleFocus && (
+                      <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider shrink-0">
+                        {(study.phases[activePhase] as any).roleFocus}
+                      </span>
+                    )}
                   </div>
                   <p className="text-text-muted leading-relaxed text-[14px] mb-6">{study.phases[activePhase].desc}</p>
                   
