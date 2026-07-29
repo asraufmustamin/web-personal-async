@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   },
 };
 
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -83,8 +86,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden`}>
+        <CustomCursor />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
