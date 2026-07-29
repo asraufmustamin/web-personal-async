@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import AsyncSolutionsSection from "@/components/AsyncSolutionsSection";
+
 import ToolsSection from "@/components/ToolsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -26,7 +26,7 @@ export default function Home() {
         <SkillsSection />
         <ExperienceSection />
         <PortfolioSection />
-        <AsyncSolutionsSection />
+
         <ContactSection />
         <Footer />
       </div>

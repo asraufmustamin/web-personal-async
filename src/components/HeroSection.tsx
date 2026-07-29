@@ -65,42 +65,22 @@ export default function HeroSection() {
 
             <motion.div variants={itemVariants} className="flex flex-col items-center w-full relative z-30">
               
-              {/* Mobile Only: Logo ASYNC below the nav */}
-              <div className="md:hidden flex justify-center mb-8 mt-0 w-full z-10">
-                 <img src="/logo-async-gold.png" alt="ASYNC Logo" className="w-[50vw] max-w-[200px] h-auto object-contain drop-shadow-sm" />
-              </div>
-
-              {/* Name Subtitle Hook (Desktop & Mobile) */}
+              {/* Personal Branding Subtitle */}
               <div className="relative w-full flex flex-col items-center">
-                <a 
-                  href="https://async-id.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex text-primary font-sans tracking-[0.1em] md:tracking-[0.2em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-3 md:gap-5 text-center transition-all cursor-pointer overflow-hidden py-2"
-                >
-                  <span className="w-8 md:w-16 h-[1px] bg-primary/40 group-hover:bg-primary group-hover:w-12 md:group-hover:w-24 transition-all duration-500 ease-out"></span> 
-                  
-                  <span className="relative flex items-center gap-2 group-hover:text-orange-500 transition-colors duration-300">
-                    <span className="material-symbols-outlined text-[14px] md:text-[18px] opacity-0 pointer-events-none -translate-x-2 md:translate-x-0 hidden sm:inline-block">
-                      arrow_forward
-                    </span>
-                    <span className="animate-pulse group-hover:animate-none">JELAJAHI LAYANAN ASYNC SOLUTIONS</span>
-                    <span className="material-symbols-outlined text-[14px] md:text-[18px] opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                      arrow_forward
-                    </span>
-                  </span>
-
-                  <span className="w-8 md:w-16 h-[1px] bg-primary/40 group-hover:bg-primary group-hover:w-12 md:group-hover:w-24 transition-all duration-500 ease-out"></span>
-                </a>
+                <div className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.25em] uppercase text-[10px] md:text-sm font-bold mb-2 md:mb-6 items-center justify-center gap-3 md:gap-5 text-center py-2">
+                  <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
+                  <span>Digital Solution Partner</span>
+                  <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
+                </div>
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[50px] sm:min-h-[60px] md:min-h-[100px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
-                      "Mitra Solusi Digital",
-                      "Sistem Informasi",
-                      "Desainer Visual",
-                      "Spesialis Data"
+                      "IT Business Analyst",
+                      "Project Coordinator",
+                      "Data Validation Analyst",
+                      "Digital Solution Partner"
                     ]}
                     speed={70}
                     className="whitespace-nowrap gradient-text"
@@ -112,7 +92,7 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4">
-              <p>Halo, saya Muhammad Asrauf Mustamin. Melalui <span className="text-primary font-medium">ASYNC by Asrauf Mustamin</span>, saya membantu merancang solusi digital yang rapi dan fungsional berbasis sistem informasi, manajemen data, dan desain visual.</p>
+              <p>Halo, saya <span className="text-primary font-medium">Muhammad Asrauf Mustamin</span> — S.Kom, Cumlaude (IPK 3,93). Berpengalaman dalam analisis proses bisnis, validasi data 5.000+ entri dengan akurasi 99%+, dan memimpin pengembangan sistem informasi dari requirement gathering hingga deployment.</p>
             </motion.div>
           </div>
         </div>

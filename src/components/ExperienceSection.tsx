@@ -54,7 +54,7 @@ const allExperiences = [
     competencies: ["Decision Support System", "Data Analysis", "System Development"],
     label: "Riset Akademik",
     category: "Proyek",
-    logo: "/logo-async.png",
+    logo: "/logouin.png",
     theme: "from-[#7c2d12] to-[#ea580c]"
   },
   {
@@ -93,7 +93,7 @@ const allExperiences = [
   },
   {
     role: "Freelance Designer & Data Entry",
-    company: "ASYNC Solutions",
+    company: "Freelance / Independent",
     location: "Makassar",
     date: "2023 – Sekarang",
     description: "Menangani 5+ proyek desain grafis untuk klien dari berbagai sektor — mencakup logo & brand identity, materi visual media sosial, poster/flyer event, dan konten visual UMKM. Juga melaksanakan proyek data entry ke Sistem Kusuka milik Kementerian Kelautan dan Perikanan (KKP).",
@@ -105,7 +105,7 @@ const allExperiences = [
     competencies: ["Graphic Design", "Brand Identity", "Data Entry", "Content Creation"],
     label: "Freelance",
     category: "Profesional",
-    logo: "/logo-async.png",
+    logo: "/logo-async-gold.png",
     theme: "from-[#0f172a] to-[#334155]"
   },
   {

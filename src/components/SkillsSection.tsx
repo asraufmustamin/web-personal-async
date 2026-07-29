@@ -6,6 +6,15 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
+const skillIcons: Record<string, string> = {
+  "01": "palette",
+  "02": "code",
+  "03": "database",
+  "04": "smart_toy",
+  "05": "search_insights",
+  "06": "groups",
+};
+
 const skills = [
   {
     id: "01",
@@ -111,8 +120,8 @@ export default function SkillsSection() {
               >
                 <div className="p-6 md:p-8 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="h-8 md:h-10 w-auto flex items-center justify-start group-hover:scale-105 transition-transform duration-300 origin-left">
-                      <img src="/logo-async-gold.png" alt="ASYNC" className="h-full w-auto object-contain object-left scale-125 md:scale-150 origin-left" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary group-hover:to-orange-500 transition-all duration-300">
+                      <span className="material-symbols-outlined text-primary group-hover:text-white text-xl md:text-2xl transition-colors duration-300">{skillIcons[skill.id] || "star"}</span>
                     </div>
                     <div className="w-8 h-8 rounded-full flex items-center justify-center text-gray-300 group-hover:text-primary transition-colors group-hover:bg-primary/5">
                       <span className="material-symbols-outlined text-xl -rotate-45 group-hover:rotate-0 transition-transform duration-300">arrow_forward</span>
@@ -160,8 +169,8 @@ export default function SkillsSection() {
                 
                 <div className="p-6 md:p-8 flex flex-col overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
                   <div className="flex justify-between items-start mb-4">
-                    <div className="w-24 md:w-32">
-                      <img src="/logo-async-gold.png" alt="ASYNC" className="w-full h-auto object-contain object-left" />
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center shadow-lg">
+                      <span className="material-symbols-outlined text-white text-2xl md:text-3xl">{skillIcons[selectedSkill.id] || "star"}</span>
                     </div>
                     <button 
                       onClick={() => setSelectedSkill(null)}

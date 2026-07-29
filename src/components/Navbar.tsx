@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, User, Sparkles, Briefcase, Folder, Mail, Menu, X, Settings } from 'lucide-react';
+import { Home, User, Sparkles, Briefcase, Folder, Mail, Menu, X } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hideServices, setHideServices] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,22 +18,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const checkHidden = () => {
-      setHideServices(localStorage.getItem('hide_services') === 'true');
-    };
-    checkHidden();
-    window.addEventListener('services-toggled', checkHidden);
-    return () => window.removeEventListener('services-toggled', checkHidden);
-  }, []);
-
   const tabs = [
     { title: 'Beranda', icon: Home, href: '#beranda' },
     { title: 'Tentang', icon: User, href: '#tentang' },
     { title: 'Keahlian', icon: Sparkles, href: '#keahlian' },
     { title: 'Pengalaman', icon: Briefcase, href: '#pengalaman' },
     { title: 'Proyek', icon: Folder, href: '#proyek' },
-    ...(hideServices ? [] : [{ title: 'Layanan', icon: Settings, href: '#layanan' }]),
     { title: 'Kontak', icon: Mail, href: '#kontak' },
   ];
 

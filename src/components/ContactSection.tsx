@@ -72,7 +72,7 @@ export default function ContactSection() {
       icon: "mail",
       label: "Email",
       value: "asrfmstmn@gmail.com",
-      link: "mailto:asrfmstmn@gmail.com?subject=Halo%20ASYNC%20-%20Diskusi%20Proyek&body=Halo%20Mas%20Asrauf,%0A%0ASaya%20tertarik%20untuk%20berdiskusi%20mengenai%20potensi%20kerjasama%20untuk%20sebuah%20proyek.%0A%0ATerima%20kasih.",
+      link: "mailto:asrfmstmn@gmail.com?subject=Halo%20Asrauf%20-%20Diskusi%20Proyek&body=Halo%20Mas%20Asrauf,%0A%0ASaya%20tertarik%20untuk%20berdiskusi%20mengenai%20potensi%20kerjasama%20untuk%20sebuah%20proyek.%0A%0ATerima%20kasih.",
       color: "bg-blue-500",
       position: "md:-translate-x-[240px] lg:-translate-x-[340px] md:-translate-y-10",
     },
