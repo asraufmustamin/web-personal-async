@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   creator: "Muhammad Asrauf Mustamin",
   publisher: "Muhammad Asrauf Mustamin",
   verification: {
-    google: "google6b3a1b8073277a94",
+    google: "google51fc19d406a7d5a7",
   },
   metadataBase: new URL("https://asraufmustamin.site"),
   alternates: {
