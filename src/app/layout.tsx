@@ -16,7 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Asrauf Mustamin — IT Business Analyst & System Analyst Portfolio",
+  title: "Asrauf Mustamin — Mengubah Kebutuhan Bisnis Menjadi Sistem Nyata",
   description: "Portfolio profesional Muhammad Asrauf Mustamin. Aspiring IT Business Analyst & System Analyst dengan studi kasus nyata: Sistem Informasi Desa Cenrana & SPK TOPSIS. Menguasai analisis kebutuhan, pemodelan sistem, UAT, dan manajemen proyek end-to-end.",
   keywords: [
     "Muhammad Asrauf Mustamin",
@@ -45,16 +45,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Asrauf Mustamin — IT Business Analyst & System Analyst",
-    description: "Aspiring IT BA & System Analyst. Studi kasus nyata end-to-end: dari analisis kebutuhan, pemodelan ERD & arsitektur, hingga UAT dan serah terima sistem.",
+    title: "Asrauf Mustamin — Mengubah Kebutuhan Bisnis Menjadi Sistem Nyata",
+    description: "IT Business Analyst & System Analyst. Studi kasus nyata end-to-end: dari analisis kebutuhan, pemodelan arsitektur, hingga UAT dan serah terima sistem.",
     url: "https://asraufmustamin.site",
-    siteName: "Asrauf Mustamin | IT BA & SA Portfolio",
+    siteName: "Asrauf Mustamin — IT BA & System Analyst",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asrauf Mustamin — IT Business Analyst & System Analyst",
+    title: "Asrauf Mustamin — Mengubah Kebutuhan Bisnis Menjadi Sistem Nyata",
     description: "Portfolio profesional dengan studi kasus nyata Sistem Informasi Desa Cenrana & SPK TOPSIS.",
   },
   robots: {
