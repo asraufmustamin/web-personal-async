@@ -379,68 +379,71 @@ export default function ExperienceSection() {
             </div>
           </div>
           
-          {/* Carousel Arrows (Hover Reveal) */}
-          <button 
-            onClick={() => scrollHighlights('left')} 
-            className="absolute left-0 top-1/2 mt-5 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
-          >
-            <span className="material-symbols-outlined text-2xl pr-0.5">chevron_left</span>
-          </button>
-          
-          <button 
-            onClick={() => scrollHighlights('right')} 
-            className="absolute right-0 top-1/2 mt-5 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
-          >
-            <span className="material-symbols-outlined text-2xl pl-0.5">chevron_right</span>
-          </button>
-
-          {/* Highlights Container */}
-          <div 
-            ref={highlightsRef}
-            className="flex overflow-x-auto snap-x md:snap-mandatory gap-4 md:gap-6 pb-12 pt-6 scroll-smooth px-6 md:px-10 -mx-6 md:-mx-10 md:scroll-pl-10"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-            onMouseLeave={() => setHoveredHighlight(null)}
-          >
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
+          {/* Carousel & Arrows Wrapper */}
+          <div className="relative group/carousel">
+            {/* Carousel Arrows (Hover Reveal) */}
+            <button 
+              onClick={() => scrollHighlights('left')} 
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 pointer-events-none group-hover/carousel:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
+            >
+              <span className="material-symbols-outlined text-2xl pr-0.5">chevron_left</span>
+            </button>
             
-            {highlights.map((h, i) => {
-              const currentHighlight = hoveredHighlight !== null ? hoveredHighlight : activeHighlight;
-              const isFocused = currentHighlight === i;
-              const isAnyFocused = currentHighlight !== null;
-              
-              const scaleClass = isFocused ? 'scale-105 md:scale-110 z-10 shadow-2xl' : (isAnyFocused ? 'scale-95 opacity-50 blur-[1px]' : 'scale-100 hover:shadow-lg');
-              const bgClass = isFocused ? 'bg-gradient-to-br from-primary to-primary-dark border-transparent shadow-primary/30' : 'bg-bg-card border-black/5 dark:border-white/5 hover:border-primary/20';
+            <button 
+              onClick={() => scrollHighlights('right')} 
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 pointer-events-none group-hover/carousel:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
+            >
+              <span className="material-symbols-outlined text-2xl pl-0.5">chevron_right</span>
+            </button>
 
-              return (
-                <motion.div 
-                  key={i} 
-                  className="w-[90vw] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start"
-                  initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  viewport={{ once: true, amount: 0.1 }}
-                >
-                  <div
-                    onClick={() => setActiveHighlight(isFocused ? null : i)}
-                    onMouseEnter={() => setHoveredHighlight(i)}
-                    className={`p-6 md:p-8 border rounded-2xl md:rounded-3xl transition-all duration-500 ease-out cursor-pointer flex flex-col items-start relative overflow-hidden h-full min-h-[220px] md:min-h-0 ${scaleClass} ${bgClass}`}
+            {/* Highlights Container */}
+            <div 
+              ref={highlightsRef}
+              className="flex overflow-x-auto snap-x md:snap-mandatory gap-4 md:gap-6 pb-12 pt-6 scroll-smooth px-6 md:px-10 -mx-6 md:-mx-10 md:scroll-pl-10"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+              onMouseLeave={() => setHoveredHighlight(null)}
+            >
+              <style jsx>{`
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
+              
+              {highlights.map((h, i) => {
+                const currentHighlight = hoveredHighlight !== null ? hoveredHighlight : activeHighlight;
+                const isFocused = currentHighlight === i;
+                const isAnyFocused = currentHighlight !== null;
+                
+                const scaleClass = isFocused ? 'scale-105 md:scale-110 z-10 shadow-2xl' : (isAnyFocused ? 'scale-95 opacity-50 blur-[1px]' : 'scale-100 hover:shadow-lg');
+                const bgClass = isFocused ? 'bg-gradient-to-br from-primary to-primary-dark border-transparent shadow-primary/30' : 'bg-bg-card border-black/5 dark:border-white/5 hover:border-primary/20';
+
+                return (
+                  <motion.div 
+                    key={i} 
+                    className="w-[90vw] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 snap-center md:snap-start"
+                    initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    viewport={{ once: true, amount: 0.1 }}
                   >
-                    <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isFocused ? 'bg-white/20 scale-110' : 'bg-primary/10'}`}>
-                       <span className={`material-symbols-outlined transition-colors duration-500 text-[24px] ${isFocused ? 'text-white' : 'text-primary'}`}>star</span>
+                    <div
+                      onClick={() => setActiveHighlight(isFocused ? null : i)}
+                      onMouseEnter={() => setHoveredHighlight(i)}
+                      className={`p-6 md:p-8 border rounded-2xl md:rounded-3xl transition-all duration-500 ease-out cursor-pointer flex flex-col items-start relative overflow-hidden h-full min-h-[220px] md:min-h-0 ${scaleClass} ${bgClass}`}
+                    >
+                      <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${isFocused ? 'bg-white/20 scale-110' : 'bg-primary/10'}`}>
+                         <span className={`material-symbols-outlined transition-colors duration-500 text-[24px] ${isFocused ? 'text-white' : 'text-primary'}`}>star</span>
+                      </div>
+                      <div className="flex flex-col flex-1 w-full justify-start">
+                          <h4 className={`font-bold text-[15px] md:text-lg mb-2 transition-colors duration-500 pr-2 ${isFocused ? 'text-white' : 'text-text-main'}`}>{h.title}</h4>
+                          <p className={`text-[13px] md:text-sm leading-relaxed transition-colors duration-500 ${isFocused ? 'text-white/90' : 'text-text-muted'}`}>{h.desc}</p>
+                      </div>
+                      <div className={`absolute -right-6 -bottom-6 w-24 h-24 rounded-full transition-opacity duration-700 blur-xl pointer-events-none ${isFocused ? 'bg-white/20 opacity-100' : 'bg-gradient-to-br from-primary/5 to-transparent opacity-0'}`}></div>
                     </div>
-                    <div className="flex flex-col flex-1 w-full justify-start">
-                        <h4 className={`font-bold text-[15px] md:text-lg mb-2 transition-colors duration-500 pr-2 ${isFocused ? 'text-white' : 'text-text-main'}`}>{h.title}</h4>
-                        <p className={`text-[13px] md:text-sm leading-relaxed transition-colors duration-500 ${isFocused ? 'text-white/90' : 'text-text-muted'}`}>{h.desc}</p>
-                    </div>
-                    <div className={`absolute -right-6 -bottom-6 w-24 h-24 rounded-full transition-opacity duration-700 blur-xl pointer-events-none ${isFocused ? 'bg-white/20 opacity-100' : 'bg-gradient-to-br from-primary/5 to-transparent opacity-0'}`}></div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
 
