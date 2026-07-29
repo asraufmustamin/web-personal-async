@@ -59,7 +59,7 @@ export default function ToolsSection() {
   return (
     <motion.section 
       id="tools" 
-      className="py-10 md:py-20 bg-bg-card border-t border-black/5"
+      className="py-16 md:py-24 bg-bg-card border-t border-black/5"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"

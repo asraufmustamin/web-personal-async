@@ -21,7 +21,7 @@ export default function AboutSection() {
   return (
     <motion.section 
       id="tentang" 
-      className="py-10 md:py-32 bg-bg-main"
+      className="py-16 md:py-24 bg-bg-main"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -132,24 +132,16 @@ export default function AboutSection() {
                 </span>
               </h2>
               
-              <div className="flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-start gap-2 md:gap-3 mt-3 w-full">
-                <div className="flex items-center justify-center bg-primary/10 border border-primary/20 text-primary px-3 py-2 rounded-[3px] font-bold gap-1.5 shadow-sm whitespace-nowrap">
-                  <span className="material-symbols-outlined text-[16px]">verified</span>
-                  <span className="text-[13px]">Digital Solution Partner</span>
-                </div>
-                
-                <a href="#proyek" className="group relative px-3 py-2 bg-primary text-white rounded-[3px] font-bold flex items-center justify-center gap-1.5 overflow-hidden shadow-md hover:shadow-primary/30 transition-all duration-300">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  <span className="relative z-10 flex items-center gap-1.5 text-[13px] whitespace-nowrap">
-                    <span className="material-symbols-outlined text-[16px]">cases</span> Lihat Karya
-                  </span>
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-start gap-3 mt-4 w-full">
+                <a href="#proyek" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
+                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">cases</span> <span className="text-[13px] whitespace-nowrap">Lihat Karya</span>
                 </a>
                 
-                <a href="/cv-muhammad-asrauf-mustamin-intern.pdf" target="_blank" rel="noopener noreferrer" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                <a href="/CV_Muhammad_Asrauf_Mustamin.pdf" target="_blank" rel="noopener noreferrer" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
                   <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
                 </a>
                 
-                <a href="#kontak" className="group px-3 py-2 bg-transparent border border-primary text-primary rounded-[3px] font-bold flex items-center justify-center gap-1.5 hover:bg-primary/5 transition-all duration-300">
+                <a href="#kontak" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
                   <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">Hubungi</span>
                 </a>
               </div>
@@ -158,10 +150,10 @@ export default function AboutSection() {
             {/* Description Section */}
             <div className="border-l-[3px] border-primary/40 pl-4 md:pl-6 flex flex-col gap-3 mt-4 relative z-10 text-justify w-full max-w-2xl mx-auto lg:mx-0">
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Sarjana Komputer dengan <strong className="text-primary font-bold">IPK 3,93/4,00 — Cumlaude</strong>. Berpengalaman dalam analisis proses bisnis, pengembangan sistem informasi, pengelolaan data, serta koordinasi lintas fungsi di lingkungan institusional dan pemerintahan.
+                Halo! Saya adalah lulusan Sistem dan Teknologi Informasi dengan predikat <strong className="text-primary font-bold">Cumlaude (IPK 3,93/4,00)</strong>. Saya memiliki ketertarikan mendalam pada titik temu antara bisnis, data, dan teknologi. Bagi saya, teknologi bukan sekadar deretan kode, melainkan alat untuk menyederhanakan proses dan menyelesaikan masalah nyata di lapangan.
               </p>
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Memimpin siklus pengembangan (SDLC) dan implementasi solusi digital yang mendukung operasional layanan publik. Berkomitmen memberikan kontribusi nyata melalui penguasaan teknologi, pendekatan berbasis data, dan kemampuan memimpin proyek digital secara end-to-end.
+                Saya adalah individu yang adaptif, sangat teliti terhadap detail, dan senang mengambil inisiatif—karakter yang terus saya asah melalui berbagai pengalaman memimpin organisasi dan proyek digital. Saya sangat menikmati proses mengurai kerumitan suatu masalah, memahaminya dari kacamata pengguna, lalu meraciknya menjadi solusi yang elegan dan tepat sasaran.
               </p>
             </div>
 

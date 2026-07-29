@@ -51,55 +51,43 @@ export default function ContactSection() {
     mouseY.set(0);
   };
 
-  // Dynamic speech text
   const getSpeechText = () => {
     if (!isActive) return "Klik saya untuk mulai berkolaborasi!";
     switch (hoveredContact) {
       case "email":
-        return "Kirim pesan lewat Email? Siap meluncur!";
+        return "Kirim email? Siap membalas dengan cepat!";
       case "whatsapp":
-        return "Lebih suka ngobrol cepat? Mari ke WhatsApp!";
-      case "location":
-        return "Saya berbasis di Makassar. Mari ngopi!";
+        return "Lebih suka ngobrol santai? Mari ke WhatsApp!";
       default:
-        return "Punya ide luar biasa? Mari kita wujudkan!";
+        return "Punya ide inovatif? Mari kita diskusikan!";
     }
   };
 
   const contacts = [
     {
-      id: "email",
-      icon: "mail",
-      label: "Email",
-      value: "asrfmstmn@gmail.com",
-      link: "mailto:asrfmstmn@gmail.com?subject=Halo%20Asrauf%20-%20Diskusi%20Proyek&body=Halo%20Mas%20Asrauf,%0A%0ASaya%20tertarik%20untuk%20berdiskusi%20mengenai%20potensi%20kerjasama%20untuk%20sebuah%20proyek.%0A%0ATerima%20kasih.",
-      color: "bg-blue-500",
-      position: "md:-translate-x-[240px] lg:-translate-x-[340px] md:-translate-y-10",
-    },
-    {
       id: "whatsapp",
       icon: "chat",
       label: "WhatsApp",
       value: "+62 857-2971-5555",
-      link: "https://wa.me/6285729715555?text=Halo%20Mas%20Asrauf,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20potensi%20kerjasama%20proyek.%20Bisa%20kita%20ngobrol%20lebih%20lanjut?",
+      link: "https://wa.me/6285729715555?text=Halo%20Mas%20Asrauf,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20potensi%20kolaborasi.%20Bisa%20kita%20ngobrol%20lebih%20lanjut?",
       color: "bg-green-500",
-      position: "md:translate-x-[240px] lg:translate-x-[340px] md:-translate-y-10",
+      position: "md:translate-x-[200px] lg:translate-x-[280px] md:-translate-y-10",
     },
     {
-      id: "location",
-      icon: "location_on",
-      label: "Lokasi",
-      value: "Makassar, Sulsel",
-      link: "#",
-      color: "bg-orange-500",
-      position: "md:translate-y-[140px] lg:translate-y-[170px]",
+      id: "email",
+      icon: "mail",
+      label: "Email",
+      value: "asrfmstmn@gmail.com",
+      link: "mailto:asrfmstmn@gmail.com?subject=Halo%20Asrauf%20-%20Peluang%20Kolaborasi",
+      color: "bg-blue-500",
+      position: "md:-translate-x-[200px] lg:-translate-x-[280px] md:-translate-y-10",
     }
   ];
 
   return (
     <motion.section 
       id="kontak" 
-      className="py-10 md:py-24 bg-bg-main relative overflow-hidden"
+      className="py-16 md:py-24 bg-bg-main relative overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       variants={staggerContainer}
@@ -146,7 +134,7 @@ export default function ContactSection() {
           </h2>
           <motion.div className="flex flex-col gap-6 w-full max-w-md lg:max-w-none mx-auto" variants={fadeUpBlur}>
             <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow-sm">
-              Singkirkan formulir kaku. Pilih jalur komunikasi favorit Anda dan mari mulai diskusi proyek impian Anda hari ini.
+              Singkirkan formulir kaku. Pilih jalur komunikasi favorit Anda dan mari diskusikan peluang kolaborasi, inovasi sistem, atau langkah karir berikutnya.
             </p>
           </motion.div>
         </motion.div>

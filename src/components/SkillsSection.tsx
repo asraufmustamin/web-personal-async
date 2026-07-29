@@ -7,50 +7,50 @@ import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
 const skillIcons: Record<string, string> = {
-  "01": "palette",
-  "02": "code",
-  "03": "database",
-  "04": "smart_toy",
-  "05": "search_insights",
-  "06": "groups",
+  "01": "search_insights",
+  "02": "database",
+  "03": "code",
+  "04": "groups",
+  "05": "palette",
+  "06": "smart_toy",
 };
 
 const skills = [
   {
     id: "01",
-    title: "Desain Visual & Branding",
-    desc: "Membantu menciptakan identitas visual dan materi komunikasi yang konsisten untuk kebutuhan personal, bisnis, organisasi, maupun instansi. Mulai dari desain media sosial, banner promosi, materi publikasi, hingga identitas visual yang membantu menyampaikan pesan secara lebih jelas dan profesional.",
-    tags: ["Social Media Design", "Feed & Carousel Content", "Banner Design", "Poster Design", "Spanduk & Publikasi", "Logo Design", "Brand Identity", "Presentation Design", "Visual Communication", "UI Mockup", "Digital Assets", "Marketing Materials"]
+    title: "Analisis Sistem & Proses Bisnis",
+    desc: "Setiap solusi yang baik dimulai dari pemahaman masalah yang tepat. Saya terbiasa melakukan ekstraksi kebutuhan pengguna (requirement gathering), menyusun alur kerja, memetakan proses bisnis, dan merancang pendekatan yang paling efektif sebelum tahap pengembangan dimulai.",
+    tags: ["System Analysis", "Requirement Gathering", "Business Process Mapping", "Problem Solving", "Workflow Design", "System Mapping", "Solution Design", "Dokumentasi Sistem (SOP, UAT)"]
   },
   {
     id: "02",
-    title: "Pengembangan Website & Sistem",
-    desc: "Merancang dan membangun website maupun sistem informasi yang disesuaikan dengan kebutuhan pengguna dan tujuan bisnis. Fokus pada solusi yang tidak hanya berjalan secara teknis, tetapi juga mudah digunakan, mudah dikelola, dan mampu mendukung proses kerja yang lebih efisien.",
-    tags: ["Company Profile Website", "Personal Website", "Landing Page", "Dashboard System", "Information System", "Frontend Development", "Backend Integration", "Database Implementation", "Responsive Design", "API Integration", "Deployment & Maintenance", "SDLC End-to-End", "User Acceptance Testing (UAT)", "Monitoring Performa Aplikasi", "Python", "GitHub"]
+    title: "Manajemen Data & Validasi",
+    desc: "Memastikan integritas dan kualitas data untuk kebutuhan operasional. Berpengalaman dalam memvalidasi ribuan data, merapikan dataset kompleks, dan melakukan digitalisasi dokumen agar terstruktur dan siap mendukung pengambilan keputusan.",
+    tags: ["Data Validation", "Data Management", "Data Integrity", "Digital Archiving", "Data Processing", "Spreadsheet Management", "Reporting", "Validasi Data Massal"]
   },
   {
     id: "03",
-    title: "Manajemen Data & Administrasi Digital",
-    desc: "Membantu mengelola data agar lebih rapi, terstruktur, dan siap digunakan untuk kebutuhan operasional maupun pengambilan keputusan. Mulai dari input data, validasi, perapihan dataset, hingga penyajian informasi dalam bentuk yang lebih mudah dipahami.",
-    tags: ["Data Entry", "Data Validation", "Data Cleaning", "Data Organization", "Spreadsheet Management", "Data Processing", "Reporting", "Data Visualization", "Digital Documentation", "Digital Archiving", "Administrative Support", "Information Structuring", "Data Integrity", "Validasi Data Massal", "Pelaporan Manajemen", "Google Workspace", "Microsoft Office"]
+    title: "Siklus Pengembangan Sistem (SDLC)",
+    desc: "Mengawal siklus pengembangan perangkat lunak secara end-to-end. Memastikan sistem atau website yang dibangun tidak hanya berfungsi secara teknis, tetapi juga menjawab kebutuhan pengguna akhir dan mencapai metrik keberhasilan yang ditargetkan.",
+    tags: ["SDLC End-to-End", "User Acceptance Testing (UAT)", "System Implementation", "Frontend & Backend Logic", "Database Implementation", "Dashboard System", "API Integration", "Deployment & Maintenance"]
   },
   {
     id: "04",
-    title: "Pengembangan Berbasis AI",
-    desc: "Memanfaatkan teknologi Artificial Intelligence untuk mempercepat proses riset, dokumentasi, eksplorasi solusi, dan pengembangan produk digital. AI digunakan sebagai alat bantu produktivitas untuk menghasilkan proses kerja yang lebih efisien tanpa mengurangi kualitas hasil akhir.",
-    tags: ["AI Workflow", "Prompt Engineering", "AI Research", "AI-Assisted Coding", "Technical Documentation", "Rapid Prototyping", "Productivity Optimization", "Automation Exploration", "Content Generation", "Knowledge Management"]
+    title: "Koordinasi Proyek & Kepemimpinan",
+    desc: "Menjadi jembatan antara kebutuhan bisnis (non-teknis) dan tim pengembang (teknis). Terbiasa memimpin tim, menyusun prioritas proyek, dan menjaga komunikasi antar pemangku kepentingan agar proyek selesai tepat waktu dan sesuai ekspektasi.",
+    tags: ["Project Coordination", "Team Leadership", "Stakeholder Communication", "Task Coordination", "Project Documentation", "Public Speaking", "IT Project Management", "TOEFL Score 537"]
   },
   {
     id: "05",
-    title: "Riset Digital & Perencanaan Solusi",
-    desc: "Setiap solusi yang baik dimulai dari pemahaman masalah yang tepat. Saya terbiasa melakukan analisis kebutuhan, menyusun alur kerja, memetakan proses, dan merancang pendekatan yang paling sesuai sebelum pengembangan dimulai.",
-    tags: ["Requirement Analysis", "Workflow Design", "User Flow", "Feature Planning", "System Mapping", "Problem Solving", "Solution Design", "Digital Strategy", "Project Planning", "Business Process Understanding", "Business Process Mapping", "Requirement Gathering", "Dokumentasi Sistem (SOP, UAT)", "Analisis Proses Bisnis"]
+    title: "Komunikasi Visual & Prototyping",
+    desc: "Menerjemahkan ide dan kebutuhan sistem menjadi rancangan visual yang mudah dipahami. Mulai dari pembuatan wireframe, prototipe antarmuka dasar, hingga pembuatan materi komunikasi digital yang mendukung branding proyek.",
+    tags: ["UI Prototyping", "Wireframing", "Visual Communication", "Graphic Design", "Social Media Design", "Presentation Design", "Brand Identity", "Mockup Creation"]
   },
   {
     id: "06",
-    title: "Komunikasi & Koordinasi Proyek",
-    desc: "Menjadi penghubung antara kebutuhan teknis dan non-teknis agar setiap proses dapat berjalan lebih jelas dan terarah. Terbiasa berkoordinasi dengan berbagai pihak, menyusun kebutuhan proyek, dan menjaga komunikasi agar tujuan dapat dicapai secara efektif.",
-    tags: ["Project Coordination", "Stakeholder Communication", "Team Collaboration", "Information Management", "Requirement Gathering", "Project Documentation", "Operational Support", "Digital Communication", "Task Coordination", "Process Alignment", "Stakeholder Management", "IT Project Management", "Koordinasi Lintas Fungsi", "TOEFL Score 537"]
+    title: "Pengembangan Berbasis AI",
+    desc: "Memanfaatkan teknologi Artificial Intelligence (Prompt Engineering) untuk mempercepat proses riset, menyusun kerangka dokumentasi, dan mengeksplorasi solusi guna meningkatkan produktivitas pengembangan.",
+    tags: ["Prompt Engineering", "AI Workflow", "AI Research", "AI-Assisted Coding", "Rapid Prototyping", "Productivity Optimization", "Content Generation"]
   }
 ];
 
@@ -67,7 +67,7 @@ export default function SkillsSection() {
 
   return (
     <motion.section 
-      className="py-10 md:py-28 px-4 md:px-8 bg-bg-main relative overflow-hidden" 
+      className="py-16 md:py-24 px-4 md:px-8 bg-bg-main relative overflow-hidden" 
       id="keahlian"
       variants={staggerContainer}
       initial="hidden"
@@ -163,44 +163,53 @@ export default function SkillsSection() {
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-xl max-h-[90vh] overflow-hidden flex flex-col bg-bg-card rounded-[2rem] shadow-2xl border border-black/5 dark:border-white/5"
+                className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col bg-bg-card rounded-[2rem] shadow-2xl border border-black/5 dark:border-white/5"
               >
-                <div className="h-2 w-full bg-gradient-to-r from-primary via-accent to-primary-dark"></div>
-                
-                <div className="p-6 md:p-8 flex flex-col overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center shadow-lg">
-                      <span className="material-symbols-outlined text-white text-2xl md:text-3xl">{skillIcons[selectedSkill.id] || "star"}</span>
-                    </div>
-                    <button 
-                      onClick={() => setSelectedSkill(null)}
-                      className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 text-gray-500 transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-sm">close</span>
-                    </button>
+                {/* Fixed Header */}
+                <div className="p-6 md:p-8 pb-0 md:pb-0 flex justify-between items-center shrink-0 w-full bg-bg-card z-20">
+                  {/* Left: ASYNC Logo */}
+                  <div className="w-[90px] md:w-[110px] flex items-center justify-start opacity-90 -ml-1">
+                    <img 
+                      src="/logo-async-gold.png" 
+                      alt="ASYNC" 
+                      className="w-full h-auto object-contain object-left" 
+                      onError={(e) => { (e.target as HTMLImageElement).src = '/logo-async.png'; }}
+                    />
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold font-serif text-text-main mb-2 leading-tight tracking-tight">
+                  {/* Right: Close Button */}
+                  <button 
+                    onClick={() => setSelectedSkill(null)}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 transition-colors -mr-1"
+                  >
+                    <span className="material-symbols-outlined text-base">close</span>
+                  </button>
+                </div>
+
+                {/* Scrollable Content Body */}
+                <div className="px-6 pb-6 md:px-8 md:pb-8 pt-1 md:pt-2 flex flex-col overflow-y-auto h-full z-10" style={{ scrollbarWidth: 'none' }}>
+                  <h3 className="text-2xl md:text-3xl font-extrabold font-serif text-text-main mb-3 leading-tight tracking-tight text-left">
                     {selectedSkill.title}
                   </h3>
                   
-                  <p className="text-text-muted text-sm md:text-base leading-relaxed mb-6">
+                  <p className="text-text-muted text-base md:text-lg leading-relaxed mb-6 text-left">
                     {selectedSkill.desc}
                   </p>
 
-                  <div className="border-t border-gray-100 pt-5 mt-2">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="w-2 h-2 rounded-full bg-primary/80"></span>
-                      <span className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-widest">Fokus Area</span>
+                  <div className="pt-5 mt-auto border-t border-black/5 dark:border-white/5">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      <span className="text-[10px] md:text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Fokus Area & Teknologi</span>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    
+                    <div className="flex flex-wrap gap-2.5 justify-start">
                       {selectedSkill.tags.map((tag: string, i: number) => (
-                        <span 
-                          key={i}
-                          className="px-3 py-1.5 md:px-4 md:py-2 bg-primary/5 border border-primary/10 text-primary text-xs md:text-sm font-medium rounded-xl cursor-default hover:bg-primary/10 transition-colors"
+                        <div 
+                          key={i} 
+                          className="px-3.5 py-1.5 bg-bg-main border border-black/5 dark:border-white/10 rounded-lg text-sm md:text-base font-medium text-text-muted hover:text-primary transition-colors shadow-sm cursor-default"
                         >
                           {tag}
-                        </span>
+                        </div>
                       ))}
                     </div>
                   </div>

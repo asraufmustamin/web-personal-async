@@ -14,7 +14,7 @@ const allPortfolios = [
   {
     id: 1,
     title: "Sistem Informasi Terpadu Desa Cenrana",
-    desc: "Sistem Informasi Desa Terpadu (desacenrana.id) yang dikembangkan end-to-end (SDLC) dengan 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
+    desc: "Platform digital end-to-end dengan 3 modul utama: transparansi anggaran, e-Surat, dan manajemen data. Memimpin siklus pengembangan dari analisis kebutuhan hingga peluncuran, mencatatkan tingkat keberhasilan UAT 93,8% dan skor kemudahan penggunaan (SUS) 75,6.",
     category: "Sistem & Web",
     image: "/screenshot-3910.png",
     link: "https://desacenrana.id/",
@@ -22,6 +22,30 @@ const allPortfolios = [
       "/desacenrana1-2.png",
       "/desacenrana1-3.png",
       "/desacenrana1-4.png"
+    ]
+  },
+  {
+    id: 13,
+    title: "Prototipe SIM Rumah Tangga (Bea Cukai)",
+    desc: "Rancangan antarmuka dan alur proses bisnis untuk Sistem Informasi Manajemen (SIM) operasional instansi. Hasil dari requirement gathering komprehensif yang memetakan kerumitan alur kerja fisik menjadi solusi digital terstruktur.",
+    category: "Sistem & Web",
+    image: "/async-placeholder.png", // TODO: ganti dengan screenshot asli
+    gallery: [
+      "/async-placeholder.png",
+      "/async-placeholder.png"
+    ]
+  },
+  {
+    id: 3,
+    title: "Sistem Pendukung Keputusan (Metode TOPSIS)",
+    desc: "Sistem analisis data berbasis web (makassarauto.my.id) untuk mengoptimalkan pemilihan kendaraan bekas berdasarkan 7 kriteria kompleks. Menerjemahkan kebutuhan riset menjadi logika algoritma yang fungsional dan dapat diakses publik.",
+    category: "Sistem & Web",
+    image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
+    link: "https://makassarauto.my.id/",
+    gallery: [
+      "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800",
+      "/topsis-1.png",
+      "/topsis-2.png"
     ]
   },
   {
@@ -37,22 +61,9 @@ const allPortfolios = [
     ]
   },
   {
-    id: 3,
-    title: "Sistem Prediksi Menggunakan Metode TOPSIS",
-    desc: "Sistem Pendukung Keputusan berbasis TOPSIS (makassarauto.my.id) untuk optimasi pemilihan motor bekas — mengolah data dari 3 dealer di Kota Makassar dengan 7 kriteria penilaian. Sistem live dan dapat diakses publik.",
-    category: "Sistem & Web",
-    image: "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800", // TODO: ganti dengan screenshot manual dari user
-    link: "https://makassarauto.my.id/",
-    gallery: [
-      "https://s0.wp.com/mshots/v1/https://makassarauto.my.id/?w=1200&h=800", // TODO: ganti dengan screenshot manual dari user
-      "/topsis-1.png",
-      "/topsis-2.png"
-    ]
-  },
-  {
     id: 4,
-    title: "Landing Page",
-    desc: "Halaman promosi atau personal branding yang dirancang untuk menyampaikan informasi secara ringkas, jelas, dan menarik.",
+    title: "Landing Page & Web Profil",
+    desc: "Halaman promosi dan personal branding yang dirancang dengan pendekatan visual elegan untuk menyampaikan informasi secara ringkas, jelas, dan memikat.",
     category: "Sistem & Web",
     image: "/asyn-3.png",
     gallery: [

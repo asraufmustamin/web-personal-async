@@ -4,182 +4,211 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
+import CaseStudyDetail from "@/components/CaseStudySection";
+
+const categories = ["Semua", "Profesional", "Proyek", "Desain & Kreatif", "Organisasi"];
 
 const allExperiences = [
   {
-    role: "Ketua OSIS",
-    company: "SMAN 2 Enrekang",
-    location: "Enrekang",
-    date: "2021 – 2022",
-    description: "Memimpin organisasi siswa intra sekolah — mengkoordinasikan program kerja, mengelola komunikasi antara siswa dan pihak sekolah, serta merencanakan dan mengevaluasi seluruh kegiatan OSIS selama masa jabatan.",
+    role: "System Analyst & DSS Developer",
+    company: "Freelance / Proyek Independen",
+    location: "Makassar",
+    date: "Apr 2026 – Jun 2026",
+    description: "Mengembangkan Sistem Pendukung Keputusan (SPK) metode TOPSIS berbasis web. Menganalisis kebutuhan pengguna, memvalidasi variabel keputusan, dan menyusun dokumentasi sistem yang fungsional.",
     activities: [
-      "Mengkoordinasikan program kerja tahunan OSIS.",
-      "Mengelola komunikasi antara siswa dan pihak sekolah.",
-      "Merencanakan dan mengevaluasi seluruh kegiatan OSIS."
+      "Menganalisis kebutuhan & variabel keputusan.",
+      "Mengembangkan SPK metode TOPSIS.",
+      "Menyusun dokumentasi sistem fungsional."
     ],
-    competencies: ["Leadership", "Public Speaking", "Team Management", "Decision Making"],
-    label: "Organisasi",
-    category: "Organisasi",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Logo_OSIS.svg/1024px-Logo_OSIS.svg.png",
-    theme: "from-[#064e3b] to-[#059669]"
+    competencies: ["System Analysis", "Decision Support System", "Requirement Documentation"],
+    label: "Freelance",
+    category: "Proyek",
+    logo: "/logo-async-gold.png",
+    theme: "from-[#7c2d12] to-[#ea580c]",
+    relatedProject: "topsis"
+  },
+  {
+    role: "Business Analyst & Project Lead",
+    company: "Sistem Terpadu Desa Cenrana",
+    location: "Kabupaten Maros",
+    date: "Jul 2025 – Apr 2026",
+    description: "Memimpin siklus pengembangan (SDLC) platform digital desa secara end-to-end. Menggali kebutuhan langsung dari perangkat desa dan menerjemahkannya menjadi solusi web yang mencatatkan keberhasilan UAT 93,8%.",
+    activities: [
+      "Memimpin SDLC end-to-end platform desa.",
+      "Melakukan requirement gathering & UI prototyping.",
+      "Mengeksekusi User Acceptance Testing (UAT)."
+    ],
+    competencies: ["Business Analysis", "Project Leadership", "Requirement Gathering", "UAT"],
+    label: "Proyek Utama",
+    category: "Proyek",
+    logo: "/logonobel.png",
+    theme: "from-[#7c2d12] to-[#ea580c]",
+    relatedProject: "cenrana"
+  },
+  {
+    role: "System Analyst Intern",
+    company: "Kanwil Bea Cukai Sulbagsel",
+    location: "Makassar",
+    date: "Mar 2025 – Jul 2025",
+    description: "Menganalisis kebutuhan operasional instansi untuk merancang prototipe Sistem Informasi Manajemen (SIM) Rumah Tangga. Menyusun struktur basis data, ERD, process mapping, hingga desain antarmuka.",
+    activities: [
+      "Requirement gathering & business process mapping.",
+      "Merancang ERD & struktur basis data.",
+      "Membuat prototipe UI Sistem Informasi Manajemen."
+    ],
+    competencies: ["System Analysis", "Business Process Mapping", "Prototyping", "Database Design"],
+    label: "Magang Kemenkeu",
+    category: "Profesional",
+    logo: "/logobeacukai.png",
+    theme: "from-[#0f172a] to-[#334155]",
+    relatedProject: null
+  },
+  {
+    role: "Data Validation Intern",
+    company: "BPJS Ketenagakerjaan",
+    location: "Makassar",
+    date: "Okt 2024 – Jan 2025",
+    description: "Memastikan integritas dan keakuratan data instansi dengan memvalidasi lebih dari 5.000 data kepesertaan. Mengoperasikan sistem CRM internal untuk pemantauan progres dan sinkronisasi data operasional.",
+    activities: [
+      "Memvalidasi 5.000+ data kepesertaan.",
+      "Mengelola sinkronisasi data via CRM internal.",
+      "Mengeksekusi komunikasi digital massal."
+    ],
+    competencies: ["Data Validation", "Data Integrity", "CRM Operation", "Quality Assurance"],
+    label: "MBKM",
+    category: "Profesional",
+    logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",
+    theme: "from-[#0f172a] to-[#334155]",
+    relatedProject: null
+  },
+  {
+    role: "Data Digitalization Support",
+    company: "Sistem Kusuka KKP",
+    location: "Freelance",
+    date: "Mei 2024 – Jul 2024",
+    description: "Mengelola digitalisasi dan penginputan lebih dari 1.000 data profil pengguna ke portal sistem kementerian secara presisi dan sesuai standar prosedur administrasi.",
+    activities: [
+      "Melakukan digitalisasi 1.000+ data profil.",
+      "Memastikan keakuratan input data.",
+      "Menjalankan prosedur administrasi sistem."
+    ],
+    competencies: ["Data Management", "Data Entry", "Digital Administration"],
+    label: "Freelance",
+    category: "Profesional",
+    logo: "/logo-async-gold.png",
+    theme: "from-[#0f172a] to-[#334155]",
+    relatedProject: null
   },
   {
     role: "Koordinator INFOKOM",
     company: "UKM Pencinta Pasar Modal",
     location: "ITB Nobel Indonesia",
     date: "2023 – 2024",
-    description: "Bertanggung jawab dalam pengelolaan komunikasi organisasi, distribusi informasi kegiatan, serta pengembangan identitas visual dan media sosial UKM agar lebih interaktif dan profesional.",
+    description: "Mengelola komunikasi resmi kelembagaan dan pengembangan identitas visual organisasi. Memastikan distribusi informasi berjalan efektif dan profesional.",
     activities: [
-      "Menjembatani komunikasi ke lembaga kemahasiswaan.",
-      "Menyusun dan mendistribusikan informasi.",
-      "Mengelola media sosial organisasi."
+      "Menjembatani komunikasi antar lembaga.",
+      "Mengelola penjadwalan publikasi media sosial.",
+      "Merancang materi visual komunikasi."
     ],
-    competencies: ["Leadership", "Communication", "Branding", "Social Media Management"],
+    competencies: ["Communication", "Stakeholder Management", "Visual Branding"],
     label: "Organisasi",
     category: "Organisasi",
-    logo: "https://cdn-icons-png.flaticon.com/512/1006/1006555.png",
-    theme: "from-[#064e3b] to-[#059669]"
+    logo: "/Logo%20PPM-1.png",
+    theme: "from-[#064e3b] to-[#059669]",
+    relatedProject: null
   },
   {
-    role: "Developer",
-    company: "Sistem Prediksi & SPK",
-    location: "Academic Projects",
-    date: "Project-Based",
-    description: "Mengembangkan berbagai sistem berbasis data untuk membantu proses analisis, prediksi, dan pengambilan keputusan menggunakan algoritma dan metode yang sesuai dengan kebutuhan.",
+    role: "Ketua Organisasi Siswa Intra Sekolah (OSIS)",
+    company: "SMA Negeri 2 Enrekang",
+    location: "Enrekang",
+    date: "2020 – 2021",
+    description: "Memimpin kepengurusan OSIS dan mengoordinasikan berbagai program kerja. Memastikan komunikasi yang baik antara siswa, guru, dan pihak sekolah.",
     activities: [
-      "Analisis kebutuhan pengguna.",
-      "Pengolahan dan persiapan dataset.",
-      "Implementasi algoritma prediksi & analisis."
+      "Mengkoordinasikan berbagai program kerja.",
+      "Memimpin kepengurusan dan anggota OSIS.",
+      "Menjadi penghubung komunikasi."
     ],
-    competencies: ["Decision Support System", "Data Analysis", "System Development"],
-    label: "Riset Akademik",
-    category: "Proyek",
-    logo: "/logouin.png",
-    theme: "from-[#7c2d12] to-[#ea580c]"
+    competencies: ["Leadership", "Public Speaking", "Event Management"],
+    label: "Organisasi",
+    category: "Organisasi",
+    logo: "/logo-osis.png",
+    theme: "from-[#1e40af] to-[#3b82f6]",
+    relatedProject: null
   },
   {
-    role: "Staf Pengelolaan & Validasi Data",
-    company: "BPJS Ketenagakerjaan",
+    role: "Desainer Grafis & Media Sosial",
+    company: "UKM Pencinta Pasar Modal",
     location: "Makassar",
-    date: "Okt 2024 – Jan 2025",
-    description: "Memvalidasi dan mengoreksi 5.000+ entri data peserta dalam SIM BPJS Ketenagakerjaan dengan akurasi 99%+. Mengelola program komunikasi digital terjadwal kepada 3.000+ peserta aktif serta melaksanakan digitalisasi dokumen administrasi fisik ke sistem digital.",
+    date: "2023 – 2024",
+    description: "Merancang kumpulan desain media sosial yang mendukung branding organisasi dan komunikasi publikasi digital untuk kepengurusan periode 2024-2025.",
     activities: [
-      "Memvalidasi dan mengoreksi 5.000+ entri data peserta.",
-      "Mengelola komunikasi digital kepada 3.000+ peserta aktif.",
-      "Melaksanakan digitalisasi dan pengarsipan dokumen."
+      "Membuat desain konten Feed & Story Instagram.",
+      "Mengelola aset komunikasi visual organisasi.",
+      "Mendukung kampanye publikasi digital."
     ],
-    competencies: ["Data Validation", "Data Integrity", "Digital Archiving", "Stakeholder Communication"],
-    label: "MBKM",
-    category: "Profesional",
-    logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",
-    theme: "from-[#0f172a] to-[#334155]"
+    competencies: ["Graphic Design", "Social Media Branding", "Visual Communication"],
+    label: "Desain",
+    category: "Desain & Kreatif",
+    logo: "/logo_ppm_transparent.png",
+    theme: "from-[#ec4899] to-[#db2777]",
+    relatedProject: null,
+    gallery: [
+      "/ppm-1.png",
+      "/ppm-2.png",
+      "/ppm-3.png",
+      "/ppm-4.png",
+      "/ppm-5.png"
+    ]
   },
   {
-    role: "Analis Sistem & Staf Administrasi Digital",
-    company: "Kanwil Bea Cukai Sulbagsel",
-    location: "Makassar",
-    date: "Mar 2025 – Jul 2025",
-    description: "Menganalisis kebutuhan operasional instansi dan merancang prototipe SIM Rumah Tangga — mencakup requirement gathering, business process mapping, dokumentasi proses bisnis, dan perancangan alur sistem. Merancang 20+ aset komunikasi visual yang disetujui tanpa revisi mayor.",
-    activities: [
-      "Requirement gathering & business process mapping.",
-      "Merancang prototipe Sistem Informasi Manajemen.",
-      "Memproduksi 20+ aset komunikasi visual instansi."
-    ],
-    competencies: ["Business Process Mapping", "Requirement Gathering", "System Analysis", "Visual Communication"],
-    label: "MBKM Flagship",
-    category: "Profesional",
-    logo: "/logobeacukai.png",
-    theme: "from-[#0f172a] to-[#334155]"
-  },
-  {
-    role: "Freelance Designer & Data Entry",
-    company: "Freelance / Independent",
-    location: "Makassar",
-    date: "2023 – Sekarang",
-    description: "Menangani 5+ proyek desain grafis untuk klien dari berbagai sektor — mencakup logo & brand identity, materi visual media sosial, poster/flyer event, dan konten visual UMKM. Juga melaksanakan proyek data entry ke Sistem Kusuka milik Kementerian Kelautan dan Perikanan (KKP).",
-    activities: [
-      "Mendesain logo, brand identity, dan konten media sosial.",
-      "Membuat poster, flyer event, dan materi visual UMKM.",
-      "Data entry ke Sistem Kusuka KKP."
-    ],
-    competencies: ["Graphic Design", "Brand Identity", "Data Entry", "Content Creation"],
-    label: "Freelance",
-    category: "Profesional",
-    logo: "/logo-async-gold.png",
-    theme: "from-[#0f172a] to-[#334155]"
-  },
-  {
-    role: "Project Lead",
-    company: "Sistem Desa Cenrana",
-    location: "Kabupaten Maros",
-    date: "Jul 2025 – Apr 2026",
-    description: "Memimpin pengembangan end-to-end (SDLC) dan deployment Sistem Informasi Desa Terpadu (desacenrana.id) — mencakup 3 modul utama: transparansi anggaran real-time, e-Surat (10 jenis dokumen), dan manajemen data kependudukan. Skor aksesibilitas Google Lighthouse 94%.",
-    activities: [
-      "Memimpin SDLC end-to-end hingga deployment.",
-      "Mengembangkan 3 modul utama sistem desa.",
-      "Implementasi keamanan data (enkripsi NIK)."
-    ],
-    competencies: ["Project Leadership", "SDLC", "Website Development", "UI/UX Design"],
-    label: "Proyek Desa",
-    category: "Proyek",
-    logo: "/logonobel.png",
-    theme: "from-[#7c2d12] to-[#ea580c]"
-  },
-  {
-    role: "Developer",
-    company: "Layanan Aspirasi Digital",
-    location: "Program KKN Cenrana",
+    role: "Kreator Konten Visual",
+    company: "POSKO KKN Desa Cenrana",
+    location: "Cenrana",
     date: "Jul 2025 – Sep 2025",
-    description: "Mengembangkan konsep layanan aspirasi digital yang bertujuan membantu masyarakat menyampaikan keluhan maupun aspirasi secara lebih cepat, mudah, dan terdokumentasi.",
+    description: "Merancang desain konten media sosial yang mendukung publikasi kegiatan dan program kerja Posko KKN selama periode pengabdian di Desa Cenrana.",
     activities: [
-      "Analisis kebutuhan pelaporan masyarakat.",
-      "Perancangan konsep platform digital.",
-      "Deployment dan implementasi website."
+      "Merancang materi publikasi program kerja.",
+      "Mendokumentasikan kegiatan pengabdian.",
+      "Mengelola visual konten harian."
     ],
-    competencies: ["User Research", "System Design", "Community Engagement"],
-    label: "Proyek KKN",
-    category: "Proyek",
-    logo: "/logonobel.png",
-    theme: "from-[#7c2d12] to-[#ea580c]"
+    competencies: ["Content Creation", "Digital Design", "Documentation"],
+    label: "Desain",
+    category: "Desain & Kreatif",
+    logo: "/logo_nobel_transparent.png",
+    theme: "from-[#8b5cf6] to-[#6d28d9]",
+    relatedProject: null,
+    gallery: [
+      "/cenranice-1.png",
+      "/cenranice-2.png"
+    ]
   }
 ];
 
+
 const highlights = [
-  { title: "Kepemimpinan Proyek", desc: "Memimpin pengembangan Sistem Informasi Desa Cenrana dari tahap analisis kebutuhan hingga implementasi." },
-  { title: "Pengalaman Instansi & Layanan Publik", desc: "Berpengalaman bekerja di lingkungan instansi pemerintah dan pelayanan publik melalui program MBKM." },
-  { title: "Manajemen Data", desc: "Terbiasa mengelola, memvalidasi, merapikan, dan menyajikan data untuk kebutuhan administrasi maupun sistem informasi." },
-  { title: "Desain & Komunikasi Digital", desc: "Memiliki pengalaman dalam desain visual, branding digital, dokumentasi media, dan komunikasi organisasi." },
-  { title: "Pengembangan Sistem & Website", desc: "Mengembangkan website, sistem informasi, sistem prediksi, dan sistem pendukung keputusan berbasis kebutuhan pengguna." },
-  { title: "Kepemimpinan & Organisasi", desc: "Memiliki pengalaman memimpin organisasi sekolah dan mengelola komunikasi organisasi tingkat perguruan tinggi." },
-  { title: "Pola Pikir Solusi Digital", desc: "Terbiasa memahami kebutuhan, melakukan riset, dan merancang solusi yang sesuai dengan konteks pengguna." },
-  { title: "Pembelajaran Berkelanjutan", desc: "Aktif mempelajari teknologi, tools, dan pendekatan baru untuk meningkatkan kualitas solusi digital." },
+  { title: "Lulusan & Yudisium Terbaik (IPK 3,93)", desc: "Sebagai Fresh Graduate, terbukti memiliki pondasi akademik dan logika penyelesaian masalah yang solid dengan predikat Cumlaude dan Yudisium Terbaik Fakultas Teknologi Industri." },
+  { title: "Skor Penerimaan Tinggi (UAT 93,8%)", desc: "Mengawal pengembangan sistem informasi yang benar-benar diterima pengguna nyata, dibuktikan dengan skor User Acceptance Test mencapai 93,8%." },
+  { title: "Pengiriman Solusi Efisien (Live 3 Bulan)", desc: "Menunjukkan ketangkasan (agility) dalam mengorkestrasi proyek dari tahap analisis kebutuhan hingga sistem dirilis (live) dalam waktu singkat." },
+  { title: "Implementasi AI-Assisted Development", desc: "Berpengalaman bertindak sebagai logic orchestrator yang memanfaatkan alat bantu Artificial Intelligence untuk mempercepat siklus pengembangan sistem (SDLC)." },
+  { title: "Validasi Skala Besar (5.000+ Data)", desc: "Membuktikan ketelitian tingkat tinggi dan kesiapan dalam menjaga integritas ribuan data krusial untuk kebutuhan instansi publik skala enterprise." },
+  { title: "Standar Keamanan & Privasi (NIK)", desc: "Mengedepankan etika dan kerahasiaan pengguna dalam perancangan sistem, termasuk penerapan enkripsi untuk keamanan integrasi data kependudukan." },
+  { title: "Kolaborasi Lintas Sektor", desc: "Adaptif dan luwes bekerja sama dengan berbagai kultur entitas: Pemerintahan Desa, Kementerian (Kemenkeu, KKP), hingga BUMN." },
+  { title: "Pengelolaan Komunikasi & Visual", desc: "Memiliki keahlian komunikasi publik dan visual branding yang terasah melalui peran di Subbagian Humas dan kepemimpinan organisasi." },
 ];
 
 export default function ExperienceSection() {
-  const [currentIndex, setCurrentIndex] = useState(4);
-  const [isMobile, setIsMobile] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Semua");
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
   const [hoveredHighlight, setHoveredHighlight] = useState<number | null>(null);
+  const [selectedExpIndex, setSelectedExpIndex] = useState<number | null>(null);
+
+  const filteredExperiences = activeCategory === "Semua" 
+    ? allExperiences 
+    : allExperiences.filter(e => e.category === activeCategory);
+    
   const highlightsRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
-  const cardsContainerRef = useRef(null);
-  const isCardsInView = useInView(cardsContainerRef, { once: true, margin: "-50px" });
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile(); 
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + 1, allExperiences.length - 1));
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
-  };
 
   const scrollHighlights = (direction: 'left' | 'right') => {
     if (highlightsRef.current) {
@@ -188,22 +217,30 @@ export default function ExperienceSection() {
     }
   };
 
-  const activeItem = allExperiences[currentIndex];
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedExpIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedExpIndex]);
 
   return (
     <motion.section 
-      className="py-10 md:py-24 px-4 md:px-8 bg-bg-card relative overflow-hidden border-t border-black/5" 
+      className="py-16 md:py-24 px-4 md:px-8 bg-bg-card relative overflow-hidden border-t border-black/5" 
       id="pengalaman"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.05 }}
     >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col">
         
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center text-center mb-10"
+          className="flex flex-col items-center text-center mb-8"
           variants={fadeUpBlur}
         >
           <div className="flex items-center gap-3 mb-4">
@@ -214,7 +251,7 @@ export default function ExperienceSection() {
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
           </div>
 
-          <h2 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-text-main tracking-tight mb-6 px-2">
+          <h2 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-text-main tracking-tight mb-4 px-2">
             Pengalaman{" "}
             {isHeadingInView ? (
               <Typewriter 
@@ -228,166 +265,118 @@ export default function ExperienceSection() {
               <span className="invisible">Profesional & Organisasi.</span>
             )}
           </h2>
-          <p className="text-text-muted text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-            Visualisasi terpusat perjalanan karir, proyek, dan kolaborasi yang disusun rapi berdasarkan klasifikasinya. Silakan jelajahi kartu di bawah ini.
-          </p>
         </motion.div>
 
-        {/* Card Fan Carousel */}
-        <motion.div 
-          ref={cardsContainerRef}
-          className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden mt-2 select-none"
-          variants={fadeUpBlur}
-        >
-          {allExperiences.map((item, index) => {
-            const offset = index - currentIndex;
-            const absOffset = Math.abs(offset);
-            const isActive = offset === 0;
-            const isVisible = absOffset <= 3;
-
-            return (
-              <motion.div
-                key={index}
-                className={`absolute w-[220px] h-[300px] md:w-[260px] md:h-[360px] rounded-2xl md:rounded-[2rem] shadow-2xl cursor-pointer flex flex-col justify-between p-6 md:p-7 text-white bg-gradient-to-br ${item.theme} border border-white/20 overflow-hidden group hover:shadow-[0_0_35px_rgba(255,255,255,0.15)] transition-shadow duration-500`}
-                animate={{
-                  x: isCardsInView ? offset * (isMobile ? 65 : 120) : 0,
-                  y: isCardsInView ? absOffset * (isMobile ? 12 : 20) : 0,
-                  rotateZ: isCardsInView ? offset * (isMobile ? 7 : 9) : 0,
-                  scale: isCardsInView ? (isActive ? 1 : Math.max(1 - absOffset * 0.12, 0.65)) : 0.85,
-                  opacity: isCardsInView ? (isVisible ? 1 : 0) : 0,
-                }}
-                transition={{
-                  x: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
-                  y: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
-                  rotateZ: { type: "spring", stiffness: 80, damping: 18, mass: 0.6 },
-                  scale: { type: "spring", stiffness: 100, damping: 20, mass: 0.5 },
-                  opacity: { duration: 0.3, ease: "easeOut" },
-                }}
-                style={{ zIndex: 50 - absOffset, willChange: "transform, opacity" }}
-                onClick={() => setCurrentIndex(index)}
+        {/* Category Filter Tabs */}
+        <div className="flex flex-col items-center mb-10">
+          <h3 className="text-2xl font-bold font-serif mb-6 text-text-main">Jelajahi <span className="text-primary">Portofolio</span></h3>
+          <div className="flex items-center justify-center gap-2 md:gap-3 flex-wrap">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 border ${
+                  activeCategory === cat
+                    ? 'bg-primary text-white border-primary shadow-[0_4px_20px_rgba(234,88,12,0.3)]'
+                    : 'bg-bg-card text-text-muted border-black/5 dark:border-white/5 hover:border-primary/30 hover:text-primary'
+                }`}
               >
-                {/* Logo Watermark Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
-                  <img src={item.logo} alt="" className="w-40 h-40 object-contain filter grayscale brightness-0 invert pointer-events-none" />
-                </div>
+                {cat}
+                <span className={`ml-2 px-1.5 py-0.5 rounded-full text-[10px] ${
+                  activeCategory === cat ? 'bg-white/20 text-white' : 'bg-black/5 dark:bg-white/5'
+                }`}>
+                  {cat === "Semua" ? allExperiences.length : allExperiences.filter(e => e.category === cat).length}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
 
-                {/* Card Content (Preview) */}
-                <div className="relative z-10 flex flex-col items-start">
-                  <span className="px-3 py-1 bg-white/20 rounded-full text-[10px] md:text-xs font-bold text-white backdrop-blur-md border border-white/20 uppercase tracking-wider shadow-sm">
-                    {item.label}
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mt-4 leading-snug drop-shadow-md">
-                    {item.role}
-                  </h3>
-                </div>
-                <div className="relative z-10">
-                  <p className="font-medium text-sm text-white drop-shadow-sm leading-tight">{item.company}</p>
-                  <p className="text-[11px] text-white/80 mt-1.5 font-mono bg-black/20 inline-block px-2 py-1 rounded-md backdrop-blur-sm">{item.date}</p>
-                </div>
-
-                {/* Overlay for inactive cards */}
-                <div className={`absolute inset-0 rounded-2xl md:rounded-[2rem] transition-opacity duration-500 ${isActive ? 'bg-transparent opacity-0' : 'bg-black/30 opacity-100'}`} />
-              </motion.div>
-            );
-          })}
+        {/* Grid of Cards ("Doors") */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          layout
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredExperiences.map((item, index) => {
+              // Find actual index in allExperiences for consistent ID linking
+              const actualIndex = allExperiences.findIndex(e => e.role === item.role && e.company === item.company);
+              
+              return (
+                <motion.div 
+                  key={`${item.role}-${item.company}`}
+                  layoutId={`exp-card-${actualIndex}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setSelectedExpIndex(actualIndex)}
+                  className="bg-bg-main border border-black/5 dark:border-white/5 rounded-[2rem] p-6 lg:p-8 cursor-pointer hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col relative overflow-hidden"
+                >
+                  {/* Background Glow */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  <div className="flex items-start justify-between mb-6 relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-black/20 flex items-center justify-center p-2.5 border border-black/5 dark:border-white/10 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                      <img src={item.logo} alt="" className="w-full h-full object-contain" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                    </div>
+                    <span className={`px-2.5 py-1 text-[10px] font-bold rounded-lg uppercase tracking-wider ${
+                        item.category === 'Profesional' ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400' :
+                        item.category === 'Proyek' ? 'bg-primary/10 text-primary' :
+                        'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                    }`}>
+                      {item.label}
+                    </span>
+                  </div>
+                  
+                  <div className="relative z-10 mb-4">
+                    <h3 className="font-bold text-lg md:text-xl text-text-main mb-1.5 group-hover:text-primary transition-colors leading-tight">
+                      {item.role}
+                    </h3>
+                    <p className="text-sm font-medium text-text-muted">{item.company}</p>
+                  </div>
+                  
+                  <div className="mt-auto relative z-10 flex items-center justify-between text-[11px] font-bold text-text-muted border-t border-black/5 dark:border-white/5 pt-5 uppercase tracking-wider">
+                    <span className="flex items-center gap-1.5">
+                      <span className="material-symbols-outlined text-[16px]">calendar_month</span> 
+                      {item.date.split("–")[0].trim()}
+                    </span>
+                    <span className={`flex items-center gap-1.5 transition-colors ${item.relatedProject ? 'text-primary group-hover:translate-x-1 transition-transform' : 'group-hover:text-text-main'}`}>
+                      {item.relatedProject ? (
+                        <>Buka Portofolio <span className="material-symbols-outlined text-[16px]">arrow_forward</span></>
+                      ) : (
+                        <>Detail <span className="material-symbols-outlined text-[16px]">open_in_new</span></>
+                      )}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </motion.div>
 
-        {/* Carousel Navigation */}
-        <div className="flex items-center justify-center gap-6 md:gap-8 mt-4 md:mt-6">
-          <button onClick={handlePrev} className="w-12 h-12 rounded-full bg-bg-card shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 dark:border-white/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === 0}>
-            <span className="material-symbols-outlined text-2xl">chevron_left</span>
-          </button>
-          
-          <div className="flex gap-2">
-             {allExperiences.map((_, i) => (
-               <div key={i} onClick={() => setCurrentIndex(i)} className={`h-2.5 rounded-full cursor-pointer transition-all duration-300 ${i === currentIndex ? 'bg-primary w-8' : 'bg-black/10 w-2.5 hover:bg-black/20'}`} />
-             ))}
-          </div>
-
-          <button onClick={handleNext} className="w-12 h-12 rounded-full bg-bg-card shadow-md flex items-center justify-center text-text-muted hover:text-primary hover:bg-bg-main transition-all active:scale-95 border border-black/5 dark:border-white/5 disabled:opacity-30 disabled:cursor-not-allowed" disabled={currentIndex === allExperiences.length - 1}>
-            <span className="material-symbols-outlined text-2xl">chevron_right</span>
-          </button>
-        </div>
-
-        {/* Detailed Information (Compact & Rectangular Split Layout) */}
-        <div className="max-w-5xl mx-auto mt-8 w-full bg-bg-card rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-500 ease-out border border-black/5 dark:border-white/5 p-6 md:p-8 relative overflow-hidden group">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, filter: "blur(6px)" }}
-              transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="flex flex-col md:flex-row gap-6 md:gap-10"
-            >
-              {/* Left Column: Core Info & Description */}
-              <div className="flex-1 md:border-r border-black/5 md:pr-8 flex flex-col justify-center">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                     <span className={`w-3 h-3 rounded-full bg-gradient-to-br ${activeItem.theme} shadow-sm`}></span>
-                     <span className="text-text-muted font-bold text-[11px] uppercase tracking-wider">{activeItem.category}</span>
-                  </div>
-                  {/* Logo Instansi Asli (Tanpa Efek Transparan) */}
-                  <img src={activeItem.logo} alt="" className="h-10 md:h-12 w-auto object-contain max-w-[120px] drop-shadow-sm" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-text-main leading-tight mb-2">{activeItem.role}</h3>
-                
-                <div className="flex flex-wrap items-center gap-2 mb-4 bg-bg-card py-2 px-3 rounded-lg border border-black/5 w-fit">
-                  <span className="material-symbols-outlined text-primary text-[16px]">domain</span>
-                  <span className="text-primary font-bold text-sm">{activeItem.company}</span>
-                  <span className="text-text-muted text-xs mx-1">•</span>
-                  <span className="text-text-muted text-xs font-mono">{activeItem.date}</span>
-                </div>
-                
-                <p className="text-text-main leading-relaxed text-sm">
-                  {activeItem.description}
-                </p>
-              </div>
-
-              {/* Right Column: Activities & Competencies */}
-              <div className="flex-1 flex flex-col justify-center gap-6">
-                <div>
-                  <h4 className="font-bold text-text-main mb-3 flex items-center gap-1.5 text-xs uppercase tracking-wide">
-                    <span className="material-symbols-outlined text-primary text-[18px]">task_alt</span>
-                    Aktivitas Utama
-                  </h4>
-                  <ul className="space-y-2 text-[13px] text-text-muted">
-                    {activeItem.activities.map((act, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                        <span className="leading-snug">{act}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-text-main mb-3 flex items-center gap-1.5 text-xs uppercase tracking-wide">
-                    <span className="material-symbols-outlined text-primary text-[18px]">psychology</span>
-                    Kompetensi
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeItem.competencies.map((comp, i) => (
-                        <span key={i} className="px-3 py-1 bg-primary/5 text-primary text-[11px] font-bold rounded-full border border-primary/10 transition-colors hover:bg-primary hover:text-white cursor-default">
-                          {comp}
-                        </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Highlights Section */}
+        {/* Highlights Section (MOVED TO BOTTOM) */}
         <motion.div 
-          className="mt-12 md:mt-28 relative group/section"
+          className="mt-24 mb-16 md:mb-24 relative group/section"
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-text-main font-serif">Professional <span className="text-primary">Highlights</span></h3>
+          <div className="text-center mb-8 md:mb-12 relative">
+            <h3 className="text-2xl md:text-3xl font-bold font-serif text-text-main mb-4">
+              Jejak Dampak & <span className="text-primary">Pencapaian</span>
+            </h3>
+            <p className="text-text-muted text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6">
+              Bukan sekadar daftar pengalaman, melainkan jejak bukti nyata dari dampak yang telah saya hadirkan untuk instansi, publik, dan kolaborasi tim.
+            </p>
+            
+            {/* Swipe/Scroll Hint */}
+            <div className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-[10px] md:text-[11px] font-bold uppercase tracking-wider animate-pulse border border-primary/20">
+              <span className="material-symbols-outlined text-[16px] leading-none">swipe</span>
+              <span className="leading-none pt-[1px]">Geser untuk melihat selengkapnya</span>
+              <span className="material-symbols-outlined text-[16px] leading-none">arrow_forward</span>
+            </div>
           </div>
           
           {/* Carousel Arrows (Hover Reveal) */}
@@ -408,11 +397,10 @@ export default function ExperienceSection() {
           {/* Highlights Container */}
           <div 
             ref={highlightsRef}
-            className="flex overflow-x-auto snap-x md:snap-mandatory gap-4 md:gap-6 pb-12 pt-10 scroll-smooth px-6 md:px-10 -mx-6 md:-mx-10 md:scroll-pl-10"
+            className="flex overflow-x-auto snap-x md:snap-mandatory gap-4 md:gap-6 pb-12 pt-6 scroll-smooth px-6 md:px-10 -mx-6 md:-mx-10 md:scroll-pl-10"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
             onMouseLeave={() => setHoveredHighlight(null)}
           >
-            {/* Tailwind utility for hiding scrollbar isn't standard, so inline style used */}
             <style jsx>{`
               div::-webkit-scrollbar {
                 display: none;
@@ -434,7 +422,7 @@ export default function ExperienceSection() {
                   initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.1 }}
                 >
                   <div
                     onClick={() => setActiveHighlight(isFocused ? null : i)}
@@ -448,8 +436,6 @@ export default function ExperienceSection() {
                         <h4 className={`font-bold text-[15px] md:text-lg mb-2 transition-colors duration-500 pr-2 ${isFocused ? 'text-white' : 'text-text-main'}`}>{h.title}</h4>
                         <p className={`text-[13px] md:text-sm leading-relaxed transition-colors duration-500 ${isFocused ? 'text-white/90' : 'text-text-muted'}`}>{h.desc}</p>
                     </div>
-                    
-                    {/* Decorative background element */}
                     <div className={`absolute -right-6 -bottom-6 w-24 h-24 rounded-full transition-opacity duration-700 blur-xl pointer-events-none ${isFocused ? 'bg-white/20 opacity-100' : 'bg-gradient-to-br from-primary/5 to-transparent opacity-0'}`}></div>
                   </div>
                 </motion.div>
@@ -459,6 +445,134 @@ export default function ExperienceSection() {
         </motion.div>
 
       </div>
+      
+      {/* Modal / Open Door (Fullscreen Overlay) */}
+      <AnimatePresence>
+        {selectedExpIndex !== null && (
+          <motion.div
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md p-0 md:p-6 lg:p-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedExpIndex(null)}
+          >
+            <motion.div 
+              layoutId={`exp-card-${selectedExpIndex}`}
+              className="w-full h-full md:h-auto max-h-full md:max-h-[90vh] md:rounded-[2.5rem] bg-bg-main shadow-2xl relative overflow-hidden flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="sticky top-0 z-50 flex items-center justify-between p-4 md:px-8 md:py-6 border-b border-black/5 dark:border-white/5 bg-bg-main/80 backdrop-blur-md">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white dark:bg-black/20 flex items-center justify-center p-2 border border-black/5 dark:border-white/10 shrink-0">
+                     <img src={allExperiences[selectedExpIndex].logo} alt="" className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h2 className="text-base md:text-lg font-bold text-text-main line-clamp-1 leading-tight">{allExperiences[selectedExpIndex].role}</h2>
+                    <p className="text-xs md:text-sm text-text-muted">{allExperiences[selectedExpIndex].company}</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setSelectedExpIndex(null)}
+                  className="w-10 h-10 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-colors shrink-0"
+                >
+                  <span className="material-symbols-outlined text-text-main">close</span>
+                </button>
+              </div>
+              
+              {/* Modal Body (Scrollable) */}
+              <div className="flex-1 overflow-y-auto p-5 md:p-8 lg:p-12">
+                <div className="max-w-4xl mx-auto">
+                  
+                  {/* Top Info Banner */}
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-8 border-b border-black/5 dark:border-white/5">
+                    <div>
+                      <h1 className="text-2xl md:text-4xl font-bold text-text-main mb-3 leading-tight">
+                        {allExperiences[selectedExpIndex].role}
+                      </h1>
+                      <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm font-medium text-text-muted">
+                        <span className="flex items-center gap-1.5 bg-black/5 dark:bg-white/5 px-3 py-1.5 rounded-lg">
+                          <span className="material-symbols-outlined text-[18px]">calendar_month</span> {allExperiences[selectedExpIndex].date}
+                        </span>
+                        {allExperiences[selectedExpIndex].location && (
+                          <span className="flex items-center gap-1.5 bg-black/5 dark:bg-white/5 px-3 py-1.5 rounded-lg">
+                            <span className="material-symbols-outlined text-[18px]">location_on</span> {allExperiences[selectedExpIndex].location}
+                          </span>
+                        )}
+                        <span className="flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1.5 rounded-lg">
+                          <span className="material-symbols-outlined text-[18px]">category</span> {allExperiences[selectedExpIndex].category}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Description & Competencies */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mb-12">
+                     <div className="lg:col-span-2 space-y-8">
+                       <div>
+                         <h3 className="text-lg font-bold text-text-main mb-3 font-serif">Tentang Peran</h3>
+                         <p className="text-text-muted leading-relaxed text-[15px]">{allExperiences[selectedExpIndex].description}</p>
+                       </div>
+                       <div>
+                          <h3 className="text-lg font-bold text-text-main mb-4 font-serif flex items-center gap-2">
+                            <span className="material-symbols-outlined text-primary">check_circle</span> 
+                            Aktivitas Utama
+                          </h3>
+                          <ul className="space-y-3">
+                            {allExperiences[selectedExpIndex].activities.map((act, i) => (
+                               <li key={i} className="flex gap-4 text-text-muted text-[15px]">
+                                 <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">{i+1}</span>
+                                 <span className="leading-relaxed">{act}</span>
+                               </li>
+                            ))}
+                          </ul>
+                       </div>
+                     </div>
+                     
+                     <div className="bg-bg-card p-6 rounded-[2rem] border border-black/5 dark:border-white/5 h-fit">
+                        <h3 className="text-lg font-bold text-text-main mb-5 font-serif flex items-center gap-2">
+                          <span className="material-symbols-outlined text-primary">psychology</span> 
+                          Kompetensi
+                        </h3>
+                        <div className="flex flex-wrap gap-2.5">
+                          {allExperiences[selectedExpIndex].competencies.map((comp, i) => (
+                            <span key={i} className="px-3 py-1.5 bg-bg-main border border-black/5 dark:border-white/10 text-text-main text-[13px] font-medium rounded-xl">
+                              {comp}
+                            </span>
+                          ))}
+                        </div>
+                     </div>
+                  </div>
+                  {/* Gallery Integration for Design Items */}
+                  {(allExperiences[selectedExpIndex] as any).gallery && (
+                    <div className="mt-8 mb-12">
+                       <h3 className="text-lg font-bold text-text-main mb-6 font-serif flex items-center gap-2">
+                         <span className="material-symbols-outlined text-primary">photo_library</span>
+                         Koleksi Visual
+                       </h3>
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                         {(allExperiences[selectedExpIndex] as any).gallery.map((img: string, i: number) => (
+                           <div key={i} className="rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 flex items-center justify-center">
+                             <img src={img} alt={`Gallery item ${i}`} className="w-full h-auto object-cover scale-[1.15] hover:scale-[1.25] transition-transform duration-500" />
+                           </div>
+                         ))}
+                       </div>
+                    </div>
+                  )}
+
+                  {/* Case Study Integration */}
+                  {allExperiences[selectedExpIndex].relatedProject && (
+                     <div className="mt-8 pt-8 border-t-2 border-dashed border-black/10 dark:border-white/10">
+                        <CaseStudyDetail projectId={allExperiences[selectedExpIndex].relatedProject!} />
+                     </div>
+                  )}
+
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 }

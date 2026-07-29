@@ -5,7 +5,6 @@ import AboutSection from "@/components/AboutSection";
 import ToolsSection from "@/components/ToolsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -25,8 +24,6 @@ export default function Home() {
         <ToolsSection />
         <SkillsSection />
         <ExperienceSection />
-        <PortfolioSection />
-
         <ContactSection />
         <Footer />
       </div>
