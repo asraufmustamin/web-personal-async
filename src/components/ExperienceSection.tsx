@@ -62,7 +62,27 @@ const allExperiences = [
     category: "Profesional",
     logo: "/logobeacukai.png",
     theme: "from-[#0f172a] to-[#334155]",
-    relatedProject: null
+    relatedProject: null,
+    proofSection: {
+      metrics: [
+        { label: "Rotasi Bidang", value: "5 Bidang", icon: "published_with_changes" },
+        { label: "Sistem Dikembangkan", value: "SIMIRA", icon: "inventory" },
+        { label: "Laporan MBKM", value: "344 Halaman", icon: "description" },
+        { label: "Durasi Rotasi", value: "4 Bulan", icon: "event_available" }
+      ],
+      workflow: [
+        { phase: "Analisis Kebutuhan Gudang", desc: "Wawancara pengelola gudang rumah tangga & pemetaan alur barang As-Is vs To-Be.", roleFocus: "IT Business Analyst" },
+        { phase: "Pengembangan Web SIMIRA", desc: "Merancang database MySQL & membangun prototipe Laravel dengan stok update real-time.", roleFocus: "System Analyst" },
+        { phase: "Media Monitoring & Cross-check", desc: "Analisis berita harian kepabeanan (NALIKA) & validasi silang data ribuan pegawai.", roleFocus: "Operational Analyst" },
+        { phase: "Pelaporan & Validasi Akademik", desc: "Menyusun laporan akhir magang 344 hal & validasi logbook MBKM di SIAKAD Nobel.", roleFocus: "Project Coordinator" }
+      ],
+      proofs: [
+        { title: "Dashboard Aplikasi SIMIRA", image: "/projects/simira-dashboard.jpeg", caption: "Screenshot antarmuka dashboard utama SIMIRA (PHP Laravel) di laptop kantor.", tag: "Prototipe Web" },
+        { title: "Proses Coding & Development", image: "/projects/simira-work-1.jpeg", caption: "Dokumentasi aktivitas pengembangan & pengujian sistem di meja kerja Bea Cukai.", tag: "Development" },
+        { title: "Verifikasi Spreadsheet Pegawai", image: "/projects/simira-work-2.jpeg", caption: "Suasana verifikasi data & analisis operasional instansi dengan seragam resmi.", tag: "Data Analysis" },
+        { title: "Logbook SIAKAD Nobel", image: "/projects/beacukai-siakad-log.jpeg", caption: "Tangkapan layar rekap logbook harian tervalidasi di portal siakad.nobel.ac.id.", tag: "Validasi SIAKAD" }
+      ]
+    }
   },
   {
     role: "Data Analyst & Account Representative Specialist",
@@ -81,7 +101,27 @@ const allExperiences = [
     category: "Profesional",
     logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",
     theme: "from-[#0f172a] to-[#334155]",
-    relatedProject: null
+    relatedProject: null,
+    proofSection: {
+      metrics: [
+        { label: "Data Divalidasi", value: ">5.000 Data", icon: "verified_user" },
+        { label: "Otomatisasi Penagihan", value: "WA Blasting", icon: "send" },
+        { label: "Sistem Terintegrasi", value: "Portal OSS", icon: "sync" },
+        { label: "Durasi Magang", value: "4 Bulan", icon: "calendar_today" }
+      ],
+      workflow: [
+        { phase: "Analisis Integrasi Portal OSS", desc: "Memetakan NIK & NPP perusahaan baru dari portal OSS Kemeninves/BKPM ke CRM BPJS.", roleFocus: "Process Analyst" },
+        { phase: "Pembersihan Data IGI (>5.000 Data)", desc: "Mengeksekusi validasi presisi tinggi pada spreadsheet kepesertaan untuk koreksi identitas.", roleFocus: "Data Quality Analyst" },
+        { phase: "Otomatisasi Penagihan Iuran", desc: "Pengoperasian sistem WA Blasting & Email massal untuk peringatan jatuh tempo tunggakan.", roleFocus: "Operations Specialist" },
+        { phase: "Edukasi & Sosialisasi Lapangan", desc: "Pendistribusian brosur & edukasi langsung program kepesertaan BPU bagi pekerja informal.", roleFocus: "Field Coordinator" }
+      ],
+      proofs: [
+        { title: "Administrasi Kantor Cabang", image: "/experience/bpjs/image14.jpeg", caption: "Aktivitas pengelolaan administrasi & verifikasi data peserta di kantor cabang.", tag: "Operasional Kantor" },
+        { title: "Cross-check Spreadsheet Data IGI", image: "/experience/bpjs/image15.jpeg", caption: "Proses validasi dan koreksi ketidakcocokan >5.000 data kepesertaan peserta.", tag: "Data Validation" },
+        { title: "Automated Communication System", image: "/experience/bpjs/image24.jpeg", caption: "Pengoperasian aplikasi komunikasi massal WA Blasting untuk penagihan iuran.", tag: "WA Blasting" },
+        { title: "Sosialisasi Kepesertaan BPU", image: "/experience/bpjs/image27.jpeg", caption: "Kegiatan edukasi dan pembagian brosur jaminan sosial pekerja informal di Makassar.", tag: "Sosialisasi" }
+      ]
+    }
   },
   {
     role: "Data Digitalization Support",
@@ -203,6 +243,7 @@ export default function ExperienceSection() {
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
   const [hoveredHighlight, setHoveredHighlight] = useState<number | null>(null);
   const [selectedExpIndex, setSelectedExpIndex] = useState<number | null>(null);
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
   const filteredExperiences = activeCategory === "Semua" 
     ? allExperiences 
@@ -548,20 +589,84 @@ export default function ExperienceSection() {
                         </div>
                      </div>
                   </div>
-                  {/* Gallery Integration for Design Items */}
-                  {(allExperiences[selectedExpIndex] as any).gallery && (
-                    <div className="mt-8 mb-12">
-                       <h3 className="text-lg font-bold text-text-main mb-6 font-serif flex items-center gap-2">
-                         <span className="material-symbols-outlined text-primary">photo_library</span>
-                         Koleksi Visual
-                       </h3>
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                         {(allExperiences[selectedExpIndex] as any).gallery.map((img: string, i: number) => (
-                           <div key={i} className="rounded-2xl overflow-hidden border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 flex items-center justify-center">
-                             <img src={img} alt={`Gallery item ${i}`} className="w-full h-auto object-cover scale-[1.15] hover:scale-[1.25] transition-transform duration-500" />
-                           </div>
-                         ))}
-                       </div>
+                  {/* Proof & Workflow Section (BA & PM Focus) */}
+                  {(allExperiences[selectedExpIndex] as any).proofSection && (
+                    <div className="mt-10 pt-8 border-t border-black/10 dark:border-white/10 space-y-8">
+                      <div>
+                        <span className="px-3 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-full uppercase tracking-wider mb-2 inline-block">
+                          Bukti & Alur Kerja Analis (BA & PM)
+                        </span>
+                        <h3 className="text-xl md:text-2xl font-bold text-text-main font-serif">
+                          Dokumentasi & Ringkasan Kontribusi Real
+                        </h3>
+                      </div>
+
+                      {/* Key Impact Metrics */}
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {(allExperiences[selectedExpIndex] as any).proofSection.metrics.map((m: any, i: number) => (
+                          <div key={i} className="p-4 bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 shadow-sm text-center">
+                            <span className="material-symbols-outlined text-primary text-2xl mb-1">{m.icon}</span>
+                            <div className="text-base md:text-lg font-black text-text-main font-serif">{m.value}</div>
+                            <div className="text-[11px] text-text-muted font-medium mt-0.5">{m.label}</div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Workflow (Analisis Alur Kerja) */}
+                      <div>
+                        <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
+                          <span className="material-symbols-outlined text-primary text-lg">account_tree</span>
+                          Alur Kerja & Fokus Peran
+                        </h4>
+                        <div className="space-y-3">
+                          {(allExperiences[selectedExpIndex] as any).proofSection.workflow.map((w: any, i: number) => (
+                            <div key={i} className="p-4 bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                              <div className="flex items-start gap-3">
+                                <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">{i+1}</span>
+                                <div>
+                                  <h5 className="text-xs md:text-sm font-bold text-text-main">{w.phase}</h5>
+                                  <p className="text-[11px] md:text-xs text-text-muted mt-0.5 leading-relaxed">{w.desc}</p>
+                                </div>
+                              </div>
+                              <span className="px-3 py-1 bg-black/5 dark:bg-white/5 text-primary text-[10px] md:text-[11px] font-bold rounded-lg shrink-0 w-fit">
+                                {w.roleFocus}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Proof Cards (Bukti Dokumentasi) */}
+                      <div>
+                        <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
+                          <span className="material-symbols-outlined text-primary text-lg">verified</span>
+                          Bukti Otentik Dokumentasi & Log Instansi
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {(allExperiences[selectedExpIndex] as any).proofSection.proofs.map((p: any, i: number) => (
+                            <div 
+                              key={i} 
+                              className="bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                              onClick={() => setLightboxImg(p.image)}
+                            >
+                              <div className="relative h-44 bg-black/5 dark:bg-white/5 flex items-center justify-center p-2">
+                                <img src={p.image} alt={p.title} className="w-full h-full object-contain rounded-xl group-hover:scale-105 transition-transform duration-300" />
+                                <span className="absolute top-3 left-3 px-2 py-0.5 bg-black/75 backdrop-blur-md text-white text-[10px] font-bold rounded-md uppercase tracking-wider">
+                                  {p.tag}
+                                </span>
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                  <span className="material-symbols-outlined text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">zoom_in</span>
+                                </div>
+                              </div>
+                              <div className="p-4">
+                                <h5 className="text-xs font-bold text-text-main mb-1 group-hover:text-primary transition-colors">{p.title}</h5>
+                                <p className="text-[11px] text-text-muted leading-relaxed">{p.caption}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
                     </div>
                   )}
 
@@ -575,6 +680,35 @@ export default function ExperienceSection() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Lightbox Modal for Proof Images */}
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100000] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+            onClick={() => setLightboxImg(null)}
+          >
+            <button
+              onClick={() => setLightboxImg(null)}
+              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={lightboxImg}
+              alt="Bukti Dokumentasi"
+              className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
           </motion.div>
         )}
       </AnimatePresence>
