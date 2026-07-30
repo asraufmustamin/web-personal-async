@@ -78,18 +78,18 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <motion.div variants={itemVariants} className="flex flex-col items-center w-full relative z-30">
+            <motion.div layout variants={itemVariants} className="flex flex-col items-center w-full relative z-30">
               
               {/* Personal Branding Subtitle */}
-              <div className="relative w-full flex flex-col items-center">
+              <motion.div layout className="relative w-full flex flex-col items-center">
                 <div className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.25em] uppercase text-[10px] md:text-sm font-bold mb-4 md:mb-8 items-center justify-center gap-3 md:gap-5 text-center py-2">
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
                   <span>Fresh Graduate | Business Analyst Track</span>
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
                 </div>
-              </div>
+              </motion.div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[80px] sm:min-h-[60px] md:min-h-[90px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
+              <motion.h1 layout className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
                       "IT Business Analyst & Project Coordinator",
@@ -103,10 +103,10 @@ export default function HeroSection() {
                     deleteSpeed={40}
                     cursorChar={"|"}
                   />
-              </h1>
+              </motion.h1>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4 md:mt-8 px-4 md:px-0">
+            <motion.div layout variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4 md:mt-8 px-4 md:px-0">
               <p>Berfokus menjembatani kebutuhan bisnis dengan solusi teknologi. Berpengalaman memimpin siklus pengembangan sistem dan manajemen data untuk instansi pemerintah guna menghasilkan dampak digital yang terukur.</p>
             </motion.div>
           </div>
