@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant cyber (&:where(.cyber, .cyber *));
+@custom-variant blueprint (&:where(.blueprint, .blueprint *));
 
 :root {
   --bg-main: #FFFFFF;
@@ -17,10 +17,10 @@
   --text-muted: #A1A1A1;
 }
 
-.cyber {
-  --bg-main: #040914;
-  --bg-card: #0B132B;
-  --text-main: #F1F5F9;
+.blueprint {
+  --bg-main: #070E1B;
+  --bg-card: #0F1C34;
+  --text-main: #F8FAFC;
   --text-muted: #94A3B8;
 }
 
