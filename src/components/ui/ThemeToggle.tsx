@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Moon, Sun, Gem, ChevronDown, Check } from "lucide-react";
+import { Moon, Sun, Wine, ChevronDown, Check } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -44,16 +44,16 @@ export function ThemeToggle() {
     {
       id: "dark",
       name: "Dark Mode",
-      desc: "Obsidian & BA/PM Flow",
+      desc: "Deep Obsidian & Gold",
       icon: Moon,
       color: "text-primary",
     },
     {
-      id: "emerald",
-      name: "Royal Emerald",
-      desc: "Emerald Green & Gold Nebula",
-      icon: Gem,
-      color: "text-emerald-400",
+      id: "maroon",
+      name: "Velvet Maroon",
+      desc: "Rose Maroon & Gold Orange",
+      icon: Wine,
+      color: "text-rose-400",
     },
   ];
 
