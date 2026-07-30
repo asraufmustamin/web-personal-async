@@ -17,15 +17,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Muhammad Asrauf Mustamin - Portofolio",
-  description: "Portofolio resmi Muhammad Asrauf Mustamin, Lulusan Sistem dan Teknologi Informasi Cumlaude (IPK 3,93/4,00). Spesialis IT Business Analyst & System Analyst yang fokus pada perancangan alur bisnis, pemodelan sistem terpadu, UAT, dan transformasi digital.",
+  description: "Portofolio Muhammad Asrauf Mustamin, Fresh Graduate Sistem dan Teknologi Informasi Cumlaude (IPK 3,93/4,00) dari ITB Nobel Indonesia. Berfokus mengejar karier sebagai IT Business Analyst & System Analyst melalui studi kasus proyek nyata.",
   keywords: [
     "Muhammad Asrauf Mustamin",
     "Portofolio Asrauf Mustamin",
-    "IT Business Analyst",
-    "System Analyst",
-    "Portfolio BA SA",
-    "Business Analyst Makassar",
-    "System Analyst Indonesia",
+    "Fresh Graduate IT",
+    "Lulusan Baru Sistem Informasi",
+    "Aspiring IT Business Analyst",
+    "Aspiring System Analyst",
+    "LinkedIn Asrauf Mustamin",
+    "GitHub Asrauf Mustamin",
     "Analisis Kebutuhan Sistem",
     "Sistem Informasi Desa Cenrana",
     "SPK TOPSIS",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Muhammad Asrauf Mustamin - Portofolio",
-    description: "Portofolio resmi Muhammad Asrauf Mustamin. Lulusan Cumlaude IT & Sistem Informasi. IT Business Analyst & System Analyst dengan studi kasus nyata end-to-end.",
+    description: "Portofolio Muhammad Asrauf Mustamin — Fresh Graduate Sistem & Teknologi Informasi Cumlaude (IPK 3,93/4,00). Bersemangat mengejar karier sebagai IT Business Analyst & System Analyst.",
     url: "https://asraufmustamin.site",
     siteName: "Muhammad Asrauf Mustamin - Portofolio",
     locale: "id_ID",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Asrauf Mustamin - Portofolio",
-    description: "Portofolio resmi IT Business Analyst & System Analyst. Lulusan Cumlaude Sistem dan Teknologi Informasi.",
+    description: "Portofolio Fresh Graduate Sistem & Teknologi Informasi Cumlaude (IPK 3,93/4,00). Aspiring IT Business Analyst & System Analyst.",
   },
   robots: {
     index: true,
@@ -89,8 +90,8 @@ export default function RootLayout({
               "@type": "Person",
               name: "Muhammad Asrauf Mustamin",
               url: "https://asraufmustamin.site",
-              jobTitle: "IT Business Analyst & System Analyst",
-              description: "Muhammad Asrauf Mustamin adalah seorang IT Business Analyst, System Analyst, dan Peneliti Lulusan Sistem dan Teknologi Informasi (IPK 3,93/4,00 Cumlaude) dari Institut Teknologi dan Bisnis Nobel Indonesia.",
+              jobTitle: "Fresh Graduate | Aspiring IT Business Analyst & System Analyst",
+              description: "Muhammad Asrauf Mustamin adalah Lulusan Baru (Fresh Graduate) Sistem dan Teknologi Informasi dengan predikat Cumlaude (IPK 3,93/4,00) dari Institut Teknologi dan Bisnis Nobel Indonesia. Bersemangat mengejar karier sebagai IT Business Analyst & System Analyst melalui penerapan langsung studi kasus proyek.",
               alumniOf: {
                 "@type": "EducationalOrganization",
                 name: "Institut Teknologi dan Bisnis Nobel Indonesia"
@@ -102,15 +103,14 @@ export default function RootLayout({
                 "https://garuda.kemdikbudristek.go.id/author/detail/3858054"
               ],
               knowsAbout: [
-                "IT Business Analyst",
-                "System Analyst",
+                "Business Analysis",
+                "System Analysis",
                 "Requirements Engineering",
                 "User Acceptance Testing (UAT)",
                 "SDLC Management",
                 "ERD & Database Modeling",
                 "Sistem Informasi Manajemen",
-                "Publikasi Ilmiah & Pengabdian Masyarakat",
-                "UI/UX & Web Development"
+                "Fresh Graduate IT"
               ]
             })
           }}
