@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant maroon (&:where(.maroon, .maroon *));
+@custom-variant custom (&:where(.custom, .custom *));
 
 :root {
   --bg-main: #FFFFFF;
@@ -17,7 +17,7 @@
   --text-muted: #A1A1A1;
 }
 
-.maroon {
+.custom {
   --bg-main: #250711;
   --bg-card: #380C1C;
   --text-main: #FDF2F8;

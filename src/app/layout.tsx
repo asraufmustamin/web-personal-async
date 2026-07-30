@@ -119,7 +119,7 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden relative`}>
         <CustomCursor />
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} themes={["light", "dark", "maroon"]}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} themes={["light", "dark", "custom"]}>
           <InteractiveBackground />
           <SmoothScroll>
             {children}
