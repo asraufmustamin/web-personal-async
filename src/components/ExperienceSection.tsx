@@ -131,17 +131,17 @@ const allExperiences = [
     }
   },
   {
-    role: "Data Digitalization Support",
-    company: "Sistem Kusuka KKP",
-    location: "Freelance",
+    role: "Data Digitalization Support Specialist",
+    company: "Sistem KUSUKA KKP (Kementerian Kelautan & Perikanan)",
+    location: "Freelance / Remote",
     date: "Mei 2024 – Jul 2024",
-    description: "Mengelola digitalisasi dan penginputan lebih dari 1.000 data profil pengguna ke portal sistem kementerian secara presisi dan sesuai standar prosedur administrasi.",
+    description: "Mengelola digitalisasi, pembersihan, dan verifikasi presisi >1.000 data profil pelaku usaha kelautan & perikanan. Memastikan validasi NIK dan identitas penerima bantuan program kementerian terintegrasi sempurna sesuai SOP administrasi publik.",
     activities: [
-      "Melakukan digitalisasi 1.000+ data profil.",
-      "Memastikan keakuratan input data.",
-      "Menjalankan prosedur administrasi sistem."
+      "Mengeksekusi pembersihan & validasi presisi >1.000 data kependudukan nelayan/pelaku usaha KUSUKA.",
+      "Memverifikasi keabsahan dokumen NIK & identitas fisik pendaftar sesuai standar baku kementerian.",
+      "Mengelola proses data entry massal & sinkronisasi data ke portal resmi KUSUKA KKP RI."
     ],
-    competencies: ["Data Management", "Data Entry", "Digital Administration"],
+    competencies: ["Data Quality Control", "Data Integrity & Cleanse", "Digital Administration", "Government SOP Compliance"],
     label: "Freelance",
     category: "Profesional",
     logo: "/logo-async-gold.png",
@@ -149,17 +149,17 @@ const allExperiences = [
     relatedProject: null
   },
   {
-    role: "Koordinator INFOKOM",
-    company: "UKM Pencinta Pasar Modal",
-    location: "ITB Nobel Indonesia",
+    role: "Koordinator Division INFOKOM & Humas",
+    company: "UKM Pencinta Pasar Modal (ITB Nobel Indonesia)",
+    location: "Makassar",
     date: "2023 – 2024",
-    description: "Mengelola komunikasi resmi kelembagaan dan pengembangan identitas visual organisasi. Memastikan distribusi informasi berjalan efektif dan profesional.",
+    description: "Memimpin Divisi Informasi & Komunikasi dalam mengendalikan publikasi digital, manajemen reputasi, dan kolaborasi strategis dengan Bursa Efek Indonesia (BEI) & sekuritas mitra.",
     activities: [
-      "Menjembatani komunikasi antar lembaga.",
-      "Mengelola penjadwalan publikasi media sosial.",
-      "Merancang materi visual komunikasi."
+      "Memimpin & mengoordinasikan tim divisi INFOKOM dalam eksekusi kampanye publikasi edukasi investasi.",
+      "Membangun hubungan kemitraan strategis dengan entitas eksternal, galeri investasi, & sekuritas mitra.",
+      "Merancang kalender komunikasi digital & mengontrol standar visual branding organisasi."
     ],
-    competencies: ["Communication", "Stakeholder Management", "Visual Branding"],
+    competencies: ["Organizational Leadership", "Public Relations & Media", "Stakeholder Engagement", "Visual Brand Strategy"],
     label: "Organisasi",
     category: "Organisasi",
     logo: "/Logo%20PPM-1.png",
@@ -167,17 +167,17 @@ const allExperiences = [
     relatedProject: null
   },
   {
-    role: "Ketua Organisasi Siswa Intra Sekolah (OSIS)",
+    role: "Ketua OSIS (President of Student Executive Board)",
     company: "SMA Negeri 2 Enrekang",
     location: "Enrekang",
     date: "2020 – 2021",
-    description: "Memimpin kepengurusan OSIS dan mengoordinasikan berbagai program kerja. Memastikan komunikasi yang baik antara siswa, guru, dan pihak sekolah.",
+    description: "Memimpin kepengurusan OSIS tingkat sekolah/kabupaten, mengorkestrasi 10 seksi bidang program kerja, dan menjembatani komunikasi strategis antara siswa, pihak sekolah, dan dinas pendidikan.",
     activities: [
-      "Mengkoordinasikan berbagai program kerja.",
-      "Memimpin kepengurusan dan anggota OSIS.",
-      "Menjadi penghubung komunikasi."
+      "Memimpin kepengurusan OSIS & memfasilitasi koordinasi 10 seksi bidang program kerja.",
+      "Mengorkestrasi pelaksanaan ajang kompetisi seni, olahraga, & aksi sosial tingkat kabupaten.",
+      "Menjadi representasi resmi komunikasi siswa kepada pimpinan sekolah & lembaga eksternal."
     ],
-    competencies: ["Leadership", "Public Speaking", "Event Management"],
+    competencies: ["Executive Leadership", "Project & Event Management", "Public Speaking", "Strategic Communication"],
     label: "Organisasi",
     category: "Organisasi",
     logo: "/logo-osis.png",
