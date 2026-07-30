@@ -107,7 +107,7 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div layout variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4 md:mt-8 px-4 md:px-0">
-              <p>Berfokus menjembatani kebutuhan bisnis dengan solusi teknologi. Berpengalaman memimpin siklus pengembangan sistem dan manajemen data untuk instansi pemerintah guna menghasilkan dampak digital yang terukur.</p>
+              <p>Menjembatani kebutuhan bisnis dengan solusi teknologi yang presisi. Berpengalaman mengorkestrasi siklus pengembangan sistem (SDLC), analisis proses bisnis, dan manajemen data untuk menghadirkan dampak digital yang terukur.</p>
             </motion.div>
           </div>
         </div>
