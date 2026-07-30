@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Moon, Sun, Compass, ChevronDown, Check } from "lucide-react";
+import { Moon, Sun, Sparkles, ChevronDown, Check } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,7 +19,6 @@ export function ThemeToggle() {
     () => false
   );
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -45,16 +44,16 @@ export function ThemeToggle() {
     {
       id: "dark",
       name: "Dark Mode",
-      desc: "Obsidian & Process Flow",
+      desc: "Obsidian & BA/PM Flow",
       icon: Moon,
       color: "text-primary",
     },
     {
-      id: "blueprint",
-      name: "Executive Blueprint",
-      desc: "System Architecture View",
-      icon: Compass,
-      color: "text-sky-400",
+      id: "vibrant",
+      name: "Vibrant Studio",
+      desc: "Mode Ceria & Bento Layout",
+      icon: Sparkles,
+      color: "text-purple-400",
     },
   ];
 

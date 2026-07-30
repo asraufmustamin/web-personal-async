@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant blueprint (&:where(.blueprint, .blueprint *));
+@custom-variant vibrant (&:where(.vibrant, .vibrant *));
 
 :root {
   --bg-main: #FFFFFF;
@@ -17,11 +17,24 @@
   --text-muted: #A1A1A1;
 }
 
-.blueprint {
-  --bg-main: #070E1B;
-  --bg-card: #0F1C34;
+.vibrant {
+  --bg-main: #0A0717;
+  --bg-card: #130E26;
   --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
+  --text-muted: #CBD5E1;
+}
+
+.vibrant-gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #06B6D4 50%, #F43F5E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vibrant-gradient-border {
+  border: 1.5px solid transparent;
+  background: linear-gradient(#130E26, #130E26) padding-box,
+              linear-gradient(135deg, #8B5CF6, #06B6D4, #F43F5E) border-box;
 }
 
 @theme {

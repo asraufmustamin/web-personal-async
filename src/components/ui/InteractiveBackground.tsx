@@ -70,7 +70,7 @@ export default function InteractiveBackground() {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
 
-    const isBlueprint = theme === "blueprint";
+    const isVibrant = theme === "vibrant";
     const isDark = theme === "dark";
 
     // Setup BPMN Process Nodes for Dark Mode (BA & PM Focus)
@@ -82,27 +82,27 @@ export default function InteractiveBackground() {
       { x: width * 0.65, y: height * 0.7, width: 110, height: 45, label: "System Live", type: "node", pulse: 6 },
     ];
 
-    // Setup Constellation Particles
-    const colors = isBlueprint
-      ? ["#38BDF8", "#F89D0A", "#818CF8", "#34D399"]
+    // Colorful Palettes per Theme
+    const colors = isVibrant
+      ? ["#8B5CF6", "#06B6D4", "#F43F5E", "#10B981", "#F59E0B", "#EC4899"]
       : isDark
       ? ["#F89D0A", "#94A3B8", "#64748B", "#FCD560"]
       : ["#F89D0A", "#CBD5E1", "#94A3B8"];
 
-    const particleCount = isBlueprint ? 65 : isDark ? 40 : 25;
+    const particleCount = isVibrant ? 70 : isDark ? 40 : 25;
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
-      const radius = Math.random() * 2 + 1;
+      const radius = Math.random() * (isVibrant ? 3.5 : 2) + 1;
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * (isBlueprint ? 0.8 : 0.5),
-        vy: (Math.random() - 0.5) * (isBlueprint ? 0.8 : 0.5),
+        vx: (Math.random() - 0.5) * (isVibrant ? 1.0 : 0.5),
+        vy: (Math.random() - 0.5) * (isVibrant ? 1.0 : 0.5),
         radius: radius,
         baseRadius: radius,
         color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.5 + 0.3,
+        alpha: Math.random() * 0.55 + 0.35,
       });
     }
 
@@ -113,45 +113,31 @@ export default function InteractiveBackground() {
       ctx.clearRect(0, 0, width, height);
 
       // ===============================================
-      // 1. EXECUTIVE BLUEPRINT MODE (Architecture Grid)
+      // 1. VIBRANT STUDIO MODE (Fluid Aurora Background)
       // ===============================================
-      if (isBlueprint) {
-        // Blueprint Technical Grid
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.05)";
-        ctx.lineWidth = 1;
-        const gridSize = 50;
-        
-        for (let x = 0; x < width; x += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, height);
-          ctx.stroke();
-        }
-        for (let y = 0; y < height; y += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(width, y);
-          ctx.stroke();
-        }
+      if (isVibrant) {
+        // Render Floating Colorful Gradient Blobs
+        const blob1X = width * 0.2 + Math.sin(frameCount * 0.01) * 60;
+        const blob1Y = height * 0.3 + Math.cos(frameCount * 0.01) * 40;
+        const grad1 = ctx.createRadialGradient(blob1X, blob1Y, 10, blob1X, blob1Y, 320);
+        grad1.addColorStop(0, "rgba(139, 92, 246, 0.12)");
+        grad1.addColorStop(1, "rgba(139, 92, 246, 0)");
+        ctx.fillStyle = grad1;
+        ctx.fillRect(0, 0, width, height);
 
-        // Blueprint Crosshairs at intersections
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.15)";
-        ctx.lineWidth = 1;
-        for (let x = gridSize; x < width; x += gridSize * 3) {
-          for (let y = gridSize; y < height; y += gridSize * 3) {
-            ctx.beginPath();
-            ctx.moveTo(x - 4, y); ctx.lineTo(x + 4, y);
-            ctx.moveTo(x, y - 4); ctx.lineTo(x, y + 4);
-            ctx.stroke();
-          }
-        }
+        const blob2X = width * 0.8 + Math.cos(frameCount * 0.012) * 50;
+        const blob2Y = height * 0.7 + Math.sin(frameCount * 0.012) * 50;
+        const grad2 = ctx.createRadialGradient(blob2X, blob2Y, 10, blob2X, blob2Y, 350);
+        grad2.addColorStop(0, "rgba(6, 182, 212, 0.12)");
+        grad2.addColorStop(1, "rgba(6, 182, 212, 0)");
+        ctx.fillStyle = grad2;
+        ctx.fillRect(0, 0, width, height);
       }
 
       // ===============================================
       // 2. DARK MODE (BPMN Process Flow & Data Packets)
       // ===============================================
       if (isDark) {
-        // Render Subtle BPMN Process Flow Diagram Vectors
         ctx.lineWidth = 1;
 
         bpmnNodes.forEach((node, idx) => {
@@ -161,7 +147,6 @@ export default function InteractiveBackground() {
           ctx.strokeStyle = `rgba(248, 157, 10, ${alpha})`;
           ctx.fillStyle = `rgba(15, 23, 42, ${alpha * 2})`;
 
-          // Draw Process Node Box or Decision Diamond
           if (node.type === "node") {
             ctx.beginPath();
             ctx.roundRect(node.x, node.y, node.width, node.height, 8);
@@ -178,7 +163,6 @@ export default function InteractiveBackground() {
             ctx.stroke();
           }
 
-          // Draw Connecting Flow Line to Next Node
           if (idx < bpmnNodes.length - 1) {
             const nextNode = bpmnNodes[idx + 1];
             ctx.beginPath();
@@ -189,7 +173,6 @@ export default function InteractiveBackground() {
             ctx.stroke();
             ctx.setLineDash([]);
 
-            // Animated Data Packet Pulse Moving Along the Flow
             const progress = ((frameCount * 0.5 + idx * 40) % 100) / 100;
             const px = node.x + node.width + (nextNode.x - (node.x + node.width)) * progress;
             const py = node.y + node.height / 2 + (nextNode.y + nextNode.height / 2 - (node.y + node.height / 2)) * progress;
@@ -204,7 +187,7 @@ export default function InteractiveBackground() {
       }
 
       // ===============================================
-      // 3. PARTICLES & CONSTELLATION CONNECTIONS
+      // 3. PARTICLES & COLORFUL CONSTELLATION LINES
       // ===============================================
       particles.forEach((p, index) => {
         p.x += p.vx;
@@ -213,59 +196,54 @@ export default function InteractiveBackground() {
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // Mouse attraction
         const dx = mouseRef.current.x - p.x;
         const dy = mouseRef.current.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = isBlueprint ? 170 : 120;
+        const maxDist = isVibrant ? 160 : 120;
 
         if (dist < maxDist && mouseRef.current.active) {
           const force = (maxDist - dist) / maxDist;
-          p.x += (dx / dist) * force * (isBlueprint ? 2 : 1.2);
-          p.y += (dy / dist) * force * (isBlueprint ? 2 : 1.2);
-          p.radius = p.baseRadius + force * (isBlueprint ? 2.5 : 1.5);
+          p.x += (dx / dist) * force * (isVibrant ? 2.2 : 1.2);
+          p.y += (dy / dist) * force * (isVibrant ? 2.2 : 1.2);
+          p.radius = p.baseRadius + force * (isVibrant ? 3 : 1.5);
         } else {
           if (p.radius > p.baseRadius) p.radius -= 0.1;
         }
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = isBlueprint ? p.alpha : isDark ? p.alpha * 0.7 : p.alpha * 0.4;
+        ctx.globalAlpha = isVibrant ? p.alpha : isDark ? p.alpha * 0.7 : p.alpha * 0.4;
         ctx.fill();
 
-        // Connect lines between nearby particles
         for (let j = index + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const ldx = p.x - p2.x;
           const ldy = p.y - p2.y;
           const ldist = Math.sqrt(ldx * ldx + ldy * ldy);
-          const maxLinkDist = isBlueprint ? 130 : 90;
+          const maxLinkDist = isVibrant ? 130 : 90;
 
           if (ldist < maxLinkDist) {
-            const lineAlpha = (1 - ldist / maxLinkDist) * (isBlueprint ? 0.3 : 0.12);
+            const lineAlpha = (1 - ldist / maxLinkDist) * (isVibrant ? 0.35 : 0.12);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = isBlueprint ? "#38BDF8" : isDark ? "#F89D0A" : "#CBD5E1";
+            ctx.strokeStyle = isVibrant ? p.color : isDark ? "#F89D0A" : "#CBD5E1";
             ctx.globalAlpha = lineAlpha;
-            ctx.lineWidth = isBlueprint ? 1 : 0.7;
+            ctx.lineWidth = isVibrant ? 1.2 : 0.7;
             ctx.stroke();
           }
         }
       });
 
-      // Mouse blueprint scanner circle on mouse movement
-      if (isBlueprint && mouseRef.current.active) {
+      // Vibrant Mouse Aurora Ripple
+      if (isVibrant && mouseRef.current.active) {
         ctx.beginPath();
-        ctx.arc(mouseRef.current.x, mouseRef.current.y, 45, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.3)";
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([4, 4]);
-        ctx.globalAlpha = 0.6;
+        ctx.arc(mouseRef.current.x, mouseRef.current.y, 50, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(139, 92, 246, 0.4)";
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.5;
         ctx.stroke();
-        ctx.setLineDash([]);
       }
 
       ctx.globalAlpha = 1;
@@ -288,7 +266,7 @@ export default function InteractiveBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-700"
-      style={{ opacity: theme === "blueprint" ? 0.9 : theme === "dark" ? 0.7 : 0.4 }}
+      style={{ opacity: theme === "vibrant" ? 0.95 : theme === "dark" ? 0.7 : 0.4 }}
     />
   );
 }
