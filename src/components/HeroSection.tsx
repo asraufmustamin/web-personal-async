@@ -55,7 +55,7 @@ export default function HeroSection() {
             {/* Mobile Logo & Nav Container */}
             <div className="md:hidden flex flex-col items-center w-full w-full relative z-40 mb-10">
               {/* Mobile Logo */}
-              <div className="w-[140px] h-8 mb-6">
+              <div className="w-[180px] h-10 mb-6">
                 <img 
                   src="/logo-async-gold.png" 
                   alt="ASYNC Logo" 

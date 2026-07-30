@@ -24,7 +24,7 @@ const GitHubIcon = ({ className }: { className?: string }) => (
 export default function Footer() {
   return (
     <FooterComponent
-      logo={<img src="/logo-async-gold.png" alt="ASYNC Logo" className="w-[140px] md:w-[180px] h-auto object-contain" />}
+      logo={<img src="/logo-async-gold.png" alt="ASYNC Logo" className="w-[180px] md:w-[220px] h-auto object-contain" />}
       brandName=""
       socialLinks={[
         {

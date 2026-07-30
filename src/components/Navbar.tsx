@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex items-center justify-center gap-0 lg:gap-6 w-full lg:w-auto relative z-50 transition-all duration-500">
             {/* Logo */}
             <div className={`flex-none transition-all duration-500 overflow-hidden flex items-center justify-center ${
-              isScrolled ? 'w-[130px] lg:w-[150px] h-8 lg:h-10' : 'w-[160px] lg:w-[180px] h-10 lg:h-12'
+              isScrolled ? 'w-[160px] md:w-[180px] lg:w-[150px] h-10 lg:h-10' : 'w-[190px] md:w-[220px] lg:w-[180px] h-12 lg:h-12'
             }`}>
               <a className="hover:opacity-80 transition-opacity flex justify-center items-center w-full h-full" href="/">
                 <img 
