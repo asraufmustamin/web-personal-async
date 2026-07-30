@@ -25,17 +25,6 @@ const allPortfolios = [
     ]
   },
   {
-    id: 13,
-    title: "Prototipe SIM Rumah Tangga (Bea Cukai)",
-    desc: "Rancangan antarmuka dan alur proses bisnis untuk Sistem Informasi Manajemen (SIM) operasional instansi. Hasil dari requirement gathering komprehensif yang memetakan kerumitan alur kerja fisik menjadi solusi digital terstruktur.",
-    category: "Sistem & Web",
-    image: "/async-placeholder.png", // TODO: ganti dengan screenshot asli
-    gallery: [
-      "/async-placeholder.png",
-      "/async-placeholder.png"
-    ]
-  },
-  {
     id: 3,
     title: "Sistem Pendukung Keputusan (Metode TOPSIS)",
     desc: "Sistem analisis data berbasis web (makassarauto.my.id) untuk mengoptimalkan pemilihan kendaraan bekas berdasarkan 7 kriteria kompleks. Menerjemahkan kebutuhan riset menjadi logika algoritma yang fungsional dan dapat diakses publik.",
