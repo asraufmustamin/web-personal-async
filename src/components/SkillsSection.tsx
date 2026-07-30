@@ -187,7 +187,7 @@ export default function SkillsSection() {
                 </div>
 
                 {/* Scrollable Content Body */}
-                <div className="px-6 pb-6 md:px-8 md:pb-8 pt-1 md:pt-2 overflow-y-auto flex-1 min-h-0 z-10" style={{ scrollbarWidth: 'none' }}>
+                <div className="px-6 md:px-8 pt-1 md:pt-2 overflow-y-auto flex-1 min-h-0 z-10" style={{ scrollbarWidth: 'none' }}>
                   <h3 className="text-2xl md:text-3xl font-extrabold font-serif text-text-main mb-3 leading-tight tracking-tight text-left">
                     {selectedSkill.title}
                   </h3>
@@ -213,6 +213,9 @@ export default function SkillsSection() {
                       ))}
                     </div>
                   </div>
+                  
+                  {/* Spacer to guarantee scrollable padding at the bottom across all browsers */}
+                  <div className="h-6 md:h-8 w-full shrink-0"></div>
                 </div>
               </motion.div>
             </motion.div>
