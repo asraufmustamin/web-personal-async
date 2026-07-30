@@ -109,13 +109,13 @@ const Typewriter = ({
     loop,
   ])
 
-  const longestText = texts.reduce((a, b) => (a.length > b.length ? a : b), "");
+  const currentFullText = texts[currentTextIndex];
 
   return (
     <span className={`inline-grid ${className}`}>
-      {/* Invisible placeholder to reserve layout space */}
+      {/* Invisible placeholder to reserve layout space for the current string */}
       <span className="invisible col-start-1 row-start-1 whitespace-pre-wrap tracking-tight pointer-events-none">
-        {longestText}
+        {currentFullText}
         {showCursor && <span className={cn(cursorClassName)}>{cursorChar}</span>}
       </span>
       {/* Visible typing text */}
