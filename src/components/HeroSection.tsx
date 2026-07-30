@@ -92,8 +92,7 @@ export default function HeroSection() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif min-h-[80px] sm:min-h-[60px] md:min-h-[90px] flex items-center justify-center px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
                     text={[
-                      "Business & System Analyst",
-                      "Project Coordinator",
+                      "IT Business Analyst & Project Coordinator",
                       "Data-Driven Problem Solver",
                       "SDLC End-to-End",
                       "Digital Transformation"

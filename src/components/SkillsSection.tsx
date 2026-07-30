@@ -38,7 +38,7 @@ const skills = [
     id: "04",
     title: "Koordinasi Proyek & Kepemimpinan",
     desc: "Menjadi jembatan antara kebutuhan bisnis (non-teknis) dan tim pengembang (teknis). Terbiasa memimpin tim, menyusun prioritas proyek, dan menjaga komunikasi antar pemangku kepentingan agar proyek selesai tepat waktu dan sesuai ekspektasi.",
-    tags: ["Project Coordination", "Team Leadership", "Stakeholder Communication", "Task Coordination", "Project Documentation", "Public Speaking", "IT Project Management", "TOEFL Score 537"]
+    tags: ["Project Coordination", "Team Leadership", "Stakeholder Communication", "Task Coordination", "Project Documentation", "Public Speaking", "IT Project Management", "TOEFL Score 537", "Project Planning", "Timeline & Milestone Management", "Stakeholder Coordination"]
   },
   {
     id: "05",

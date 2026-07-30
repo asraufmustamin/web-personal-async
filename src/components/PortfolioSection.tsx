@@ -447,9 +447,56 @@ export default function PortfolioSection() {
                     </div>
                   </div>
                   
-                  <div className="prose max-w-none text-text-muted pt-6 border-t border-gray-100">
-                    <p>Berikut adalah detail tambahan mengenai proyek <strong>{selectedProject.title}</strong>. Proyek ini dibangun dengan fokus pada fungsionalitas, desain antarmuka yang modern, serta pengalaman pengguna yang optimal.</p>
-                    <p>Konsep pengerjaannya diawali dengan analisis kebutuhan, dilanjutkan dengan perancangan arsitektur dan eksekusi visual, sebelum akhirnya di-deploy sebagai solusi fungsional yang siap digunakan.</p>
+                  <div className="prose max-w-none text-text-muted pt-6 border-t border-gray-100 dark:border-gray-800">
+                    {selectedProject.id === 1 ? (
+                      <div className="flex flex-col gap-10">
+                        {/* Metrics Highlights */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl flex flex-col items-center text-center justify-center">
+                            <span className="material-symbols-outlined text-primary text-4xl mb-2">rocket_launch</span>
+                            <h4 className="text-xl font-bold text-text-main mb-1">Live dalam 3 Bulan</h4>
+                            <p className="text-sm text-text-muted">Proses end-to-end dari riset awal hingga implementasi sistem.</p>
+                          </div>
+                          <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl flex flex-col items-center text-center justify-center">
+                            <span className="material-symbols-outlined text-primary text-4xl mb-2">handshake</span>
+                            <h4 className="text-xl font-bold text-text-main mb-1">MoU Resmi</h4>
+                            <p className="text-sm text-text-muted">Berawal dari proyek KKN, diadopsi resmi oleh Pemerintah Desa Cenrana.</p>
+                          </div>
+                        </div>
+
+                        {/* Project Timeline / Flow */}
+                        <div>
+                          <h3 className="text-2xl font-bold text-text-main font-serif mb-8 flex items-center gap-2">
+                            <span className="material-symbols-outlined text-primary">timeline</span> Project Flow & Timeline
+                          </h3>
+                          <div className="flex flex-col gap-6 relative before:absolute before:inset-0 before:ml-[1.125rem] md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-black/10 dark:before:via-white/10 before:to-transparent">
+                            {[
+                              { title: "Discovery & Requirement Gathering", desc: "Wawancara mendalam dengan aparat desa untuk memetakan alur birokrasi fisik dan kebutuhan digitalisasi." },
+                              { title: "Dokumentasi Kebutuhan & Spesifikasi Sistem", desc: "Penyusunan requirement dokumen, use case, dan flow process yang disetujui stakeholder." },
+                              { title: "Wireframe & UI Design (Figma)", desc: "Pembuatan prototipe antarmuka untuk memvalidasi user experience sebelum tahap pengembangan." },
+                              { title: "Development", desc: "Pendekatan AI-orchestrated development dengan human-in-the-loop validation untuk akurasi logika bisnis." },
+                              { title: "User Acceptance Testing (UAT)", desc: "Pengujian langsung dengan pengguna akhir (Admin Desa) menghasilkan Success Rate 93,8% dan skor SUS 75,6." },
+                              { title: "Handover & Training Admin", desc: "Serah terima sistem, pelatihan penggunaan, dan pembuatan manual book (SOP)." },
+                            ].map((step, idx) => (
+                              <div key={idx} className="relative flex items-start md:items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-bg-card bg-primary text-white font-bold text-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md z-10 relative">
+                                  {idx + 1}
+                                </div>
+                                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-black/5 dark:border-white/5 bg-bg-main shadow-sm hover:shadow-md transition-shadow">
+                                  <h4 className="font-bold text-text-main text-base mb-2">{step.title}</h4>
+                                  <p className="text-sm text-text-muted leading-relaxed">{step.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <p className="mb-4">Berikut adalah detail tambahan mengenai proyek <strong>{selectedProject.title}</strong>. Proyek ini dibangun dengan fokus pada fungsionalitas, desain antarmuka yang modern, serta pengalaman pengguna yang optimal.</p>
+                        <p>Konsep pengerjaannya diawali dengan analisis kebutuhan, dilanjutkan dengan perancangan arsitektur dan eksekusi visual, sebelum akhirnya di-deploy sebagai solusi fungsional yang siap digunakan.</p>
+                      </>
+                    )}
                   </div>
                 </div>
               </motion.div>

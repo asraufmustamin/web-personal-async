@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
+import { CVModal } from "@/components/ui/CVModal";
 
 const images = [
   "/foto-aboutus.jpeg",
@@ -15,6 +16,7 @@ export default function AboutSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isPhotoHovered, setIsPhotoHovered] = useState(false);
   const [isMobileFanned, setIsMobileFanned] = useState(true);
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
@@ -137,9 +139,9 @@ export default function AboutSection() {
                   <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">cases</span> <span className="text-[13px] whitespace-nowrap">Lihat Karya</span>
                 </a>
                 
-                <a href="/CV_Muhammad_Asrauf_Mustamin.pdf" target="_blank" rel="noopener noreferrer" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
+                <button onClick={() => setIsCVModalOpen(true)} className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
                   <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
-                </a>
+                </button>
                 
                 <a href="#kontak" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
                   <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">Hubungi</span>
@@ -161,6 +163,7 @@ export default function AboutSection() {
 
         </div>
       </div>
+      <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
     </motion.section>
   );
 }
