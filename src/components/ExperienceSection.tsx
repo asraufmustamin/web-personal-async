@@ -62,13 +62,7 @@ const allExperiences = [
     category: "Profesional",
     logo: "/logobeacukai.png",
     theme: "from-[#0f172a] to-[#334155]",
-    relatedProject: "beacukai",
-    gallery: [
-      "/projects/simira-dashboard.jpeg",
-      "/projects/simira-work-1.jpeg",
-      "/projects/simira-work-2.jpeg",
-      "/projects/beacukai-siakad-log.jpeg"
-    ]
+    relatedProject: null
   },
   {
     role: "Data Analyst & Account Representative Specialist",
@@ -87,13 +81,7 @@ const allExperiences = [
     category: "Profesional",
     logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",
     theme: "from-[#0f172a] to-[#334155]",
-    relatedProject: "bpjs",
-    gallery: [
-      "/experience/bpjs/image14.jpeg",
-      "/experience/bpjs/image15.jpeg",
-      "/experience/bpjs/image24.jpeg",
-      "/experience/bpjs/image27.jpeg"
-    ]
+    relatedProject: null
   },
   {
     role: "Data Digitalization Support",
