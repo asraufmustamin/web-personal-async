@@ -1,0 +1,357 @@
+LAPORAN MAGANG/PRAKTIK KERJA
+MERDEKA BELAJAR KAMPUS MERDEKA
+DI BPJS KETENAGAKERJAAN
+DIAJUKAN OLEH :
+MUHAMMAD ASRAUF MUSTAMIN (2022233037)
+PROGRAM STUDI SISTEM DAN TEKNOLOGI INFORMASI
+FAKULTAS TEKNOLOGI DAN BISNIS
+INSTITUT TEKNOLOGI DAN BISNIS NOBEL INDONESIA MAKASSAR
+TAHUN 2024
+  
+LEMBAR PENGESAHAN
+LAPORAN MAGANG MANDIRI
+KAMPUS MERDEKA FAKULTAS TEKNOLOGI DAN BISNIS INSTITUT TEKNOLOGI DAN BISNIS NOBEL INDONESIA
+Diajukan oleh:
+MUHAMMAD ASRAUF MUSTAMIN (2022233037)
+Telah disetujui:
+Dosen Pembimbing
+Rasdi.,S.Pi.,M.Si
+NIDN 0918079501Tanggal: 31 Januari 2025
+Ketua Program Studi Sistem dan Teknologi Informasi
+Nurkhalik Wahdanial Asbara.,S.Kom.,M.Kom          Tanggal: 31 Januari 2025
+NIDN: 0926049202
+Kepala Bidang Pengendalian Oprasional
+Muhammad Idrus                Tanggal: 31 Januari 2025
+NPK.150401184                
+KATA PENGANTAR
+Syukur kehadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya, sehingga saya dapat menyelesaikan kegiatan dan penyusunan laporan magang ini dengan baik dan tepat waktu. Laporan ini merupakan hasil dari kegiatan magang yang dilakukan di Badan Penyelenggara Jaminan Sosial (BPJS) Ketenagakerjaan Cabang Makassar selama empat bulan, dari Oktober 2024 hingga Januari 2025. Penyusunan laporan ini bertujuan untuk memberikan gambaran kegiatan yang telah dilaksanakan selama magang, sekaligus menjadi bahan evaluasi dan dokumentasi untuk keperluan akademik. Selain itu, laporan ini diharapkan dapat menjadi bukti nyata kontribusi yang telah diberikan selama magang, sekaligus mendukung proses pembelajaran yang lebih baik di masa mendatang.
+Saya menyadari bahwa keberhasilan dalam menyusun laporan ini tidak lepas dari dukungan dan bantuan dari berbagai pihak. Oleh karena itu, penulis ingin mengucapkan terima kasih yang sebesar-besarnya kepada:
+Bapak/Ibu Pembimbing di BPJS Ketenagakerjaan Cabang Makassar, yang telah memberikan bimbingan, arahan, dan kesempatan untuk berkontribusi selama magang berlangsung.
+Dosen Pembimbing di Institut Teknologi dan Bisnis Nobel Indonesia, yang senantiasa memberikan dukungan serta masukan berharga dalam proses penyusunan laporan ini.
+Rekan-rekan magang dan staf BPJS Ketenagakerjaan, yang telah memberikan kerja sama dan dukungan selama menjalani program ini.
+Saya menyadari bahwa laporan ini masih memiliki kekurangan yang perlu diperbaiki. Oleh karena itu, segala bentuk kritik dan saran yang membangun akan diterima dengan senang hati untuk meningkatkan kualitas laporan di masa mendatang.
+Akhir kata, saya berharap laporan magang ini dapat memberikan manfaat yang besar, baik bagi pembaca, pihak terkait, maupun sebagai referensi bagi mahasiswa yang akan melaksanakan kegiatan serupa di masa yang akan datang.
+Makassar, 31 Januari 2025
+Muhammad Asrauf Mustamin
+DAFTAR ISI
+LEMBAR PENGESAHANii
+KATA PENGANTARiii
+DAFTAR ISIiv
+DAFTAR GAMBARvi
+DAFTAR TABELvii
+BAB I PENDAHULUANi
+1.1Rasional Programi
+1.2Tujuani
+1.3Sasarani
+1.4Manfaat2
+1.5Jadwal Pelaksanaan2
+BAB II PELAKSANAAN 3
+2.1Gambaran Umum Perusahaan/Mitra3
+1.Geografis dan Demografi3
+2.Visi Misi4
+3.   Instansi Profil4
+4.Tujuan Utama7
+5.Struktur Organisasi BPJS Ketenagakerjaan7
+6.Tugas Pokok dan Fungsi BPJS Ketenagakerjaan8
+7.Jenis Program Pelayanan BPJS Ketenagakerjaan10
+8.Pendaftaran Program BPJS Ketenagakerjaan13
+2.2Bentuk Pelaksanaan14
+1.Matriks Kegiatan14
+2.Lokasi Magang14
+3.Jadwal dan Waktu Pelaksanaan Magang15
+BAB III AKTIVITAS LANJUTAN DAN TARGET CAPAIAN 16
+3.1 Aktivitas Lanjutan16
+3.2 Target Capaian17
+BAB IV PENUTUP18
+4.1. Kesimpulan18
+4.2. Saran18
+LAMPIRAN19
+Lampiran 1. Kegiatan dalam Kantor19
+Lampiran 2. Kegiatan Luar Kantor20
+Lampiran 3. Kunjungan Dosen dan Pelepasan Mahasiswa Magang21
+Lampiran 4. Sertifikat Kegiatan Softskill dan Hardskill22
+DAFTAR GAMBAR
+Gambar 2. 1. Kantor BPJS Ketenagakerjaan Cabang Makassar5
+Gambar 2. 2. Logo BPJS Ketenagakerjaan6
+Gambar 2. 3. Struktur BPJS Ketenagakerjaan Cabang Makassar7
+Gambar 2. 4. Lokasi Magang Kantor BPJS Ketenagakerjaan Cabanng Makassar14
+DAFTAR TABEL
+Tabel 2. 1. Gambaran kegiatan  MBKM selama 4 bulan14
+BAB I
+PENDAHULLUAN
+Rasional Program
+Program magang ini dilaksanakan sebagai bagian dari upaya untuk mengintegrasikan teori yang telah dipelajari di bangku kuliah dengan praktik nyata di dunia kerja. Dalam proses ini, mahasiswa diharapkan dapat mengaplikasikan konsep-konsep akademik ke dalam situasi praktis yang kompleks, sehingga mampu meningkatkan keterampilan analitis, teknis, dan problem-solving.
+BPJS Ketenagakerjaan dipilih sebagai mitra tempat magang karena memiliki relevansi yang tinggi dengan bidang studi Sistem dan Teknologi Informasi. Institusi ini tidak hanya berfokus pada pengelolaan data yang terstruktur dan sistematis, tetapi juga terus berinovasi dalam pelayanan digital untuk mendukung efisiensi dan transparansi layanan jaminan sosial di Indonesia. Relevansi ini memberikan kesempatan kepada mahasiswa untuk memahami bagaimana teknologi informasi diterapkan secara langsung pada sistem yang berskala besar dan memiliki dampak sosial yang luas.
+Selain itu, program magang ini bertujuan untuk memberikan pengalaman kerja nyata yang tidak hanya berfungsi sebagai sarana pembelajaran tetapi juga sebagai wadah pengembangan keterampilan teknis dan interpersonal. Mahasiswa dapat memahami lebih dalam tentang kebutuhan industri, seperti bagaimana sistem informasi dirancang, dikelola, dan dioptimalkan untuk menjawab tantangan operasional sehari-hari. Dengan menghadapi berbagai situasi kerja yang menuntut ketepatan, kolaborasi tim, dan adaptasi terhadap teknologi baru, mahasiswa juga dapat memperkuat kompetensi mereka dalam mempersiapkan diri menghadapi persaingan di dunia profesional.
+Tujuan   
+Tujuan program merdeka belajar kampus merdeka (MBKM) adalah
+Memberikan kesempatan kepada mahasiswa untuk memahami dan terlibat langsung dalam operasional di BPJS Ketenagakerjaan.
+Meningkatkan keterampilan teknis dalam pengelolaan sistem informasi dan data.
+Membekali mahasiswa dengan wawasan mengenai tata kelola jaminan sosial di Indonesia.
+Membentuk kemampuan adaptasi dan kerja sama di lingkungan kerja profesional
+Sasaran
+  Mahasiswa Institut dan Teknologi dan Bisnis Nobel Indonesia yang melaksanakan magang. BPJS Ketenagakerjaan sebagai mitra yang mendapatkan 
+kontribusi berupa pemecahan masalah atau dukungan teknis. Universitas sebagai institusi pengawas program magang.
+Manfaat  
+Manfaat merdeka belajar kampus merdeka (MBKM) adalah
+Bagi mahasiswa mendapatkan pengalaman kerja nyata, meningkatkan keterampilan praktis, dan memperluas jaringan profesional.
+Bagi BPJS Ketenagakerjaan mendapatkan perspektif baru dan dukungan tenaga kerja tambahan dalam melaksanakan tugas-tugas tertentu.
+Bagi Universitas memperkuat hubungan kerja sama dengan mitra industri dan memastikan lulusan memiliki kompetensi yang relevan dengan kebutuhan pasar kerja.
+Jadwal Pelaksanaan  
+Program magang dilaksanakan selama empat bulan, mulai dari 07 Oktober 2024 hingga 23 Januari 2025. 
+BAB II
+PELAKSANAAN
+Gambaran Umum Perusahaan/Mitra
+Geografis dan Demografi
+Kota Makassar adalah salah satu wilayah administratif yang setingkat dengan Kabupaten di Sulawesi Selatan, terletak antara 119º24'17'38” Bujur Timur dan 5º8'6'19” Lintang Selatan yang berbatasan sebelah utara dengan Kabupaten Maros, sebelah timur Kabupaten Maros, sebelah selatan Kabupaten Gowa dan sebelah barat adalah Selat Makassar. Luas Wilayah Kota Makassar tercatat 175,77 km2 yang meliputi 14 Kecamatan, 143 Kelurahan, 971 RW dan 4.789 RT. Kecamatan yang memiliki wilayah paling luas adalah Kecamatan Biringkanaya dengan luas area adalah 48,22 km2 atau 27,43 persen dari luas Kota Makassar. Berikutnya adalah Kecamatan Tamalanrea dengan luas wilayah sebesar 31,84 km2 atau 18,11 persen dari luas Kota Makassar dan yang menempati urutan ketiga adalah Kecamatan Manggala 24,14 km2 atau 13,73 persen dari luas Kota Makassar. Sedangkan Kecamatan yang memiliki luas wilayah paling kecil adalah Kecamatan Mariso dengan luas wilayah sebesar 1.82 km2 atau 1,04 persen dari luas Kota Makassar. Disusul dengan Kecamatan Wajo sebesar 1,99 km2 atau 1,13 persen dari luas Kota Makassar yang menempati urutan luas wilayah terkecil kedua dan Kecamatan Bontoala terkecil ketiga dengan luas wilayah sebesar 2,10 km2 atau 1,19 persen dari luas Kota Makassar.
+Sebagai kota besar di Indonesia Timur, Ibukota Provinsi Sulawesi Selatan memiliki infrastruktur yang baik, termasuk transportasi yang memadai, sehingga memudahkan masyarakat untuk mengunjungi kantor cabang. Kota Makassar memiliki tantangan tersendiri dalam menjangkau pekerja informal yang tidak terikat dengan perusahaan. Banyak dari mereka mengalami kesulitan untuk menjadi peserta BPJS Ketenagakerjaan akibat faktor ekonomi dan kurangnya informasi. Meski demikian, pemerintah kota berupaya meningkatkan partisipasi melalui berbagai regulasi dan program subsidi bagi pekerja informal.
+Salah satu kantor cabang utama BPJS Ketenagakerjaan berlokasi di Makassar di bawah naungan kantor wilayah Sulawesi Maluku. Selain itu, terdapat sejumlah kantor cabang lainnya yang melayani peserta di berbagai daerah 6 seperti Gorontalo, Kendari, Maluku, Manado, Palopo, Palu, Sulawesi Barat, dan Ternate. Kantor-kantor ini bertugas mengelola program jaminan sosial ketenagakerjaan serta menyediakan layanan kepada pekerja di masing-masing wilayah.
+Khususnya, Kantor Cabang BPJS Ketenagakerjaan Makassar memiliki peran strategis dalam mengoordinasikan pelaksanaan program jaminan sosial di berbagai kabupaten di Sulawesi Selatan, seperti Bantaeng, Bulukumba, Pinrang, Sinjai, Soppeng, Wajo, Bone Gowa, Selayar, Maros, Pangkep dan Pare-pare Fungsi utama kantor ini adalah memperluas cakupan perlindungan jaminan sosial 
+bagi pekerja di seluruh wilayah tersebut, sekaligus melaksanakan sosialisasi dan pengawasan terhadap implementasi program secara menyeluruh.
+Pencapaian Universal Coverage BPJS Ketenagakerjaan di Sulawesi Selatan hingga kini mencapai 40,40%, dengan total 1.159.887 pekerja yang terlindungi dari semesta kepesertaan sebanyak 2.871.182 orang. Cakupan ini meliputi Pekerja Penerima Upah (PU), Bukan Penerima Upah (BPU), dan sektor Jasa Konstruksi. Berdasarkan data nasional, Sulawesi Selatan menempati posisi ke-16 dan peringkat ke-5 dari delapan Provinsi dalam wilayah kerja BPJS Ketenagakerjaan Kantor Wilayah Sulawesi Maluku.
+Komitmen Pemerintah Provinsi Sulawesi Selatan tercermin dari target perlindungan pekerja di seluruh sektor, yakni sebanyak 1.393.671 pekerja pada 2024 dan meningkat menjadi 1.701.749 pada 2025. Dukungan ini juga diperkuat melalui optimalisasi pelaksanaan program jaminan sosial sesuai Instruksi Presiden Nomor 2 Tahun 2021 dan surat edaran Sekda Sulawesi Selatan yang menegaskan pentingnya penyelenggaraan JKK dan JKM bagi pegawai non-ASN.
+Visi Misi 
+Visi BPJS Ketenagakerjaan
+Mewujudkan Jaminan Sosial Ketenagakerjaan yang terpercaya, berkelanjutan dan menyejahterahkan seluruh pekerja Indonesia
+Misi BPJS Ketenagakerjaan
+Melindungi, melayani dan menyejahterahkan pekerja dan keluarga
+Memberikan rasa aman, mudah dan nyaman untuk meningkatkan produktivitas dan daya saing peserta
+Memberikan kontribusi dalam pembangunan dan perekonomian bangsa dengan tata kelola baik
+3.   Instansi Profil
+Sejarah BPJS Ketenagakerjaan
+Perjalanan terbentuknya lembaga jaminan sosial tenaga kerja di Indonesia mengawali babak baru dalam perlindungan sosial ekonomi masyarakat. Bermula dari kesadaran negara akan tanggung jawab memberikan perlindungan sosial sesuai kemampuan keuangan, Indonesia mengembangkan sistem jaminan sosial berbasis kontribusi peserta, yang awalnya terfokus pada pekerja sektor formal. Tonggak awal pembentukan dimulai sejak dikeluarkannya UU No.33/1947 tentang kecelakaan kerja, yang kemudian disusul berbagai peraturan menteri perburuhan. Perjalanan legislasi yang panjang ini menandai evolusi sistematis perlindungan tenaga kerja, dengan milestone penting pada tahun 1977 ketika Pemerintah mengeluarkan Peraturan Pemerintah No.33 yang mewajibkan pengusaha swasta dan BUMN mengikuti program Asuransi Sosial Tenaga Kerja (ASTEK).
+Transformasi signifikan terjadi dengan lahirnya UU No.3 tahun 1992 tentang Jaminan Sosial Tenaga Kerja (JAMSOSTEK), yang meletakkan fondasi komprehensif perlindungan tenaga kerja. Undang-undang ini memberikan jaminan dasar untuk memenuhi kebutuhan minimal pekerja dan keluarganya, dengan menjamin keberlangsungan penghasilan keluarga. Perkembangan berkelanjutan ditandai dengan terbitnya UU Nomor 40 Tahun 2004 tentang Sistem Jaminan Sosial Nasional, yang terkait langsung dengan amandemen UUD 1945 pasal 34 ayat 2. Pasal tersebut menegaskan komitmen negara untuk mengembangkan sistem jaminan sosial yang memberdayakan masyarakat lemah sesuai martabat kemanusiaan.
+Babak baru dimulai pada 2011 dengan ditetapkannya UU No. 24 Tahun 2011 tentang Badan Penyelenggara Jaminan Sosial (BPJS). Sebagai implementasinya, pada 1 Januari 2014, PT. Jamsostek resmi bertransformasi menjadi BPJS Ketenagakerjaan, berubah dari badan hukum privat menjadi badan hukum publik. Pada tanggal 5 Desember 2024, BPJS Ketenagakerjaan genap berusia 47 tahun, memperingati perjalanan panjang memberikan perlindungan sosial. Lembaga ini kini menyelenggarakan lima program utama: Jaminan Kecelakaan Kerja (JKK), Jaminan Kehilangan Pekerjaan (JKP), Jaminan Hari Tua (JHT), Jaminan Pensiun (JP), dan Jaminan Kematian (JKM). BPJS Ketenagakerjaan Cabang Makassar, sebagai bagian integral dari sistem ini, terus mengembangkan layanan dan infrastruktur. Fokus utamanya adalah sosialisasi program, peningkatan kesadaran masyarakat, dan perluasan jangkauan layanan melalui digitalisasi, khususnya di wilayah Indonesia Timur.
+Gambar 2. 1. Kantor BPJS Ketenagakerjaan Cabang Makassar
+BPJS Ketenagakerjaan Cabang Makassar terletak di Kota Makassar, yang merupakan ibukota provinsi Sulawesi Selatan. Makassar sendiri merupakan salah satu kota besar di Indonesia yang menjadi pusat pemerintahan, perdagangan, dan jasa. Cabang Makassar ini memiliki peran strategis karena berada di wilayah Sulawesi Selatan, yang mencakup daerah perkotaan dan pedesaan dengan berbagai sektor ekonomi seperti pariwisata, perdagangan, konstruksi, dan industri. Alamat BPJS Ketenagakerjaan Cabang Makassar di Jl. Urip Sumorarjo Km.4,5, Pampang, Kec. Makassar, Kota Makassar, Sulawesi Selatan 90231.
+Logo BPJS Ketenagakerjaan
+Gambar 2. 2. Logo BPJS Ketenagakerjaan
+Adapun makna pada logo BPJS Ketenagakerjaan adalah sebagai berikut yaitu logo BPJS Ketenagakerjaan menggunakan empat warna berbeda, yaitu hijau, putih, kuning, dan biru. Penggunaan warna yang lebih beragam ini bukan sekedar agar logo baru ini terlihat lebih menarik. Akan tetapi, dibalik warna-warna tersebut mengandung nilai dan makna filosofis tertentu, yaitu:
+HIJAU
+1.  Warna hijau melambangkan kesejahteraan.
+   2.  Warna hijau diharapkan dapat merepresentasikan nilai-nilai 
+        pertumbuhan, harmoni, kesegaran, stabilitas dan keamanan.
+PUTIH
+3.  Warna putih melambangkan integritas.
+ Warna putih diharapkan dapat merepresentasikan kemurnian,  
+ kebersihan dan kesempurnaan sebagai simbol kebaikan.
+KUNING
+Warna kuning melambangkan optimisme.
+Warna kuning diharapkan dapat merepresentasikan optimisme, pencerahan dan kebahagiaan serta memberi harapan akan masa depan yang lebih baik.
+BIRU
+Warna biru melambangkan keberlanjutan.
+Warna biru diharapkan dapat merepresentasikan kepercayaan, kesetiaan, kebijaksanaan, kepercayaan diri, keahlian dan ketahanan jangka panjang.
+Selain dari sisi warna, perbedaan lain pada logo BPJS Ketenagakerjaan adalah pada tipologi huruf “J” yang membelah lingkaran dan dibuat makin membesar dari bawah ke atas. Ini melambangkan cita-cita BPJS Ketenagakerjaan yang terus bergerak naik dan semakin memberikan banyak manfaat bagi pekerja. Selain itu, huruf “J” yang dibuat melebihi diameter lingkaran melambangkan sebagai puncak pencapaian yaitu universal coverage bagi kesejahteraan seluruh tenaga kerja di Indonesia. Dengan logo baru ini diharapkan cita-cita BPJS Ketenagakerjaan untuk mewujudkan kesejahteraan bagi tenaga kerja di Indonesia dapat terealisasi, sesuai dengan tagline baru yaitu “Jembatan Menuju Kesejahteraan Pekerja
+Tujuan Utama
+Berikut adalah tujuan utama BPJS Ketenagakerjaan
+Memberikan perlindungan kepada pekerja dari risiko sosial seperti kecelakaan kerja, kematian, hari tua, pensiun dan kehilangan pekerjaan.
+Meningkatkan kesejahteraan kepada pekerja dan keluarganya, terutama saat menghadapi kondisi yang tidak diinginkan.
+Menciptakan ketenangan kerja kepada pekerja dapat bekerja dengan lebih tenang dan produktif.
+Mendorong pertumbuhan ekonomi negara kepada pekerja akan merasa lebih aman dan terlindungi.
+Struktur Organisasi BPJS Ketenagakerjaan
+Struktur organisasi adalah kerangka yang menggambarkan pembagian tugas dan aktivitas dalam rangka mencapai tujuan organisasi. Struktur ini juga menunjukkan hubungan antara fungsi, wewenang, dan tanggung jawab setiap anggota, yang bekerja sama secara efektif untuk mencapai tujuan yang telah ditetapkan. Dalam sebuah perusahaan, bentuk organisasi ditentukan oleh pimpinan dengan tujuan untuk mempermudah pelaksanaan tugas-tugas, mengatur pembagian pekerjaan, serta memberikan wewenang dan tanggung jawab atas pekerjaan. Struktur organisasi BPJS Ketenagakerjaan Cabang Makassar.
+Gambar 2. 3. Struktur BPJS Ketenagakerjaan Cabang Makassar
+Tugas Pokok dan Fungsi BPJS Ketenagakerjaan
+a. Kepala Kantor Cabang
+Kepala Kantor Cabang memegang tanggung jawab utama atas seluruh aktivitas karyawan di cabangnya dan wajib memberikan laporan langsung kepada atasan setingkat Area Manager. Peran utama Kepala Cabang meliputi memberikan arahan, mengkoordinasi, dan mengawasi kinerja tim di cabang untuk mencapai target perusahaan, serta memastikan pelaksanaan seluruh aktivitas sesuai dengan kebijakan dan peraturan yang telah ditetapkan.
+Tugas-tugas Kepala Cabang:
+Memimpin dan mengarahkan seluruh karyawan di cabang untuk menyelenggarakan berbagai kegiatan yang mendukung pencapaian target perusahaan.
+Bertanggung jawab atas pencapaian target perusahaan di tingkat cabang secara keseluruhan.
+Menyusun laporan berkala untuk kantor pusat, memberikan pelatihan kepada karyawan, serta mengimplementasikan strategi perusahaan.
+Memberikan pelatihan mendalam kepada tim cabang.
+Memastikan semua karyawan di kantor cabang mematuhi ketentuan dan kebijakan yang berlaku.
+Memberikan persetujuan terkait pengajuan jaminan sesuai dengan ketentuan yang berlaku.
+Menjamin profesionalisme seluruh karyawan dalam melaksanakan tugasnya.
+Memberikan informasi kepada manajemen terkait perubahan atau perkembangan pasar di sekitar wilayah operasional cabang.
+b. Kepala Bidang Kepesertaan Korporasi dan Institusi
+Bidang ini bertugas mengelola kepesertaan perusahaan dan institusi, termasuk pengolahan data peserta serta administrasi pendaftaran.
+Account Representative (AR)
+AR berfungsi sebagai penghubung antara BPJS Ketenagakerjaan dengan perusahaan, memberikan informasi terkait program, membantu proses pendaftaran, dan menjelaskan manfaat yang diterima peserta.
+Penata Administrasi Peserta
+Bertugas mengelola dan memelihara data peserta, memastikan informasi terinput dengan baik, serta mengorganisasi dokumen administrasi terkait kepesertaan.
+Kepala Bidang Kepesertaan Program Khusus
+Bidang ini mengelola program-program khusus yang dirancang untuk kelompok tertentu yang memiliki persyaratan dan manfaat berbeda.
+Account Representative Khusus (ARK)
+ARK bertugas seperti AR, tetapi fokus pada program khusus, termasuk pengumpulan data, pembinaan peserta, penyelesaian keluhan, dan pengembangan kepesertaan dari segmen khusus seperti BPU, Jasa Konstruksi, dan PMI.
+Penata Administrasi Peserta Khusus
+Bertanggung jawab memverifikasi dan mengelola data peserta dari program khusus, menyediakan layanan administrasi, serta memastikan data yang akurat untuk mendukung kelancaran aktivitas kepesertaan.
+d. Kepala Bidang Pelayanan
+Bidang ini berfokus pada penyediaan layanan kepada peserta, memastikan kebutuhan informasi dan bantuan peserta terpenuhi secara optimal.
+Manajer Kasus
+Bertugas menangani kasus khusus seperti klaim Jaminan Kecelakaan Kerja (JKK), memverifikasi laporan, dan mengurus surat jaminan peserta.
+Penata Layanan (JHT-JP, JKK-JKM)
+Bertugas mengelola layanan program jaminan seperti Jaminan Hari Tua (JHT), Jaminan Pensiun (JP), Jaminan Kecelakaan Kerja (JKK), dan Jaminan Kematian (JKM), termasuk menangani klaim dan mendukung peserta.
+Customer Service Officer
+Sebagai kontak utama bagi peserta, memberikan informasi, menjawab pertanyaan, serta membantu menyelesaikan masalah yang dihadapi peserta.
+Customer Care Officer
+Fokus pada membangun hubungan baik dengan peserta dan memastikan kepuasan peserta atas layanan yang diterima.
+e. Kepala Bidang Pengendalian Operasional
+Bidang ini bertanggung jawab memastikan bahwa seluruh aktivitas operasional berjalan sesuai dengan prosedur dan efisien.
+Penata Operasional Cabang
+Bertugas mengawasi operasional di cabang, memastikan layanan berjalan efektif dan efisien.
+Penata Keuangan
+Bertanggung jawab atas pengelolaan keuangan cabang, termasuk pengawasan anggaran dan pelaporan keuangan.
+Penata Pengendalian dan Risiko
+Melakukan analisis risiko operasional serta merancang strategi untuk meminimalkan risiko tersebut.
+f. Petugas Pengawasan dan Pemeriksaan (Wasrik)
+Petugas Wasrik bertugas mengawasi pelaksanaan program dan kebijakan BPJS Ketenagakerjaan Mereka merencanakan, mengoordinasikan, dan melaksanakan pengawasan terhadap kepatuhan perusahaan, tenaga kerja, dan pemberi kerja secara berkala.
+Tugas lainnya meliputi:
+Menganalisis data kepesertaan, baik dari pengaduan masyarakat, laporan AR/ARK, maupun instansi terkait.
+Berkoordinasi dengan instansi pemerintah atau lembaga hukum untuk menindak pelanggaran kepatuhan.
+Hasil pengawasan menjadi dasar penerapan sanksi, seperti:
+Teguran: Diberikan kepada pelanggaran ringan.
+Denda: Diberikan kepada pelanggaran sedang.
+Sanksi Administratif: Diberikan kepada pelanggaran berat.
+Jenis Program Pelayanan BPJS Ketenagakerjaan
+BPJS Ketenagakerjaan terdiri dari 4 program yaitu untuk kepesertaan pekerja Penerima Upah (PU), untuk kepesertaan Bukan Penerima Upah (BPU), Peserta Imigran Indonesia (PMI), dan Jasa Konstruksi.
+Penerima Upah (PU)
+Peserta dalam kategori ini adalah karyawan yang menerima gaji atau imbalan dari pemberi kerja. Program yang tersedia untuk mereka meliputi: Jaminan Kematian (JKM), Jaminan Kecelakaan Kerja (JKK), Jaminan Hari Tua (JHT), Jaminan Kehilangan Pekerjaan (JKP), dan Jaminan Pensiun (JP).
+Jaminan Kecelakaan Kerja (JKK)
+Manfaat berupa uang tunai dan/atau pelayanan kesehatan bagi peserta yang mengalami kecelakaan kerja atau penyakit akibat kerja.
+Pelayanan Kesehatan: Meliputi pemeriksaan, rawat inap kelas I, rehabilitasi, perawatan di rumah (maksimal 1 tahun/ Rp20 juta), dan penanganan komorbiditas.
+Santunan Uang:
+Transportasi: Maks. Rp 10 juta (udara), Rp 5 juta (darat), Rp 2 juta (laut).
+Santunan Tidak Mampu Bekerja: 100% upah (12 bulan), lalu 50%.
+Cacat: Berdasarkan persentase cacat hingga 70% x 80 x upah.
+Kematian: 60% x 80 x upah (minimal sesuai JKM).
+Biaya pemakaman: Rp10 juta.
+Beasiswa: Total hingga Rp174 juta untuk 2 anak.
+Jaminan Kematian (JKM)
+Manfaat berupa santunan uang tunai bagi ahli waris peserta yang meninggal bukan akibat kerja.
+Santunan kematian: Rp20 juta.
+Santunan berkala: Rp12 juta.
+Biaya pemakaman: Rp10 juta.
+Beasiswa: Total hingga Rp174 juta untuk 2 anak, diberikan sesuai tingkat pendidikan jika masa iuran minimal 3 tahun.
+Jaminan Hari Tua (JHT)
+Manfaat berupa uang tunai dari akumulasi iuran dan hasil pengembangan, diberikan:
+Sekaligus: Saat usia 56 tahun, berhenti bekerja, meninggalkan Indonesia, cacat total tetap, atau meninggal dunia.
+Sebagian: Maks. 10% untuk persiapan pensiun atau 30% untuk rumah, dengan masa kepesertaan minimal 10 tahun.
+Jaminan Kehilangan Pekerjaan (JKP)
+Program untuk pekerja yang mengalami pemutusan hubungan kerja (PHK), memberikan:
+Uang tunai hingga 6 bulan.
+Akses informasi pasar kerja.
+Pelatihan kerja untuk meningkatkan keterampilan.
+Syarat: Peserta terdaftar aktif di BPJS Ketenagakerjaan, termasuk program JHT dan JKK.
+Jaminan Pensiun (JP)
+Program untuk menjamin pendapatan di hari tua, diberikan secara bulanan atau sekaligus kepada peserta yang memenuhi syarat.
+Pensiun hari tua: Bulanan bagi peserta mencapai usia pensiun (57 tahun).
+Pensiun cacat: Jika peserta mengalami cacat total tetap.
+Pensiun janda/duda, anak, atau orang tua: Jika peserta meninggal dunia.
+Besaran: Berdasarkan iuran yang telah dibayarkan dan perhitungan tertentu sesuai ketentuan.
+Bukan Penerima Upah (BPU)
+Bukan Penerima Upah (BPU) adalah pekerja mandiri yang menjalankan usaha sendiri tanpa pemberi kerja tetap. Contohnya adalah pedagang, petani, nelayan, pengemudi ojek, atau pekerja lepas lainnya. Berbeda dengan PU, iuran jaminan sosial BPU dibayar sepenuhnya secara mandiri.
+Sosialisasi mengenai perbedaan PU dan BPU serta program perlindungan sosial sangat penting untuk memastikan seluruh lapisan masyarakat memahami hak dan kewajiban mereka. Melalui penyampaian informasi seperti brosur dan kegiatan di tempat umum (pasar, kantor, atau komunitas pekerja), masyarakat diajak memahami manfaat program jaminan sosial, seperti Jaminan Kesehatan, Hari Tua, Kecelakaan Kerja, dan Kematian.
+Gambar 2. 4 Pembagian Brosur Bagi Kepesertaan BPU
+ Peserta Imigran Indonesia (PMI)
+Pekerja migran Indonesia yang terdaftar sebagai peserta BPJS Ketenagakerjaan. Program ini memberikan perlindungan bagi PMI selama masa penempatan, mencakup: Jaminan Kecelakaan Kerja (JKK), Jaminan Kematian (JKM), dan opsional Jaminan Hari Tua (JHT). Cakupan perlindungan mulai dari keberangkatan, selama bekerja di luar negeri, hingga kembali ke Indonesia.
+Jasa Konstruksi
+Program perlindungan untuk pekerja di sektor konstruksi, baik harian lepas, borongan, maupun per proyek. Manfaat program yaitu Jaminan Kecelakaan Kerja (JKK), dan Jaminan Kematian (JKM) selama proyek berlangsung. Pendaftaran iurannya bersifat sementara, dihitung berdasarkan nilai proyek konstruksi.
+Pendaftaran Program BPJS Ketenagakerjaan
+Pendaftaran Online
+Kunjungi Website Resmi: Akses situsresmi BPJS Ketenagakerjaan di www.bpjsketenagakerjaan.go.id.
+Pilih Menu Pendaftaran: Di pojok kanan atas, pilih menu “Daftarkan Saya”.
+Pilih Kategori: Pilih “Individu (Pekerja Bukan Penerima Upah – BPU)”.
+Isi Data Diri: Lengkapi informasi yang diminta, seperti:
+Informasi Pekerja
+Profil Pekerja
+Konfirmasi Pendaftaran: Setelah mengisi data, lakukan konfirmasi.
+Pembayaran: Setelah pendaftaran, Anda akan menerima kode untuk pembayaran iuran. Pembayaran dapat dilakukan melalui berbagai kanal yang tersedia.
+Dokumen Pendukung: Siapkan dokumen seperti:
+Salinan KTP
+Salinan Kartu Keluarga
+Pas foto ukuran 2x3
+Setelah proses pendaftaran selesai, kartu kepesertaan akan diterima dalam waktu maksimal tujuh hari setelah pembayaran iuran.
+Pendaftaran Melalui Kantor Cabang
+Datang ke Kantor Cabang: Kunjungi kantor cabang BPJS Ketenagakerjaan terdekat.
+Isi Formulir Pendaftaran: Lengkapi formulir dokumen pendaftaran kepesertaan.
+Ambil nomor antrian.
+Dapatkan informasi jumlah iuran yang harus dibayarkan.
+Setelah pembayaran dilakukan, akan menerima kartu dan sertifikat kepesertaan.
+Aplikasi JMO (Jamsostek Mobile)
+Pengguna dapat mengunduh aplikasi ini melalui Google Play Store atau App Store dan mengikuti langkah-langkah pendaftaran yang disediakan dalam aplikasi.
+Bentuk Pelaksanaan
+Pelaksanaan program magang di BPJS Ketenagakerjaan Cabang Makassar dilakukan dengan mengikuti prosedur dan tahapan yang telah ditentukan oleh perusahaan serta pengawasan dari universitas. Selama magang, saya diberikan kesempatan untuk terlibat dalam berbagai kegiatan yang berkaitan dengan pengelolaan data, pengembangan sistem informasi, serta pelayanan digital yang merupakan bagian utama dari operasi BPJS Ketenagakerjaan.
+Matriks Kegiatan
+                            Tabel 2. 1. Gambaran kegiatan  MBKM selama 4 bulan
+Lokasi Magang
+Kegiatan Kuliah Kerja Praktek/Magang dilaksanakan di Badan Penyelenggara Jaminan Sosial (BPJS) Ketenagakerjaan Kantor Cabang Makassar di JL. Urip Sumohardjo km 4,5 Pampang Makassar 90232, Makassar 90231, Sulawesi Selatan. Dengan jarak tempuh dari Institut Teknologi dan Bisinis Nobel Indonesia menuju Perusahaan sekitar 5,8 km dengan ±11 menit menggunakan alat transportasi darat. Berikut lokasi Magang menurut
+Gambar 2. 4. Lokasi Magang Kantor BPJS Ketenagakerjaan Cabanng Makassar
+Sumber : Google Maps (2025)
+ 
+Jadwal dan Waktu Pelaksanaan Magang
+Kegiatan magang dilaksanakan selama empat bulan atau 80 hari kerja, terhitung sejak tanggal 07 Oktober hingga 23 Januari 2024. Selama periode tersebut, peserta magang mengikuti jam kerja operasional kantor yang berlangsung dari pukul 08.00 - 17.00 WITA. Waktu istirahat pukul 12.00 – 13.00, pada hari Jumat, istirahat pukul 11.30 – 13.30 atau dengan kata lain, sama dengan jam kerja karyawan lainnya. (Lihat lampiran 1, 2 dan 3).
+BAB III
+AKTIVITAS LANJUTAN DAN TARGET CAPAIAN
+3.1 Aktivitas Lanjutan
+   Selama 4 bulan magang di BPJS Ketenagakerjaan Cabang Makassar, saya terlibat dalam beberapa aktivitas lanjutan yang bertujuan untuk mendalami lebih dalam tentang pengelolaan data dan pengembangan sistem informasi. Beberapa aktivitas lanjutan tersebut adalah sebagai berikut:
+Pekerjaan Harian (Bidang Penempatan Penata Administrasi Khusus & Account Representative Khusus)
+Selama menjalani magang sebagai Penata Administrasi Khusus dan Account Representative Khusus, saya berperan dalam mendukung kelancaran program BPJS Ketenagakerjaan, khususnya dalam akuisisi peserta baru dan pengelolaan administrasi kepesertaan.
+Pengelolaan Administrasi Kepesertaan
+Seluruh kegiatan yang berkaitan dengan data peserta, mulai dari pendaftaran hingga perubahan data. Misalnya, mengelola database peserta, memperbarui informasi peserta, dan memastikan data selalu akurat dan up-to-date.
+Pencetakan Kartu dan Sertifikat
+Setelah peserta terdaftar, akan diterbitkan kartu kepesertaan sebagai bukti keikutsertaan dalam program. Menggunakan aplikasi kemudian data dicocokkan, melalui proses pencarian NIK dan NPP (Nomor Pendaftaran Perusahaan). Untuk peserta jasa konstruksi, mungkin juga ada sertifikat yang diterbitkan dan pemberian spanduk apabila sudah terdaftar.
+Pencetakan Dokumen Kepesertaan
+Selain kartu, juga dicetak berbagai dokumen kepesertaan lainnya, seperti laporan iuran, surat keterangan peserta aktif, dan sebagainya.
+Pemanggilan OSS
+Pelaku usaha mendaftar melalui sistem OSS dengan mengisi data yang diperlukan, termasuk identitas perusahaan dan dokumen pendukung.
+Wa Blasting
+Tugas ini biasa dilakukan setiap minggu atau setiap bulan meliputi perhitungan jumlah iuran yang harus dibayarkan oleh perusahaan berdasarkan jumlah pekerja dan upah yang dilaporkan. Untuk tunggakan, akan dilakukan penagihan melalui berbagai cara, seperti surat teguran, SMS, WhatsApp, atau email.
+Kualitas dan Koreksi data IGI
+Kegiatan ini bertujuan untuk menjaga kualitas data peserta agar selalu akurat, relevan, dan terkini, mengakses koreksi data dan kualitas data di sistem atau melalui Excel/Spreedsheet yang sesuai 
+dengan arahan masing-masing pembina.
+Sosialisasi Program
+Penulis juga sering terlibat dalam kegiatan sosialisasi program BPJS Ketenagakerjaan. Kegiatan sosialisasi ini sangat penting untuk meningkatkan kesadaran dan pemahaman masyarakat, terutama para pekerja, tentang manfaat dan signifikansi program jaminan sosial yang diselenggarakan oleh BPJS Ketenagakerjaan. Tujuan dari sosialisasi ini adalah agar lebih banyak pekerja terlndungi dan dapat memperoleh hak-hak mereka sebagai tenaga kerja.
+3.2 Target Capaian   
+ Target capaian yang diharapkan selama magang ini adalah untuk memberikan kontribusi nyata bagi BPJS Ketenagakerjaan Cabang Makassar serta mengembangkan kompetensi saya dalam bidang sistem dan teknologi informasi. Beberapa target capaian yang ingin dicapai adalah:
+Meningkatkan Pemahaman tentang Sistem Informasi Ketenagakerjaan: 
+Saya berharap dapat memperoleh wawasan yang lebih mendalam mengenai bagaimana sistem informasi dikelola dan diterapkan dalam sebuah lembaga yang memiliki cakupan besar seperti BPJS Ketenagakerjaan.
+Pengembangan Keterampilan Teknis: 
+Saya menargetkan untuk mengembangkan keterampilan dalam pengelolaan data, pemrograman, serta pemeliharaan sistem informasi yang relevan dengan kebutuhan industri.
+ Menyelesaikan Tugas yang Diberikan dengan Baik: 
+Penulis bertujuan untuk menyelesaikan semua tugas yang diberikan dengan tepat waktu dan sesuai dengan standar yang ditetapkan oleh BPJS Ketenagakerjaan, baik itu dalam bentuk laporan maupun kontribusi terhadap pengembangan sistem.
+Memberikan Kontribusi dalam Peningkatan Layanan: 
+Melalui partisipasi dalam pengembangan layanan digital dan program sosialisasi, penulis berharap dapat memberikan kontribusi yang signifikan dalam meningkatkan efisiensi dan pemahaman peserta terhadap layanan yang diberikan oleh BPJS Ketenagakerjaan.
+Peningkatan Soft Skills: 
+Penulis juga berharap untuk mengembangkan keterampilan interpersonal seperti kerja sama tim, komunikasi, dan adaptasi di lingkungan kerja profesional, yang sangat dibutuhkan dalam dunia kerja yang kompetitif.
+Dengan pencapaian target-target ini, saya berharap dapat memberikan manfaat bagi BPJS Ketenagakerjaan sekaligus memperoleh pengalaman yang berharga untuk mendukung perkembangan karier di masa depan.
+BAB IV
+KESIMPULAN
+4.1. Kesimpulan 
+Berdasarkan pengalaman selama menjalani magang mandiri di BPJS Ketenagakerjaan, penulis dapat menyimpulkan beberapa hal berikut:
+Saya memperoleh pemahaman yang lebih mendalam tentang bidang pekerjaan, khususnya di BPJS Ketenagakerjaan. Hal ini sangat bermanfaat untuk mempersiapkan diri menghadapi dunia kerja yang sesungguhnya.
+Saya berkesempatan menerapkan teori yang didapat selama perkuliahan, sehingga dapat membandingkan antara pengetahuan akademis dengan praktik nyata di lapangan.
+Saya mampu beradaptasi dengan lingkungan kerja profesional di BPJS Ketenagakerjaan. Pengalaman ini memudahkan saya untuk menyesuaikan diri di dunia kerja nantinya.
+Saya mendapatkan keterampilan tambahan selama magang, seperti kemampuan mengelola waktu dengan lebih disiplin dan meningkatkan rasa tanggung jawab dalam menyelesaikan tugas.
+4.2. Saran
+Untuk BPJS Ketenagakerjaan:
+Meningkatkan frekuensi pelatihan bagi mahasiswa magang agar mereka dapat memahami sistem operasional perusahaan secara lebih mendalam.
+Memberikan kesempatan yang lebih luas kepada mahasiswa magang untuk terlibat dalam proyek-proyek strategis perusahaan.
+Untuk Perguruan Tinggi:
+Memperluas jaringan kerja sama dengan institusi seperti BPJS Ketenagakerjaan untuk mendukung program magang yang selaras dengan perkembangan industri.
+Mengintegrasikan pengalaman magang mahasiswa ke dalam kurikulum pembelajaran guna memberikan nilai tambah bagi proses pendidikan.
+Untuk Mahasiswa:
+Memanfaatkan kesempatan magang sebaik mungkin untuk belajar dan membangun jaringan profesional.
+Bersikap proaktif dalam menggali informasi tentang operasional perusahaan serta memahami tantangan yang dihadapi industri terkait.
+LAMPIRAN
+Lampiran 1. Kegiatan dalam Kantor
+     
+  
+      
+ 
+     
+  
+ 
+ 
+ 
+ 
+ 
+Lampiran 2. Kegiatan Luar Kantor
+     
+      \
+      
+   
+     
+Lampiran 3. Kunjungan Dosen dan Pelepasan Mahasiswa Magang
+Lampiran 4. Sertifikat Kegiatan Softskill dan Hardskill
+  
+ 

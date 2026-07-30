@@ -25,6 +25,19 @@ const allPortfolios = [
     ]
   },
   {
+    id: 13,
+    title: "Prototipe SIMIRA (Kanwil Bea Cukai Sulbagsel)",
+    desc: "Sistem Informasi Manajemen Rumah Tangga & Gudang berbasis web (PHP Laravel & MySQL) untuk Kanwil DJBC Sulbagsel. Merancang alur bisnis dari requirement gathering hingga fitur pencatatan stok real-time, manajemen barang masuk/keluar, dan autentikasi user.",
+    category: "Sistem & Web",
+    image: "/projects/simira-dashboard.jpeg",
+    gallery: [
+      "/projects/simira-dashboard.jpeg",
+      "/projects/simira-work-1.jpeg",
+      "/projects/simira-work-2.jpeg",
+      "/projects/beacukai-siakad-log.jpeg"
+    ]
+  },
+  {
     id: 3,
     title: "Sistem Pendukung Keputusan (Metode TOPSIS)",
     desc: "Sistem analisis data berbasis web (makassarauto.my.id) untuk mengoptimalkan pemilihan kendaraan bekas berdasarkan 7 kriteria kompleks. Menerjemahkan kebutuhan riset menjadi logika algoritma yang fungsional dan dapat diakses publik.",

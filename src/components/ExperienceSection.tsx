@@ -46,17 +46,18 @@ const allExperiences = [
     relatedProject: "cenrana"
   },
   {
-    role: "System Analyst Intern",
-    company: "Kanwil Bea Cukai Sulbagsel",
+    role: "System Analyst & Software Developer Intern",
+    company: "Kanwil Bea Cukai Sulbagsel (Kemenkeu RI)",
     location: "Makassar",
     date: "Mar 2025 – Jul 2025",
-    description: "Menganalisis kebutuhan operasional instansi untuk merancang prototipe Sistem Informasi Manajemen (SIM) Rumah Tangga. Menyusun struktur basis data, ERD, process mapping, hingga desain antarmuka.",
+    description: "Menjalani rotasi kerja di 5 bidang strategis. Mengembangkan prototipe SIMIRA (Sistem Informasi Manajemen Rumah Tangga) berbasis PHP Laravel & MySQL, menganalisis sistem pengaduan keberatan/banding, serta mengeksekusi media monitoring berita harian (NALIKA).",
     activities: [
-      "Requirement gathering & business process mapping.",
-      "Merancang ERD & struktur basis data.",
-      "Membuat prototipe UI Sistem Informasi Manajemen."
+      "Mengembangkan aplikasi SIMIRA (Laravel & MySQL) untuk inventaris gudang instansi.",
+      "Mengeksekusi NALIKA (Media Monitoring) & analisis berita harian kepabeanan.",
+      "Melakukan cross-check & input data pegawai di Bidang Umum.",
+      "Mengidentifikasi alur kerja bidang Penindakan, Penyidikan & Kepatuhan Internal."
     ],
-    competencies: ["System Analysis", "Business Process Mapping", "Prototyping", "Database Design"],
+    competencies: ["System Analysis", "Laravel & MySQL", "Business Process Mapping", "Media Monitoring", "Database Design"],
     label: "Magang Kemenkeu",
     category: "Profesional",
     logo: "/logobeacukai.png",
@@ -64,17 +65,18 @@ const allExperiences = [
     relatedProject: null
   },
   {
-    role: "Data Validation Intern",
-    company: "BPJS Ketenagakerjaan",
+    role: "Data Analyst & Account Representative Specialist",
+    company: "BPJS Ketenagakerjaan Cabang Makassar",
     location: "Makassar",
     date: "Okt 2024 – Jan 2025",
-    description: "Memastikan integritas dan keakuratan data instansi dengan memvalidasi lebih dari 5.000 data kepesertaan. Mengoperasikan sistem CRM internal untuk pemantauan progres dan sinkronisasi data operasional.",
+    description: "Mengelola akuisisi & administrasi kepesertaan. Memvalidasi integritas >5.000 data Kualitas IGI, mengotomatisasi penagihan iuran/tunggakan via WA Blasting, serta memverifikasi data integrasi perusahaan dari portal OSS (Online Single Submission).",
     activities: [
-      "Memvalidasi 5.000+ data kepesertaan.",
-      "Mengelola sinkronisasi data via CRM internal.",
-      "Mengeksekusi komunikasi digital massal."
+      "Memvalidasi & melakukan koreksi kualitas data IGI (>5.000 data kepesertaan).",
+      "Mengoperasikan penagihan iuran & tunggakan berkala via WA Blasting & Email.",
+      "Memverifikasi pendaftaran pelaku usaha dari sistem OSS Kemeninves/BKPM.",
+      "Menjalankan sosialisasi lapangan program BPU (Bukan Penerima Upah)."
     ],
-    competencies: ["Data Validation", "Data Integrity", "CRM Operation", "Quality Assurance"],
+    competencies: ["Data Quality Control", "WA Blasting Automation", "OSS System Integration", "CRM & Data Integrity", "Public Relations"],
     label: "MBKM",
     category: "Profesional",
     logo: "/bpjs-ketenagakerjaan-logo-png-seeklogo-406885.png",

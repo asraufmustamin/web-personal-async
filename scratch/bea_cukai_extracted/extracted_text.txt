@@ -1,0 +1,344 @@
+LAPORAN MAGANG KEMENTERIAN KEUANGAN KANTOR WILAYAH DIREKTORAT JENDERAL BEA DAN CUKAI
+SULAWESI BAGIAN SELATAN
+DIAJUKAN OLEH:
+MUHAMMAD ASRAUF MUSTAMIN (2022233037)
+PROGRAM STUDI SISTEM DAN TEKNOLOGI INFORMASI FAKULTAS TEKNOLOGI INDUSTRI
+INSTITUT TEKNOLOGI DAN BISNIS NOBEL INDONESIA MAKASSAR TAHUN 2025
+ii
+KATA PENGANTAR
+Puji syukur penulis panjatkan ke hadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia- Nya sehingga penulis dapat menyelesaikan laporan kegiatan magang ini dengan baik. Laporan ini disusun sebagai bentuk pertanggungjawaban dan dokumentasi atas pelaksanaan magang yang telah dilaksanakan di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan.
+Kegiatan magang ini berlangsung selama empat bulan dan memberikan banyak pengalaman berharga, baik dalam memahami tugas dan fungsi instansi pemerintah khususnya di bidang kepabeanan dan cukai. Penulis menyadari bahwa tanpa bantuan dan bimbingan dari berbagai pihak, laporan ini tidak akan terselesaikan dengan baik. Oleh karena itu, penulis mengucapkan terima kasih kepada:
+Bapak Nurkhalik Wahdanial Asbara, S.Kom., M.Kom selaku Ketua Jurusan Sistem dan Teknologi Informasi S1 Institut Teknologi dan Bisnis Nobel Indonesia
+Ibu Andi Marlinah, S.E., M.M selaku Dosen Pembimbing Magang Kementrian Keuangan Periode I Tahun 2025.
+Bapak Djaka Kusmartata, S.E., M.M selaku Kepala Kantor Wilayah DJBC Sulawesi Bagian Selatan.
+Seluruh pegawai di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan yang telah banyak memberikan perhatian dan bantuan kepada penulis selama pelaksanaan magang.
+Penulis menyadari bahwa laporan ini masih jauh dari sempurna. Oleh karena itu, segala kritik dan saran yang membangun sangat penulis harapkan demi perbaikan di masa yang akan datang. Semoga laporan ini dapat memberikan manfaat dan gambaran yang jelas mengenai kegiatan magang yang telah dilaksanakan.
+Makassar, 3 Juli 2025
+Muhammad Asrauf Mustamin
+iii
+DAFTAR ISI
+LEMBAR PENGESAHANError! Bookmark not defined.
+KATA PENGANTARiii
+DAFTAR ISIiv
+DAFTAR GAMBARv
+DAFTAR TABELvi
+DAFTAR LAMPIRANvii
+BAB I PENDAHULUAN1
+Latar Belakang Kegiatan1
+Tujuan dan Manfaat Kegiatan2
+BAB II PELAKSANAAN KEGIATAN4
+Kegiatan MBKM4
+Kondisi Umum Lingkungan Mitra4
+Geografis dan Demografi4
+Visi Misi5
+Sejarah Kanwil Bea dan Cukai Sulbagsel6
+Lambang Kanwil Bea Cukai Sulbagsel8
+Struktur Kanwil Bea Cukai Sulbagsel9
+Tugas Pokok dan Fungsi Kanwil DJBC Sulbagsel10
+Bentuk Pelaksanaan19
+Matriks Kegiatan19
+Lokasi Magang20
+Jadwal dan Waktu Pelaksanaan Magang21
+Aktivitas Lanjutan21
+Target Capaian23
+Pembahasan24
+BAB III PENUTUP27
+Simpulan27
+Saran28
+DAFTAR PUSTAKA30
+LAMPIRAN31
+Dokumentasi Foto Dan Link Video UTS31
+Logbook Harian33
+Daftar Kegiatan Softskill Dan Hardskill33
+iv
+DAFTAR GAMBAR
+Gambar 2. 1. Kantor Kanwil DJBC Sulbagsel7
+Gambar 2. 2. Lambang Kanwil DJBC Sulbagsel8
+Gambar 2. 3. Struktur Kanwil DJBC Sulbagsel10
+Gambar 2. 4. Lokasi Magang Kanwil DJBC Sulbagsel20
+v
+DAFTAR TABEL
+Tabel 2. 1. Gambaran Kegiatan MBKM Selama 4 Bulan20
+vi
+DAFTAR LAMPIRAN
+Lampiran 1Dokumentasi Foto dan Link Video UTS32
+Lampiran 2Logbook Harian34
+Lampiran 3Daftar Kegiatan Softskill dan Hardskill35
+vii
+Latar Belakang Kegiatan
+BAB I PENDAHULUAN
+Program Merdeka Belajar – Kampus Merdeka (MBKM) merupakan kebijakan dari Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia yang bertujuan memberikan ruang seluas-luasnya bagi mahasiswa untuk mengembangkan potensi dan kompetensinya melalui pembelajaran di luar program studi. Salah satu bentuk implementasi program MBKM adalah kegiatan magang yang memberikan pengalaman kerja nyata di dunia industri maupun instansi pemerintahan.
+Magang sebagai bagian dari MBKM bertujuan untuk mengurangi kesenjangan antara dunia pendidikan tinggi dan dunia kerja. Melalui kegiatan ini, mahasiswa dapat mengaplikasikan pengetahuan teoritis yang diperoleh selama masa perkuliahan ke dalam konteks profesional. Selain itu, program magang juga melatih mahasiswa untuk membangun karakter kerja yang adaptif, kreatif, dan bertanggung jawab, serta meningkatkan keterampilan komunikasi, kolaborasi, dan pemecahan masalah.
+Dalam rangka mendukung pelaksanaan program MBKM, penulis mengikuti kegiatan magang di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan. Penulis mendapatkan kesempatan untuk terlibat langsung di lima bidang strategis, yaitu: Bidang Umum, Bidang Fasilitas Kepabeanan dan Cukai, Bidang Kepabeanan dan Cukai, Bidang Penindakan dan Penyidikan, serta Bidang Kepatuhan Internal. Penempatan ini memberikan gambaran komprehensif tentang bagaimana proses kerja di lingkungan instansi pemerintah berlangsung, khususnya dalam pengawasan dan pelayanan kepabeanan serta cukai.
+1
+Selama magang berlangsung, penulis dituntut untuk aktif, sigap, dan mampu beradaptasi dengan lingkungan kerja profesional. Kegiatan ini tidak hanya menambah wawasan dan pengalaman kerja, tetapi juga menjadi sarana untuk meningkatkan keterampilan non-teknis (soft skills) seperti komunikasi efektif, etika kerja, manajemen waktu, dan kerja sama tim. Dengan demikian, magang MBKM ini diharapkan dapat menjadi bekal berharga bagi mahasiswa dalam memasuki dunia kerja dan berkontribusi nyata bagi pembangunan bangsa.
+Tujuan dan Manfaat Kegiatan
+Pelaksanaan magang dalam program Merdeka Belajar – Kampus Merdeka (MBKM) bertujuan untuk memberikan pengalaman belajar di luar kampus yang relevan dengan dunia kerja. Melalui kegiatan ini, mahasiswa diharapkan dapat mengembangkan potensi diri, baik secara akademik maupun profesional. Adapun tujuan dan manfaat dari kegiatan magang ini adalah sebagai berikut:
+Tujuan Kegiatan
+Mengaplikasikan ilmu pengetahuan dan keterampilan yang telah diperoleh selama perkuliahan ke dalam situasi kerja nyata di lingkungan instansi pemerintahan.
+Meningkatkan pemahaman praktis dalam bidang administrasi, kepabeanan, dan cukai melalui keterlibatan langsung dalam berbagai aktivitas operasional instansi.
+Mengembangkan soft skill seperti kemampuan komunikasi, manajemen waktu, kerja sama tim, kedisiplinan, dan pemecahan masalah.
+Mengenal sistem kerja, struktur organisasi, dan budaya kerja di lingkungan Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan.
+Melatih sikap profesional dan tanggung jawab, serta meningkatkan kesiapan dalam menghadapi tantangan dunia kerja setelah lulus.
+Manfaat Kegiatan
+Bagi Mahasiswa:
+Mendapatkan pengalaman kerja nyata yang dapat memperkuat portofolio dan meningkatkan daya saing lulusan.
+Memperluas jejaring profesional dan membuka wawasan tentang peluang karier di sektor publik.
+Menumbuhkan rasa percaya diri dan kemampuan adaptasi dalam lingkungan kerja.
+Bagi Perguruan Tinggi:
+Menjalin kerja sama yang produktif dengan instansi mitra sebagai bagian dari implementasi program MBKM.
+Menyediakan ruang aktualisasi bagi mahasiswa untuk belajar langsung dari dunia kerja.
+Bagi Instansi Tempat Magang:
+Mendapatkan kontribusi dari mahasiswa sebagai tenaga pendukung operasional yang dapat membantu pelaksanaan tugas harian.
+Menjadi sarana pencarian calon talenta yang berpotensi untuk kebutuhan sumber daya manusia di masa depan.
+BAB II PELAKSANAAN KEGIATAN
+Kegiatan MBKM
+Kondisi Umum Lingkungan Mitra
+Geografis dan Demografi
+Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan (Kanwil DJBC Sulbagsel) merupakan salah satu unit vertikal di bawah Direktorat Jenderal Bea dan Cukai Kementerian Keuangan Republik Indonesia yang memiliki wilayah kerja meliputi Provinsi Sulawesi Selatan, Sulawesi Barat, dan Sulawesi Tenggara.
+Secara geografis, Kanwil DJBC Sulawesi Bagian Selatan berlokasi di Jl. Satando No. 6, Kelurahan Butung, Kecamatan Wajo, Kota Makassar, Provinsi Sulawesi Selatan, dengan kode pos 90165. Kantor ini terletak pada titik koordinat 5°07'19.0" LS dan 119°24'45.2" BT, berada di kawasan strategis dekat Pelabuhan Soekarno Hatta Makassar, pelabuhan utama di wilayah Sulawesi Selatan yang menjadi pusat kegiatan ekspor dan impor di Kawasan Timur Indonesia.
+Kanwil DJBC Sulbagsel memiliki cakupan wilayah yang luas, sehingga pelaksanaan tugas dan fungsinya mencakup pengawasan lalu lintas barang ekspor impor, pelayanan kepabeanan dan cukai, serta penegakan hukum kepabeanan di wilayah kerja. Keberadaannya mendukung pengawasan perbatasan laut di kawasan Sulawesi bagian selatan agar terhindar dari penyelundupan barang ilegal yang dapat merugikan negara. Dari segi demografi, Kanwil DJBC Sulawesi Bagian Selatan memiliki pegawai dengan jumlah sekitar 400 orang yang tersebar di kantor wilayah dan kantor-kantor pelayanan di bawahnya. Komposisi pegawai
+4
+terdiri atas 65% pegawai laki-laki dan 35% pegawai perempuan. Berdasarkan kelompok usia, mayoritas pegawai berada pada rentang usia 25 hingga 40 tahun, menjadikan organisasi ini memiliki sumber daya manusia yang produktif dan adaptif terhadap perkembangan teknologi dan digitalisasi sistem kepabeanan.
+Latar belakang pendidikan pegawai di Kanwil DJBC Sulbagsel juga beragam, meliputi bidang Kepabeanan dan Cukai, Hukum, Ekonomi, Akuntansi, Manajemen, Administrasi Publik, dan Teknologi Informasi. Hal ini mendukung pelaksanaan fungsi organisasi yang kompleks, mulai dari pelayanan, pengawasan, hingga penegakan hukum di bidang kepabeanan dan cukai.
+Dengan kondisi geografis yang strategis serta demografi pegawai yang kompeten, Kanwil DJBC Sulawesi Bagian Selatan memiliki peran penting dalam mendukung tercapainya visi Direktorat Jenderal Bea dan Cukai yaitu “Menjadi institusi kepabeanan dan cukai yang terkemuka di dunia” melalui optimalisasi pelayanan dan pengawasan di wilayah kerjanya.
+Visi Misi
+Setiap instansi pemerintahan memiliki visi dan misi yang digunakan sebagai pedoman dalam berorganisasi.Untuk itu telah ditetapkan Keputusan Dirjen Bea Cukai Nomor KEP- 105/BC/2014 tentang Visi dan Misi:
+Visi
+“Menjadi institusi kepabeanan dan cukai terkemuka di dunia untuk melindungi masyarakat Indonesia dan mendukung pertumbuhan ekonomi.”
+Misi
+Untuk mencapai visi yang telah ditetapkan, Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan melakukan beberapa misi yakni:
+Memfasilitasi perdagangan dan industri melalui pelayanan kepabeanan dan cukai yang efektif dan efisien.
+Melindungi masyarakat Indonesia dari masuknya barang-barang ilegal dan berbahaya melalui pengawasan kepabeanan dan cukai yang optimal.
+Mengoptimalkan penerimaan negara dari sektor kepabeanan dan cukai untuk mendukung pembangunan nasional.
+Mendorong kepatuhan pengguna jasa melalui penyederhanaan prosedur dan penegakan hukum yang adil dan tegas.
+Sejarah Kanwil Bea dan Cukai Sulbagsel
+Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan (Kanwil DJBC Sulbagsel) merupakan salah satu unit vertikal di bawah Direktorat Jenderal Bea dan Cukai Kementerian Keuangan Republik Indonesia yang dibentuk untuk mendukung pelaksanaan tugas pengawasan dan pelayanan di wilayah Sulawesi bagian selatan.
+Pada awalnya, pelaksanaan tugas Direktorat Jenderal Bea dan Cukai di wilayah Sulawesi Bagian Selatan hanya dilakukan melalui kantor pelayanan utama di Makassar yang berada di bawah koordinasi langsung Kantor Pusat DJBC di Jakarta. Namun, seiring meningkatnya volume kegiatan ekspor impor dan kebutuhan pengawasan di kawasan timur Indonesia, maka pada tahun 2007 dibentuklah Kantor Wilayah DJBC Sulawesi Bagian Selatan berdasarkan Peraturan Menteri Keuangan Nomor 80/PMK.01/2007 tentang Organisasi dan Tata Kerja Kantor Wilayah Direktorat Jenderal Bea dan Cukai.
+Pembentukan Kanwil DJBC Sulbagsel bertujuan untuk mempercepat pelayanan dan memperkuat fungsi pengawasan di wilayah Sulawesi Selatan, Sulawesi Barat, dan Sulawesi Tenggara, termasuk pengawasan kepabeanan
+dan cukai di pelabuhan-pelabuhan utama, seperti Pelabuhan Soekarno Hatta Makassar dan pelabuhan di Kendari serta Mamuju. Selain itu, Kanwil DJBC Sulbagsel juga berperan dalam penegakan hukum untuk mencegah penyelundupan barang ilegal serta pengawasan terhadap barang kena cukai di wilayah kerjanya.
+Gambar 2.1 Kantor Kanwil Bea Cukai Sulbagsel
+Sejak berdiri, Kanwil DJBC Sulawesi Bagian Selatan terus mengalami perkembangan, baik dari segi struktur organisasi, peningkatan kualitas sumber daya manusia, serta sarana dan prasarana untuk mendukung optimalisasi pelaksanaan tugas dan fungsi DJBC di kawasan timur Indonesia. Saat ini, Kanwil DJBC Sulbagsel menaungi beberapa kantor pelayanan yang meliputi Kantor Pengawasan dan Pelayanan Bea dan Cukai (KPPBC) Tipe Madya Pabean B Makassar, KPPBC Tipe Madya Cukai Makassar, dan kantor-kantor pelayanan lainnya di wilayah kerja.
+Lambang Kanwil Bea Cukai Sulbagsel
+Gambar 2. 2 Lambang Kanwil Bea Cukai Sulbagsel
+Lambang Direktorat Jenderal Bea dan Cukai menampilkan:
+Perisai bersudut lima di tengah yang menggambarkan Pancasila sebagai dasar negara.
+Di dalam perisai terdapat gambar gunung, laut, dan awan, melambangkan wilayah Nusantara yang diawasi Bea Cukai, baik daratan, lautan, maupun udara.
+Tongkat bersayap dan berhiaskan daun laurel melambangkan kewenangan, kehormatan, kejayaan, dan kejayaan negara.
+Makna Detail:
+Tongkat bersayap
+Melambangkan kewenangan dan kecepatan pelayanan Bea Cukai dalam pengawasan dan pelayanan kepabeanan serta cukai.
+Daun laurel
+Melambangkan kehormatan, kejayaan, dan keberhasilan yang dicapai dalam melaksanakan tugas.
+Perisai bersudut lima
+Melambangkan dasar negara Pancasila yang menjadi landasan kerja DJBC.
+Gunung, laut, dan awan
+Menggambarkan cakupan wilayah kerja Bea Cukai di seluruh Indonesia, meliputi darat, laut, dan udara.
+Struktur Kanwil Bea Cukai Sulbagsel
+Struktur organisasi adalah kerangka yang menggambarkan pembagian tugas dan aktivitas dalam rangka mencapai tujuan organisasi. Struktur ini juga menunjukkan hubungan antara fungsi, wewenang, dan tanggung jawab setiap anggota, yang bekerja sama secara efektif untuk mencapai tujuan yang telah ditetapkan. Dalam sebuah perusahaan, bentuk organisasi ditentukan oleh pimpinan dengan tujuan untuk mempermudah pelaksanaan tugas-tugas, mengatur pembagian pekerjaan, serta memberikan wewenang dan tanggung jawab atas pekerjaan. Struktur organisasi Kanwil Bea dan Cukai Sulawesi Bagian Selatan.
+Peraturan Menteri Keuangan Nomor 188/PMK.01/2016 Tahun 2016 tentang Organisasi dan Tata Kerja Instansi Vertikal Direktorat Jenderal Bea dan Cukai.
+Gambar 2.3 Struktur Kanwil DJBC Sulbagsel
+Tugas Pokok dan Fungsi Kanwil DJBC Sulbagsel
+Bagian Umum
+Bagian Umum mempunyai tugas melaksanakan urusan keuangan, ketatausahaan dan rumah tangga, administrasi kepegawaian dan pengembangan pegawai, memfasilitasi dan melakukan pembinaan administratif bagi Jabatan Fungsional Pemeriksa Bea dan Cukai, dan jabatan fungsional lainnya  sesuai  dengan  ruang  lingkup  tugas  jabatan  fungsional  yang
+bersangkutan.
+Dalam melaksanakan tugas sebagaimana dimaksud dalam Pasal 6, Bagian Umum menyelenggarakan fungsi:
+Pelaksanaan urusan administrasi kepegawaian dan pengembangan pegawai
+Pelaksanaan fasilitasi dan pembinaan administratif bagi jabatan fungsional pemeriksa bea dan cukai, dan jabatan fungsional lainnya sesuai dengan ruang lingkup tugas jabatan fungsional yang bersangkutan
+Pelaksanaan urusan rumah tangga, dan perlengkapan dan
+Pelaksanaan urusan tata usaha, kearsipan, dan keuangan.
+Bagian Umum terdiri atas:
+Subbagian Kepegawaian. Subbagian Kepegawaian mempunyai
+tugas melakukan urusan administrasi kepegawaian dan pengembangan pegawai, serta memfasilitasi dan melakukan pembinaan administratif bagi Jabatan Fungsional Pemeriksa Bea dan Cukai, dan jabatan fungsional lainnya sesuai dengan ruang lingkup tugas jabatan fungsional yang bersangkutan.
+Subbagian Rumah Tangga. Subbagian Rumah Tangga mempunyai tugasmelaksanakanurusanrumahtangga,perlengkapan,dan kesejahteraan pegawai.
+Subbagian Tata Usaha dan Keuangan. Subbagian Tata Usaha dan Keuangan mempunyai tugas melakukan urusan tata persuratan, kearsipan, keuangan, dan anggaran.
+Bidang Kepabeanan dan Cukai
+Bidang Kepabeanan dan Cukai mempunyai tugas melaksanakan bimbingan teknis, pengendalian dan evaluasi pelaksanaan peraturan perundang-undangan, pelaksanaan penelitian ulang dan penelitian atas keberatan terhadap keputusan di bidang kepabeanan dan cukai, melaksanakan penyusunan rencana, analisis potensi, pemantauan dan evaluasi realisasi penerimaan bea masuk, bea keluar, cukai, dan pungutan negara yang sesuai peraturan perundang-undangan dipungut oleh Direktorat Jenderal Bea dan Cukai, melaksanakan koordinasi dan pengelolaan data, penyajian informasi dan pelaporan, memberikan bantuan hukum di bidang kepabeanan dan cukai, serta asistensi dari segi hukum dalam penyusunan keputusan serta pelaksanaan tugas dan fungsi Direktorat Jenderal Bea dan Cukai yang mempunyai implikasi di bidang hukum.
+Dalam melaksanakan tugas Pasal 10, Bidang menyelenggarakan fungsi: sebagaimana dimaksud Kepabeanan dan Cukai
+Pemberian bimbingan teknis, penyiapan pengendalian, dan evaluasi pelaksanaan klasifikasi barang dan nilai pabean.
+Penyiapan bahan penyusunan rencana, analisis potensi, pemantauan dan evaluasi realisasi, dan penyusunan laporan penerimaan di bidang kepabeanan dan cukai.
+Penelitian ulang atas penetapan di bidang kepabeanan clan cukai.
+Penelitian atas keberatan terhadap penetapan di bidang kepabeanan dan cukai, serta penyiapan administrasi urusan banding.
+Pemberian bantuan hukum terhadap permasalahan hukum yang timbul akibat pelaksanaan tugas dan fungsi direktorat jenderal bea dan cukai.
+Pemberian asistensi dari segi hukum dalam penyusunan keputusan serta pelaksanaan tugas dan fungsi direktorat jenderal bea dan cukai yang mempunyai implikasi di bidang hukum.
+Penyiapan bahan koordinasi clan pelaksanaan pengelolaan data, penyajian informasi, clan laporan di bidang kepabeanan dan cukai.
+Bidang Kepabeanan clan Cukai terdiri atas:
+Seksi Pemeriksaan. Seksi Pemeriksaan mempunyai tugas melakukan penyiapan bahan bimbingan teknis, pengendalian, dan evaluasi pelaksanaan klasifikasi barang dan nilai pabean, serta melaksanakan penelitian ulang atas penetapan di bidang kepabeanan dan cukai.
+Seksi Keberatan dan Banding. Seksi Keberatan dan Banding mempunyai tugas melakukan penelitian atas keberatan terhadap penetapan di bidang kepabeanan dan cukai dan menyiapkan administrasi urusan banding.
+Seksi Penerimaan dan Pengelolaan Data. Seksi Penerimaan dan Pengelolaan Data mempunyai tugas menyiapkan bahan penyusunan rencana,analisispotensi,pemantauandanevaluasirealisasi penerimaan bea masuk, bea keluar, cukai, dan pungutan negara lainnya di bidang kepabeanan dan cukai, serta menyiapkan bahan koordinasi dan pelaksanaan pengelolaan data, penyajian informasi, dan laporan di bidang kepabeanan dan cukai.
+Seksi Bantuan Hukum. Seksi Bantuan Hukum mempunyai tugas memberikan bantuan hukum terhadap permasalahan hukum yang timbul akibat pelaksanaan tugas dan fungsi Direktorat Jenderal Bea dan Cukai, dan pemberian asistensi dari segi hukum dalam penyusunan penetapan serta pelaksanaan tugas dan fungsi Direktorat Jenderal Bea dan Cukai yang mempunyai implikasi di bidang hukum.
+Bidang Fasilitas Kepabeanan dan Cukai
+Bidang Fasilitas Kepabeanan dan Cukai mempunyai tugas melaksanakan bimbingan teknis, pengendalian dan evaluasi pelaksanaan perizinan dan fasilitasi di bidang kepabeanan dan cukai, dan melaksanakan penyuluhan dan publikasi peraturan perundang-undangan kepabeanan dan cukai, hubungan masyarakat, serta memberikan bimbingan kepatuhan di bidang kepabeanan dan cukai.
+Dalam melaksanakan tugas sebagaimana dimaksud dalam Pasal 14, Bidang Fasilitas Kepabeanan dan Cukai menyelenggarakan fungsi:
+Pemberian bimbingan teknis, penyiapan pengendalian, dan evaluasi pelaksanaan tata laksana di bidang kepabeanan dan cukai
+Pemberian bimbingan teknis, pengendalian, pemberian rekomendasi dan perijinan, serta evaluasi pelaksanaan peraturan perundang-undangan di bidang fasilitas Tempat Penimbunan Berikat dan Authorized Economic Operator (AEO) serta bidang kepabeanan dan cukai lainnya
+Pelaksanaan fasilitas pembebasan dan/ atau pengembalian bea inasuk dalam rangka ekspor dan fasilitas kepabeanan lainnya
+Pelaksanaan fasilitas di bidang cukai
+Pemberian bimbingan kepatuhan di bidang kepabeanan dan cukai; dan
+Penyuluhan dan publikasi peraturan perundang undangan di bidang kepabeanan dan cukai dan hubungan masyarakat.
+Bidang Fasilitas Kepabeanan dan Cukai terdiri atas:
+Seksi Perizinan dan Fasilitas. Seksi Perizinan dan Fasilitas melakukan penyiapan bahan mempunyai tugas bimbingan teknis, pengendalian, pemberian  rekomendasi  dan  perizinan,  melakukan  evaluasi
+pelaksanaan peraturan perundang-undangan di bidang fasilitas tempat Penimbunan Berikat dan Authorized Economic Operator (AEO) serta di bidang kepabeanan dan cukai lainnya, melaksanakan pemberian fasilitas pembebasan dan/ atau pengembalian bea masuk dalam rangka ekspor dan fasilitas kepabeanan lainnya, serta melaksanakan pemberian fasilitas di bidang cukai.
+Seksi Bimbingan Kepatuhan dan Hubungan Masyarakat. Seksi Bimbingan Kepatuhan dan Hubungan Masyarakat mempunyai tugas melakukan penyiapan bali.an pelaksanaan penyuluhan dan publikasi peraturan perundang-undangan di bidang kepabeanan dan cukai, hubungan masyarakat, dan pemberian bimbingan kepatuhan kepada pengguna jasa kepabeanan dan cukai.
+Bidang Penindakan dan Penyidikan
+Bidang Penindakan dan Penyidikan mempunyai tugas melaksanakan pemberian bimbingan teknis, pengendalian, evaluasi, pengoordinasian dan pelaksanaan intelijen, melaksanakan patroli dan operasi pencegahan pelanggaran peraturan perundang-undangan, dan melaksanakan penindakan dan penyidikan tindak pidana kepabeanan dan cukai.
+Dalam melaksanakan tugas sebagaimana dimaksud dalam Pasal 18, Bidang Penindakan dan Penyidikan menyelenggarakan fungsi:
+Pemberian bimbingan teknis, penyiapan pengendalian, evaluasi, penyiapan koordinasi, dan pelaksanaan intelijen, patroli dan operasi pencegahan pelanggaran peraturan perundang- undangan, penindakan dan penyidikan tindak pidana kepabeanan dan cukai
+Pengumpulan, analisis, penyajian, dan penyebaran informasi intelijen dan hasil intelijen di bidang kepabeanan dan cukai
+Pengelolaan pangkalan data intelijen
+Penyiapan pengendalian tindak lanjut hasil penindakan dan pemantauan tindak lanjut hasil penyidikan di bidang kepabeanan dan cukai
+Pengumpulan data pelanggaran dan data penyelesaian pelanggaran peraturan perundang- undangan kepabeanan dan cukai
+Penatausahaan dan pengurusan barang hasil penindakan dan barang bukti, pelelangan, dan premi dan
+Penyiapan pengelolaan dan pemeliharaan sarana operasi, sarana komunikasi, dan senj ata api kantor wilayah.
+Bidang Penindakan dan Penyidikan terdiri atas:
+Seksi Intelligen. Seksi Intelligen mempunyai tugas melakukan penyiapan bahan bimbingan teknis, pengendalian, evaluasi, koordinasi dan pelaksanaan intelijen di bidang kepabeanan dan cukai, dan melakukan pengumpulan, analisis, penyaJian, penyebaran informasi intelijen dan hasil Intelligen, serta melakukan pengelolaan pangkalan data intelijen.
+Seksi Penindakan. Seksi Penindakan mempunyai tugas melakukan penyiapan bahan bimbingan teknis, pengendalian, evaluasi, koordinasi, pelaksanaan patroli dan operasi pencegahan pelanggaran peraturan perundang undangan, dan melakukan penindakan di bidang kepabeanan dan cukai, pengendalian tindak lanjut hasil penindakan, serta melakukan pengelolaan dan pemeliharaan sarana operasi, sarana komunikasi, dan senjata api Kantor Wilayah.
+Seksi Narkotika dan Barang Larangan. Seksi Narkotika dan Barang Larangan mempunyai tugas melakukan penyiapan bahan bimbingan teknis,  pengendalian,  evaluasi,  koordinasi,  dan  pelaksanaan
+pengawasan dalam rangka pencegahan dan penindakan pelanggaran peraturan perundang undangan kepabeanan dan cukai di bidang narkotika, psikotropika, prekursor, barang hasil pelanggaran Hak Atas Kekayaan Intelektual (HAKI) , barang yang terkait terorisme dan/atau kejahatan lintas negara, barang tertentu, serta barang yang termasuk dalam ketentuan barang larangan.
+Seksi Penyidikan dan Barang Hasil Penindakan. Seksi Penyidikan dan Barang Hasil Penindakan mempunyai tugas melakukan penyiapan bahan bimbingan teknis, pengendalian, evaluasi, koordinasi, dan pelaksanaan penyidikan tindak pidana kepabeanan dan cukai, dan melakukan pemantauan tindak lanjut hasil penyidikan, pengumpulan data pelanggaran dan data penyelesaian pelanggaran peraturan perundang-undangan di bidang kepabeanan dan cukai, serta melakukan penatausahaan dan pengurusan barang hasil penindakan, barang bukti, pelelangan, dan premi.
+Bidang Kepatuhan Internal
+Bidang Kepatuhan Internal mempunyai tugas melakukan pengawasan terhadap pelaksanaan tugas, pengendalian intern, pengelolaan risiko, pemantauan pengelolaan kinerja, analisis beban kerja, investigasi internal, upaya pencegahan pelanggaran dan penegakan kepatuhan terhadap kode etik dan disiplin, dan tindak lanjut hasil pengawasan, penyusunan rencana kerja dan laporan akuntabilitas, serta perumusan rekomendasi perbaikan proses bisnis di wilayah kerja Kantor Wilayah.
+Dalam melaksanakan tugas sebagaimana dimaksud dalam Pasal 22, Bidang Kepatuhan Internal menyelenggarakan fungsi:
+Penyiapan bahan koordinasi dan pengawasan pelaksanaan tugas di bidang pelayanan kepabeanan dan cukai di wilayah kerja masing-
+masing Kantor Wilayah
+Penyiapan bahan koordinasi dan pengawasan pelaksanaan tugas intelijen, penindakan, dan penyidikan di bidang kepabeanan dan cukai di wilayah kerja masing-masing Kantor Wilayah
+Penyiapan bahan koordinasi dan pengawasan pelaksanaan tugas di bidang administrasi di wilayah kerja masing-masing Kantor Wilayah
+Penyiapan bahan koordinasi pelaksanaan pemantauan pengendalian intern, pengelolaan risiko, pengelolaan kinerja, analisis beban kerja, investigasi internal, dan upaya pencegahanpelanggaran dan penegakan kepatuhan terhadap kode etik dan disiplin di wilayah kerja masing- masing Kantor Wilayah
+Pelaksanaan pemantauan tindak lanjut hasil pengawasan dan perumusan rekomendasi perbaikan proses bisnis di wilayah kerja masing-masing Kantor Wilayah; dan
+Pelaksanaan penyusunan rencana kerja dan laporan akuntabilitas di lingkungan Kantor Wilayah masing-masing.
+Bidang Kepatuhan Internal terdiri atas:
+Seksi Kepatuhan Pelaksanaan Tugas Pelayanan. Seksi Kepatuhan Pelaksanaan Tugas Pelayanan mempunyai tugas melakukan pengawasan pelaksanaan tugas, pemantauan pengendalian intern, pengelolaan risiko, pengelolaan kinerja, analisis beban kerja, upaya pencegahan pelanggaran dan penegakan kepatuhan terhadap kode etik dan disiplin, dan tindak lanjut hasil pengawasan, serta rekomendasi perbaikan proses pelayanan kepabeanan dan cukai.
+Seksi Kepatuhan Pelaksanaan Tugas Pengawasan. Seksi Kepatuhan Pelaksanaan Tugas Pengawasan mempunyai tugas melakukan pengawasan pelaksanaan tugas, pemantauan pengendalian intern,
+pengelolaan risiko, pengelolaan kinerja, analisis beban kerja, investigasi internal dan tindak lanjut hasil pengawasan, serta penyiapan bahan rekomendasi perbaikan proses bisnis di bidang intelijen, penindakan, penyidikan, dan audit di bidang kepabeanan dan cukai.
+Seksi Kepatuhan Pelaksanaan Tugas Administrasi. Seksi Kepatuhan Pelaksanaan Tugas Administrasi mempunyai tugas melakukan pengawasan pelaksanaan tugas, pemantauan pengendalian intern, pengelolaan risiko, pengelolaan kinerja, analisis beban kerja, kepatuhan terhadap kode etik dan disiplin, dan tindak lanjut hasil pengawasan, penyiapan bahan rekomendasi perbaikan proses bisnis di bidang administrasi, penyusunan rencana kerja dan laporan akuntabilitas, serta pelaporan dan pemantauan tindak lanjut hasil pemeriksaan aparat pengawasan fungsional dan pengawasan masyarakat.
+Bentuk Pelaksanaan
+Pelaksanaan program magang kementrian keungan di Kanwil DJBC Sulbagsel dilakukan dengan mengikuti prosedur dan tahapan yang telah ditentukan oleh perusahaan serta pengawasan dari universitas. Selama magang, saya diberikan kesempatan untuk terlibat dalam berbagai kegiatan yang berkaitan dengan pengelolaan data, pengembangan sistem informasi, serta pelayanan digital yang merupakan bagian utama dari operasi BPJS Ketenagakerjaan.
+Matriks Kegiatan
+Tabel 2.1 Gambaran kegiatan magang selama 4 bulan
+Lokasi Magang
+Kegiatan Magang Kementrian Keuangan Periode 1 Tahun 2025 di Direktorat Jenderal Bea dan Cukai Kantor Wilayah Sulawesi Bagian Selatan dilaksanakan di Makassar di JL. Satando 1, Sulawesi Selatan. Dengan jarak tempuh dari Institut Teknologi dan Bisinis Nobel Indonesia menuju Kantor sekitar 8,9 km dengan ±22 menit menggunakan alat transportasi darat. Berikut lokasi Magang menurut
+Gambar 2. 3 Lokasi Magang Kanwil DJBC Sulbagsel, Sumber: Google Maps (2025)
+Jadwal dan Waktu Pelaksanaan Magang
+Kegiatan magang dilaksanakan selama empat bulan atau 80 hari kerja, terhitung sejak tanggal 10 Maret hingga 10 Juli 2025. Selama periode tersebut, peserta magang mengikuti jam kerja operasional kantor yang berlangsung dari pukul 08.00 - 16.00 WITA. Waktu istirahat pukul 12.00 – 13.00, pada hari Jumat, istirahat pukul 11.30 – 13.30 atau dengan kata lain, sama dengan jam kerja karyawan lainnya.
+Aktivitas Lanjutan
+Selama magang di Kanwil DJBC Sulbagsel, saya terlibat dalam beberapa aktivitas lanjutan yang bertujuan untuk mendalami lebih dalam tentang pengelolaan data dan pengembangan sistem informasi. Beberapa aktivitas lanjutan tersebut adalah sebagai berikut:
+Aktivitas lanjutan yang direncanakan setelah pelaksanaan kegiatan magang di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan adalah sebagai berikut:
+Melanjutkan Pendalaman Proses Bisnis dan Alur Kerja Bea Cukai Setelah mempelajari berbagai proses bisnis dan alur kerja di Direktorat Jenderal Bea dan Cukai, ke depannya akan dilakukan pendalaman lebih lanjut melalui studi literatur, modul pelatihan, dan diskusi dengan praktisi untuk memperkuat pemahaman terkait prosedur kepabeanan dan cukai, pelayanan publik, serta tugas dan fungsi masing-masing bidang.
+Mengasah Pemahaman Sistem dan Website Bea Cukai Melanjutkan pengamatan dan pembelajaran terkait sistem dan website yang digunakan Bea Cukai, termasuk di antaranya aplikasi di bawah Kementerian Keuangan, Cukai dan Kepabeanan Integrated System and Automation (CEISA) beserta turunannya. Pendalaman ini bertujuan
+untuk memahami integrasi data dan sistem kerja digital di lingkungan DJBC sebagai bekal pengembangan karir di bidang sistem informasi dan kepabeanan.
+Pengembangan Kemampuan Desain dan Konten Media Sosial Berdasarkan pengalaman membantu mengedit dan membuat konten untuk media sosial Bea Cukai Sulawesi Bagian Selatan, ke depannya akan dilakukan pengembangan kemampuan desain grafis dan copywriting untuk mendukung branding, publikasi informasi, dan pelayanan informasi publik secara efektif.
+Peningkatan Kemampuan Analisis Berita dan Media Monitoring Melanjutkan praktik menganalisis, memproses, dan mengklasifikasikan berita dari berbagai media massa terkait isu kepabeanan, cukai, serta kegiatan DJBC. Aktivitas ini akan menjadi bekal dalam mengasah critical thinking dan kemampuan komunikasi strategis.
+Penguatan  Soft  Skills  Pelayanan  Publik  (Frontdesk) Menguatkan keterampilan sebagai frontdesk yang telah dilaksanakan selama magang, termasuk sikap ramah, komunikatif, pelayanan prima, dan pencatatan tamu. Hal ini penting untuk menunjang profesionalisme dan kesiapan menghadapi dunia kerja di bidang pelayanan publik atau sektor lain yang serupa.
+Menyusun dan Menyempurnakan Laporan Magang. Menyelesaikan laporan akhir magang secara sistematis dan sesuai pedoman kampus, sekaligus mempersiapkan diri untuk presentasi laporan sebagai bentuk pertanggungjawaban akademik.
+Mempersiapkan Langkah Karir Selanjutnya. Mengidentifikasi bidang pekerjaan atau studi lanjutan yang sesuai minat dan pengalaman magang, termasuk rencana untuk mengikuti pelatihan, sertifikasi, atau
+seleksi CPNS/PPPK di masa mendatang.
+Target Capaian
+Target capaian dari pelaksanaan kegiatan magang di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan adalah sebagai berikut:
+Meningkatkan Pemahaman tentang Instansi Bea dan Cukai
+Memahami tugas, fungsi, serta peran Direktorat Jenderal Bea dan Cukai khususnya pada lingkup Kantor Wilayah Sulawesi Bagian Selatan.
+Mengetahui struktur organisasi dan pembagian tugas antar bidang dalam mendukung operasional kantor.
+Mengembangkan Kompetensi Diri
+Meningkatkan kemampuan administrasi, komunikasi formal, dan kerjasama tim di lingkungan kerja.
+Melatih keterampilan pengolahan data menggunakan aplikasi Microsoft Office dan sistem database sederhana sesuai kebutuhan tugas.
+Mengaplikasikan Ilmu yang Dipelajari di Perkuliahan
+Mengintegrasikan teori perkuliahan dengan praktik langsung di instansi pemerintah.
+Melatih kemampuan analisis sederhana untuk mendukung penyelesaian tugas harian yang diberikan pembimbing lapangan.
+Membangun Etika dan Profesionalisme Kerja
+Membiasakan sikap disiplin, tanggung jawab, dan etika kerja yang baik sesuai budaya organisasi pemerintah.
+Menjalin relasi baik dengan pegawai dan rekan magang sebagai bekal jaringan profesional di masa depan.
+Menyelesaikan Laporan Magang dengan Baik
+Menyusun laporan kegiatan magang secara sistematis dan sesuai pedoman kampus.
+Menghasilkan laporan yang dapat dipertanggungjawabkan sebagai bukti pembelajaran dan pemenuhan mata kuliah magang.
+Pembahasan
+Selama melaksanakan magang di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan (Kanwil DJBC Sulbagsel), saya terlibat dalam beberapa aktivitas yang mendukung pengembangan pengetahuan, keterampilan, serta pengalaman kerja di bidang kepabeanan, cukai, pelayanan publik, dan teknologi informasi. Adapun kegiatan-kegiatan tersebut adalah sebagai berikut:
+Melanjutkan Pendalaman Proses Bisnis dan Alur Kerja Bea Cukai Kegiatan ini bertujuan untuk memahami secara menyeluruh tentang proses bisnis dan alur kerja Bea Cukai, mulai dari tugas dan fungsi setiap bidang,
+mekanisme pelayanan kepabeanan dan cukai, hingga sistem pelayanan
+publik yang diterapkan. Pendalaman dilakukan melalui pengamatan langsung, membaca dokumen dan SOP yang tersedia, serta diskusi dengan pegawai terkait. Aktivitas ini sangat penting untuk menambah wawasan praktis di luar materi perkuliahan dan menjadi bekal dalam memahami struktur organisasi pemerintah, khususnya DJBC.
+Mengasah Pemahaman Sistem dan Website Bea Cukai
+Selama magang, saya juga melakukan kegiatan pengamatan dan pembelajaran terhadap sistem dan website Bea Cukai, seperti CEISA (Customs-Excise Information System and Automation) beserta turunannya. Melalui kegiatan ini, saya memperoleh pemahaman mengenai integrasi data, proses digitalisasi layanan, dan bagaimana sistem informasi mendukung kinerja DJBC dalam memberikan pelayanan kepada masyarakat dan dunia usaha.
+Pengembangan Kemampuan Desain dan Konten Media Sosial
+Dalam mendukung kegiatan publikasi DJBC Sulbagsel, saya terlibat dalam pembuatan dan pengeditan konten media sosial. Kegiatan ini meliputi mendesain poster digital, membuat caption informatif, hingga mengunggah konten di Instagram dan media publikasi lainnya. Melalui aktivitas ini, saya dapat mengasah kemampuan desain grafis, copywriting, dan memahami strategi komunikasi publik di instansi pemerintah.
+Peningkatan Kemampuan Analisis Berita dan Media Monitoring
+Saya juga melaksanakan kegiatan analisis berita dan media monitoring, yaitu membaca, menelaah, serta mengklasifikasikan berbagai berita yang relevan dengan DJBC dari media massa nasional maupun lokal. Hasil analisis tersebut digunakan oleh bidang Kehumasan untuk mengetahui isu terkini yang perlu ditindaklanjuti atau dipublikasikan. Kegiatan ini bermanfaat dalam mengasah kemampuan berpikir kritis dan komunikasi strategis.
+Penguatan Soft Skills Pelayanan Publik (Frontdesk)
+Sebagai bagian dari tugas frontdesk, saya melaksanakan kegiatan penerimaan tamu dan pelayanan publik, seperti menyambut tamu dengan ramah, mencatat kehadiran tamu, mengarahkan ke ruangan tujuan, serta membantu kelancaran operasional pelayanan di frontdesk. Kegiatan ini
+sangat mendukung penguatan soft skills, terutama sikap profesional, sopan santun, dan komunikasi efektif dalam lingkungan kerja formal.
+Menyusun dan Menyempurnakan Laporan Magang
+Selain kegiatan harian, saya juga melakukan penyusunan laporan magang secara sistematis dan sesuai pedoman kampus. Penyusunan laporan ini dilakukan di sela waktu magang dan setelah jam kerja, dengan tujuan untuk mendokumentasikan seluruh proses magang serta sebagai syarat akademik mata kuliah magang.
+Pembuatan Project SIMIRA (Sistem Manajemen Informasi Rumah Tangga)
+Salah satu aktivitas utama yang saya lakukan selama magang adalah membuat Project SIMIRA (Sistem Manajemen Informasi Rumah Tangga). SIMIRA merupakan aplikasi berbasis website yang dirancang untuk mempermudah proses inventory barang di gudang atau rumah tangga pada kantor Bea Cukai. Fitur utama SIMIRA meliputi pencatatan data barang masuk dan keluar, update stok barang secara real-time, pembuatan laporan stok barang, serta manajemen user dengan sistem login dan autentikasi. Pembuatan project SIMIRA ini dilakukan menggunakan bahasa pemrograman PHP dengan framework Laravel dan terhubung ke database MySQL. Melalui project ini, saya dapat mengimplementasikan ilmu sistem informasi dan pengembangan aplikasi untuk mendukung efisiensi kerja di bidang administrasi barang.
+BAB III PENUTUP
+Simpulan
+Kegiatan magang yang telah dilaksanakan di Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan memberikan banyak manfaat bagi mahasiswa. Berdasarkan hasil pelaksanaan magang, dapat disimpulkan bahwa: Mahasiswa memperoleh pemahaman mendalam terkait tugas dan fungsi Direktorat Jenderal Bea dan Cukai, khususnya pada lingkup Kanwil Sulawesi Bagian Selatan, termasuk bidang kepabeanan, cukai, pelayanan publik, dan pengawasan.
+Mahasiswa memiliki kesempatan untuk mempelajari proses bisnis dan alur kerja Bea Cukai, serta mengamati dan mempelajari sistem dan website yang digunakan, seperti CEISA beserta turunannya. Mahasiswa berkontribusi dalam kegiatan administrasi kantor, pelayanan tamu sebagai frontdesk, pembuatan dan pengeditan konten media sosial, serta analisis dan klasifikasi berita media massa terkait Bea Cukai.
+Kegiatan magang melatih kedisiplinan, etika kerja, komunikasi formal, kerjasama tim, dan manajemen waktu yang akan berguna dalam menghadapi dunia kerja di masa mendatang. Program magang ini menjadi wadah pengintegrasian ilmu perkuliahan dengan praktik lapangan, sehingga mahasiswa memiliki gambaran nyata mengenai lingkungan kerja instansi pemerintah.
+28
+Saran
+Berdasarkan pelaksanaan magang, terdapat beberapa saran yang dapat diberikan, yaitu:
+Untuk Kantor Wilayah Direktorat Jenderal Bea dan Cukai Sulawesi Bagian Selatan
+Diharapkan dapat terus mempertahankan dan mengembangkan program magang bagi mahasiswa, karena sangat bermanfaat dalam pengembangan kompetensi mahasiswa dan mendukung pengenalan instansi kepada masyarakat akademik.
+Memberikan pembekalan materi dasar kepabeanan dan cukai di awal magang agar mahasiswa memiliki pemahaman awal yang lebih kuat dalam melaksanakan tugas.
+Untuk Mahasiswa Magang Selanjutnya
+Sebaiknya mempersiapkan diri sebelum magang dengan mempelajari regulasi, sistem, dan gambaran umum mengenai Direktorat Jenderal Bea dan Cukai agar lebih mudah beradaptasi dan memahami tugas yang diberikan.
+Melaksanakan magang dengan sungguh-sungguh, menjaga nama baik almamater, mematuhi aturan instansi, serta menjaga sikap profesional selama pelaksanaan magang.
+Untuk Perguruan Tinggi
+Diharapkan dapat terus menjalin kerja sama dengan instansi pemerintah, khususnya Direktorat Jenderal Bea dan Cukai, untuk memfasilitasi
+mahasiswa memperoleh pengalaman kerja yang relevan dengan bidang studinya.
+Memberikan pembekalan teknis dan soft skills kepada mahasiswa sebelum melaksanakan magang agar siap menghadapi tantangan di dunia kerja.
+DAFTAR PUSTAKA
+Direktorat Jenderal Bea dan Cukai. (2025). Profil Direktorat Jenderal Bea dan Cukai. [Online]. Tersedia di: https://www.beacukai.go.id [Diakses pada 4 Juli 2025].
+Direktorat Jenderal Bea dan Cukai. (2025). Visi dan Misi DJBC. [Online]. Tersedia di: https://www.beacukai.go.id/profil/visi-dan-misi.html [Diakses pada 4 Juli 2025].
+Kementerian Keuangan Republik Indonesia. (2007). Peraturan Menteri Keuangan Nomor 80/PMK.01/2007 tentang Organisasi dan Tata Kerja Kantor Wilayah DirektoratJenderalBeadanCukai.[Online].Tersediadi: https://peraturan.bpk.go.id/Home/Details/39002/pmk-no-80pmk012007 [Diakses pada 4 Juli 2025].
+Kantor Wilayah DJBC Sulawesi Bagian Selatan. (2025). Profil Kanwil DJBC Sulbagsel. [Online]. Tersedia di: https://sulbagsel.beacukai.go.id [Diakses pada 4 Juli 2025].
+Google Maps. (2025). Kanwil DJBC Sulawesi Bagian Selatan. [Online]. Tersedia di: https://maps.app.goo.gl/3jk57xPGv7KnwVoP7 [Diakses pada 4 Juli 2025].
+Kementerian Keuangan Republik Indonesia. (2025). Direktorat Jenderal Bea dan Cukai. [Online]. Tersedia di: https://www.kemenkeu.go.id/apip/djbc [Diakses pada 4 Juli 2025].
+Politeknik Keuangan Negara STAN. (2025). Profil PKN STAN. [Online]. Tersedia di: https://pknstan.ac.id [Diakses pada 4 Juli 2025].
+LAMPIRAN
+DOKUMENTASI FOTO DAN LINK VIDEO UTS BIDANG KEPATUHAN INTERNAL
+SIMIRA (SISTEM MANAJEMEN RUMAH TANGGA)
+BIDANG FASILITAS KEPABEANAN DAN CUKAI DI BAGIAN HUMAS MEMBUAT KONTEN UNTUK MEDIA SOSIAL KANTOR, MENGIKUTI KEGIATAN SEMINAR HUMAS, ANALISIS BERITA MEDIA MASSA & FRONTDESK
+BIDANG UMUM DI BAGIAN KEPEGAWAIAN
+MENGINPUT & CROSH CHECK DATA PEGAWAI
+BIDANG KEPABEANAN DAN CUKAI DI BAGIAN KEBERATAN DAN BANDING
+UJI COBA SERTA MENGANALISIS SISTEM PROSES PENGADUAN BANDING DAN PENGADUAN KEBERATAN
+BIDANG PENINDAKAN DAN PENYIDIKAN
+MEMBANTU PENCACAHAN BARANG PENINDAKAN & ROKOK ILEGAL
+LINK DOKUMENTASI VIDEO MAGANG
+https://youtu.be/h3Ggm6Wf2IM?si=1zvwcOiGrWRSH5u
+LOGBOOK HARIAN
+DAFTAR KEGIATAN SOFTSKILL DAN HARDSKILL
+No.
+Tgl/Bulan
+Judul Kegiatan
+Deskripsi Kegiatan
+Paraf Pembimbing
+1
+19 April
+Seminar Keuangan Galeri Investasi Nobel Festival
+Seminar Nasional Keuangan yang pematerinya dari OJK, BEI Makassar dan MNC Securitas Pusat
+2
+14 Maret
+Pelatihan (Digitalisasi Umkm Berbasis Syariah Digital Entrepreneurship Academy Digital Talent Scholarship 2025)
+Program ini membekali pelaku UMKM dengan
+keterampilan digital dan kewirausahaan berbasis syariah
+3
+26 Maret
+Pelatihan (Dampak Teknologi Digital Bagi Umkm Micro Skill Digital Talent Scholarship 2025
+Pelatihan ini membahas
+bagaimana
+teknologi digital memengaruhi
+perkembangan UMKM.
+4
+20 Mei
+Pelatihan (Pemanfaatan Aplikasi Chat Bagi Wirausahawan Pemula Micro Skill Digital Talent Scholarship 2025)
+Pelatihan ini membantu wirausahawan
+pemula memahami cara menggunakan aplikasi chat secara efektif untuk
+promosi, pelayanan pelanggan, dan
+pengelolaan bisnis sehari-hari.
+Makassar, Kamis 10 Juli 2025
+Dosen Pembimbing
+Andi Marlinah, S.E., M.M.
+GINFEST 2025 (GALERI INVESTASI NOBEL FESTIVAL)
+PELATIHAN (DAMPAK TEKNOLOGI DIGITAL BAGI UMKM MICRO SKILL DIGITAL TALENT SCHOLARSHIP 2025)
+PELATIHAN (DIGITALISASI UMKM BERBASIS SYARIAH DIGITAL ENTREPRENEURSHIP ACADEMY DIGITAL TALENT SCHOLARSHIP 2025)
+PELATIHAN (PEMANFAATAN APLIKASI CHAT BAGI WIRAUSAHAWAN PEMULA MICRO SKILL DIGITAL TALENT SCHOLARSHIP 2025)
