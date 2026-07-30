@@ -35,7 +35,7 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`hidden md:block fixed left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
           isScrolled 
-            ? 'top-3 lg:top-5 mx-4 lg:mx-auto max-w-[95%] lg:max-w-6xl rounded-full py-2.5 lg:py-3 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-md shadow-lg shadow-black/5 ring-1 ring-black/5 dark:ring-white/5'
+            ? 'top-3 lg:top-5 mx-4 lg:mx-auto max-w-[95%] lg:max-w-6xl rounded-full py-2.5 lg:py-3 bg-bg-card/90 backdrop-blur-xl shadow-lg shadow-black/10 ring-1 ring-black/5 dark:ring-white/10 border border-black/5 dark:border-white/10'
             : 'top-4 lg:top-8 py-4 lg:py-6 bg-transparent ring-1 ring-transparent'
         }`}
       >
@@ -64,7 +64,7 @@ export default function Navbar() {
               <ExpandableTabs 
                 tabs={tabs} 
                 activeColor="text-white bg-gradient-to-r from-primary to-[#cc7a00] shadow-md" 
-                className="border-white/10 shadow-lg shadow-black/10 bg-white/90 dark:bg-[#141414]/90 backdrop-blur-xl text-gray-500 dark:text-gray-400 flex-nowrap whitespace-nowrap min-w-max h-12 items-center px-2"
+                className="border-black/5 dark:border-white/10 shadow-lg shadow-black/10 bg-bg-card/90 backdrop-blur-xl text-text-muted flex-nowrap whitespace-nowrap min-w-max h-12 items-center px-2"
               />
             </div>
             
@@ -78,9 +78,9 @@ export default function Navbar() {
             <ExpandableTabs 
               tabs={tabs} 
               activeColor="text-white bg-gradient-to-r from-primary to-[#cc7a00] shadow-md" 
-              className="border-white/10 shadow-lg shadow-black/10 bg-white/90 dark:bg-[#141414]/90 backdrop-blur-xl text-gray-500 dark:text-gray-400 grid grid-cols-3 w-full p-3 gap-2 mx-auto"
+              className="border-black/5 dark:border-white/10 shadow-lg shadow-black/10 bg-bg-card/90 backdrop-blur-xl text-text-muted grid grid-cols-3 w-full p-3 gap-2 mx-auto"
             />
-            <div className="bg-white/90 dark:bg-[#141414]/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-white/10 p-2 rounded-2xl flex items-center justify-center">
+            <div className="bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 p-2 rounded-2xl flex items-center justify-center">
               <ThemeToggle />
             </div>
           </div>
