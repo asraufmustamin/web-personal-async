@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant vibrant (&:where(.vibrant, .vibrant *));
+@custom-variant emerald (&:where(.emerald, .emerald *));
 
 :root {
   --bg-main: #FFFFFF;
@@ -17,11 +17,11 @@
   --text-muted: #A1A1A1;
 }
 
-.vibrant {
-  --bg-main: #0A0717;
-  --bg-card: #130E26;
+.emerald {
+  --bg-main: #022C22;
+  --bg-card: #064E3B;
   --text-main: #F8FAFC;
-  --text-muted: #CBD5E1;
+  --text-muted: #A7F3D0;
 }
 
 .vibrant-gradient-text {

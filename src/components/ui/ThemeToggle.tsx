@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Moon, Sun, Sparkles, ChevronDown, Check } from "lucide-react";
+import { Moon, Sun, Gem, ChevronDown, Check } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -49,11 +49,11 @@ export function ThemeToggle() {
       color: "text-primary",
     },
     {
-      id: "vibrant",
-      name: "Vibrant Studio",
-      desc: "Mode Ceria & Bento Layout",
-      icon: Sparkles,
-      color: "text-purple-400",
+      id: "emerald",
+      name: "Royal Emerald",
+      desc: "Emerald Green & Gold Nebula",
+      icon: Gem,
+      color: "text-emerald-400",
     },
   ];
 
