@@ -84,7 +84,7 @@ export default function HeroSection() {
               <motion.div layout className="relative w-full flex flex-col items-center">
                 <div className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.25em] uppercase text-[10px] md:text-sm font-bold mb-4 md:mb-8 items-center justify-center gap-3 md:gap-5 text-center py-2">
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
-                  <span>Fresh Graduate | Business Analyst Track</span>
+                  <span>Fresh Graduate | IT BA & PM Track</span>
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
                 </div>
               </motion.div>
