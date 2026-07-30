@@ -16,23 +16,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asrauf Mustamin | Portofolio",
-  description: "Portfolio profesional Muhammad Asrauf Mustamin. Aspiring IT Business Analyst & System Analyst dengan studi kasus nyata: Sistem Informasi Desa Cenrana & SPK TOPSIS. Menguasai analisis kebutuhan, pemodelan sistem, UAT, dan manajemen proyek end-to-end.",
+  title: "Muhammad Asrauf Mustamin - Portofolio",
+  description: "Portofolio resmi Muhammad Asrauf Mustamin, Lulusan Sistem dan Teknologi Informasi Cumlaude (IPK 3,93/4,00). Spesialis IT Business Analyst & System Analyst yang fokus pada perancangan alur bisnis, pemodelan sistem terpadu, UAT, dan transformasi digital.",
   keywords: [
     "Muhammad Asrauf Mustamin",
+    "Portofolio Asrauf Mustamin",
     "IT Business Analyst",
     "System Analyst",
-    "Portfolio BA",
-    "Business Analyst Indonesia",
-    "System Analyst Makassar",
+    "Portfolio BA SA",
+    "Business Analyst Makassar",
+    "System Analyst Indonesia",
     "Analisis Kebutuhan Sistem",
+    "Sistem Informasi Desa Cenrana",
+    "SPK TOPSIS",
     "UAT Testing",
     "SDLC",
-    "Studi Kasus Sistem Informasi",
-    "SPK TOPSIS",
-    "Sistem Informasi Desa",
-    "Project Management",
-    "Requirements Engineering",
+    "Institut Teknologi dan Bisnis Nobel Indonesia",
   ],
   authors: [{ name: "Muhammad Asrauf Mustamin" }],
   creator: "Muhammad Asrauf Mustamin",
@@ -45,17 +44,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Muhammad Asrauf Mustamin | Portofolio",
-    description: "IT Business Analyst & System Analyst. Studi kasus nyata end-to-end: dari analisis kebutuhan, pemodelan arsitektur, hingga UAT dan serah terima sistem.",
+    title: "Muhammad Asrauf Mustamin - Portofolio",
+    description: "Portofolio resmi Muhammad Asrauf Mustamin. Lulusan Cumlaude IT & Sistem Informasi. IT Business Analyst & System Analyst dengan studi kasus nyata end-to-end.",
     url: "https://asraufmustamin.site",
-    siteName: "Muhammad Asrauf Mustamin | Portofolio",
+    siteName: "Muhammad Asrauf Mustamin - Portofolio",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Asrauf Mustamin | Portofolio",
-    description: "Portfolio profesional dengan studi kasus nyata Sistem Informasi Desa Cenrana & SPK TOPSIS.",
+    title: "Muhammad Asrauf Mustamin - Portofolio",
+    description: "Portofolio resmi IT Business Analyst & System Analyst. Lulusan Cumlaude Sistem dan Teknologi Informasi.",
   },
   robots: {
     index: true,
@@ -90,23 +89,28 @@ export default function RootLayout({
               "@type": "Person",
               name: "Muhammad Asrauf Mustamin",
               url: "https://asraufmustamin.site",
-              jobTitle: "Aspiring IT Business Analyst & System Analyst",
-              description: "Fresh graduate Sistem Informasi dengan pengalaman nyata dalam analisis kebutuhan, pemodelan sistem, UAT, dan manajemen proyek end-to-end.",
+              jobTitle: "IT Business Analyst & System Analyst",
+              description: "Muhammad Asrauf Mustamin adalah seorang IT Business Analyst, System Analyst, dan Peneliti Lulusan Sistem dan Teknologi Informasi (IPK 3,93/4,00 Cumlaude) dari Institut Teknologi dan Bisnis Nobel Indonesia.",
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "Institut Teknologi dan Bisnis Nobel Indonesia"
+              },
               sameAs: [
                 "https://www.linkedin.com/in/asrauf-mustamin",
                 "https://github.com/asraufmustamin",
-                "https://www.instagram.com/asrfmst22_/"
+                "https://www.instagram.com/asrfmst22_/",
+                "https://garuda.kemdikbudristek.go.id/author/detail/3858054"
               ],
               knowsAbout: [
-                "Business Analysis",
-                "System Analysis",
+                "IT Business Analyst",
+                "System Analyst",
                 "Requirements Engineering",
                 "User Acceptance Testing (UAT)",
                 "SDLC Management",
                 "ERD & Database Modeling",
-                "Stakeholder Management",
-                "Web Development",
-                "UI/UX Design"
+                "Sistem Informasi Manajemen",
+                "Publikasi Ilmiah & Pengabdian Masyarakat",
+                "UI/UX & Web Development"
               ]
             })
           }}
