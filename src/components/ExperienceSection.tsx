@@ -66,21 +66,25 @@ const allExperiences = [
     proofSection: {
       metrics: [
         { label: "Rotasi Bidang", value: "5 Bidang", icon: "published_with_changes" },
-        { label: "Sistem Dikembangkan", value: "SIMIRA", icon: "inventory" },
+        { label: "Sistem Dikembangkan", value: "SIMIRA (Laravel)", icon: "inventory" },
         { label: "Laporan MBKM", value: "344 Halaman", icon: "description" },
         { label: "Durasi Rotasi", value: "4 Bulan", icon: "event_available" }
       ],
       workflow: [
-        { phase: "Analisis Kebutuhan Gudang", desc: "Wawancara pengelola gudang rumah tangga & pemetaan alur barang As-Is vs To-Be.", roleFocus: "IT Business Analyst" },
-        { phase: "Pengembangan Web SIMIRA", desc: "Merancang database MySQL & membangun prototipe Laravel dengan stok update real-time.", roleFocus: "System Analyst" },
-        { phase: "Media Monitoring & Cross-check", desc: "Analisis berita harian kepabeanan (NALIKA) & validasi silang data ribuan pegawai.", roleFocus: "Operational Analyst" },
-        { phase: "Pelaporan & Validasi Akademik", desc: "Menyusun laporan akhir magang 344 hal & validasi logbook MBKM di SIAKAD Nobel.", roleFocus: "Project Coordinator" }
+        { phase: "Elicitation Kebutuhan Gudang & Design SIMIRA", desc: "Wawancara pengelola gudang rumah tangga, merancang database MySQL, & membangun prototipe PHP Laravel.", roleFocus: "IT Business Analyst & System Analyst" },
+        { phase: "Audit Data Kepegawaian & Cross-Check", desc: "Verifikasi silang integritas data >1.000 pegawai Kanwil DJBC Sulbagsel pada Subbagian Kepegawaian.", roleFocus: "Data Quality Analyst" },
+        { phase: "Media Monitoring (NALIKA) & Public Relations", desc: "Pemantauan isu berita harian kepabeanan serta merancang materi publikasi di Subbag Humas.", roleFocus: "Media & Communications Analyst" },
+        { phase: "Analisis Kepatuhan Internal & Pencacahan P2", desc: "Evaluasi alur pengaduan/banding serta pendataan fisik barang penindakan (rokok/miras ilegal).", roleFocus: "Compliance & Field Auditor" }
       ],
       proofs: [
-        { title: "Dashboard Aplikasi SIMIRA", image: "/projects/simira-dashboard.jpeg", caption: "Screenshot antarmuka dashboard utama SIMIRA (PHP Laravel) di laptop kantor.", tag: "Prototipe Web" },
-        { title: "Proses Coding & Development", image: "/projects/simira-work-1.jpeg", caption: "Dokumentasi aktivitas pengembangan & pengujian sistem di meja kerja Bea Cukai.", tag: "Development" },
-        { title: "Verifikasi Spreadsheet Pegawai", image: "/projects/simira-work-2.jpeg", caption: "Suasana verifikasi data & analisis operasional instansi dengan seragam resmi.", tag: "Data Analysis" },
-        { title: "Logbook SIAKAD Nobel", image: "/projects/beacukai-siakad-log.jpeg", caption: "Tangkapan layar rekap logbook harian tervalidasi di portal siakad.nobel.ac.id.", tag: "Validasi SIAKAD" }
+        { title: "Pengembangan & Prototipe System SIMIRA", image: "/BEACUKAI/PEMBUATAN SIMIRA.jpg", caption: "Merancang database MySQL dan membangun antarmuka web SIMIRA berbasis PHP Laravel untuk pencatatan stok gudang rumah tangga.", tag: "Laravel & MySQL" },
+        { title: "Analisis Alur Sistem & Mapping Proses Bisnis", image: "/BEACUKAI/ANALISSI SISTEM.jpg", caption: "Pemetaan diagram alur proses bisnis (As-Is to To-Be) untuk perancangan fitur hak akses berbasis peran (RBAC).", tag: "System Analysis" },
+        { title: "Validasi & Cross-Check Data Kepegawaian DJBC", image: "/BEACUKAI/CROSCHECK DATA KEPEGAWAIAN.jpg", caption: "Verifikasi silang integritas data ribuan pegawai di wilayah Sulawesi Bagian Selatan berbasis spreadsheet & database.", tag: "Data Quality" },
+        { title: "Analisis Sistem Pengaduan & Banding (KI)", image: "/BEACUKAI/ANAALISIS SITEM PENGADUAN BANDING.jpg", caption: "Mengkaji alur penanganan pengaduan publik serta tata kelola berkas keberatan dan banding kepabeanan.", tag: "Compliance Analysis" },
+        { title: "Media Monitoring NALIKA & Design Humas", image: "/BEACUKAI/DESIGNDI HUMAS.jpg", caption: "Pelaksanaan monitoring berita harian kepabeanan (NALIKA) serta perancangan materi publikasi digital instansi.", tag: "Media Monitoring" },
+        { title: "Pencacahan Barang Hasil Penindakan (Bidang P2)", image: "/BEACUKAI/PENCACAHAN BARANG.jpg", caption: "Pencacahan fisik dan pendataan Berita Acara barang hasil penindakan rokok & minuman mengandung etil alkohol (MMEA) ilegal.", tag: "Field Audit & P2" },
+        { title: "Layanan Frontdesk & Stakeholder Relations", image: "/BEACUKAI/FRONTDESK.jpg", caption: "Pelayanan administrasi publik dan penerimaan tamu/pengguna jasa kepabeanan di area frontdesk Kanwil DJBC.", tag: "Public Service" },
+        { title: "Validasi Logbook MBKM SIAKAD Nobel Indonesia", image: "/BEACUKAI/LOOGBOOK HARIAN SIAKAD NOBEL.jpg", caption: "Rekap logbook harian aktivitas magang yang telah disetujui dan tervalidasi secara akademik di portal SIAKAD Nobel.", tag: "Academic Validation" }
       ]
     }
   },
@@ -110,16 +114,19 @@ const allExperiences = [
         { label: "Durasi Magang", value: "4 Bulan", icon: "calendar_today" }
       ],
       workflow: [
-        { phase: "Analisis Integrasi Portal OSS", desc: "Memetakan NIK & NPP perusahaan baru dari portal OSS Kemeninves/BKPM ke CRM BPJS.", roleFocus: "Process Analyst" },
-        { phase: "Pembersihan Data IGI (>5.000 Data)", desc: "Mengeksekusi validasi presisi tinggi pada spreadsheet kepesertaan untuk koreksi identitas.", roleFocus: "Data Quality Analyst" },
-        { phase: "Otomatisasi Penagihan Iuran", desc: "Pengoperasian sistem WA Blasting & Email massal untuk peringatan jatuh tempo tunggakan.", roleFocus: "Operations Specialist" },
-        { phase: "Edukasi & Sosialisasi Lapangan", desc: "Pendistribusian brosur & edukasi langsung program kepesertaan BPU bagi pekerja informal.", roleFocus: "Field Coordinator" }
+        { phase: "Analisis Integrasi Portal OSS", desc: "Memetakan data pendaftaran perusahaan baru dari portal Online Single Submission (OSS Kemeninves) ke CRM BPJS.", roleFocus: "Business Process Analyst" },
+        { phase: "Validasi Kualitas Data IGI (>5.000 Record)", desc: "Pembersihan data presisi tinggi pada spreadsheet kepesertaan & koreksi ketidakcocokan NIK/NPP.", roleFocus: "Data Quality Analyst" },
+        { phase: "Automated Communication WA Blasting", desc: "Pengoperasian sistem pesan massal terjadwal untuk pemberitahuan iuran & tunggakan perusahaan.", roleFocus: "Operations & Automation Specialist" },
+        { phase: "Logistik Kartu & Sosialisasi Lapangan BPU", desc: "Pencetakan fisik kartu kepesertaan serta pendistribusian brosur sosialisasi pekerja informal.", roleFocus: "Field Coordinator & QA" }
       ],
       proofs: [
-        { title: "Administrasi Kantor Cabang", image: "/experience/bpjs/image14.jpeg", caption: "Aktivitas pengelolaan administrasi & verifikasi data peserta di kantor cabang.", tag: "Operasional Kantor" },
-        { title: "Cross-check Spreadsheet Data IGI", image: "/experience/bpjs/image15.jpeg", caption: "Proses validasi dan koreksi ketidakcocokan >5.000 data kepesertaan peserta.", tag: "Data Validation" },
-        { title: "Automated Communication System", image: "/experience/bpjs/image24.jpeg", caption: "Pengoperasian aplikasi komunikasi massal WA Blasting untuk penagihan iuran.", tag: "WA Blasting" },
-        { title: "Sosialisasi Kepesertaan BPU", image: "/experience/bpjs/image27.jpeg", caption: "Kegiatan edukasi dan pembagian brosur jaminan sosial pekerja informal di Makassar.", tag: "Sosialisasi" }
+        { title: "Validasi Presisi >5.000 Data Kualitas IGI (CRM)", image: "/BPJSTK/CRM_DATA_IGI.jpg", caption: "Pembersihan dan verifikasi integritas data Informasi Gaji & Identitas (IGI) peserta pada CRM internal BPJS Ketenagakerjaan.", tag: "Data Quality" },
+        { title: "Integrasi Data OSS & Automasi WA Blasting", image: "/BPJSTK/OSS_Whatsaap Blasting.jpg", caption: "Pencocokan NIK/NPP dari portal OSS Kemeninves dan konfigurasi penagihan massal via WA Blasting.", tag: "Automation & Integration" },
+        { title: "Pencetakan & Quality Control Kartu Kepesertaan", image: "/BPJSTK/PENCETAKAN_KARTU_BPJSTK.jpg", caption: "Proses pencetakan fisik, laminasi, dan verifikasi kualitas kartu kepesertaan resmi BPJS Ketenagakerjaan.", tag: "Operations & Logistics" },
+        { title: "Sosialisasi & Edukasi Lapangan Pekerja BPU", image: "/BPJSTK/SOSIALISASI.jpg", caption: "Terjun langsung ke lapangan dalam pendistribusian brosur dan edukasi jaminan sosial bagi pekerja informal di Makassar.", tag: "Field Outreach" },
+        { title: "Kolaborasi Tim AR & Pengendalian Operasional", image: "/BPJSTK/TIM KEPESERTAAN.jpg", caption: "Koordinasi rutin bersama Tim Account Representative dalam evaluasi kepatuhan iuran dan penetrasi pasar kepesertaan.", tag: "Team Collaboration" },
+        { title: "Evaluasi & Pelepasan Resmi Magang BPJS TK", image: "/BPJSTK/EVALUASI DAN PELEPASAN MAGANG.jpg", caption: "Sesi presentasi hasil kerja magang mandiri dan penyerahan plakat bersama Kepala Bidang Pengendalian Operasional.", tag: "Project Closure" },
+        { title: "Pengesahan & Verifikasi Laporan Resmi MBKM", image: "/BPJSTK/TTD 1.jpg", caption: "Dokumen Lembar Pengesahan Laporan Magang resmi yang telah ditandatangani oleh Dosen & Kepala Bidang BPJS.", tag: "Official Verification" }
       ]
     }
   },
