@@ -94,10 +94,9 @@ export default function HeroSection() {
                     text={[
                       "Business & System Analyst",
                       "Project Coordinator",
-                      "Data Management Specialist",
-                      "Digital Solution Partner",
-                      "Tech Enthusiast",
-                      "Creative Thinker"
+                      "Data-Driven Problem Solver",
+                      "SDLC End-to-End",
+                      "Digital Transformation"
                     ]}
                     speed={70}
                     className="gradient-text"

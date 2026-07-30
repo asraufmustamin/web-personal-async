@@ -95,7 +95,7 @@ export default function ToolsSection() {
           </h2>
           
           <p className="text-text-muted font-medium text-base md:text-lg max-w-2xl mt-4 leading-relaxed">
-            Kombinasi tools untuk mendukung proses desain, pengembangan website, pengelolaan data, dokumentasi, dan produktivitas digital.
+            Berbagai tools yang pernah saya gunakan sepanjang pengerjaan proyek — mulai dari pembuatan website portofolio ini, pengembangan sistem informasi, hingga dokumentasi dan produktivitas sehari-hari.
           </p>
         </motion.div>
       </div>
