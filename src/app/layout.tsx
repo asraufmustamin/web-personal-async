@@ -97,7 +97,7 @@ export default function RootLayout({
                 name: "Institut Teknologi dan Bisnis Nobel Indonesia"
               },
               sameAs: [
-                "https://www.linkedin.com/in/asrauf-mustamin",
+                "https://www.linkedin.com/in/muhammadasraufmustamin/",
                 "https://github.com/asraufmustamin",
                 "https://www.instagram.com/asrfmst22_/",
                 "https://garuda.kemdikbudristek.go.id/author/detail/3858054"

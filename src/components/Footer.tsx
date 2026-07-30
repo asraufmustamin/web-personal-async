@@ -34,7 +34,7 @@ export default function Footer() {
         },
         {
           icon: <LinkedInIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" />,
-          href: "https://www.linkedin.com/in/muhammad-asrauf-mustamin-6a782b1b3/",
+          href: "https://www.linkedin.com/in/muhammadasraufmustamin/",
           label: "LinkedIn",
         },
         {
