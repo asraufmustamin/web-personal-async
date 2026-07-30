@@ -69,6 +69,7 @@ export const metadata: Metadata = {
 
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import InteractiveBackground from "@/components/ui/InteractiveBackground";
 
 export default function RootLayout({
   children,
@@ -116,9 +117,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden`}>
+      <body className={`${outfit.variable} ${plusJakartaSans.variable} font-sans bg-bg-main text-text-main antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden relative`}>
         <CustomCursor />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} themes={["light", "dark", "cyber"]}>
+          <InteractiveBackground />
           <SmoothScroll>
             {children}
           </SmoothScroll>
