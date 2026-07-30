@@ -20,6 +20,7 @@ const toolsRow1 = [
 
 const toolsRow2 = [
   { name: "Figma", icon: "/tools/Figma.svg" },
+  { name: "Draw.io", icon: "/tools/Drawio.svg" },
   { name: "Canva", icon: "/tools/Canva.svg" },
   { name: "CapCut", icon: "/tools/capcutlogo.png", className: "w-12 h-12 md:w-[60px] md:h-[60px]" },
   { name: "Word", icon: "/tools/Word.svg" },
