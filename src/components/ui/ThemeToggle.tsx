@@ -218,46 +218,39 @@ export function ThemeToggle() {
 
                             <div className="h-px bg-black/10 dark:bg-white/10 w-full" />
 
-                            {/* Custom Hex / Pipet */}
+                            {/* Custom Picker Button */}
                             <div>
                               <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
-                                Custom (Pipet / Hex)
+                                Eksplorasi Warna
                               </span>
-                              <div className="flex items-center gap-2">
-                                {/* Pipet Color Picker */}
-                                <div className="relative w-8 h-8 rounded-xl overflow-hidden shadow-sm group border border-black/10 dark:border-white/10">
-                                  <input
-                                    type="color"
-                                    value={customHex}
-                                    onChange={(e) => handleCustomHexChange(e.target.value)}
-                                    className="absolute -inset-2 w-12 h-12 cursor-pointer opacity-0 z-10"
-                                    title="Pilih Warna Kustom"
-                                  />
-                                  <div
-                                    className="w-full h-full flex items-center justify-center transition-transform group-hover:scale-105"
-                                    style={{ backgroundColor: customHex }}
-                                  >
-                                    <Edit3 className="w-3.5 h-3.5 text-white mix-blend-difference opacity-80" />
+                              <div className="relative overflow-hidden group rounded-xl">
+                                {/* Gradient Background for the Button */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                {/* The hidden native color picker stretched over the button */}
+                                <input
+                                  type="color"
+                                  value={customHex}
+                                  onChange={(e) => handleCustomHexChange(e.target.value)}
+                                  className="absolute inset-[-10px] w-[120%] h-[150%] cursor-pointer opacity-0 z-20"
+                                  title="Pilih Warna Bebas"
+                                />
+                                
+                                {/* Button Content */}
+                                <div className="relative z-10 flex items-center justify-between px-4 py-2.5 pointer-events-none">
+                                  <div className="flex items-center gap-2">
+                                    <Palette className="w-4 h-4 text-white drop-shadow-md" />
+                                    <span className="text-xs font-bold text-white drop-shadow-md">
+                                      Pilih Warna Sendiri
+                                    </span>
                                   </div>
-                                </div>
-
-                                {/* Hex Input Text */}
-                                <div className="relative flex-1">
-                                  <input
-                                    type="text"
-                                    value={customHex}
-                                    onChange={(e) => {
-                                      const val = e.target.value;
-                                      if (val.startsWith("#") || val === "") {
-                                        setCustomHex(val);
-                                        if (/^#[0-9A-F]{6}$/i.test(val)) {
-                                          handleCustomHexChange(val);
-                                        }
-                                      }
-                                    }}
-                                    placeholder="#250711"
-                                    className="w-full bg-white dark:bg-black/20 text-xs font-mono font-bold text-text-main border border-black/10 dark:border-white/10 rounded-xl px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
-                                  />
+                                  
+                                  {/* Read-only Hex Badge */}
+                                  <div className="bg-black/30 backdrop-blur-sm px-2 py-1 rounded-lg border border-white/20">
+                                    <span className="text-[10px] font-mono font-bold text-white uppercase tracking-wider">
+                                      {customHex}
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
