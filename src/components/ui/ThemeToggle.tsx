@@ -35,6 +35,21 @@ export function ThemeToggle() {
     }
     return undefined;
   });
+  
+  const [customTextHex, setCustomTextHex] = useState<string | undefined>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("async_custom_text_color") || undefined;
+    }
+    return undefined;
+  });
+
+  const [customAccentHex, setCustomAccentHex] = useState<string | undefined>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("async_custom_accent_color") || undefined;
+    }
+    return undefined;
+  });
+
   const [isCustomConfigOpen, setIsCustomConfigOpen] = useState(false);
   
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -49,7 +64,7 @@ export function ThemeToggle() {
   useEffect(() => {
     if (!mounted) return;
     if (theme === "custom") {
-      applyCustomThemeColor(customHex, customTextMode);
+      applyCustomThemeColor(customHex, customTextMode, customTextHex, customAccentHex);
       if (typeof window !== "undefined") {
         localStorage.setItem("async_custom_theme_color_v2", customHex);
         if (customTextMode) {
@@ -57,11 +72,21 @@ export function ThemeToggle() {
         } else {
           localStorage.removeItem("async_custom_text_mode");
         }
+        if (customTextHex) {
+          localStorage.setItem("async_custom_text_color", customTextHex);
+        } else {
+          localStorage.removeItem("async_custom_text_color");
+        }
+        if (customAccentHex) {
+          localStorage.setItem("async_custom_accent_color", customAccentHex);
+        } else {
+          localStorage.removeItem("async_custom_accent_color");
+        }
       }
     } else {
       removeCustomThemeColor();
     }
-  }, [theme, customHex, customTextMode, mounted]);
+  }, [theme, customHex, customTextMode, customTextHex, customAccentHex, mounted]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -198,71 +223,86 @@ export function ThemeToggle() {
 
                     <div className="h-px bg-black/10 dark:bg-white/10 w-full" />
 
-                    {/* Custom Picker Button */}
+                    {/* Komponen Warna (Theme Builder) */}
                     <div>
                       <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
-                        Eksplorasi Warna
+                        Tema Bebas (Komponen)
                       </span>
-                      <div className="flex items-center gap-2 mt-1">
-                        <div className="relative overflow-hidden group rounded-lg flex-1 border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
-                          <input
-                            type="color"
-                            value={customHex}
-                            onChange={(e) => handleCustomHexChange(e.target.value)}
-                            className="absolute inset-[-10px] w-[120%] h-[150%] cursor-pointer opacity-0 z-20"
-                            title="Pilih Warna Bebas"
-                          />
-                          <div className="relative z-10 flex items-center justify-center gap-2 px-3 py-1.5 pointer-events-none">
-                            <Palette className="w-3.5 h-3.5 text-text-muted group-hover:text-text-main transition-colors" />
-                            <span className="text-[10px] font-bold text-text-muted group-hover:text-text-main transition-colors">
-                              Pilih Warna Bebas
-                            </span>
+                      <div className="space-y-2 mt-1">
+                        
+                        {/* 1. Latar Belakang */}
+                        <div className="flex items-center gap-2">
+                          <div className="relative overflow-hidden group rounded-lg flex-1 border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors h-8">
+                            <input
+                              type="color"
+                              value={customHex}
+                              onChange={(e) => handleCustomHexChange(e.target.value)}
+                              className="absolute inset-[-10px] w-[150%] h-[150%] cursor-pointer opacity-0 z-20"
+                              title="Pilih Latar Belakang"
+                            />
+                            <div className="relative z-10 flex items-center justify-between px-3 h-full pointer-events-none">
+                              <span className="text-[10px] font-bold text-text-muted group-hover:text-text-main transition-colors">Latar Belakang</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[9px] font-mono text-text-muted uppercase">{customHex}</span>
+                                <div className="w-3 h-3 rounded-full border border-black/20 dark:border-white/20" style={{ backgroundColor: customHex }} />
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div className="bg-black/5 dark:bg-white/5 px-2 py-1.5 rounded-lg border border-black/5 dark:border-white/5 text-center min-w-[60px]">
-                          <span className="text-[10px] font-mono font-bold text-text-muted uppercase">
-                            {customHex}
-                          </span>
+
+                        {/* 2. Teks Utama */}
+                        <div className="flex items-center gap-2">
+                          <div className="relative overflow-hidden group rounded-lg flex-1 border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors h-8">
+                            <input
+                              type="color"
+                              value={customTextHex || "#ffffff"}
+                              onChange={(e) => {
+                                setCustomTextHex(e.target.value);
+                                setCustomTextMode(undefined); // Disable toggle auto mode
+                              }}
+                              className="absolute inset-[-10px] w-[150%] h-[150%] cursor-pointer opacity-0 z-20"
+                              title="Pilih Warna Teks"
+                            />
+                            <div className="relative z-10 flex items-center justify-between px-3 h-full pointer-events-none">
+                              <span className="text-[10px] font-bold text-text-muted group-hover:text-text-main transition-colors">Teks Utama</span>
+                              <div className="flex items-center gap-2">
+                                {customTextHex && <span className="text-[9px] font-mono text-text-muted uppercase">{customTextHex}</span>}
+                                <div className="w-3 h-3 rounded-full border border-black/20 dark:border-white/20" style={{ backgroundColor: customTextHex || "transparent" }} />
+                              </div>
+                            </div>
+                          </div>
+                          {customTextHex && (
+                            <button onClick={() => setCustomTextHex(undefined)} className="p-1.5 bg-black/5 dark:bg-white/5 rounded-lg text-text-muted hover:text-red-400 transition-colors shrink-0" title="Reset Teks">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            </button>
+                          )}
                         </div>
-                      </div>
-                    </div>
-                    
-                    {/* Text Color Toggle */}
-                    <div className="mt-1">
-                      <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
-                        Warna Teks
-                      </span>
-                      <div className="flex bg-black/5 dark:bg-white/5 p-1 rounded-lg">
-                        <button
-                          onClick={() => setCustomTextMode("light")}
-                          className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
-                            customTextMode === "light" 
-                              ? "bg-white text-black shadow-sm" 
-                              : "text-text-muted hover:text-text-main"
-                          }`}
-                        >
-                          ⚪ Putih
-                        </button>
-                        <button
-                          onClick={() => setCustomTextMode(undefined)}
-                          className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
-                            customTextMode === undefined 
-                              ? "bg-primary text-white shadow-sm" 
-                              : "text-text-muted hover:text-text-main"
-                          }`}
-                        >
-                          ✨ Auto
-                        </button>
-                        <button
-                          onClick={() => setCustomTextMode("dark")}
-                          className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
-                            customTextMode === "dark" 
-                              ? "bg-[#111] text-white shadow-sm" 
-                              : "text-text-muted hover:text-text-main"
-                          }`}
-                        >
-                          ⚫ Hitam
-                        </button>
+
+                        {/* 3. Aksen & Sorotan */}
+                        <div className="flex items-center gap-2">
+                          <div className="relative overflow-hidden group rounded-lg flex-1 border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors h-8">
+                            <input
+                              type="color"
+                              value={customAccentHex || "#f89d0a"}
+                              onChange={(e) => setCustomAccentHex(e.target.value)}
+                              className="absolute inset-[-10px] w-[150%] h-[150%] cursor-pointer opacity-0 z-20"
+                              title="Pilih Warna Aksen"
+                            />
+                            <div className="relative z-10 flex items-center justify-between px-3 h-full pointer-events-none">
+                              <span className="text-[10px] font-bold text-text-muted group-hover:text-text-main transition-colors">Aksen (Gradient)</span>
+                              <div className="flex items-center gap-2">
+                                {customAccentHex && <span className="text-[9px] font-mono text-text-muted uppercase">{customAccentHex}</span>}
+                                <div className="w-3 h-3 rounded-full border border-black/20 dark:border-white/20" style={{ backgroundColor: customAccentHex || "transparent" }} />
+                              </div>
+                            </div>
+                          </div>
+                          {customAccentHex && (
+                            <button onClick={() => setCustomAccentHex(undefined)} className="p-1.5 bg-black/5 dark:bg-white/5 rounded-lg text-text-muted hover:text-red-400 transition-colors shrink-0" title="Reset Aksen">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            </button>
+                          )}
+                        </div>
+
                       </div>
                     </div>
                   </div>

@@ -48,7 +48,16 @@ export function computeCardColor(mainHex: string): string {
 }
 
 // Compute matching text main color
-export function computeTextColor(mainHex: string, forceMode?: "light" | "dark"): { main: string; muted: string } {
+export function computeTextColor(mainHex: string, forceMode?: "light" | "dark", customTextHex?: string): { main: string; muted: string } {
+  if (customTextHex) {
+    const rgb = hexToRgb(customTextHex);
+    const lum = rgb ? getLuminance(rgb.r, rgb.g, rgb.b) : 1;
+    // If text is light, mute by darkening. If text is dark, mute by lightening.
+    const factor = lum > 0.5 ? 0.7 : 1.5;
+    const muted = rgb ? rgbToHex(rgb.r * factor, rgb.g * factor, rgb.b * factor) : "#888888";
+    return { main: customTextHex, muted };
+  }
+
   const rgb = hexToRgb(mainHex);
   if (!rgb) return { main: "#FDF2F8", muted: "#FBCFE8" };
   
@@ -65,7 +74,21 @@ export function computeTextColor(mainHex: string, forceMode?: "light" | "dark"):
 }
 
 // Compute primary and accent colors for gradient based on luminance
-export function computeAccentColors(mainHex: string, forceMode?: "light" | "dark") {
+export function computeAccentColors(mainHex: string, forceMode?: "light" | "dark", customAccentHex?: string) {
+  if (customAccentHex) {
+    const rgb = hexToRgb(customAccentHex);
+    if (rgb) {
+      // Generate gradient palette from single accent color
+      return {
+        primary: customAccentHex,
+        primaryDark: rgbToHex(rgb.r * 0.7, rgb.g * 0.7, rgb.b * 0.7),
+        accent: rgbToHex(Math.min(255, rgb.r * 1.2), Math.min(255, rgb.g * 1.2), Math.min(255, rgb.b * 1.2)),
+        accentSoft: rgbToHex(Math.min(255, rgb.r * 1.4), Math.min(255, rgb.g * 1.4), Math.min(255, rgb.b * 1.4)),
+        bronzeDark: rgbToHex(rgb.r * 0.4, rgb.g * 0.4, rgb.b * 0.4),
+      };
+    }
+  }
+
   const rgb = hexToRgb(mainHex);
   if (!rgb) {
     return {
@@ -103,15 +126,15 @@ export function computeAccentColors(mainHex: string, forceMode?: "light" | "dark
 }
 
 // Apply custom colors to document root
-export function applyCustomThemeColor(hex: string, forceMode?: "light" | "dark") {
+export function applyCustomThemeColor(hex: string, forceMode?: "light" | "dark", customTextHex?: string, customAccentHex?: string) {
   if (typeof document === "undefined") return;
   
   const rgb = hexToRgb(hex);
   if (!rgb) return;
   
   const cardHex = computeCardColor(hex);
-  const { main: textMain, muted: textMuted } = computeTextColor(hex, forceMode);
-  const accents = computeAccentColors(hex, forceMode);
+  const { main: textMain, muted: textMuted } = computeTextColor(hex, forceMode, customTextHex);
+  const accents = computeAccentColors(hex, forceMode, customAccentHex);
   
   const root = document.documentElement;
   root.style.setProperty("--bg-main", hex);
