@@ -62,6 +62,21 @@ export function computeTextColor(mainHex: string): { main: string; muted: string
   }
 }
 
+// Compute primary accent color
+export function computePrimaryColor(mainHex: string): string {
+  const rgb = hexToRgb(mainHex);
+  if (!rgb) return "#F89D0A";
+  
+  const luminance = getLuminance(rgb.r, rgb.g, rgb.b);
+  if (luminance < 0.5) {
+    // Dark background -> Bright Gold
+    return "#F89D0A";
+  } else {
+    // Light background -> Deep Bronze/Orange
+    return "#B45309"; 
+  }
+}
+
 // Apply custom colors to document root
 export function applyCustomThemeColor(hex: string) {
   if (typeof document === "undefined") return;
@@ -71,12 +86,14 @@ export function applyCustomThemeColor(hex: string) {
   
   const cardHex = computeCardColor(hex);
   const { main: textMain, muted: textMuted } = computeTextColor(hex);
+  const primaryHex = computePrimaryColor(hex);
   
   const root = document.documentElement;
   root.style.setProperty("--bg-main", hex);
   root.style.setProperty("--bg-card", cardHex);
   root.style.setProperty("--text-main", textMain);
   root.style.setProperty("--text-muted", textMuted);
+  root.style.setProperty("--primary-color", primaryHex);
 }
 
 // Remove custom color overrides when switching back to light or dark
@@ -87,4 +104,5 @@ export function removeCustomThemeColor() {
   root.style.removeProperty("--bg-card");
   root.style.removeProperty("--text-main");
   root.style.removeProperty("--text-muted");
+  root.style.removeProperty("--primary-color");
 }

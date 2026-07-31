@@ -2,16 +2,32 @@
 
 import * as React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Moon, Sun, Lock, ChevronDown, Check, Info } from "lucide-react";
+import { Moon, Sun, Palette, ChevronDown, Check } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
+import { applyCustomThemeColor, removeCustomThemeColor } from "@/lib/colorUtils";
 
 const emptySubscribe = () => () => {};
+
+const PRESET_PALETTES = [
+  { name: "Velvet Maroon", hex: "#250711" },
+  { name: "Royal Emerald", hex: "#022C22" },
+  { name: "Sapphire Indigo", hex: "#0F172A" },
+  { name: "Deep Plum", hex: "#1E0A2A" },
+  { name: "Soft Ivory (Terang)", hex: "#F8F6F0" },
+  { name: "Ice Blue (Terang)", hex: "#F0F8FF" },
+];
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [showLockedMsg, setShowLockedMsg] = useState(false);
+  const [customHex, setCustomHex] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("async_custom_theme_color") || "#250711";
+    }
+    return "#250711";
+  });
+  
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const mounted = React.useSyncExternalStore(
@@ -20,12 +36,24 @@ export function ThemeToggle() {
     () => false
   );
 
+  // Apply custom theme overrides when theme === 'custom'
+  useEffect(() => {
+    if (!mounted) return;
+    if (theme === "custom") {
+      applyCustomThemeColor(customHex);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("async_custom_theme_color", customHex);
+      }
+    } else {
+      removeCustomThemeColor();
+    }
+  }, [theme, customHex, mounted]);
+
   // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setIsOpen(false);
-        setShowLockedMsg(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -54,8 +82,8 @@ export function ThemeToggle() {
     {
       id: "custom",
       name: "Custom Color",
-      desc: "Locked Theme",
-      icon: Lock,
+      desc: "Pilih Warna Favorit",
+      icon: Palette,
       color: "text-rose-400",
     },
   ];
@@ -63,27 +91,25 @@ export function ThemeToggle() {
   const currentOption = themeOptions.find((t) => t.id === theme) || themeOptions[0];
   const CurrentIcon = currentOption.icon;
 
-  const handleCustomClick = () => {
-    setTheme("custom");
-    setShowLockedMsg(true);
-    // Don't close dropdown immediately so they can see the message
+  const handleCustomHexChange = (hex: string) => {
+    setCustomHex(hex);
+    if (theme !== "custom") {
+      setTheme("custom");
+    }
   };
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
       {/* Dropdown Button Trigger */}
       <button
-        onClick={() => {
-          setIsOpen(!isOpen);
-          if (isOpen) setShowLockedMsg(false); // reset msg on close
-        }}
+        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-full bg-bg-card hover:bg-black/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 transition-all duration-300 shadow-sm cursor-pointer group"
         aria-label="Pilih Tema Tampilan"
         aria-expanded={isOpen}
       >
         <CurrentIcon className={`h-4 w-4 ${currentOption.color} transition-transform group-hover:scale-110`} />
         <span className="text-xs font-bold text-text-main hidden sm:inline-block">
-          {currentOption.name.split(" ")[0]}
+          {theme === "custom" ? "Custom Color" : currentOption.name.split(" ")[0]}
         </span>
         <ChevronDown className={`h-3.5 w-3.5 text-text-muted transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
@@ -105,109 +131,77 @@ export function ThemeToggle() {
             </div>
 
             <div className="space-y-1">
-              {/* Light Mode */}
-              <button
-                onClick={() => { setTheme("light"); setIsOpen(false); }}
-                className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-200 cursor-pointer text-left ${
-                  theme === "light"
-                    ? "bg-primary/10 border border-primary/30"
-                    : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded-lg ${theme === "light" ? "bg-primary text-white" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
-                    <Sun className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className={`text-xs font-bold ${theme === "light" ? "text-primary" : "text-text-main"}`}>
-                      Light Mode
-                    </div>
-                    <div className="text-[10px] text-text-muted">
-                      Ivory & Warm Gold
-                    </div>
-                  </div>
-                </div>
-                {theme === "light" && <Check className="h-4 w-4 text-primary shrink-0" />}
-              </button>
-
-              {/* Dark Mode */}
-              <button
-                onClick={() => { setTheme("dark"); setIsOpen(false); }}
-                className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-200 cursor-pointer text-left ${
-                  theme === "dark"
-                    ? "bg-primary/10 border border-primary/30"
-                    : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded-lg ${theme === "dark" ? "bg-primary text-white" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
-                    <Moon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className={`text-xs font-bold ${theme === "dark" ? "text-primary" : "text-text-main"}`}>
-                      Dark Mode
-                    </div>
-                    <div className="text-[10px] text-text-muted">
-                      Deep Obsidian & Gold
-                    </div>
-                  </div>
-                </div>
-                {theme === "dark" && <Check className="h-4 w-4 text-primary shrink-0" />}
-              </button>
-
-              {/* Custom Color Mode (Locked) */}
-              <button
-                onClick={handleCustomClick}
-                className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-200 cursor-pointer text-left ${
-                  theme === "custom"
-                    ? "bg-primary/10 border border-primary/30"
-                    : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
-                }`}
-              >
-                <div className="flex items-center gap-3 w-full">
-                  <div className={`p-1.5 rounded-lg ${theme === "custom" ? "bg-primary text-white" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
-                    <Lock className="h-4 w-4" />
-                  </div>
-                  <div className="flex-1">
-                    <div className={`text-xs font-bold flex items-center justify-between w-full ${theme === "custom" ? "text-primary" : "text-text-main"}`}>
-                      Custom Color
-                      {/* Little color dot badges indicating custom colors */}
-                      <div className="flex items-center gap-0.5 ml-2">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#022C22] shadow-sm"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#0F172A] shadow-sm"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#1C100B] shadow-sm"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#250711] shadow-sm"></div>
+              {themeOptions.map((opt) => {
+                const OptionIcon = opt.icon;
+                const isSelected = theme === opt.id;
+                return (
+                  <div key={opt.id} className="relative">
+                    <button
+                      onClick={() => {
+                        if (opt.id !== "custom") {
+                          setTheme(opt.id);
+                          setIsOpen(false);
+                        } else {
+                          // if already custom, just toggle the dots view? 
+                          // Or always select it and keep dropdown open
+                          if (theme !== "custom") {
+                            setTheme("custom");
+                          }
+                        }
+                      }}
+                      className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-200 cursor-pointer text-left ${
+                        isSelected
+                          ? "bg-primary/10 border border-primary/30"
+                          : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`p-1.5 rounded-lg ${isSelected ? "bg-primary text-white" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
+                          <OptionIcon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className={`text-xs font-bold ${isSelected ? "text-primary" : "text-text-main"}`}>
+                            {opt.name}
+                          </div>
+                          <div className="text-[10px] text-text-muted">
+                            {opt.desc}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-[10px] text-text-muted">
-                      Terkunci di Velvet Maroon
-                    </div>
+
+                      {isSelected && opt.id !== "custom" && (
+                        <Check className="h-4 w-4 text-primary shrink-0" />
+                      )}
+                    </button>
+
+                    {/* Show simple color dots if Custom Color is selected */}
+                    {opt.id === "custom" && isSelected && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        className="px-2 pb-2 pt-1"
+                      >
+                        <div className="flex items-center justify-between gap-1.5 p-1.5 bg-black/5 dark:bg-white/5 rounded-xl border border-black/5 dark:border-white/5">
+                          {PRESET_PALETTES.map((palette) => (
+                            <button
+                              key={palette.hex}
+                              onClick={() => handleCustomHexChange(palette.hex)}
+                              className={`w-6 h-6 rounded-full transition-transform hover:scale-110 relative flex items-center justify-center shadow-sm cursor-pointer ${
+                                customHex.toLowerCase() === palette.hex.toLowerCase()
+                                  ? "ring-2 ring-primary ring-offset-1 ring-offset-bg-card scale-110"
+                                  : "opacity-80 hover:opacity-100"
+                              }`}
+                              style={{ backgroundColor: palette.hex }}
+                              title={palette.name}
+                            />
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
-                </div>
-                {theme === "custom" && !showLockedMsg && <Check className="h-4 w-4 text-primary shrink-0" />}
-              </button>
+                );
+              })}
             </div>
-
-            {/* Small Popup Message inside the card */}
-            <AnimatePresence>
-              {showLockedMsg && theme === "custom" && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="overflow-hidden"
-                >
-                  <div className="mt-2 p-2.5 bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-xl flex items-start gap-2">
-                    <Info className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                    <p className="text-[10px] text-text-muted leading-tight">
-                      Fitur ganti warna sedang disiapkan! 🎨<br/>
-                      Sementara ini nikmati tema <strong className="text-text-main">Velvet Maroon</strong>.
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
           </motion.div>
         )}
       </AnimatePresence>

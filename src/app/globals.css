@@ -8,6 +8,7 @@
   --bg-card: #F9F9F9;
   --text-main: #111111;
   --text-muted: #555555;
+  --primary-color: #F89D0A;
 }
 
 .dark {
@@ -15,6 +16,7 @@
   --bg-card: #141414;
   --text-main: #EDEDED;
   --text-muted: #A1A1A1;
+  --primary-color: #F89D0A;
 }
 
 .custom {
@@ -22,6 +24,7 @@
   --bg-card: #380C1C;
   --text-main: #FDF2F8;
   --text-muted: #FBCFE8;
+  --primary-color: #F89D0A;
 }
 
 .vibrant-gradient-text {
@@ -45,7 +48,7 @@
   --color-text-muted: var(--text-muted);
 
   /* Shared Palette */
-  --color-primary: #F89D0A;
+  --color-primary: var(--primary-color);
   --color-primary-dark: #DD6202;
   --color-accent: #FCD560;
   --color-accent-soft: #FCE99D;
