@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Moon, Sun, Palette, ChevronDown, Check } from "lucide-react";
+import { Moon, Sun, Palette, ChevronDown, Check, Edit3, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { applyCustomThemeColor, removeCustomThemeColor } from "@/lib/colorUtils";
@@ -23,7 +23,8 @@ export function ThemeToggle() {
   const [isOpen, setIsOpen] = useState(false);
   const [customHex, setCustomHex] = useState(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("async_custom_theme_color") || "#250711";
+      // Changed to v2 to fix the cached blue color bug
+      return localStorage.getItem("async_custom_theme_color_v2") || "#250711";
     }
     return "#250711";
   });
@@ -42,7 +43,7 @@ export function ThemeToggle() {
     if (theme === "custom") {
       applyCustomThemeColor(customHex);
       if (typeof window !== "undefined") {
-        localStorage.setItem("async_custom_theme_color", customHex);
+        localStorage.setItem("async_custom_theme_color_v2", customHex);
       }
     } else {
       removeCustomThemeColor();
@@ -82,7 +83,7 @@ export function ThemeToggle() {
     {
       id: "custom",
       name: "Custom Color",
-      desc: "Pilih Warna Favorit",
+      desc: "Rekomendasi & Warna Bebas",
       icon: Palette,
       color: "text-rose-400",
     },
@@ -122,15 +123,15 @@ export function ThemeToggle() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 mt-2 w-64 rounded-2xl bg-bg-card border border-black/10 dark:border-white/10 shadow-2xl backdrop-blur-xl z-[10000] p-2 space-y-1"
+            className="absolute right-0 mt-2 w-72 rounded-2xl bg-bg-card border border-black/10 dark:border-white/10 shadow-2xl backdrop-blur-xl z-[10000] p-2.5 space-y-1.5"
           >
-            <div className="px-3 py-1.5 border-b border-black/5 dark:border-white/5 mb-1">
-              <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider">
-                Mode Tampilan & Warna
+            <div className="px-2 py-1.5 border-b border-black/5 dark:border-white/5 mb-2 flex items-center justify-between">
+              <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3 h-3 text-primary" /> Mode Tampilan
               </span>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {themeOptions.map((opt) => {
                 const OptionIcon = opt.icon;
                 const isSelected = theme === opt.id;
@@ -142,25 +143,21 @@ export function ThemeToggle() {
                           setTheme(opt.id);
                           setIsOpen(false);
                         } else {
-                          // if already custom, just toggle the dots view? 
-                          // Or always select it and keep dropdown open
-                          if (theme !== "custom") {
-                            setTheme("custom");
-                          }
+                          if (theme !== "custom") setTheme("custom");
                         }
                       }}
-                      className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-200 cursor-pointer text-left ${
-                        isSelected
+                      className={`w-full flex items-center justify-between p-2.5 rounded-xl transition-all duration-300 cursor-pointer text-left ${
+                        isSelected && opt.id !== "custom"
                           ? "bg-primary/10 border border-primary/30"
                           : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`p-1.5 rounded-lg ${isSelected ? "bg-primary text-white" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
+                        <div className={`p-1.5 rounded-lg transition-colors duration-300 ${isSelected ? "bg-primary text-white shadow-md shadow-primary/20" : "bg-black/5 dark:bg-white/5 text-text-muted"}`}>
                           <OptionIcon className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`text-xs font-bold ${isSelected ? "text-primary" : "text-text-main"}`}>
+                          <div className={`text-xs font-bold transition-colors ${isSelected ? "text-primary" : "text-text-main"}`}>
                             {opt.name}
                           </div>
                           <div className="text-[10px] text-text-muted">
@@ -174,30 +171,101 @@ export function ThemeToggle() {
                       )}
                     </button>
 
-                    {/* Show simple color dots if Custom Color is selected */}
-                    {opt.id === "custom" && isSelected && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        className="px-2 pb-2 pt-1"
-                      >
-                        <div className="flex items-center justify-between gap-1.5 p-1.5 bg-black/5 dark:bg-white/5 rounded-xl border border-black/5 dark:border-white/5">
-                          {PRESET_PALETTES.map((palette) => (
-                            <button
-                              key={palette.hex}
-                              onClick={() => handleCustomHexChange(palette.hex)}
-                              className={`w-6 h-6 rounded-full transition-transform hover:scale-110 relative flex items-center justify-center shadow-sm cursor-pointer ${
-                                customHex.toLowerCase() === palette.hex.toLowerCase()
-                                  ? "ring-2 ring-primary ring-offset-1 ring-offset-bg-card scale-110"
-                                  : "opacity-80 hover:opacity-100"
-                              }`}
-                              style={{ backgroundColor: palette.hex }}
-                              title={palette.name}
-                            />
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
+                    {/* Modern Custom Color UI */}
+                    <AnimatePresence>
+                      {opt.id === "custom" && isSelected && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, height: "auto", scale: 1 }}
+                          exit={{ opacity: 0, height: 0, scale: 0.95 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          className="px-1 pt-2 pb-1 overflow-hidden"
+                        >
+                          <div className="p-3 bg-black/5 dark:bg-white/5 rounded-2xl border border-black/10 dark:border-white/10 backdrop-blur-md shadow-inner space-y-3">
+                            
+                            {/* Curated Colors */}
+                            <div>
+                              <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
+                                Rekomendasi
+                              </span>
+                              <div className="flex items-center justify-between gap-2">
+                                {PRESET_PALETTES.map((palette) => (
+                                  <button
+                                    key={palette.hex}
+                                    onClick={() => handleCustomHexChange(palette.hex)}
+                                    className={`w-6 h-6 rounded-full transition-all duration-300 relative flex items-center justify-center cursor-pointer ${
+                                      customHex.toLowerCase() === palette.hex.toLowerCase()
+                                        ? "scale-125 shadow-lg z-10"
+                                        : "hover:scale-110 opacity-70 hover:opacity-100 shadow-sm"
+                                    }`}
+                                    style={{ 
+                                      backgroundColor: palette.hex,
+                                      boxShadow: customHex.toLowerCase() === palette.hex.toLowerCase() ? `0 0 10px ${palette.hex}80` : ''
+                                    }}
+                                    title={palette.name}
+                                  >
+                                    {customHex.toLowerCase() === palette.hex.toLowerCase() && (
+                                      <motion.div 
+                                        initial={{ scale: 0 }} 
+                                        animate={{ scale: 1 }} 
+                                        className="absolute inset-0 rounded-full border border-white/40"
+                                      />
+                                    )}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className="h-px bg-black/10 dark:bg-white/10 w-full" />
+
+                            {/* Custom Hex / Pipet */}
+                            <div>
+                              <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
+                                Custom (Pipet / Hex)
+                              </span>
+                              <div className="flex items-center gap-2">
+                                {/* Pipet Color Picker */}
+                                <div className="relative w-8 h-8 rounded-xl overflow-hidden shadow-sm group border border-black/10 dark:border-white/10">
+                                  <input
+                                    type="color"
+                                    value={customHex}
+                                    onChange={(e) => handleCustomHexChange(e.target.value)}
+                                    className="absolute -inset-2 w-12 h-12 cursor-pointer opacity-0 z-10"
+                                    title="Pilih Warna Kustom"
+                                  />
+                                  <div
+                                    className="w-full h-full flex items-center justify-center transition-transform group-hover:scale-105"
+                                    style={{ backgroundColor: customHex }}
+                                  >
+                                    <Edit3 className="w-3.5 h-3.5 text-white mix-blend-difference opacity-80" />
+                                  </div>
+                                </div>
+
+                                {/* Hex Input Text */}
+                                <div className="relative flex-1">
+                                  <input
+                                    type="text"
+                                    value={customHex}
+                                    onChange={(e) => {
+                                      const val = e.target.value;
+                                      if (val.startsWith("#") || val === "") {
+                                        setCustomHex(val);
+                                        if (/^#[0-9A-F]{6}$/i.test(val)) {
+                                          handleCustomHexChange(val);
+                                        }
+                                      }
+                                    }}
+                                    placeholder="#250711"
+                                    className="w-full bg-white dark:bg-black/20 text-xs font-mono font-bold text-text-main border border-black/10 dark:border-white/10 rounded-xl px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary shadow-sm"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}
