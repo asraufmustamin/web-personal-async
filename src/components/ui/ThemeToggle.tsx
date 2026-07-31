@@ -223,34 +223,26 @@ export function ThemeToggle() {
                               <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
                                 Eksplorasi Warna
                               </span>
-                              <div className="relative overflow-hidden group rounded-xl">
-                                {/* Gradient Background for the Button */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                
-                                {/* The hidden native color picker stretched over the button */}
-                                <input
-                                  type="color"
-                                  value={customHex}
-                                  onChange={(e) => handleCustomHexChange(e.target.value)}
-                                  className="absolute inset-[-10px] w-[120%] h-[150%] cursor-pointer opacity-0 z-20"
-                                  title="Pilih Warna Bebas"
-                                />
-                                
-                                {/* Button Content */}
-                                <div className="relative z-10 flex items-center justify-between px-4 py-2.5 pointer-events-none">
-                                  <div className="flex items-center gap-2">
-                                    <Palette className="w-4 h-4 text-white drop-shadow-md" />
-                                    <span className="text-xs font-bold text-white drop-shadow-md">
-                                      Pilih Warna Sendiri
+                              <div className="flex items-center gap-2 mt-1">
+                                <div className="relative overflow-hidden group rounded-lg flex-1 border border-black/5 dark:border-white/5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+                                  <input
+                                    type="color"
+                                    value={customHex}
+                                    onChange={(e) => handleCustomHexChange(e.target.value)}
+                                    className="absolute inset-[-10px] w-[120%] h-[150%] cursor-pointer opacity-0 z-20"
+                                    title="Pilih Warna Bebas"
+                                  />
+                                  <div className="relative z-10 flex items-center justify-center gap-2 px-3 py-1.5 pointer-events-none">
+                                    <Palette className="w-3.5 h-3.5 text-text-muted group-hover:text-text-main transition-colors" />
+                                    <span className="text-[10px] font-bold text-text-muted group-hover:text-text-main transition-colors">
+                                      Pilih Warna Bebas
                                     </span>
                                   </div>
-                                  
-                                  {/* Read-only Hex Badge */}
-                                  <div className="bg-black/30 backdrop-blur-sm px-2 py-1 rounded-lg border border-white/20">
-                                    <span className="text-[10px] font-mono font-bold text-white uppercase tracking-wider">
-                                      {customHex}
-                                    </span>
-                                  </div>
+                                </div>
+                                <div className="bg-black/5 dark:bg-white/5 px-2 py-1.5 rounded-lg border border-black/5 dark:border-white/5 text-center min-w-[60px]">
+                                  <span className="text-[10px] font-mono font-bold text-text-muted uppercase">
+                                    {customHex}
+                                  </span>
                                 </div>
                               </div>
                             </div>
