@@ -260,9 +260,7 @@ export default function ExperienceSection() {
     description: t.experience.items[index]?.description || exp.description,
     activities: t.experience.items[index]?.activities || exp.activities,
     label: t.experience.items[index]?.label || exp.label,
-    // Note: categories matching depends on categories list being the same order.
-    // However, the original exp.category is in Indonesian. We need to match by index if we want it to work correctly for filtering.
-    // But since filtering relies on exact string match, we should translate exp.category as well.
+    categoryIndex: categoriesRaw.indexOf(exp.category),
     category: t.experience.categories[categoriesRaw.indexOf(exp.category)] || exp.category
   }));
 
@@ -270,15 +268,15 @@ export default function ExperienceSection() {
     title: t.experience.highlights[index]?.title || hl.title,
     desc: t.experience.highlights[index]?.desc || hl.desc,
   }));
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
   const [hoveredHighlight, setHoveredHighlight] = useState<number | null>(null);
   const [selectedExpIndex, setSelectedExpIndex] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
-  const filteredExperiences = activeCategory === categories[0] 
+  const filteredExperiences = activeCategoryIndex === 0 
     ? allExperiences 
-    : allExperiences.filter(e => e.category === activeCategory);
+    : allExperiences.filter(e => e.categoryIndex === activeCategoryIndex);
     
   const highlightsRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef(null);
@@ -341,21 +339,21 @@ export default function ExperienceSection() {
 
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-            {categories.map((cat) => (
+            {categories.map((cat, catIndex) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => setActiveCategoryIndex(catIndex)}
                 className={`px-5 py-2.5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 border ${
-                  activeCategory === cat
+                  activeCategoryIndex === catIndex
                     ? 'bg-primary text-white border-primary shadow-[0_4px_20px_rgba(234,88,12,0.3)]'
                     : 'bg-bg-card text-text-muted border-black/5 dark:border-white/5 hover:border-primary/30 hover:text-primary'
                 }`}
               >
                 {cat}
                 <span className={`ml-2 px-1.5 py-0.5 rounded-full text-[10px] ${
-                  activeCategory === cat ? 'bg-white/20 text-white' : 'bg-black/5 dark:bg-white/5'
+                  activeCategoryIndex === catIndex ? 'bg-white/20 text-white' : 'bg-black/5 dark:bg-white/5'
                 }`}>
-                  {cat === categories[0] ? allExperiences.length : allExperiences.filter(e => e.category === cat).length}
+                  {catIndex === 0 ? allExperiences.length : allExperiences.filter(e => e.categoryIndex === catIndex).length}
                 </span>
               </button>
             ))}
