@@ -48,12 +48,14 @@ export function computeCardColor(mainHex: string): string {
 }
 
 // Compute matching text main color
-export function computeTextColor(mainHex: string): { main: string; muted: string } {
+export function computeTextColor(mainHex: string, forceMode?: "light" | "dark"): { main: string; muted: string } {
   const rgb = hexToRgb(mainHex);
   if (!rgb) return { main: "#FDF2F8", muted: "#FBCFE8" };
   
   const luminance = getLuminance(rgb.r, rgb.g, rgb.b);
-  if (luminance < 0.4) {
+  const isDarkBg = forceMode ? forceMode === "light" : luminance < 0.4;
+  
+  if (isDarkBg) {
     // Dark background -> Light text
     return { main: "#F8FAFC", muted: "#CBD5E1" };
   } else {
@@ -63,7 +65,7 @@ export function computeTextColor(mainHex: string): { main: string; muted: string
 }
 
 // Compute primary and accent colors for gradient based on luminance
-export function computeAccentColors(mainHex: string) {
+export function computeAccentColors(mainHex: string, forceMode?: "light" | "dark") {
   const rgb = hexToRgb(mainHex);
   if (!rgb) {
     return {
@@ -76,8 +78,11 @@ export function computeAccentColors(mainHex: string) {
   }
   
   const luminance = getLuminance(rgb.r, rgb.g, rgb.b);
-  if (luminance < 0.5) {
-    // Dark background -> Bright Gold/Orange
+  // Default to light mode text/accents if dark background
+  const isDarkBg = forceMode ? forceMode === "light" : luminance < 0.4;
+  
+  if (isDarkBg) {
+    // Dark background -> Bright Gold/Orange text/accents
     return {
       primary: "#F89D0A",
       primaryDark: "#DD6202",
@@ -86,27 +91,27 @@ export function computeAccentColors(mainHex: string) {
       bronzeDark: "#621501",
     };
   } else {
-    // Light background -> Deep Bronze/Orange/Brown to ensure contrast
+    // Light background -> Deep Bronze/Black text/accents for contrast
     return {
-      primary: "#B45309",        // Darker orange
-      primaryDark: "#78350F",    // Deep brown
-      accent: "#D97706",         // Amber
-      accentSoft: "#F59E0B",     // Light amber for highlight
-      bronzeDark: "#451A03",     // Very dark brown
+      primary: "#111827",        // Dark Gray (almost black)
+      primaryDark: "#030712",    // Very Dark Gray
+      accent: "#374151",         // Gray
+      accentSoft: "#6B7280",     // Light Gray
+      bronzeDark: "#000000",     // Black
     }; 
   }
 }
 
 // Apply custom colors to document root
-export function applyCustomThemeColor(hex: string) {
+export function applyCustomThemeColor(hex: string, forceMode?: "light" | "dark") {
   if (typeof document === "undefined") return;
   
   const rgb = hexToRgb(hex);
   if (!rgb) return;
   
   const cardHex = computeCardColor(hex);
-  const { main: textMain, muted: textMuted } = computeTextColor(hex);
-  const accents = computeAccentColors(hex);
+  const { main: textMain, muted: textMuted } = computeTextColor(hex, forceMode);
+  const accents = computeAccentColors(hex, forceMode);
   
   const root = document.documentElement;
   root.style.setProperty("--bg-main", hex);

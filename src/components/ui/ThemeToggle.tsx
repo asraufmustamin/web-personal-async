@@ -28,6 +28,13 @@ export function ThemeToggle() {
     }
     return "#250711";
   });
+  const [customTextMode, setCustomTextMode] = useState<"light" | "dark" | undefined>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("async_custom_text_mode");
+      if (saved === "light" || saved === "dark") return saved;
+    }
+    return undefined;
+  });
   
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -41,14 +48,19 @@ export function ThemeToggle() {
   useEffect(() => {
     if (!mounted) return;
     if (theme === "custom") {
-      applyCustomThemeColor(customHex);
+      applyCustomThemeColor(customHex, customTextMode);
       if (typeof window !== "undefined") {
         localStorage.setItem("async_custom_theme_color_v2", customHex);
+        if (customTextMode) {
+          localStorage.setItem("async_custom_text_mode", customTextMode);
+        } else {
+          localStorage.removeItem("async_custom_text_mode");
+        }
       }
     } else {
       removeCustomThemeColor();
     }
-  }, [theme, customHex, mounted]);
+  }, [theme, customHex, customTextMode, mounted]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -244,6 +256,45 @@ export function ThemeToggle() {
                                     {customHex}
                                   </span>
                                 </div>
+                              </div>
+                            </div>
+                            
+                            {/* Text Color Toggle */}
+                            <div className="mt-1">
+                              <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 block">
+                                Warna Teks
+                              </span>
+                              <div className="flex bg-black/5 dark:bg-white/5 p-1 rounded-lg">
+                                <button
+                                  onClick={() => setCustomTextMode("light")}
+                                  className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
+                                    customTextMode === "light" 
+                                      ? "bg-white text-black shadow-sm" 
+                                      : "text-text-muted hover:text-text-main"
+                                  }`}
+                                >
+                                  ⚪ Putih
+                                </button>
+                                <button
+                                  onClick={() => setCustomTextMode(undefined)}
+                                  className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
+                                    customTextMode === undefined 
+                                      ? "bg-primary text-white shadow-sm" 
+                                      : "text-text-muted hover:text-text-main"
+                                  }`}
+                                >
+                                  ✨ Auto
+                                </button>
+                                <button
+                                  onClick={() => setCustomTextMode("dark")}
+                                  className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all flex items-center justify-center gap-1 ${
+                                    customTextMode === "dark" 
+                                      ? "bg-[#111] text-white shadow-sm" 
+                                      : "text-text-muted hover:text-text-main"
+                                  }`}
+                                >
+                                  ⚫ Hitam
+                                </button>
                               </div>
                             </div>
 
