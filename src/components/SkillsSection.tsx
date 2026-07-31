@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
+import { useLanguage } from "@/context/LanguageContext";
 
 const skillIcons: Record<string, string> = {
   "01": "search_insights",
@@ -15,48 +16,10 @@ const skillIcons: Record<string, string> = {
   "06": "smart_toy",
 };
 
-const skills = [
-  {
-    id: "01",
-    title: "Analisis Sistem & Proses Bisnis",
-    desc: "Setiap solusi yang baik dimulai dari pemahaman masalah yang tepat. Saya terbiasa melakukan ekstraksi kebutuhan pengguna (requirement gathering), menyusun alur kerja, memetakan proses bisnis, dan merancang pendekatan yang paling efektif sebelum tahap pengembangan dimulai.",
-    tags: ["System Analysis", "Requirement Gathering", "Business Process Mapping", "Problem Solving", "Workflow Design", "System Mapping", "Solution Design", "Dokumentasi Sistem (SOP, UAT)"]
-  },
-  {
-    id: "02",
-    title: "Manajemen Data & Validasi",
-    desc: "Memastikan integritas dan kualitas data untuk kebutuhan operasional. Berpengalaman dalam memvalidasi ribuan data, merapikan dataset kompleks, dan melakukan digitalisasi dokumen agar terstruktur dan siap mendukung pengambilan keputusan.",
-    tags: ["Data Validation", "Data Management", "Data Integrity", "Digital Archiving", "Data Processing", "Spreadsheet Management", "Reporting", "Validasi Data Massal"]
-  },
-  {
-    id: "03",
-    title: "Siklus Pengembangan Sistem (SDLC)",
-    desc: "Mengawal siklus pengembangan perangkat lunak secara end-to-end. Memastikan sistem atau website yang dibangun tidak hanya berfungsi secara teknis, tetapi juga menjawab kebutuhan pengguna akhir dan mencapai metrik keberhasilan yang ditargetkan.",
-    tags: ["SDLC End-to-End", "User Acceptance Testing (UAT)", "System Implementation", "Frontend & Backend Logic", "Database Implementation", "Dashboard System", "API Integration", "Deployment & Maintenance"]
-  },
-  {
-    id: "04",
-    title: "Koordinasi Proyek & Kepemimpinan",
-    desc: "Menjadi jembatan antara kebutuhan bisnis (non-teknis) dan tim pengembang (teknis). Terbiasa memimpin tim, menyusun prioritas proyek, dan menjaga komunikasi antar pemangku kepentingan agar proyek selesai tepat waktu dan sesuai ekspektasi.",
-    tags: ["Project Coordination", "Team Leadership", "Stakeholder Communication", "Task Coordination", "Project Documentation", "Public Speaking", "IT Project Management", "TOEFL Score 537", "Project Planning", "Timeline & Milestone Management", "Stakeholder Coordination"]
-  },
-  {
-    id: "05",
-    title: "Komunikasi Visual & Prototyping",
-    desc: "Menerjemahkan ide dan kebutuhan sistem menjadi rancangan visual yang mudah dipahami. Mulai dari pembuatan wireframe, prototipe antarmuka dasar, hingga pembuatan materi komunikasi digital yang mendukung branding proyek.",
-    tags: ["UI Prototyping", "Wireframing", "Visual Communication", "Graphic Design", "Social Media Design", "Presentation Design", "Brand Identity", "Mockup Creation"]
-  },
-  {
-    id: "06",
-    title: "Pengembangan Berbasis AI",
-    desc: "Memanfaatkan teknologi Artificial Intelligence (Prompt Engineering) untuk mempercepat proses riset, menyusun kerangka dokumentasi, dan mengeksplorasi solusi guna meningkatkan produktivitas pengembangan.",
-    tags: ["Prompt Engineering", "AI Workflow", "AI Research", "AI-Assisted Coding", "Rapid Prototyping", "Productivity Optimization", "Content Generation"]
-  }
-];
-
 export default function SkillsSection() {
   const [selectedSkill, setSelectedSkill] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -84,38 +47,47 @@ export default function SkillsSection() {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
-              PENGALAMAN & FOKUS
+              {t.skills.sectionTitle}
             </span>
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
           </div>
 
           <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-text-main tracking-tight mb-6">
-            Keahlian{" "}
             {isHeadingInView ? (
               <Typewriter 
-                text={["Utama."]} 
+                text={[t.skills.subtitle]} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-dark"
               />
             ) : (
-              <span className="invisible">Utama.</span>
+              <span className="invisible">{t.skills.subtitle}</span>
             )}
           </h2>
           <p className="text-text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Ketertarikan dan pengalaman pada beberapa bidang yang saling mendukung dalam pengembangan solusi digital, dari tahap analisis hingga implementasi.
+            {t.skills.description}
           </p>
         </motion.div>
 
         {/* Bottom: Interactive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-4">
-          {skills.map((skill, index) => {
+          {t.skills.items.map((skill, index) => {
+            // Need to retain tags which aren't in translations. We can use a static mapping here or simply empty for now, wait we need tags. Let's create a tag mapping inside.
+            const tagsMapping: Record<string, string[]> = {
+              "01": ["System Analysis", "Requirement Gathering", "Business Process Mapping", "Problem Solving", "Workflow Design", "System Mapping", "Solution Design", "Dokumentasi Sistem (SOP, UAT)"],
+              "02": ["Data Validation", "Data Management", "Data Integrity", "Digital Archiving", "Data Processing", "Spreadsheet Management", "Reporting", "Validasi Data Massal"],
+              "03": ["SDLC End-to-End", "User Acceptance Testing (UAT)", "System Implementation", "Frontend & Backend Logic", "Database Implementation", "Dashboard System", "API Integration", "Deployment & Maintenance"],
+              "04": ["Project Coordination", "Team Leadership", "Stakeholder Communication", "Task Coordination", "Project Documentation", "Public Speaking", "IT Project Management", "TOEFL Score 537", "Project Planning", "Timeline & Milestone Management", "Stakeholder Coordination"],
+              "05": ["UI Prototyping", "Wireframing", "Visual Communication", "Graphic Design", "Social Media Design", "Presentation Design", "Brand Identity", "Mockup Creation"],
+              "06": ["Prompt Engineering", "AI Workflow", "AI Research", "AI-Assisted Coding", "Rapid Prototyping", "Productivity Optimization", "Content Generation"]
+            };
+
             return (
               <motion.div 
                 key={skill.id}
                 className="relative cursor-pointer transition-all duration-300 ease-out border rounded-2xl group overflow-hidden bg-bg-card hover:shadow-xl hover:-translate-y-1 h-full border-black/5 dark:border-white/5 hover:border-primary/20 flex flex-col"
-                onClick={() => setSelectedSkill(skill)}
+                onClick={() => setSelectedSkill({...skill, tags: tagsMapping[skill.id] || []})}
                 variants={popIn}
               >
                 <div className="p-6 md:p-8 flex flex-col h-full">
@@ -137,7 +109,7 @@ export default function SkillsSection() {
                   </p>
 
                   <div className="mt-auto">
-                    <span className="text-xs font-semibold text-primary uppercase tracking-wider group-hover:underline">Lihat Detail &rarr;</span>
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider group-hover:underline">{t.skills.viewDetail} &rarr;</span>
                   </div>
                 </div>
               </motion.div>
@@ -199,7 +171,7 @@ export default function SkillsSection() {
                   <div className="pt-5 mt-6 border-t border-black/5 dark:border-white/5">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                      <span className="text-[10px] md:text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Fokus Area & Teknologi</span>
+                      <span className="text-[10px] md:text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{t.skills.focusArea}</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-2.5 justify-start">

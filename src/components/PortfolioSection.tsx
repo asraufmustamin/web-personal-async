@@ -6,6 +6,8 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur, popIn } from "@/lib/animations";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 // --- PORTFOLIO DATA ---
 const categories = ["Sistem & Web", "Design", "Manajemen Data", "Lainnya"];
 
@@ -176,6 +178,7 @@ const allPortfolios = [
 ];
 
 export default function PortfolioSection() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("Sistem & Web");
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -216,23 +219,22 @@ export default function PortfolioSection() {
           className="flex flex-col items-center text-center mb-10"
           variants={fadeUpBlur}
         >
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Portofolio / Karya Terbaik</span>
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t.portfolio.sectionTitle}</span>
           <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-black font-serif mb-6 text-text-main">
-            Karya{" "}
             {isHeadingInView ? (
               <Typewriter 
-                text={["Terbaik."]} 
+                text={[t.portfolio.subtitle]} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
               />
             ) : (
-              <span className="invisible">Terbaik.</span>
+              <span className="invisible">{t.portfolio.subtitle}</span>
             )}
           </h2>
           <p className="text-text-muted text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-            Kumpulan proyek dan hasil kerja yang saya bangun, mulai dari sistem dan website, desain visual, pengelolaan data, hingga kebutuhan digital lainnya.
+            {t.portfolio.description}
           </p>
         </motion.div>
 

@@ -6,9 +6,11 @@ import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 import CaseStudyDetail from "@/components/CaseStudySection";
 
-const categories = ["Semua", "Profesional", "Proyek", "Desain & Kreatif", "Organisasi"];
+import { useLanguage } from "@/context/LanguageContext";
 
-const allExperiences = [
+const categoriesRaw = ["Semua", "Profesional", "Proyek", "Desain & Kreatif", "Organisasi"];
+
+const allExperiencesRaw = [
   {
     role: "System Analyst & DSS Developer",
     company: "Freelance / Proyek Independen",
@@ -234,7 +236,7 @@ const allExperiences = [
 ];
 
 
-const highlights = [
+const highlightsRaw = [
   { title: "Lulusan & Yudisium Terbaik (IPK 3,93)", desc: "Sebagai Fresh Graduate, terbukti memiliki pondasi akademik dan logika penyelesaian masalah yang solid dengan predikat Cumlaude dan Yudisium Terbaik Fakultas Teknologi Industri." },
   { title: "Skor Penerimaan Tinggi (UAT 93,8%)", desc: "Mengawal pengembangan sistem informasi yang benar-benar diterima pengguna nyata, dibuktikan dengan skor User Acceptance Test mencapai 93,8%." },
   { title: "Pengiriman Solusi Efisien (Live 3 Bulan)", desc: "Menunjukkan ketangkasan (agility) dalam mengorkestrasi proyek dari tahap analisis kebutuhan hingga sistem dirilis (live) dalam waktu singkat." },
@@ -246,7 +248,30 @@ const highlights = [
 ];
 
 export default function ExperienceSection() {
-  const [activeCategory, setActiveCategory] = useState("Semua");
+  const { t } = useLanguage();
+  
+  const categories = t.experience.categories || categoriesRaw;
+
+  const allExperiences = allExperiencesRaw.map((exp, index) => ({
+    ...exp,
+    role: t.experience.items[index]?.role || exp.role,
+    company: t.experience.items[index]?.company || exp.company,
+    date: t.experience.items[index]?.date || exp.date,
+    description: t.experience.items[index]?.description || exp.description,
+    activities: t.experience.items[index]?.activities || exp.activities,
+    label: t.experience.items[index]?.label || exp.label,
+    // Note: categories matching depends on categories list being the same order.
+    // However, the original exp.category is in Indonesian. We need to match by index if we want it to work correctly for filtering.
+    // But since filtering relies on exact string match, we should translate exp.category as well.
+    category: t.experience.categories[categoriesRaw.indexOf(exp.category)] || exp.category
+  }));
+
+  const highlights = highlightsRaw.map((hl, index) => ({
+    title: t.experience.highlights[index]?.title || hl.title,
+    desc: t.experience.highlights[index]?.desc || hl.desc,
+  }));
+
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
   const [hoveredHighlight, setHoveredHighlight] = useState<number | null>(null);
   const [selectedExpIndex, setSelectedExpIndex] = useState<number | null>(null);
@@ -288,7 +313,6 @@ export default function ExperienceSection() {
     >
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col">
         
-        {/* Header */}
         <motion.div
           className="flex flex-col items-center text-center mb-8"
           variants={fadeUpBlur}
@@ -296,30 +320,27 @@ export default function ExperienceSection() {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
-              PERJALANAN & PENGALAMAN
+              {t.experience.sectionTitle}
             </span>
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
           </div>
 
           <h2 ref={headingRef} className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-text-main tracking-tight mb-4 px-2">
-            Pengalaman{" "}
             {isHeadingInView ? (
               <Typewriter 
-                text={["Profesional & Organisasi."]} 
+                text={[t.experience.subtitle]} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-dark"
               />
             ) : (
-              <span className="invisible">Profesional & Organisasi.</span>
+              <span className="invisible">{t.experience.subtitle}</span>
             )}
           </h2>
         </motion.div>
 
-        {/* Category Filter Tabs */}
         <div className="flex flex-col items-center mb-10">
-          <h3 className="text-2xl font-bold font-serif mb-6 text-text-main">Jelajahi <span className="text-primary">Portofolio</span></h3>
           <div className="flex items-center justify-center gap-2 md:gap-3 flex-wrap">
             {categories.map((cat) => (
               <button
@@ -342,14 +363,12 @@ export default function ExperienceSection() {
           </div>
         </div>
 
-        {/* Grid of Cards ("Doors") */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           layout
         >
           <AnimatePresence mode="popLayout">
             {filteredExperiences.map((item, index) => {
-              // Find actual index in allExperiences for consistent ID linking
               const actualIndex = allExperiences.findIndex(e => e.role === item.role && e.company === item.company);
               
               return (
@@ -363,7 +382,6 @@ export default function ExperienceSection() {
                   onClick={() => setSelectedExpIndex(actualIndex)}
                   className="bg-bg-main border border-black/5 dark:border-white/5 rounded-[2rem] p-6 lg:p-8 cursor-pointer hover:shadow-2xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col relative overflow-hidden"
                 >
-                  {/* Background Glow */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   <div className="flex items-start justify-between mb-6 relative z-10">
@@ -405,7 +423,6 @@ export default function ExperienceSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Highlights Section (MOVED TO BOTTOM) */}
         <motion.div 
           className="mt-24 mb-16 md:mb-24 relative group/section"
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
@@ -420,18 +437,9 @@ export default function ExperienceSection() {
             <p className="text-text-muted text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6">
               Bukan sekadar daftar pengalaman, melainkan jejak bukti nyata dari dampak yang telah saya hadirkan untuk instansi, publik, dan kolaborasi tim.
             </p>
-            
-            {/* Swipe/Scroll Hint */}
-            <div className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-[10px] md:text-[11px] font-bold uppercase tracking-wider animate-pulse border border-primary/20">
-              <span className="material-symbols-outlined text-[16px] leading-none">swipe</span>
-              <span className="leading-none pt-[1px]">Geser untuk melihat selengkapnya</span>
-              <span className="material-symbols-outlined text-[16px] leading-none">arrow_forward</span>
-            </div>
           </div>
           
-          {/* Carousel & Arrows Wrapper */}
           <div className="relative group/carousel">
-            {/* Carousel Arrows (Hover Reveal) */}
             <button 
               onClick={() => scrollHighlights('left')} 
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-bg-card rounded-full shadow-lg flex items-center justify-center text-text-muted hover:text-primary z-20 opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 pointer-events-none group-hover/carousel:pointer-events-auto active:scale-95 border border-black/5 dark:border-white/5 hidden md:flex"
@@ -446,7 +454,6 @@ export default function ExperienceSection() {
               <span className="material-symbols-outlined text-2xl pl-0.5">chevron_right</span>
             </button>
 
-            {/* Highlights Container */}
             <div 
               ref={highlightsRef}
               className="flex overflow-x-auto snap-x md:snap-mandatory gap-4 md:gap-6 pb-12 pt-6 scroll-smooth px-6 md:px-10 -mx-6 md:-mx-10 md:scroll-pl-10"
@@ -499,7 +506,6 @@ export default function ExperienceSection() {
 
       </div>
       
-      {/* Modal / Open Door (Fullscreen Overlay) */}
       <AnimatePresence>
         {selectedExpIndex !== null && (
           <motion.div
@@ -514,7 +520,6 @@ export default function ExperienceSection() {
               className="w-full h-full md:h-auto max-h-full md:max-h-[90vh] md:rounded-[2.5rem] bg-bg-main shadow-2xl relative overflow-hidden flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
               <div className="sticky top-0 z-50 flex items-center justify-between p-4 md:px-8 md:py-6 border-b border-black/5 dark:border-white/5 bg-bg-main/80 backdrop-blur-md">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white dark:bg-black/20 flex items-center justify-center p-2 border border-black/5 dark:border-white/10 shrink-0">
@@ -533,11 +538,9 @@ export default function ExperienceSection() {
                 </button>
               </div>
               
-              {/* Modal Body (Scrollable) */}
               <div className="flex-1 overflow-y-auto p-5 md:p-8 lg:p-12" data-lenis-prevent="true">
                 <div className="max-w-4xl mx-auto">
                   
-                  {/* Top Info Banner */}
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-8 border-b border-black/5 dark:border-white/5">
                     <div>
                       <h1 className="text-2xl md:text-4xl font-bold text-text-main mb-3 leading-tight">
@@ -559,7 +562,6 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   
-                  {/* Description & Competencies */}
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mb-12">
                      <div className="lg:col-span-2 space-y-8">
                        <div>
@@ -596,7 +598,7 @@ export default function ExperienceSection() {
                         </div>
                      </div>
                   </div>
-                  {/* Proof & Workflow Section (BA & PM Focus) */}
+                  
                   {(allExperiences[selectedExpIndex] as any).proofSection && (
                     <div className="mt-10 pt-8 border-t border-black/10 dark:border-white/10 space-y-8">
                       <div>
@@ -608,7 +610,6 @@ export default function ExperienceSection() {
                         </h3>
                       </div>
 
-                      {/* Key Impact Metrics */}
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {(allExperiences[selectedExpIndex] as any).proofSection.metrics.map((m: any, i: number) => (
                           <div key={i} className="p-4 bg-bg-card rounded-2xl border border-black/5 dark:border-white/5 shadow-sm text-center">
@@ -619,7 +620,6 @@ export default function ExperienceSection() {
                         ))}
                       </div>
 
-                      {/* Workflow (Analisis Alur Kerja) */}
                       <div>
                         <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
                           <span className="material-symbols-outlined text-primary text-lg">account_tree</span>
@@ -643,7 +643,6 @@ export default function ExperienceSection() {
                         </div>
                       </div>
 
-                      {/* Proof Cards (Bukti Dokumentasi) */}
                       <div>
                         <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
                           <span className="material-symbols-outlined text-primary text-lg">verified</span>

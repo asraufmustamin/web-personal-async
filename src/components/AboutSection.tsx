@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
 import { CVModal } from "@/components/ui/CVModal";
+import { useLanguage } from "@/context/LanguageContext";
 
 const images = [
   "/foto-aboutus.jpeg",
@@ -19,6 +20,7 @@ export default function AboutSection() {
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   return (
     <motion.section 
@@ -112,13 +114,12 @@ export default function AboutSection() {
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-1 w-full">
                 <span className="w-8 h-[2px] bg-primary rounded-full"></span>
                 <span className="text-primary font-bold tracking-widest uppercase text-xs">
-                  Kenali Lebih Dekat
+                  {t.about.sectionTitle}
                 </span>
                 <span className="w-8 h-[2px] bg-primary rounded-full lg:hidden"></span>
               </div>
               
               <h2 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-text-main tracking-tight leading-[1.2] lg:leading-[1.1] flex flex-col lg:block items-center">
-                <span className="font-light">Saya</span>{" "}
                 <span className="whitespace-nowrap mt-1 md:mt-0 md:ml-2">
                   {isHeadingInView ? (
                     <Typewriter 
@@ -136,26 +137,24 @@ export default function AboutSection() {
               
               <div className="flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-start gap-3 mt-4 w-full">
                 <a href="#proyek" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">cases</span> <span className="text-[13px] whitespace-nowrap">Lihat Karya</span>
+                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">cases</span> <span className="text-[13px] whitespace-nowrap">{t.about.viewWork}</span>
                 </a>
                 
                 <button onClick={() => setIsCVModalOpen(true)} className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">Unduh CV</span>
+                  <span className="material-symbols-outlined text-[16px] group-hover:-translate-y-1 transition-transform">download</span> <span className="text-[13px] whitespace-nowrap">{t.about.downloadCV}</span>
                 </button>
                 
                 <a href="#kontak" className="group px-4 py-2 bg-transparent border border-primary text-primary rounded-[4px] font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">Hubungi</span>
+                  <span className="material-symbols-outlined text-[16px] group-hover:scale-110 transition-transform">mail</span> <span className="text-[13px] whitespace-nowrap">{t.about.contactMe}</span>
                 </a>
               </div>
             </div>
             
             {/* Description Section */}
             <div className="border-l-[3px] border-primary/40 pl-4 md:pl-6 flex flex-col gap-3 mt-4 relative z-10 text-justify w-full max-w-2xl mx-auto lg:mx-0">
+              <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight" dangerouslySetInnerHTML={{ __html: t.about.p1.replace('Cumlaude', '<strong class="text-primary font-bold">Cumlaude</strong>').replace('3,93/4,00', '<strong class="text-primary font-bold">3,93/4,00</strong>').replace('3.93/4.00', '<strong class="text-primary font-bold">3.93/4.00</strong>') }} />
               <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Halo! Saya adalah lulusan Sistem dan Teknologi Informasi dengan predikat <strong className="text-primary font-bold">Cumlaude (IPK 3,93/4,00)</strong>. Saya memiliki ketertarikan mendalam pada titik temu antara bisnis, data, dan teknologi. Bagi saya, teknologi bukan sekadar deretan kode, melainkan alat untuk menyederhanakan proses dan menyelesaikan masalah nyata di lapangan.
-              </p>
-              <p className="text-text-muted font-medium text-[14px] md:text-[17px] leading-relaxed tracking-tight">
-                Saya adalah individu yang adaptif, sangat teliti terhadap detail, dan senang mengambil inisiatif—karakter yang terus saya asah melalui berbagai pengalaman memimpin organisasi dan proyek digital. Saya sangat menikmati proses mengurai kerumitan suatu masalah, memahaminya dari kacamata pengguna, lalu meraciknya menjadi solusi yang elegan dan tepat sasaran.
+                {t.about.p2}
               </p>
             </div>
 

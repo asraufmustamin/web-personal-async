@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, FileText, Briefcase } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function CVModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const { t } = useLanguage();
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -42,12 +45,12 @@ export function CVModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
 
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-[2px] bg-primary rounded-full"></span>
-                <h3 className="text-xl font-bold font-serif text-text-main">Pilih Versi CV</h3>
+                <h3 className="text-xl font-bold font-serif text-text-main">{t.cvModal.title}</h3>
                 <span className="w-8 h-[2px] bg-primary rounded-full"></span>
               </div>
 
               <p className="text-text-muted text-sm mb-6 text-center">
-                Silakan pilih versi Curriculum Vitae yang paling sesuai dengan kebutuhan atau posisi yang Anda tuju.
+                {t.cvModal.subtitle}
               </p>
 
               <div className="flex flex-col gap-4">
@@ -62,8 +65,8 @@ export function CVModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                     <FileText size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-text-main text-base">IT Business Analyst</span>
-                    <span className="text-xs text-text-muted">Fokus pada analisis sistem, requirement gathering, & UAT</span>
+                    <span className="font-bold text-text-main text-base">{t.cvModal.baTitle}</span>
+                    <span className="text-xs text-text-muted">{t.cvModal.baDesc}</span>
                   </div>
                 </a>
 
@@ -78,8 +81,8 @@ export function CVModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                     <Briefcase size={24} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-text-main text-base">Project Manager</span>
-                    <span className="text-xs text-text-muted">Fokus pada koordinasi, timeline, & stakeholder management</span>
+                    <span className="font-bold text-text-main text-base">{t.cvModal.pmTitle}</span>
+                    <span className="text-xs text-text-muted">{t.cvModal.pmDesc}</span>
                   </div>
                 </a>
               </div>

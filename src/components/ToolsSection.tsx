@@ -34,6 +34,8 @@ const toolsRow2 = [
   { name: "Antigravity", icon: "/tools/antigravitylogo.png", className: "w-12 h-12 md:w-[60px] md:h-[60px]" }
 ];
 
+import { useLanguage } from "@/context/LanguageContext";
+
 const ToolCard = ({ tool }: { tool: any }) => (
   <div className="flex-shrink-0 flex items-center justify-center gap-3 md:gap-4 px-6 md:px-8 py-4 group transition-all duration-300 cursor-default">
     {tool.icon ? (
@@ -56,6 +58,7 @@ const ToolCard = ({ tool }: { tool: any }) => (
 export default function ToolsSection() {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   return (
     <motion.section 
@@ -74,28 +77,28 @@ export default function ToolsSection() {
           <div className="flex items-center gap-3 mb-2 justify-center">
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm">
-              TEKNOLOGI & TOOLS
+              {t.tools.sectionTitle}
             </span>
             <span className="w-8 h-[2px] bg-primary rounded-full"></span>
           </div>
           
           <h2 ref={headingRef} className="text-4xl md:text-5xl font-bold font-serif mb-6 text-text-main">
-            Tools yang Saya{" "}
+            {t.tools.title}{" "}
             {isHeadingInView ? (
               <Typewriter 
-                text={["Gunakan."]} 
+                text={t.tools.typewriter} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400"
               />
             ) : (
-              <span className="invisible">Gunakan.</span>
+              <span className="invisible">{t.tools.typewriter[0]}</span>
             )}
           </h2>
           
           <p className="text-text-muted font-medium text-base md:text-lg max-w-2xl mt-4 leading-relaxed">
-            Berbagai tools yang pernah saya gunakan sepanjang pengerjaan proyek — mulai dari pembuatan website portofolio ini, pengembangan sistem informasi, hingga dokumentasi dan produktivitas sehari-hari.
+            {t.tools.description}
           </p>
         </motion.div>
       </div>

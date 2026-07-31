@@ -4,8 +4,10 @@ import { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
 import { Typewriter } from "@/components/ui/typewriter";
 import { staggerContainer, fadeUpBlur } from "@/lib/animations";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [hoveredContact, setHoveredContact] = useState<string | null>(null);
   const [isActive, setIsActive] = useState(false);
   const headingRef = useRef(null);
@@ -117,24 +119,24 @@ export default function ContactSection() {
           className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
           variants={fadeUpBlur}
         >
-          <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-sm">Tertarik Berkolaborasi?</span>
+          <span className="text-primary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-sm">{t.contact.sectionTitle}</span>
           <h2 ref={headingRef} className="text-4xl md:text-7xl lg:text-[7.5rem] font-black text-text-main font-serif tracking-tight leading-[1.1] md:leading-none mb-6 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] md:drop-shadow-[0_30px_30px_rgba(0,0,0,0.2)] px-2 flex justify-center items-center flex-wrap md:flex-nowrap gap-2 md:gap-4">
-            <span className="whitespace-nowrap">Mari</span>
+            <span className="whitespace-nowrap">{t.contact.subtitle.split(' ')[0]}</span>
             {isHeadingInView ? (
               <Typewriter 
-                text={["Wujudkan."]} 
+                text={[t.contact.subtitle.split(' ').slice(1).join(' ')]} 
                 speed={70} 
                 waitTime={15000}
                 cursorChar="_" 
                 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 whitespace-nowrap pb-1 md:pb-3"
               />
             ) : (
-              <span className="invisible whitespace-nowrap">Wujudkan.</span>
+              <span className="invisible whitespace-nowrap">{t.contact.subtitle.split(' ').slice(1).join(' ')}</span>
             )}
           </h2>
           <motion.div className="flex flex-col gap-6 w-full max-w-md lg:max-w-none mx-auto" variants={fadeUpBlur}>
             <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow-sm">
-              Singkirkan formulir kaku. Pilih jalur komunikasi favorit Anda dan mari diskusikan peluang kolaborasi, inovasi sistem, atau langkah karir berikutnya.
+              {t.contact.description}
             </p>
           </motion.div>
         </motion.div>

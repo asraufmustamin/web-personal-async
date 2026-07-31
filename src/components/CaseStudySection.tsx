@@ -3,6 +3,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useLanguage } from "@/context/LanguageContext";
 
 const caseStudies: Record<string, CaseStudy> = {
   cenrana: {
@@ -356,6 +357,7 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
 }
 
 export default function CaseStudyDetail({ projectId }: { projectId: string }) {
+  const { t } = useLanguage();
   const [activePhase, setActivePhase] = useState(0);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -454,13 +456,13 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
           >
             <h3 className="text-xl font-bold text-text-main mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">description</span>
-              Ringkasan Proyek
+              {t.caseStudy.overviewTitle}
             </h3>
             <p className="text-text-muted leading-relaxed text-[15px] mb-6">{study.overview}</p>
             
             <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined text-[16px]">warning</span>
-              Masalah yang Diselesaikan
+              {t.caseStudy.problemsTitle}
             </h4>
             <div className="space-y-4">
               {study.problems.map((p, i) => (
