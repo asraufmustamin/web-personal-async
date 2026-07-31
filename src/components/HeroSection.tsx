@@ -34,7 +34,10 @@ const itemVariants = {
   },
 };
 
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <>
       {/* HeroSection */}
@@ -69,7 +72,7 @@ export default function HeroSection() {
                   </a>
                 ))}
                 <div className="mx-1 border-l border-gray-200 dark:border-gray-800 h-5"></div>
-                <div className="scale-90 flex items-center justify-center">
+                <div className="scale-90 flex items-center justify-center gap-1">
                   <ThemeToggle />
                 </div>
               </div>
@@ -81,19 +84,14 @@ export default function HeroSection() {
               <motion.div layout className="relative w-full flex flex-col items-center">
                 <div className="flex text-primary font-sans tracking-[0.15em] md:tracking-[0.25em] uppercase text-[10px] md:text-sm font-bold mb-4 md:mb-8 items-center justify-center gap-3 md:gap-5 text-center py-2">
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
-                  <span>Fresh Graduate | IT BA & PM Track</span>
+                  <span>{t.hero.subtitle}</span>
                   <span className="w-8 md:w-16 h-[1px] bg-primary/40"></span>
                 </div>
               </motion.div>
               
               <motion.h1 layout className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-main tracking-tighter leading-[1.2] md:leading-[1.1] font-serif px-2 w-full max-w-full mt-0 z-20 text-center">
                   <Typewriter
-                    text={[
-                      "IT Business Analyst & Project Coordinator",
-                      "Data-Driven Problem Solver",
-                      "SDLC End-to-End",
-                      "Digital Transformation"
-                    ]}
+                    text={t.hero.typewriter}
                     speed={70}
                     className="gradient-text"
                     waitTime={2000}
@@ -104,7 +102,7 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div layout variants={itemVariants} className="font-sans text-base md:text-xl text-text-muted max-w-3xl leading-relaxed mt-4 md:mt-8 px-4 md:px-0">
-              <p>Menjembatani kebutuhan bisnis dengan solusi teknologi yang presisi. Berpengalaman mengorkestrasi siklus pengembangan sistem (SDLC), analisis proses bisnis, dan manajemen data untuk menghadirkan dampak digital yang terukur.</p>
+              <p>{t.hero.description}</p>
             </motion.div>
           </div>
         </div>

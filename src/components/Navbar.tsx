@@ -5,10 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Home, User, Sparkles, Briefcase, Folder, Mail, Menu, X } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { LanguageToggle } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +22,12 @@ export default function Navbar() {
   }, []);
 
   const tabs = [
-    { title: 'Beranda', icon: Home, href: '#beranda' },
-    { title: 'Tentang', icon: User, href: '#tentang' },
-    { title: 'Keahlian', icon: Sparkles, href: '#keahlian' },
-    { title: 'Pengalaman', icon: Briefcase, href: '#pengalaman' },
-    { title: 'Proyek', icon: Folder, href: '#proyek' },
-    { title: 'Kontak', icon: Mail, href: '#kontak' },
+    { title: t.nav.home, icon: Home, href: '#beranda' },
+    { title: t.nav.about, icon: User, href: '#tentang' },
+    { title: t.nav.skills, icon: Sparkles, href: '#keahlian' },
+    { title: t.nav.experience, icon: Briefcase, href: '#pengalaman' },
+    { title: t.nav.projects, icon: Folder, href: '#proyek' },
+    { title: t.nav.contact, icon: Mail, href: '#kontak' },
   ];
 
   return (
@@ -68,7 +71,9 @@ export default function Navbar() {
               />
             </div>
             
-            <div className="hidden lg:flex ml-2">
+            <div className="hidden lg:flex items-center gap-2 ml-2 bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 px-1 py-1 rounded-2xl">
+              <LanguageToggle />
+              <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10" />
               <ThemeToggle />
             </div>
           </div>
@@ -80,7 +85,9 @@ export default function Navbar() {
               activeColor="text-white bg-gradient-to-r from-primary to-[#cc7a00] shadow-md" 
               className="border-black/5 dark:border-white/10 shadow-lg shadow-black/10 bg-bg-card/90 backdrop-blur-xl text-text-muted grid grid-cols-3 w-full p-3 gap-2 mx-auto"
             />
-            <div className="bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 p-2 rounded-2xl flex items-center justify-center">
+            <div className="bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 px-1 py-1 rounded-2xl flex items-center justify-center gap-2">
+              <LanguageToggle />
+              <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10" />
               <ThemeToggle />
             </div>
           </div>
