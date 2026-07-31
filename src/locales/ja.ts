@@ -73,6 +73,8 @@ export const ja: Dictionary = {
     description: "組織のリーダーシップからプロフェッショナルな役割へと至る旅路を織り交ぜ、経営スキルと技術スキルを組み合わせています。",
     categories: ["すべて", "プロフェッショナル", "プロジェクト", "デザインとクリエイティブ", "組織"],
     highlightsTitle: "プロファイルのハイライト",
+    highlightsSectionTitle: "インパクトと実績",
+    highlightsSectionDesc: "単なる経験のリストではなく、機関、パブリック、チームコラボレーションに貢献した実際の成果の追跡記録。",
     viewDetails: "詳細を見る",
     proofTitle: "検証の証明",
     highlights: [
@@ -216,12 +218,18 @@ export const ja: Dictionary = {
   },
   contact: {
     sectionTitle: "お問い合わせ",
-    subtitle: "コラボレーションしましょう.",
+    subtitle: "コラボレーションしましょう。",
     description: "アイデア、プロジェクト、またはコラボレーションの機会がありますか？お気軽にご連絡ください。",
     nameLabel: "あなたの名前",
     emailLabel: "あなたのメールアドレス",
     messageLabel: "あなたのメッセージ",
-    sendButton: "メッセージを送信"
+    sendButton: "メッセージを送信",
+    mascot: {
+      idle: "クリックしてコラボレーションを開始！",
+      email: "メールを送信しますか？迅速に返信します！",
+      whatsapp: "チャットがお好みですか？WhatsAppへどうぞ！",
+      default: "革新的なアイデアがありますか？話し合いましょう！"
+    }
   },
   footer: {
     copyright: "© 2026 Muhammad Asrauf Mustamin. 無断転載を禁じます。"
@@ -244,9 +252,125 @@ export const ja: Dictionary = {
     overviewTitle: "プロジェクト概要",
     problemsTitle: "解決した課題",
     sdlcTitle: "開発プロセス (SDLC)",
-    outputsTitle: "成果物",
+    outputsTitle: "成果物 / アウトプット",
+    focusTitle: "分析の焦点と説明",
+    deliverablesTitle: "成果物とアーティファクト",
     close: "閉じる",
     backToPortfolio: "ポートフォリオに戻る",
-    viewLiveSite: "ライブサイトを見る"
+    viewLiveSite: "ライブサイトを見る",
+    cenrana: {
+      title: "Cenrana村情報システム",
+      subtitle: "統合型デジタル村プラットフォーム — パブリックアスピレーションとデジタル経済",
+      client: "マロス県Cenrana村政府",
+      overview: "情報ハブ、住民アスピレーションサービス、デジタル経済ショーケース（Lapak Warga）を統合したフルスタック村情報システム（SID）の開発。Next.js 16およびPWAを使用してゼロから構築（~95%カスタムコード）。",
+      problems: [
+        { title: "インフラのギャップ", desc: "村の情報は物理的な掲示板に頼っていました。情報の普及には3〜7日かかりました。" },
+        { title: "未管理の要望", desc: "住民は公式チャネルなしで個人的なSNSで不満を述べており、フォローアップが困難でした。" },
+        { title: "中小企業の経済停滞", desc: "70の起草者のマーケティングリーチが地元領域に厳しく制限されていました。" }
+      ],
+      metrics: [
+        { label: "UAT成功率", suffix: "%" },
+        { label: "データベーステーブル", suffix: "+" },
+        { label: "カスタムコード", suffix: "%" },
+        { label: "管理モジュール", suffix: "" },
+        { label: "村の人口", suffix: " 人" },
+        { label: "管理データ", suffix: "+" }
+      ],
+      phases: [
+        {
+          title: "1. ビジネス要件分析",
+          period: "2025年10月",
+          roleFocus: "IT Business Analyst (BA)",
+          desc: "村の役員との半構造化インタビューを実施し、運用要件の抽出と手動プロセスのマッピングを行いました。",
+          outputs: [
+            "システム要件仕様書 (SRS)",
+            "As-Is vs To-Be プロセスマッピング",
+            "ステークホルダー分析マトリックス"
+          ]
+        },
+        {
+          title: "2. システムモデリングとアーキテクチャ",
+          period: "2025年11月",
+          roleFocus: "System Analyst (SA)",
+          desc: "ビジネス要件を実効可能な技術青写真に翻訳。20以上のテーブルを持つERDやシーケンス図を設計。",
+          outputs: [
+            "実体関連図 (ERD 20+ テーブル)",
+            "フルスタックシステムアーキテクチャ青写真",
+            "NIK検証シーケンス図 (SHA-256)",
+            "苦情・住民サービスフローチャート"
+          ]
+        },
+        {
+          title: "3. プロトタイプ設計とビジネスロジック",
+          period: "2025年11月 – 2026年1月",
+          roleFocus: "UI/UX & System Analyst",
+          desc: "18の管理モジュールおよびパブリックポータルのワイヤーフレームとハイフィデリティプロトタイプを設計。",
+          outputs: [
+            "ワイヤーフレーム & ハイフィデリティUIプロトタイプ",
+            "WhatsApp Gateway ビジネスフロー仕様",
+            "暗号化NIKデータセキュリティプロトコル"
+          ]
+        },
+        {
+          title: "4. 実現可能性テスト (UAT & QA)",
+          period: "2026年2月 – 3月",
+          roleFocus: "IT BA / QA Analyst",
+          desc: "UATシナリオマトリックスを作成し、村役員および住民サンプルと直接システム実現可能性を検証。",
+          outputs: [
+            "UAT成功マトリックス & レポート (93.8%)",
+            "システムユーザビリティスケール評価 (SUS: 75.6)",
+            "Google Lighthouse & Webセキュリティ監査"
+          ]
+        },
+        {
+          title: "5. トレーニングと引継ぎ",
+          period: "2026年3月 – 5月",
+          roleFocus: "IT Project Lead & BA",
+          desc: "PDF形式のユーザーマニュアルを作成し、管理ダッシュボード運用のトレーニングとdesacenrana.idドメインの公式引継ぎを実施。",
+          outputs: [
+            "システムユーザーマニュアル (PDF)",
+            "公式システム受領書 (BAST)",
+            "desacenrana.idドメインの公式ローンチ"
+          ]
+        }
+      ]
+    },
+    topsis: {
+      title: "Makassar Auto: 中古バイクDSS",
+      subtitle: "TOPSIS手法を用いたWebベース意思決定支援システム",
+      client: "研究（中古バイクディーラー3社）",
+      overview: "TOPSISアルゴリズムを使用して中古バイクのランク付けを行うWebベース意思決定支援システム（DSS）の構築。53の実データから7つの複雑な基準を処理。",
+      problems: [
+        { title: "車両状態の多様性", desc: "走行距離やエンジン状態などの複雑な変数を手動で比較するのは困難です。" },
+        { title: "価格情報の非対称性", desc: "買い手は価格と外観だけに注目しがちで、重要な技術的側面を見落とします。" },
+        { title: "重み付けの難しさ", desc: "便益とコストのパラメーターを短時間で数学的に重み付けするのが困難です。" }
+      ],
+      metrics: [
+        { label: "テストデータユニット", suffix: "" },
+        { label: "参加ディーラー", suffix: "" },
+        { label: "評価基準", suffix: "" },
+        { label: "評価スケール", suffix: " Pt" }
+      ],
+      phases: [
+        {
+          title: "分析とデータ収集",
+          period: "2026年4月",
+          desc: "マカッサルの3つのディーラーから53台の中古バイクの一次データを収集。",
+          outputs: ["53台の中古バイクデータセット", "初期意思決定マトリックス", "7つの評価基準"]
+        },
+        {
+          title: "重み付けと変換",
+          period: "2026年5月",
+          desc: "価格や走行距離などのコスト基準を1-5の便益スケールに変換。",
+          outputs: ["コストから便益への変換", "正規化マトリックス", "正・負の理想解"]
+        },
+        {
+          title: "アルゴリズムの実装",
+          period: "2026年5月 - 6月",
+          desc: "ユークリッド距離と相対近接度スコアの計算を含むTOPSISアルゴリズムのコーディング。",
+          outputs: ["TOPSIS計算ロジック", "ランキング出力", "インタラクティブWebポータル"]
+        }
+      ]
+    }
   }
 };

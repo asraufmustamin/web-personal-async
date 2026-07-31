@@ -368,7 +368,34 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
     setIsMounted(true);
   }, []);
 
-  const study = caseStudies[projectId];
+  const studyRaw = caseStudies[projectId];
+  const localizedData = (t.caseStudy as any)?.[projectId];
+
+  const study = studyRaw ? {
+    ...studyRaw,
+    title: localizedData?.title || studyRaw.title,
+    subtitle: localizedData?.subtitle || studyRaw.subtitle,
+    client: localizedData?.client || studyRaw.client,
+    overview: localizedData?.overview || studyRaw.overview,
+    problems: studyRaw.problems.map((p, i) => ({
+      ...p,
+      title: localizedData?.problems?.[i]?.title || p.title,
+      desc: localizedData?.problems?.[i]?.desc || p.desc,
+    })),
+    metrics: studyRaw.metrics.map((m, i) => ({
+      ...m,
+      label: localizedData?.metrics?.[i]?.label || m.label,
+      suffix: localizedData?.metrics?.[i]?.suffix !== undefined ? localizedData.metrics[i].suffix : m.suffix,
+    })),
+    phases: studyRaw.phases.map((ph, i) => ({
+      ...ph,
+      title: localizedData?.phases?.[i]?.title || ph.title,
+      period: localizedData?.phases?.[i]?.period || ph.period,
+      roleFocus: localizedData?.phases?.[i]?.roleFocus || ph.roleFocus,
+      desc: localizedData?.phases?.[i]?.desc || ph.desc,
+      outputs: localizedData?.phases?.[i]?.outputs || ph.outputs,
+    })),
+  } : null;
 
   // Reset phase when switching projects
   useEffect(() => {
@@ -438,7 +465,7 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
                 <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px]">apartment</span>{study.client}</span>
                 {study.liveUrl && (
                   <a href={study.liveUrl} target="_blank" rel="noopener" className="flex items-center gap-1.5 text-primary hover:text-white transition-colors">
-                    <span className="material-symbols-outlined text-[16px]">language</span>Kunjungi Website
+                    <span className="material-symbols-outlined text-[16px]">language</span>{t.caseStudy.viewLiveSite}
                   </a>
                 )}
               </div>
@@ -567,9 +594,9 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
                     </div>
                     <p className="text-text-muted leading-relaxed text-[14px] mb-6">{study.phases[activePhase].desc}</p>
                     
-                    <h5 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-3">Output / Deliverables</h5>
+                    <h5 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-3">{t.caseStudy.outputsTitle}</h5>
                     <ul className="space-y-2">
-                      {study.phases[activePhase].outputs.map((out, i) => (
+                      {study.phases[activePhase].outputs.map((out: string, i: number) => (
                         <li key={i} className="flex items-center gap-2.5 text-[13px] text-text-muted">
                           <span className="material-symbols-outlined text-emerald-500 text-[16px]">check_circle</span>
                           {out}
@@ -602,7 +629,7 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
                     <div className="space-y-3">
                       <h5 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2">
                         <span className="material-symbols-outlined text-[18px]">psychology</span>
-                        Fokus & Deskripsi Analis
+                        {t.caseStudy.focusTitle}
                       </h5>
                       <p className="text-text-muted leading-relaxed text-[15px]">{study.phases[activePhase].desc}</p>
                     </div>
@@ -610,10 +637,10 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
                     <div className="bg-bg-main/60 p-6 rounded-2xl border border-black/5 dark:border-white/5">
                       <h5 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
                         <span className="material-symbols-outlined text-[18px]">task_alt</span>
-                        Hasil / Artefak Deliverables
+                        {t.caseStudy.deliverablesTitle}
                       </h5>
                       <ul className="space-y-3">
-                        {study.phases[activePhase].outputs.map((out, i) => (
+                        {study.phases[activePhase].outputs.map((out: string, i: number) => (
                           <li key={i} className="flex items-center gap-3 text-[14px] text-text-main font-medium">
                             <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
                               <span className="material-symbols-outlined text-[16px]">check</span>

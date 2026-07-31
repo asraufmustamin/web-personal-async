@@ -270,14 +270,13 @@ export default function ExperienceSection() {
     title: t.experience.highlights[index]?.title || hl.title,
     desc: t.experience.highlights[index]?.desc || hl.desc,
   }));
-
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [activeHighlight, setActiveHighlight] = useState<number | null>(null);
   const [hoveredHighlight, setHoveredHighlight] = useState<number | null>(null);
   const [selectedExpIndex, setSelectedExpIndex] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
-  const filteredExperiences = activeCategory === "Semua" 
+  const filteredExperiences = activeCategory === categories[0] 
     ? allExperiences 
     : allExperiences.filter(e => e.category === activeCategory);
     
@@ -356,7 +355,7 @@ export default function ExperienceSection() {
                 <span className={`ml-2 px-1.5 py-0.5 rounded-full text-[10px] ${
                   activeCategory === cat ? 'bg-white/20 text-white' : 'bg-black/5 dark:bg-white/5'
                 }`}>
-                  {cat === "Semua" ? allExperiences.length : allExperiences.filter(e => e.category === cat).length}
+                  {cat === categories[0] ? allExperiences.length : allExperiences.filter(e => e.category === cat).length}
                 </span>
               </button>
             ))}
@@ -432,10 +431,10 @@ export default function ExperienceSection() {
         >
           <div className="text-center mb-8 md:mb-12 relative">
             <h3 className="text-2xl md:text-3xl font-bold font-serif text-text-main mb-4">
-              Jejak Dampak & <span className="text-primary">Pencapaian</span>
+              {t.experience.highlightsSectionTitle}
             </h3>
             <p className="text-text-muted text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6">
-              Bukan sekadar daftar pengalaman, melainkan jejak bukti nyata dari dampak yang telah saya hadirkan untuk instansi, publik, dan kolaborasi tim.
+              {t.experience.highlightsSectionDesc}
             </p>
           </div>
           

@@ -47,6 +47,8 @@ export type Dictionary = {
       label: string;
     }[];
     highlightsTitle: string;
+    highlightsSectionTitle: string;
+    highlightsSectionDesc: string;
     highlights: {
       title: string;
       desc: string;
@@ -72,6 +74,12 @@ export type Dictionary = {
     emailLabel: string;
     messageLabel: string;
     sendButton: string;
+    mascot: {
+      idle: string;
+      email: string;
+      whatsapp: string;
+      default: string;
+    };
   };
   footer: {
     copyright: string;
@@ -95,8 +103,28 @@ export type Dictionary = {
     problemsTitle: string;
     sdlcTitle: string;
     outputsTitle: string;
+    focusTitle: string;
+    deliverablesTitle: string;
     close: string;
     backToPortfolio: string;
     viewLiveSite: string;
+    cenrana: {
+      title: string;
+      subtitle: string;
+      client: string;
+      overview: string;
+      problems: { title: string; desc: string }[];
+      metrics: { label: string; suffix: string }[];
+      phases: { title: string; period: string; roleFocus?: string; desc: string; outputs: string[] }[];
+    };
+    topsis: {
+      title: string;
+      subtitle: string;
+      client: string;
+      overview: string;
+      problems: { title: string; desc: string }[];
+      metrics: { label: string; suffix: string }[];
+      phases: { title: string; period: string; roleFocus?: string; desc: string; outputs: string[] }[];
+    };
   };
 };

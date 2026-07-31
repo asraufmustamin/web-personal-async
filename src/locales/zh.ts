@@ -72,7 +72,9 @@ export const zh: Dictionary = {
     subtitle: "经验与旅程.",
     description: "将组织领导到专业角色的旅程交织在一起，在每一步中结合管理和技术技能。",
     categories: ["全部", "专业", "项目", "设计与创意", "组织"],
-    highlightsTitle: "个人资料亮点",
+    highlightsTitle: "个人亮点",
+    highlightsSectionTitle: "影响力与成就",
+    highlightsSectionDesc: "不仅是一份经验列表，更是为机构、公众和团队合作带来真实影响的明确记录。",
     viewDetails: "查看详情",
     proofTitle: "验证证明",
     highlights: [
@@ -216,12 +218,18 @@ export const zh: Dictionary = {
   },
   contact: {
     sectionTitle: "联系我",
-    subtitle: "让我们合作.",
-    description: "有一个想法、项目或合作机会？请随时与我联系。",
+    subtitle: "让我们开始合作。",
+    description: "有想法、项目或合作机会吗？欢迎随时与我联系。",
     nameLabel: "您的姓名",
-    emailLabel: "您的电子邮件",
+    emailLabel: "您的电子邮箱",
     messageLabel: "您的留言",
-    sendButton: "发送留言"
+    sendButton: "发送留言",
+    mascot: {
+      idle: "点击我开始合作！",
+      email: "发送电子邮件？准备快速回复！",
+      whatsapp: "喜欢轻松聊天？去 WhatsApp 吧！",
+      default: "有创新的想法？让我们讨论一下！"
+    }
   },
   footer: {
     copyright: "© 2026 Muhammad Asrauf Mustamin。保留所有权利。"
@@ -230,23 +238,139 @@ export const zh: Dictionary = {
     sectionTitle: "技术与工具",
     title: "我使用的",
     typewriter: ["工具。"],
-    description: "我在项目执行过程中使用的各种工具——从构建此作品集网站到信息系统开发、文档记录和日常生产力。"
+    description: "项目执行过程中使用的各种工具——从构建此作品集网站到信息系统开发、文档记录和日常生产力。"
   },
   cvModal: {
     title: "选择简历版本",
-    subtitle: "请选择最符合您的需求或目标岗位的简历版本。",
+    subtitle: "请选择最符合您需求或目标岗位的简历版本。",
     baTitle: "IT业务分析师",
-    baDesc: "专注于系统分析、需求收集和UAT",
+    baDesc: "专注于系统分析、需求收集和UAT测试",
     pmTitle: "项目经理",
-    pmDesc: "专注于协调、时间表和利益相关者管理"
+    pmDesc: "专注于协调、进度表和干系人管理"
   },
   caseStudy: {
-    overviewTitle: "项目概述",
+    overviewTitle: "项目概览",
     problemsTitle: "解决的问题",
     sdlcTitle: "开发流程 (SDLC)",
-    outputsTitle: "交付成果",
+    outputsTitle: "交付成果 / 产出",
+    focusTitle: "分析重点与说明",
+    deliverablesTitle: "交付成果与产出",
     close: "关闭",
     backToPortfolio: "返回作品集",
-    viewLiveSite: "访问在线网站"
+    viewLiveSite: "访问在线网站",
+    cenrana: {
+      title: "Cenrana村信息系统",
+      subtitle: "集成乡村数字平台 — 公众诉求与数字经济",
+      client: "马洛斯县Cenrana村政府",
+      overview: "开发全栈乡村信息系统（SID），整合信息中心、市民诉求服务与数字经济展示（Lapak Warga）。使用Next.js 16和PWA从零构建（~95%自定义代码）。",
+      problems: [
+        { title: "基础设施差距", desc: "村庄信息依赖物理公告栏，信息发布需要3-7天。" },
+        { title: "诉求未经管理", desc: "村民在个人社交媒体上表达诉求，缺乏官方渠道，难以跟进。" },
+        { title: "微型企业经济停滞", desc: "70家企业经营者的营销范围严格限制在本地。" }
+      ],
+      metrics: [
+        { label: "UAT通过率", suffix: "%" },
+        { label: "数据库表", suffix: "+" },
+        { label: "自定义代码", suffix: "%" },
+        { label: "管理模块", suffix: "" },
+        { label: "村庄人口", suffix: " 人" },
+        { label: "管理数据", suffix: "+" }
+      ],
+      phases: [
+        {
+          title: "1. 业务需求分析",
+          period: "2025年10月",
+          roleFocus: "IT业务分析师 (BA)",
+          desc: "与村官员深入访谈，提取运营需求，映射手动流程并识别核心问题。",
+          outputs: [
+            "系统需求规格说明书 (SRS)",
+            "现状 vs 未来流程映射",
+            "干系人分析矩阵"
+          ]
+        },
+        {
+          title: "2. 系统建模与架构",
+          period: "2025年11月",
+          roleFocus: "系统分析师 (SA)",
+          desc: "将业务需求转化为技术蓝图。设计包含20多张表的ERD和序列图。",
+          outputs: [
+            "实体关系图 (ERD 20+ 表)",
+            "全栈系统架构蓝图",
+            "身份证号验证序列图 (SHA-256)",
+            "投诉与市民服务流程图"
+          ]
+        },
+        {
+          title: "3. 原型设计与业务逻辑",
+          period: "2025年11月 – 2026年1月",
+          roleFocus: "UI/UX & 系统分析师",
+          desc: "为18个管理模块和公共门户设计线框图和高保真原型。",
+          outputs: [
+            "线框图与高保真UI原型",
+            "WhatsApp网关业务流程规范",
+            "加密数据安全协议"
+          ]
+        },
+        {
+          title: "4. 可行性测试 (UAT & QA)",
+          period: "2026年2月 – 3月",
+          roleFocus: "IT BA / QA分析师",
+          desc: "制定UAT场景矩阵，直接与官员及市民样本测试可行性。",
+          outputs: [
+            "UAT成功矩阵与报告 (93.8%)",
+            "系统可用性量表评估 (SUS: 75.6)",
+            "Google Lighthouse与Web安全审计"
+          ]
+        },
+        {
+          title: "5. 培训与交付",
+          period: "2026年3月 – 5月",
+          roleFocus: "IT项目负责人 & BA",
+          desc: "撰写用户手册PDF，开展后台培训，正式交付desacenrana.id域名。",
+          outputs: [
+            "系统用户手册 (PDF)",
+            "官方系统验收报告 (BAST)",
+            "desacenrana.id域名正式上线"
+          ]
+        }
+      ]
+    },
+    topsis: {
+      title: "望加锡二手摩托车决策支持系统",
+      subtitle: "基于TOPSIS方法的Web决策支持系统",
+      client: "研究（3家二手摩托车经销商）",
+      overview: "构建基于Web的决策支持系统，利用TOPSIS算法处理53组真实数据，为购车者提供客观建议。",
+      problems: [
+        { title: "车辆状况多样", desc: "里程、发动机状况等复杂变量难以手动对比。" },
+        { title: "价格信息不对称", desc: "买家往往只关注价格与外表，忽视关键技术指标。" },
+        { title: "权重计算困难", desc: "买家难以在短时间内对成本与收益参数进行数学加权。" }
+      ],
+      metrics: [
+        { label: "测试数据单元", suffix: "" },
+        { label: "参与经销商", suffix: "" },
+        { label: "评估标准", suffix: "" },
+        { label: "评分标度", suffix: " 分" }
+      ],
+      phases: [
+        {
+          title: "分析与数据收集",
+          period: "2026年4月",
+          desc: "收集望加锡3家经销商53台二手摩托车的基础数据。",
+          outputs: ["53台摩托车数据集", "初始决策矩阵", "7项评估标准"]
+        },
+        {
+          title: "加权与转换",
+          period: "2026年5月",
+          desc: "将价格等成本标准转换为1-5分收益标度，以便矩阵统一计算。",
+          outputs: ["成本转收益标度", "标准化矩阵", "正负理想解"]
+        },
+        {
+          title: "算法实施",
+          period: "2026年5月 - 6月",
+          desc: "一步步编写TOPSIS算法计算代码，包括欧氏距离与相对贴近度。",
+          outputs: ["TOPSIS计算逻辑", "排名输出", "交互式Web门户"]
+        }
+      ]
+    }
   }
 };

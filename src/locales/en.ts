@@ -73,6 +73,8 @@ export const en: Dictionary = {
     description: "Weaving a journey from organizational leadership to professional roles, combining managerial and technical skills in every step.",
     categories: ["All", "Professional", "Projects", "Design & Creative", "Organization"],
     highlightsTitle: "Profile Highlights",
+    highlightsSectionTitle: "Impact & Achievements",
+    highlightsSectionDesc: "Not just a list of experiences, but a tangible track record of real impact delivered for institutions, the public, and team collaborations.",
     viewDetails: "View Details",
     proofTitle: "Validation Proof (Proof of Work)",
     highlights: [
@@ -102,9 +104,9 @@ export const en: Dictionary = {
         role: "Business Analyst & Project Lead",
         company: "Cenrana Village Integrated System",
         date: "Jul 2025 – Apr 2026",
-        description: "Led the software development life cycle (SDLC) of the village's digital platform end-to-end. Gathered requirements directly from village officials and translated them into a web solution that achieved a 93.8% UAT success rate.",
+        description: "Led the end-to-end software development life cycle (SDLC) for the village digital platform. Extracted requirements directly from village officials and translated them into a web solution achieving a 93.8% UAT success rate.",
         activities: [
-          "Led end-to-end SDLC of the village platform.",
+          "Led end-to-end SDLC for village digital platform.",
           "Conducted requirement gathering & UI prototyping.",
           "Executed User Acceptance Testing (UAT)."
         ],
@@ -112,14 +114,14 @@ export const en: Dictionary = {
       },
       {
         role: "System Analyst & Software Developer Intern",
-        company: "Customs Office Sulbagsel (Ministry of Finance RI)",
+        company: "Customs & Excise Sulbagsel (Ministry of Finance RI)",
         date: "Mar 2025 – Jul 2025",
-        description: "Underwent job rotation in 5 strategic divisions. Developed SIMIRA (Household Management Information System) prototype based on PHP Laravel & MySQL, analyzed objection/appeal complaint systems, and executed daily news media monitoring (NALIKA).",
+        description: "Underwent job rotation across 5 strategic divisions. Developed SIMIRA prototype (Household Management Information System) based on PHP Laravel & MySQL, analyzed objection/appeal complaint systems, and executed daily news media monitoring (NALIKA).",
         activities: [
           "Developed SIMIRA application (Laravel & MySQL) for agency warehouse inventory.",
-          "Executed NALIKA (Media Monitoring) & analysis of daily customs news.",
-          "Conducted cross-checks & employee data input in the General Affairs Division.",
-          "Identified workflows in the Enforcement, Investigation & Internal Compliance Divisions."
+          "Executed NALIKA (Media Monitoring) & customs daily news analysis.",
+          "Cross-checked & entered employee data in General Affairs Division.",
+          "Identified workflows in Enforcement, Investigation & Internal Compliance divisions."
         ],
         label: "Ministry Internship"
       },
@@ -127,48 +129,48 @@ export const en: Dictionary = {
         role: "Data Analyst & Account Representative Specialist",
         company: "BPJS Ketenagakerjaan Makassar Branch",
         date: "Oct 2024 – Jan 2025",
-        description: "Managed acquisition & administration of memberships. Validated the integrity of >5,000 IGI Quality data points, automated contribution/arrears billing via WA Blasting, and verified company integration data from the OSS (Online Single Submission) portal.",
+        description: "Managed membership acquisition & administration. Validated the integrity of >5,000 IGI Quality data entries, automated contribution/arrears collection via WA Blasting, and verified company integration data from the OSS portal (Online Single Submission).",
         activities: [
-          "Validated & corrected IGI data quality (>5,000 membership data points).",
-          "Operated periodic contribution & arrears billing via WA Blasting & Email.",
-          "Verified business registrations from the OSS Kemeninves/BKPM system.",
-          "Conducted field socialization for the BPU (Non-Wage Earner) program."
+          "Validated & corrected IGI data quality (>5,000 membership records).",
+          "Operated periodic contribution & arrears collection via WA Blasting & Email.",
+          "Verified business entity registrations from Ministry of Investment OSS system.",
+          "Conducted field socialization for Informal Worker (BPU) programs."
         ],
-        label: "MBKM"
+        label: "MBKM Program"
       },
       {
         role: "Data Digitalization Support Specialist",
         company: "KUSUKA System KKP (Ministry of Marine Affairs & Fisheries)",
         date: "May 2024 – Jul 2024",
-        description: "Managed the digitalization, cleaning, and precise verification of >1,000 profiles of marine & fisheries business actors. Ensured validation of NIK and physical identities of ministry program beneficiaries were perfectly integrated according to public administration SOPs.",
+        description: "Managed digitalization, cleaning, and precision verification of >1,000 marine & fisheries business profile data records. Ensured NIK validation and identity verification of aid program recipients integrated seamlessly with public administration SOPs.",
         activities: [
-          "Executed cleaning & precise validation of >1,000 demographic data points of fishermen/KUSUKA business actors.",
-          "Verified the authenticity of NIK documents & physical identities of applicants according to ministry standards.",
-          "Managed mass data entry processes & data synchronization to the official KUSUKA KKP RI portal."
+          "Executed cleaning & precision validation of >1,000 fisher/business population data entries.",
+          "Verified NIK document authenticity & physical identity of applicants to ministry standards.",
+          "Managed mass data entry & data synchronization to the official KUSUKA KKP RI portal."
         ],
         label: "Freelance"
       },
       {
-        role: "INFOKOM & Public Relations Division Coordinator",
-        company: "Capital Market Lovers Student Activity Unit (ITB Nobel Indonesia)",
+        role: "INFOKOM Division Coordinator & PR Lead",
+        company: "Capital Market Lovers Student Activity Unit (ITB Nobel)",
         date: "2023 – 2024",
-        description: "Led the Information & Communication Division in controlling digital publications, reputation management, and strategic collaboration with the Indonesia Stock Exchange (IDX) & partner securities.",
+        description: "Led the Information & Communication Division in controlling digital publications, reputation management, and strategic collaboration with the Indonesia Stock Exchange (IDX) & partner brokerages.",
         activities: [
-          "Led & coordinated the INFOKOM division team in executing investment education publication campaigns.",
-          "Built strategic partnerships with external entities, investment galleries, & partner securities.",
+          "Led & coordinated INFOKOM division team in executing investment education publication campaigns.",
+          "Built strategic partnership relationships with external entities, investment galleries, & partner brokerages.",
           "Designed digital communication calendars & controlled organizational visual branding standards."
         ],
         label: "Organization"
       },
       {
-        role: "Student Council President (OSIS)",
-        company: "SMA Negeri 2 Enrekang",
+        role: "President of Student Executive Board (Ketua OSIS)",
+        company: "State Senior High School 2 Enrekang",
         date: "2020 – 2021",
-        description: "Led the student council at the school/regency level, orchestrated 10 program fields, and bridged strategic communication between students, school management, and the education office.",
+        description: "Led student executive board governance at school/regency level, orchestrated 10 work program sections, and bridged strategic communication between students, school management, and the education department.",
         activities: [
-          "Led the student council management & facilitated the coordination of 10 program fields.",
-          "Orchestrated the implementation of art competitions, sports, & social actions at the regency level.",
-          "Acted as the official student communication representative to school leadership & external institutions."
+          "Led student executive board & facilitated coordination of 10 work program sections.",
+          "Orchestrated regency-level arts, sports, & social action competition events.",
+          "Served as official student communication representative to school leadership & external institutions."
         ],
         label: "Organization"
       },
@@ -176,10 +178,10 @@ export const en: Dictionary = {
         role: "Graphic & Social Media Designer",
         company: "Capital Market Lovers Student Activity Unit",
         date: "2023 – 2024",
-        description: "Designed a collection of social media designs that supported organizational branding and digital publication communication for the 2024-2025 management period.",
+        description: "Designed social media content collections supporting organizational branding and digital publication communications for the 2024-2025 executive period.",
         activities: [
           "Created Instagram Feed & Story content designs.",
-          "Managed the organization's visual communication assets.",
+          "Managed organizational visual communication assets.",
           "Supported digital publication campaigns."
         ],
         label: "Design"
@@ -188,10 +190,10 @@ export const en: Dictionary = {
         role: "Visual Content Creator",
         company: "KKN Post Cenrana Village",
         date: "Jul 2025 – Sep 2025",
-        description: "Designed social media content designs that supported the publication of activities and work programs of the KKN Post during the service period in Cenrana Village.",
+        description: "Designed social media content designs supporting publication of activities and work programs for the KKN Post during the community service period in Cenrana Village.",
         activities: [
           "Designed work program publication materials.",
-          "Documented service activities.",
+          "Documented community service activities.",
           "Managed daily visual content."
         ],
         label: "Design"
@@ -201,27 +203,33 @@ export const en: Dictionary = {
   portfolio: {
     sectionTitle: "PROJECTS & CASE STUDIES",
     subtitle: "Featured Work.",
-    description: "A collection of selected projects representing analysis, management, and development skills.",
+    description: "A curated collection of selected projects representing analysis, management, and software development capabilities.",
     viewProject: "View Project",
     projects: [
       {
         title: "Cenrana Village Integrated Management Information System",
-        desc: "A village administration digitalization system that successfully passed UAT with a score of 93.8%. Integrating correspondence management, public information transparency, and village fund reporting."
+        desc: "Village administration digitalization system successfully passing UAT with a 93.8% score. Integrating mail management, public information transparency, and village fund reporting."
       },
       {
-        title: "TOPSIS Method Decision Support System (DSS)",
-        desc: "A web-based application to provide data-driven recommendations using the TOPSIS algorithm."
+        title: "Decision Support System (DSS) TOPSIS Method",
+        desc: "Web-based application providing data-driven recommendations using the TOPSIS algorithm."
       }
     ]
   },
   contact: {
-    sectionTitle: "CONTACT ME",
+    sectionTitle: "GET IN TOUCH",
     subtitle: "Let's Collaborate.",
     description: "Have an idea, project, or collaboration opportunity? Don't hesitate to reach out to me.",
     nameLabel: "Your Name",
     emailLabel: "Your Email",
     messageLabel: "Your Message",
-    sendButton: "Send Message"
+    sendButton: "Send Message",
+    mascot: {
+      idle: "Click me to start collaborating!",
+      email: "Sending an email? Ready to reply quickly!",
+      whatsapp: "Prefer a casual chat? Let's connect on WhatsApp!",
+      default: "Have an innovative idea? Let me know!"
+    }
   },
   footer: {
     copyright: "© 2026 Muhammad Asrauf Mustamin. All Rights Reserved."
@@ -245,8 +253,124 @@ export const en: Dictionary = {
     problemsTitle: "Problems Solved",
     sdlcTitle: "Development Process (SDLC)",
     outputsTitle: "Output / Deliverables",
+    focusTitle: "Analysis Focus & Description",
+    deliverablesTitle: "Deliverables & Artifacts",
     close: "Close",
     backToPortfolio: "Back to Portfolio",
-    viewLiveSite: "Visit Live Website"
+    viewLiveSite: "Visit Live Website",
+    cenrana: {
+      title: "Cenrana Village Information System",
+      subtitle: "Integrated Village Digital Platform — Public Aspirations & Digital Economy",
+      client: "Cenrana Village Government, Maros Regency",
+      overview: "Developing a full-stack Village Information System (SID) integrating an information hub, citizen aspiration service, and digital economy showcase (Lapak Warga). Built from scratch (~95% custom code) using Next.js 16, with multi-layered security (SHA-256, AES-256-GCM) and PWA.",
+      problems: [
+        { title: "Infrastructure Gap", desc: "Village information relied on physical notice boards. Info distribution took 3-7 days." },
+        { title: "Unmanaged Aspirations", desc: "Citizens voiced complaints on personal social media without official channels, making follow-ups difficult." },
+        { title: "MSME Economic Stagnation", desc: "70 entrepreneurs with marketing reach limited strictly to local areas." }
+      ],
+      metrics: [
+        { label: "UAT SUCCESS", suffix: "%" },
+        { label: "DATABASE TABLES", suffix: "+" },
+        { label: "CUSTOM CODE", suffix: "%" },
+        { label: "ADMIN MODULES", suffix: "" },
+        { label: "VILLAGE POPULATION", suffix: " people" },
+        { label: "DATA MANAGED", suffix: "+" }
+      ],
+      phases: [
+        {
+          title: "1. Business Requirement Analysis",
+          period: "October 2025",
+          roleFocus: "IT Business Analyst (BA)",
+          desc: "Conducting semi-structured interviews with Village Officials (Village Head, Village Secretary, Kaur) to extract operational needs. Mapping manual workflows (As-Is Process) and identifying 3 main problems: delayed physical notice boards, unrecorded citizen complaints, and MSME stagnation.",
+          outputs: [
+            "System Requirement Specification (SRS) Document",
+            "As-Is vs To-Be Process Mapping",
+            "Stakeholder Mapping Matrix"
+          ]
+        },
+        {
+          title: "2. System Modeling & Architecture",
+          period: "November 2025",
+          roleFocus: "System Analyst (SA)",
+          desc: "Translating business needs into executable technical blueprints. Designing Entity Relationship Diagram (ERD) with 20+ database tables, Use Case Diagrams, and Sequence Diagrams for NIK encryption and complaint handling.",
+          outputs: [
+            "Entity Relationship Diagram (ERD 20+ Tables)",
+            "Full-Stack System Architecture Blueprint",
+            "NIK Validation Sequence Diagram (SHA-256)",
+            "Complaint & Citizen Service Flowchart"
+          ]
+        },
+        {
+          title: "3. Prototype Design & Business Logic",
+          period: "Nov 2025 – Jan 2026",
+          roleFocus: "UI/UX & System Analyst",
+          desc: "Designing Wireframes & High-Fidelity Prototypes for 18 admin modules and public portal. Designing citizen privacy protection logic (SHA-256 NIK Hashing) and WhatsApp Gateway integrated Lapak Warga business flow.",
+          outputs: [
+            "Wireframe & High-Fidelity UI Prototype",
+            "WhatsApp Gateway Business Flow Specifications",
+            "Encrypted NIK Data Security Protocol"
+          ]
+        },
+        {
+          title: "4. Feasibility Testing (UAT & QA)",
+          period: "Feb – Mar 2026",
+          roleFocus: "IT BA / QA Analyst",
+          desc: "Drafting User Acceptance Testing (UAT) scenario matrix and testing system feasibility directly with village officials and citizen samples. Measuring System Usability Scale (SUS) and auditing web performance.",
+          outputs: [
+            "UAT Success Matrix & Report (93.8%)",
+            "System Usability Scale Evaluation (SUS: 75.6)",
+            "Google Lighthouse & Web Security Audit"
+          ]
+        },
+        {
+          title: "5. Training & Handover",
+          period: "Mar – May 2026",
+          roleFocus: "IT Project Lead & BA",
+          desc: "Authoring User Manual PDF, conducting direct socialization & admin dashboard operation training for village officials, and official handover of desacenrana.id domain.",
+          outputs: [
+            "System User Manual (PDF)",
+            "Official System Acceptance Report (BAST)",
+            "Official Launch of desacenrana.id Domain"
+          ]
+        }
+      ]
+    },
+    topsis: {
+      title: "Makassar Auto: Used Motorcycle DSS",
+      subtitle: "Web-Based Decision Support System Using TOPSIS Method",
+      client: "Research (3 Used Motorcycle Dealers)",
+      overview: "Building a web-based Decision Support System (DSS) for ranking used motorcycles using the TOPSIS algorithm. Processing 7 complex criteria (price, engine, mileage, year, etc.) from 53 real unit data points across 3 dealers in Makassar into objective recommendations for buyers.",
+      problems: [
+        { title: "Unit Condition Diversity", desc: "Complex variables like mileage, engine condition, and paperwork completeness are hard to compare manually." },
+        { title: "Price Information Asymmetry", desc: "Lay buyers often focus only on price and physical appearance, ignoring crucial technical aspects." },
+        { title: "Weighting Difficulty", desc: "Buyers struggle to mathematically weight benefit vs cost parameters in a short time." }
+      ],
+      metrics: [
+        { label: "TEST DATA UNITS", suffix: "" },
+        { label: "DEALERS INVOLVED", suffix: "" },
+        { label: "EVALUATION CRITERIA", suffix: "" },
+        { label: "RATING SCALE", suffix: " Pts" }
+      ],
+      phases: [
+        {
+          title: "Analysis & Data Collection",
+          period: "April 2026",
+          desc: "Collecting primary data of 53 used motorcycle units from 3 dealers in Makassar. Formulating 7 technical and economic evaluation criteria.",
+          outputs: ["53 Motorcycle Units Dataset", "Initial Decision Matrix", "7 Evaluation Criteria"]
+        },
+        {
+          title: "Weighting & Conversion",
+          period: "May 2026",
+          desc: "Converting cost criteria such as price and mileage into benefit scale 1-5 for uniform matrix calculation.",
+          outputs: ["Cost to Benefit Conversion", "Normalized Matrix", "Positive & Negative Ideal Solutions"]
+        },
+        {
+          title: "Algorithm Implementation",
+          period: "May - June 2026",
+          desc: "Coding the TOPSIS algorithm calculation step by step, including Euclidean distance and relative closeness score calculation.",
+          outputs: ["TOPSIS Calculation Logic", "Ranking Output", "Interactive Web Portal"]
+        }
+      ]
+    }
   }
 };

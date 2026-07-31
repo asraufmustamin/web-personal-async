@@ -73,6 +73,8 @@ export const id: Dictionary = {
     description: "Merajut perjalanan dari kepemimpinan organisasi hingga profesional, memadukan kemampuan manajerial dan teknis dalam setiap langkah.",
     categories: ["Semua", "Profesional", "Proyek", "Desain & Kreatif", "Organisasi"],
     highlightsTitle: "Sorotan Profil",
+    highlightsSectionTitle: "Jejak Dampak & Pencapaian",
+    highlightsSectionDesc: "Bukan sekadar daftar pengalaman, melainkan jejak bukti nyata dari dampak yang telah saya hadirkan untuk instansi, publik, dan kolaborasi tim.",
     viewDetails: "Lihat Detail",
     proofTitle: "Bukti Validasi (Bukti Kerja)",
     highlights: [
@@ -221,7 +223,13 @@ export const id: Dictionary = {
     nameLabel: "Nama Anda",
     emailLabel: "Email Anda",
     messageLabel: "Pesan Anda",
-    sendButton: "Kirim Pesan"
+    sendButton: "Kirim Pesan",
+    mascot: {
+      idle: "Klik saya untuk mulai berkolaborasi!",
+      email: "Kirim email? Siap membalas dengan cepat!",
+      whatsapp: "Lebih suka ngobrol santai? Mari ke WhatsApp!",
+      default: "Punya ide inovatif? Mari kita diskusikan!"
+    }
   },
   footer: {
     copyright: "© 2026 Muhammad Asrauf Mustamin. Hak Cipta Dilindungi."
@@ -245,8 +253,124 @@ export const id: Dictionary = {
     problemsTitle: "Masalah yang Diselesaikan",
     sdlcTitle: "Proses Pengembangan (SDLC)",
     outputsTitle: "Output / Deliverables",
+    focusTitle: "Fokus & Deskripsi Analis",
+    deliverablesTitle: "Hasil / Artefak Deliverables",
     close: "Tutup",
     backToPortfolio: "Kembali ke Portofolio",
-    viewLiveSite: "Kunjungi Website Live"
+    viewLiveSite: "Kunjungi Website Live",
+    cenrana: {
+      title: "Sistem Informasi Desa Cenrana",
+      subtitle: "Platform Digital Desa Terintegrasi — Aspirasi Publik & Ekonomi Digital",
+      client: "Pemerintah Desa Cenrana, Kab. Maros",
+      overview: "Mengembangkan Sistem Informasi Desa (SID) full-stack yang mengintegrasikan pusat informasi, layanan aspirasi warga, dan etalase ekonomi digital (Lapak Warga). Sistem dibangun dari nol (~95% kode kustom) menggunakan Next.js 16, dengan fitur keamanan berlapis (SHA-256, AES-256-GCM) dan PWA.",
+      problems: [
+        { title: "Kesenjangan Infrastruktur", desc: "Informasi desa masih mengandalkan papan pengumuman fisik. Distribusi informasi membutuhkan 3-7 hari." },
+        { title: "Aspirasi Tidak Terkelola", desc: "Warga menyuarakan keluhan melalui media sosial pribadi tanpa saluran resmi, sulit ditindaklanjuti." },
+        { title: "Stagnasi Ekonomi UMKM", desc: "70 pelaku wirausaha dengan jangkauan pemasaran terbatas pada lingkungan lokal." }
+      ],
+      metrics: [
+        { label: "UAT SUCCESS", suffix: "%" },
+        { label: "TABEL DATABASE", suffix: "+" },
+        { label: "CUSTOM CODE", suffix: "%" },
+        { label: "MODUL ADMIN", suffix: "" },
+        { label: "POPULASI DESA", suffix: " jiwa" },
+        { label: "DATA DIKELOLA", suffix: "+" }
+      ],
+      phases: [
+        {
+          title: "1. Analisis Kebutuhan Bisnis",
+          period: "Oktober 2025",
+          roleFocus: "IT Business Analyst (BA)",
+          desc: "Melakukan wawancara semi-terstruktur dengan Perangkat Desa (Kepala Desa, Sekdes, Kaur) untuk menggali kebutuhan operasional. Memetakan alur kerja manual (As-Is Process) dan mengidentifikasi 3 masalah utama: keterlambatan papan pengumuman fisik, keluhan warga tak terdata, dan stagnasi UMKM.",
+          outputs: [
+            "Dokumen Spesifikasi Kebutuhan Sistem (SRS)",
+            "Pemetaan Proses As-Is vs To-Be",
+            "Matriks Pemangku Kepentingan (Stakeholder Mapping)"
+          ]
+        },
+        {
+          title: "2. Pemodelan & Arsitektur Sistem",
+          period: "November 2025",
+          roleFocus: "System Analyst (SA)",
+          desc: "Mentranslasikan kebutuhan bisnis menjadi blueprint teknis yang siap dieksekusi. Merancang Entity Relationship Diagram (ERD) 20+ tabel database, Use Case Diagram, dan Sequence Diagram untuk alur enkripsi NIK serta penanganan pengaduan.",
+          outputs: [
+            "Entity Relationship Diagram (ERD 20+ Tabel)",
+            "Cetak Biru Arsitektur Sistem Full-Stack",
+            "Sequence Diagram Validasi NIK (SHA-256)",
+            "Flowchart Alur Pengaduan & Layanan Warga"
+          ]
+        },
+        {
+          title: "3. Desain Prototipe & Logika Bisnis",
+          period: "Nov 2025 – Jan 2026",
+          roleFocus: "UI/UX & System Analyst",
+          desc: "Merancang Wireframe & High-Fidelity Prototype untuk 18 modul admin dan portal publik. Merancang logika proteksi privasi warga (SHA-256 NIK Hashing) dan alur bisnis Lapak Warga terintegrasi WhatsApp Gateway.",
+          outputs: [
+            "Wireframe & High-Fidelity UI Prototype",
+            "Spesifikasi Alur Bisnis WhatsApp Gateway",
+            "Protokol Keamanan Data NIK Terenkripsi"
+          ]
+        },
+        {
+          title: "4. Pengujian Kelayakan (UAT & QA)",
+          period: "Feb – Mar 2026",
+          roleFocus: "IT BA / QA Analyst",
+          desc: "Menyusun matriks skenario User Acceptance Testing (UAT) dan menguji kelayakan sistem langsung bersama aparatur desa dan sampel warga. Mengukur System Usability Scale (SUS) dan mengaudit performa web.",
+          outputs: [
+            "Matriks & Laporan UAT Success (93.8%)",
+            "Evaluasi System Usability Scale (SUS: 75.6)",
+            "Google Lighthouse & Audit Keamanan Web"
+          ]
+        },
+        {
+          title: "5. Pelatihan & Serah Terima",
+          period: "Mar – Mei 2026",
+          roleFocus: "IT Project Lead & BA",
+          desc: "Menyusun Buku Panduan Penggunaan Sistem (User Manual) versi PDF, mengadakan sosialisasi & pelatihan langsung pengoperasian dashboard admin bagi aparatur desa, serta serah terima domain desacenrana.id.",
+          outputs: [
+            "Buku Panduan Penggunaan Sistem (User Manual PDF)",
+            "Berita Acara Serah Terima (BAST) Sistem",
+            "Peluncuran Resmi Domain desacenrana.id"
+          ]
+        }
+      ]
+    },
+    topsis: {
+      title: "Makassar Auto: SPK Motor Bekas",
+      subtitle: "Sistem Pendukung Keputusan Berbasis Web Menggunakan Metode TOPSIS",
+      client: "Riset (3 Dealer Motor Bekas)",
+      overview: "Membangun Sistem Pendukung Keputusan (SPK) berbasis web untuk pemeringkatan motor bekas menggunakan algoritma TOPSIS. Mengolah 7 kriteria kompleks (harga, mesin, jarak tempuh, tahun, dll) dari 53 unit data riil yang tersebar di 3 dealer Kota Makassar menjadi rekomendasi objektif bagi calon pembeli.",
+      problems: [
+        { title: "Keragaman Kondisi Unit", desc: "Variabel kompleks seperti jarak tempuh, kondisi mesin, dan kelengkapan surat sulit dibandingkan secara manual." },
+        { title: "Asimetri Informasi Harga", desc: "Pembeli awam sering hanya terpaku pada harga dan fisik, mengabaikan aspek teknis krusial." },
+        { title: "Kesulitan Pembobotan", desc: "Setiap pembeli kesulitan membobot parameter benefit vs cost secara matematis dalam waktu singkat." }
+      ],
+      metrics: [
+        { label: "UNIT DATA UJI", suffix: "" },
+        { label: "DEALER TERLIBAT", suffix: "" },
+        { label: "KRITERIA EVALUASI", suffix: "" },
+        { label: "SKALA PENILAIAN", suffix: " Poin" }
+      ],
+      phases: [
+        {
+          title: "Analisis & Pengumpulan Data",
+          period: "April 2026",
+          desc: "Mengumpulkan data primer 53 unit motor bekas dari 3 dealer di Makassar. Merumuskan 7 kriteria penilaian teknis dan ekonomis (harga, mesin, jarak tempuh, dsb).",
+          outputs: ["Dataset 53 Unit Motor", "Matriks Keputusan Awal", "7 Kriteria Penilaian"]
+        },
+        {
+          title: "Pembobotan & Konversi",
+          period: "Mei 2026",
+          desc: "Mengubah kriteria biaya (cost) seperti harga dan kilometer menjadi skala manfaat (benefit) 1-5 agar perhitungan matriks berjalan seragam.",
+          outputs: ["Konversi Cost ke Benefit", "Matriks Normalisasi", "Solusi Ideal Positif & Negatif"]
+        },
+        {
+          title: "Implementasi Algoritma",
+          period: "Mei - Juni 2026",
+          desc: "Pengodean tahap perhitungan algoritma TOPSIS secara runtut, meliputi jarak Euclidean dan skor kedekatan relatif.",
+          outputs: ["Logika Perhitungan TOPSIS", "Output Pemeringkatan", "Portal Web Interaktif"]
+        }
+      ]
+    }
   }
 };

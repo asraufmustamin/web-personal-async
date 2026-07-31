@@ -72,181 +72,305 @@ export const fr: Dictionary = {
     subtitle: "Expérience & Voyage.",
     description: "Tisser un parcours du leadership organisationnel aux rôles professionnels, combinant des compétences managériales et techniques à chaque étape.",
     categories: ["Tous", "Professionnel", "Projets", "Design & Créatif", "Organisation"],
-    highlightsTitle: "Faits Saillants du Profil",
+    highlightsTitle: "Points Forts du Profil",
+    highlightsSectionTitle: "Impact et Réalisations",
+    highlightsSectionDesc: "Pas seulement une liste d'expériences, mais un bilan tangible d'impact réel apporté aux institutions, au public et dans les collaborations d'équipe.",
     viewDetails: "Voir les Détails",
-    proofTitle: "Preuve de Validation",
+    proofTitle: "Preuve de Validation (Proof of Work)",
     highlights: [
-      { title: "Meilleur Diplômé (GPA 3,93)", desc: "En tant que jeune diplômé, il a été prouvé qu'il possède une base académique solide avec la mention Cumlaude." },
-      { title: "Score d'Acceptation Élevé (UAT 93,8%)", desc: "A assuré le développement d'un système d'information véritablement accepté par les utilisateurs réels (93,8 %)." },
-      { title: "Livraison de Solutions Efficace", desc: "A fait preuve d'agilité dans l'orchestration de projets depuis l'analyse des besoins jusqu'à la publication du système en peu de temps." },
-      { title: "Mise en œuvre du Développement Assisté par l'IA", desc: "Expérimenté en tant que coordinateur logique utilisant des outils d'Intelligence Artificielle pour accélérer le SDLC." },
-      { title: "Validation à Grande Échelle (5 000+ Données)", desc: "A prouvé sa minutie en maintenant l'intégrité de milliers de données cruciales." },
-      { title: "Normes de Sécurité et de Confidentialité", desc: "Donne la priorité à l'éthique et à la confidentialité des utilisateurs dans la conception du système." },
-      { title: "Collaboration Intersectorielle", desc: "Adaptatif et flexible en travaillant avec diverses cultures d'entités." },
-      { title: "Gestion de la Communication et du Visuel", desc: "Possède des compétences aiguisées en communication publique et en stratégie de marque visuelle." }
+      { title: "Meilleur Diplômé et Major (GPA 3.93)", desc: "En tant que jeune diplômé, il a fait ses preuves avec une solide base académique et de résolution de problèmes, mention Cumlaude et Major de promo de la Faculté de Technologie Industrielle." },
+      { title: "Score d'Acceptation Élevé (UAT 93.8%)", desc: "A dirigé le développement d'un système d'information véritablement adopté par les utilisateurs réels, avec un score de test d'acceptation utilisateur de 93.8%." },
+      { title: "Livraison de Solution Efficace (En ligne en 3 Mois)", desc: "A fait preuve d'agilité dans l'orchestration de projets, de l'analyse des besoins au lancement en direct du système dans un délai court." },
+      { title: "Mise en Œuvre du Développement Assisté par IA", desc: "Expérimenté en tant qu'orchestrateur logique utilisant des outils d'Intelligence Artificielle pour accélérer le cycle de vie du développement logiciel (SDLC)." },
+      { title: "Validation à Grande Échelle (5 000+ Données)", desc: "A prouvé une méticulosité de haut niveau pour maintenir l'intégrité de milliers de données cruciales pour les besoins d'organismes publics." },
+      { title: "Normes de Sécurité et Confidentialité (NIK)", desc: "Priorise l'éthique de l'utilisateur et la confidentialité dans la conception du système, y compris l'application du chiffrement." },
+      { title: "Collaboration Intersectorielle", desc: "Adaptable et flexible en travaillant avec diverses entités : Gouvernement du village, Ministères (Kemenkeu, KKP) et Entreprises publiques." },
+      { title: "Gestion de la Communication et du Visuel", desc: "Possède des compétences aiguisées en communication publique et branding visuel acquises au sein des relations publiques et de la direction d'organisations." }
     ],
     items: [
       {
-        role: "Analyste de Systèmes et Développeur DSS",
+        role: "Analyste Système & Développeur DSS",
         company: "Freelance / Projet Indépendant",
         date: "Avr 2026 – Juin 2026",
-        description: "Développement d'un Système d'Aide à la Décision (DSS) basé sur le web en utilisant la méthode TOPSIS.",
+        description: "Développement d'un système d'aide à la décision (SPK) basé sur le Web avec la méthode TOPSIS. Analyse des besoins utilisateurs et structuration de la documentation fonctionnelle.",
         activities: [
-          "Analyse des besoins et des variables de décision.",
-          "Développement du DSS méthode TOPSIS.",
-          "Structuration de la documentation du système."
+          "Analyse des exigences et des variables de décision.",
+          "Développement du SPK avec la méthode TOPSIS.",
+          "Structuration de la documentation fonctionnelle."
         ],
         label: "Freelance"
       },
       {
-        role: "Analyste d'Affaires et Chef de Projet",
+        role: "Analyste d'Affaires IT & Chef de Projet",
         company: "Système Intégré du Village de Cenrana",
         date: "Juil 2025 – Avr 2026",
-        description: "A dirigé le cycle de développement (SDLC) de la plateforme numérique du village de bout en bout, avec un succès de 93,8 % à l'UAT.",
+        description: "Direction du cycle de vie complet du développement logiciel (SDLC) de la plateforme numérique du village. Recueil des besoins auprès des responsables et taux de réussite UAT de 93,8%.",
         activities: [
-          "A dirigé le SDLC de la plateforme du village.",
-          "A recueilli les besoins et créé des prototypes UI.",
-          "A exécuté les Tests d'Acceptation Utilisateur (UAT)."
+          "Direction du SDLC complet de la plateforme villageoise.",
+          "Recueil des exigences et prototypage UI.",
+          "Exécution des tests d'acceptation utilisateur (UAT)."
         ],
         label: "Projet Principal"
       },
       {
-        role: "Analyste de Systèmes et Stagiaire Développeur",
-        company: "Bureau des Douanes Sulbagsel (Ministère des Finances)",
-        date: "Mar 2025 – Juil 2025",
-        description: "A effectué une rotation dans 5 divisions. A développé le prototype SIMIRA (PHP Laravel & MySQL) et analysé les systèmes de plaintes.",
+        role: "Analyste Système & Stagiaire Développeur",
+        company: "Douanes et Droits d'Accise Sulbagsel (Ministère des Finances)",
+        date: "Mars 2025 – Juil 2025",
+        description: "Rotation sur 5 divisions stratégiques. Développement du prototype SIMIRA (Laravel & MySQL), analyse des systèmes de réclamation et veille quotidienne des médias (NALIKA).",
         activities: [
-          "A développé l'application SIMIRA.",
-          "A exécuté le suivi des médias (NALIKA).",
-          "A effectué des vérifications croisées de données.",
-          "A identifié des flux de travail en interne."
+          "Développement de l'application SIMIRA (Laravel & MySQL).",
+          "Exécution de NALIKA (Veille Médias) et analyse des actualités douanières.",
+          "Vérification croisée et saisie des données du personnel.",
+          "Identification des flux de travail de la conformité interne."
         ],
-        label: "Stage Ministériel"
+        label: "Stage Ministère"
       },
       {
-        role: "Analyste de Données et Spécialiste AR",
-        company: "BPJS Ketenagakerjaan Succursale de Makassar",
-        date: "Oct 2024 – Jan 2025",
-        description: "A géré l'acquisition et l'administration des adhésions. A validé l'intégrité de >5 000 données, et automatisé la facturation.",
+        role: "Analyste de Données & Spécialiste Représentant de Compte",
+        company: "BPJS Ketenagakerjaan Branche de Makassar",
+        date: "Oct 2024 – Janv 2025",
+        description: "Gestion des adhésions et de l'administration. Validation de plus de 5 000 données IGI Quality, automatisation des relances via WhatsApp et vérification du portail OSS.",
         activities: [
-          "A validé et corrigé la qualité des données.",
-          "A opéré la facturation périodique via WA Blasting.",
-          "A vérifié les inscriptions via le portail OSS.",
-          "A mené des activités de socialisation sur le terrain."
+          "Validation et correction de la qualité des données IGI (>5 000 dossiers).",
+          "Gestion des recouvrements périodiques via WhatsApp et Email.",
+          "Vérification des enregistrements d'entreprises sur le système OSS.",
+          "Sensibilisation sur le terrain pour les travailleurs informels (BPU)."
         ],
-        label: "MBKM"
+        label: "Programme MBKM"
       },
       {
-        role: "Spécialiste de la Numérisation des Données",
-        company: "Système KUSUKA KKP (Ministère des Affaires Maritimes)",
+        role: "Spécialiste du Support à la Numérisation des Données",
+        company: "Système KUSUKA KKP (Ministère des Affaires Maritimes et de la Pêche)",
         date: "Mai 2024 – Juil 2024",
-        description: "A géré la numérisation et la vérification précise de >1 000 profils d'acteurs commerciaux marins.",
+        description: "Gestion de la numérisation, du nettoyage et de la vérification de précision de plus de 1 000 profilings d'acteurs de la pêche. Validation des NIK selon les procédures officielles.",
         activities: [
-          "A exécuté le nettoyage et la validation des données.",
-          "A vérifié l'authenticité des documents NIK.",
-          "A géré la saisie massive de données."
+          "Nettoyage et validation de précision de plus de 1 000 dossiers de pêcheurs.",
+          "Vérification de l'authenticité des documents NIK.",
+          "Gestion de la saisie de données de masse et synchronisation."
         ],
         label: "Freelance"
       },
       {
-        role: "Coordinateur de la Division INFOKOM",
-        company: "Club des Amateurs du Marché des Capitaux",
+        role: "Coordinateur de la Division INFOKOM & Chef des RP",
+        company: "Unité d'Activité Étudiante Amateurs du Marché des Capitaux",
         date: "2023 – 2024",
-        description: "A dirigé la division de l'information dans le contrôle des publications numériques.",
+        description: "Direction de la division Information & Communication pour contrôler les publications numériques, la gestion de la réputation et le partenariat avec la Bourse d'Indonésie (IDX).",
         activities: [
-          "A dirigé les campagnes d'éducation à l'investissement.",
-          "A construit des partenariats stratégiques.",
-          "A conçu des calendriers de communication numérique."
+          "Direction de l'équipe INFOKOM pour les campagnes d'éducation financière.",
+          "Établissement de partenariats stratégiques avec des courtiers.",
+          "Conception des calendriers de communication et contrôle du branding."
         ],
         label: "Organisation"
       },
       {
-        role: "Président du Conseil Étudiant (OSIS)",
-        company: "SMA Negeri 2 Enrekang",
+        role: "Président du Conseil Étudiant (Ketua OSIS)",
+        company: "Lycée d'État 2 Enrekang",
         date: "2020 – 2021",
-        description: "A dirigé le conseil étudiant et orchestré 10 domaines de programmes.",
+        description: "Gouvernance du conseil étudiant au niveau du lycée et du district, orchestration de 10 sections de programmes et facilitation de la communication avec la direction.",
         activities: [
-          "A dirigé la direction du conseil étudiant.",
-          "A orchestré des concours d'art et de sport.",
-          "A agi en tant que représentant de la communication."
+          "Gestion du conseil étudiant et coordination de 10 sections.",
+          "Organisation de compétitions artistiques, sportives et actions sociales.",
+          "Représentant officiel des étudiants auprès de la direction."
         ],
         label: "Organisation"
       },
       {
-        role: "Concepteur Graphique et Réseaux Sociaux",
-        company: "Club des Amateurs du Marché des Capitaux",
+        role: "Designer Graphique & Réseaux Sociaux",
+        company: "Unité d'Activité Étudiante Amateurs du Marché des Capitaux",
         date: "2023 – 2024",
-        description: "A conçu une collection de designs pour soutenir l'image de marque.",
+        description: "Conception de visuels pour les réseaux sociaux soutenant le branding organisationnel et la communication numérique pour la période 2024-2025.",
         activities: [
-          "A créé des designs pour Instagram.",
-          "A géré les actifs de communication visuelle.",
-          "A soutenu des campagnes de publication."
+          "Création de visuels pour le feed et les stories Instagram.",
+          "Gestion des actifs de communication visuelle.",
+          "Soutien aux campagnes de publication numérique."
         ],
         label: "Design"
       },
       {
         role: "Créateur de Contenu Visuel",
-        company: "Village KKN Cenrana",
-        date: "Juil 2025 – Sep 2025",
-        description: "A conçu du contenu pour les réseaux sociaux soutenant les programmes de travail.",
+        company: "Poste KKN du Village de Cenrana",
+        date: "Juil 2025 – Sept 2025",
+        description: "Création de contenus pour les réseaux sociaux soutenant la publication des activités de service communautaire dans le village de Cenrana.",
         activities: [
-          "A conçu du matériel de publication.",
-          "A documenté des activités de service.",
-          "A géré le contenu visuel quotidien."
+          "Conception des supports de publication des programmes.",
+          "Documentation des activités de service communautaire.",
+          "Gestion du contenu visuel quotidien."
         ],
         label: "Design"
       }
     ]
   },
   portfolio: {
-    sectionTitle: "PROJETS ET ÉTUDES DE CAS",
-    subtitle: "Travaux Sélectionnés.",
-    description: "Une collection de projets représentant des compétences d'analyse, de gestion et de développement.",
+    sectionTitle: "PROJETS & ÉTUDES DE CAS",
+    subtitle: "Projets En Vedette.",
+    description: "Une collection de projets sélectionnés représentant des compétences d'analyse, de gestion et de développement informatique.",
     viewProject: "Voir le Projet",
     projects: [
       {
-        title: "Système d'Information de Gestion Intégré du Village de Cenrana",
-        desc: "Un système de numérisation de l'administration du village qui a passé l'UAT avec succès (93,8 %)."
+        title: "Système de Gestion Intégré du Village de Cenrana",
+        desc: "Numérisation de l'administration du village ayant réussi les tests UAT avec un score de 93,8%. Intégration de la gestion du courrier et de la transparence des fonds."
       },
       {
-        title: "Système d'Aide à la Décision (DSS) Méthode TOPSIS",
-        desc: "Une application web pour fournir des recommandations basées sur les données."
+        title: "Système d'Aide à la Décision (SPK) Méthode TOPSIS",
+        desc: "Application Web fournissant des recommandations basées sur des données à l'aide de l'algorithme TOPSIS."
       }
     ]
   },
   contact: {
-    sectionTitle: "ME CONTACTER",
-    subtitle: "Collaborons.",
+    sectionTitle: "CONTACTEZ-MOI",
+    subtitle: "Collaborons Ensemble.",
     description: "Vous avez une idée, un projet ou une opportunité de collaboration ? N'hésitez pas à me contacter.",
     nameLabel: "Votre Nom",
-    emailLabel: "Votre Email",
+    emailLabel: "Votre E-mail",
     messageLabel: "Votre Message",
-    sendButton: "Envoyer le Message"
+    sendButton: "Envoyer le Message",
+    mascot: {
+      idle: "Cliquez sur moi pour collaborer !",
+      email: "Envoyer un e-mail ? Prêt à répondre rapidement !",
+      whatsapp: "Vous préférez discuter ? Allons sur WhatsApp !",
+      default: "Une idée innovante ? Discutons-en !"
+    }
   },
   footer: {
     copyright: "© 2026 Muhammad Asrauf Mustamin. Tous droits réservés."
   },
   tools: {
-    sectionTitle: "TECHNOLOGIE & OUTILS",
-    title: "Outils que",
-    typewriter: ["J'utilise."],
-    description: "Divers outils utilisés tout au long de l'exécution du projet — de la création de ce site vitrine au développement de systèmes d'information, documentation et productivité."
+    sectionTitle: "TECHNOLOGIES & OUTILS",
+    title: "Outils que J'",
+    typewriter: ["Utilise."],
+    description: "Divers outils utilisés lors de la réalisation de mes projets : de la création de ce portfolio au développement de systèmes et à la productivité quotidienne."
   },
   cvModal: {
-    title: "Sélectionnez la version du CV",
-    subtitle: "Veuillez choisir la version du Curriculum Vitae qui correspond le mieux à vos besoins ou au poste ciblé.",
+    title: "Sélectionner la Version du CV",
+    subtitle: "Veuillez choisir la version du Curriculum Vitae qui correspond le mieux à vos besoins ou au poste visé.",
     baTitle: "IT Business Analyst",
-    baDesc: "Focus sur l'analyse système, la collecte de besoins et l'UAT",
+    baDesc: "Focus sur l'analyse système, le recueil des besoins et les UAT",
     pmTitle: "Project Manager",
     pmDesc: "Focus sur la coordination, le calendrier et la gestion des parties prenantes"
   },
   caseStudy: {
-    overviewTitle: "Aperçu du projet",
-    problemsTitle: "Problèmes résolus",
-    sdlcTitle: "Processus de développement (SDLC)",
-    outputsTitle: "Livrables",
+    overviewTitle: "Aperçu du Projet",
+    problemsTitle: "Problèmes Résolus",
+    sdlcTitle: "Processus de Développement (SDLC)",
+    outputsTitle: "Livrables / Résultats",
+    focusTitle: "Focus & Description de l'Analyse",
+    deliverablesTitle: "Livrables & Artefacts",
     close: "Fermer",
-    backToPortfolio: "Retour au portfolio",
-    viewLiveSite: "Visiter le site en direct"
+    backToPortfolio: "Retour au Portfolio",
+    viewLiveSite: "Visiter le Site en Direct",
+    cenrana: {
+      title: "Système d'Information du Village de Cenrana",
+      subtitle: "Plateforme Numérique Villageoise Intégrée — Aspirations et Économie",
+      client: "Gouvernement du Village de Cenrana, Régence de Maros",
+      overview: "Développement d'un système d'information villageois (SID) full-stack intégrant centre d'information, service de réclamations et économie numérique. Développé à 95% sur mesure avec Next.js 16 et PWA.",
+      problems: [
+        { title: "Écart d'Infrastructure", desc: "Les informations reposaient sur des panneaux physiques. La diffusion prenait 3 à 7 jours." },
+        { title: "Réclamations non Gérées", desc: "Les citoyens s'exprimaient sur leurs réseaux sociaux sans canal officiel, rendant le suivi difficile." },
+        { title: "Stagnation des PME", desc: "70 entrepreneurs avec une portée commerciale limitée exclusivement au niveau local." }
+      ],
+      metrics: [
+        { label: "SUCCÈS UAT", suffix: "%" },
+        { label: "TABLES BASE DE DONNÉES", suffix: "+" },
+        { label: "CODE SUR MESURE", suffix: "%" },
+        { label: "MODULES D'ADMINISTRATION", suffix: "" },
+        { label: "POPULATION DU VILLAGE", suffix: " personnes" },
+        { label: "DONNÉES GÉRÉES", suffix: "+" }
+      ],
+      phases: [
+        {
+          title: "1. Analyse des Exigences Métier",
+          period: "Octobre 2025",
+          roleFocus: "IT Business Analyst (BA)",
+          desc: "Entretiens semi-structurés avec les responsables du village pour extraire les besoins opérationnels et cartographier les processus.",
+          outputs: [
+            "Spécification des Exigences Système (SRS)",
+            "Cartographie As-Is vs To-Be",
+            "Matrice des Parties Prenantes"
+          ]
+        },
+        {
+          title: "2. Modélisation & Architecture Système",
+          period: "Novembre 2025",
+          roleFocus: "System Analyst (SA)",
+          desc: "Traduction des besoins en schémas techniques. Conception ERD avec plus de 20 tables et diagrammes de séquence.",
+          outputs: [
+            "Diagramme Entité-Association (ERD 20+ Tables)",
+            "Plan d'Architecture Système Full-Stack",
+            "Diagramme de Séquence de Validation NIK (SHA-256)",
+            "Organigramme de Traitement des Réclamations"
+          ]
+        },
+        {
+          title: "3. Prototypage & Logique Métier",
+          period: "Nov 2025 – Janv 2026",
+          roleFocus: "UI/UX & System Analyst",
+          desc: "Conception des maquettes et prototypes pour 18 modules d'administration et le portail public.",
+          outputs: [
+            "Maquette & Prototype UI Haute Fidélité",
+            "Spécifications WhatsApp Gateway",
+            "Protocole de Sécurité des Données Chiffrées"
+          ]
+        },
+        {
+          title: "4. Tests de Faisabilité (UAT & QA)",
+          period: "Fév – Mars 2026",
+          roleFocus: "IT BA / QA Analyst",
+          desc: "Élaboration de la matrice de scénarios UAT et tests de faisabilité directement avec les responsables et citoyens.",
+          outputs: [
+            "Rapport de Succès UAT (93.8%)",
+            "Évaluation System Usability Scale (SUS: 75.6)",
+            "Audit Google Lighthouse & Sécurité Web"
+          ]
+        },
+        {
+          title: "5. Formation & Passation",
+          period: "Mars – Mai 2026",
+          roleFocus: "IT Project Lead & BA",
+          desc: "Rédaction du manuel d'utilisation PDF, formation des équipes administratives et remise officielle du domaine desacenrana.id.",
+          outputs: [
+            "Manuel d'Utilisation du Système (PDF)",
+            "Procès-Verbal de Recette Officiel (BAST)",
+            "Lancement Officiel du Domaine desacenrana.id"
+          ]
+        }
+      ]
+    },
+    topsis: {
+      title: "Makassar Auto : SPK Motos d'Occasion",
+      subtitle: "Système d'Aide à la Décision Basé sur le Web avec la Méthode TOPSIS",
+      client: "Recherche (3 Concessionnaires)",
+      overview: "Création d'un système d'aide à la décision basé sur l'algorithme TOPSIS pour le classement des motos d'occasion à partir de 53 données réelles.",
+      problems: [
+        { title: "Diversité des États des Véhicules", desc: "Critères complexes difficiles à comparer manuellement." },
+        { title: "Asymétrie d'Information sur les Prix", desc: "Les acheteurs ignorent souvent les critères techniques cruciaux." },
+        { title: "Difficulté de Pondération", desc: "Difficulté à pondérer mathématiquement les paramètres bénéfice/coût." }
+      ],
+      metrics: [
+        { label: "DONNÉES DE TEST", suffix: "" },
+        { label: "CONCESSIONNAIRES", suffix: "" },
+        { label: "CRITÈRES D'ÉVALUATION", suffix: "" },
+        { label: "ÉCHELLE DE NOTATION", suffix: " Pts" }
+      ],
+      phases: [
+        {
+          title: "Analyse et Collecte de Données",
+          period: "Avril 2026",
+          desc: "Collecte de données de 53 motos d'occasion auprès de 3 concessionnaires.",
+          outputs: ["Jeu de Données de 53 Motos", "Matrice de Décision Initiale", "7 Critères d'Évaluation"]
+        },
+        {
+          title: "Pondération et Conversion",
+          period: "Mai 2026",
+          desc: "Conversion des critères de coût sur une échelle de bénéfice 1-5.",
+          outputs: ["Conversion Coût en Bénéfice", "Matrice de Normalisation", "Solutions Idéales Positives et Négatives"]
+        },
+        {
+          title: "Mise en Œuvre de l'Algorithme",
+          period: "Mai - Juin 2026",
+          desc: "Codage étape par étape du calcul TOPSIS et du score de proximité.",
+          outputs: ["Logique de Calcul TOPSIS", "Classement des Résultats", "Portail Web Interactif"]
+        }
+      ]
+    }
   }
 };

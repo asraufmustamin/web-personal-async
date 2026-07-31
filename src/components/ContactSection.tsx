@@ -54,14 +54,14 @@ export default function ContactSection() {
   };
 
   const getSpeechText = () => {
-    if (!isActive) return "Klik saya untuk mulai berkolaborasi!";
+    if (!isActive) return t.contact.mascot?.idle || "Click me to start collaborating!";
     switch (hoveredContact) {
       case "email":
-        return "Kirim email? Siap membalas dengan cepat!";
+        return t.contact.mascot?.email || "Sending an email? Ready to reply quickly!";
       case "whatsapp":
-        return "Lebih suka ngobrol santai? Mari ke WhatsApp!";
+        return t.contact.mascot?.whatsapp || "Prefer a casual chat? Let's connect on WhatsApp!";
       default:
-        return "Punya ide inovatif? Mari kita diskusikan!";
+        return t.contact.mascot?.default || "Have an innovative idea? Let's discuss it!";
     }
   };
 
