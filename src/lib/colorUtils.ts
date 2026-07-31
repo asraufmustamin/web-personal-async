@@ -62,18 +62,38 @@ export function computeTextColor(mainHex: string): { main: string; muted: string
   }
 }
 
-// Compute primary accent color
-export function computePrimaryColor(mainHex: string): string {
+// Compute primary and accent colors for gradient based on luminance
+export function computeAccentColors(mainHex: string) {
   const rgb = hexToRgb(mainHex);
-  if (!rgb) return "#F89D0A";
+  if (!rgb) {
+    return {
+      primary: "#F89D0A",
+      primaryDark: "#DD6202",
+      accent: "#FCD560",
+      accentSoft: "#FCE99D",
+      bronzeDark: "#621501",
+    };
+  }
   
   const luminance = getLuminance(rgb.r, rgb.g, rgb.b);
   if (luminance < 0.5) {
-    // Dark background -> Bright Gold
-    return "#F89D0A";
+    // Dark background -> Bright Gold/Orange
+    return {
+      primary: "#F89D0A",
+      primaryDark: "#DD6202",
+      accent: "#FCD560",
+      accentSoft: "#FCE99D",
+      bronzeDark: "#621501",
+    };
   } else {
-    // Light background -> Deep Bronze/Orange
-    return "#B45309"; 
+    // Light background -> Deep Bronze/Orange/Brown to ensure contrast
+    return {
+      primary: "#B45309",        // Darker orange
+      primaryDark: "#78350F",    // Deep brown
+      accent: "#D97706",         // Amber
+      accentSoft: "#F59E0B",     // Light amber for highlight
+      bronzeDark: "#451A03",     // Very dark brown
+    }; 
   }
 }
 
@@ -86,14 +106,19 @@ export function applyCustomThemeColor(hex: string) {
   
   const cardHex = computeCardColor(hex);
   const { main: textMain, muted: textMuted } = computeTextColor(hex);
-  const primaryHex = computePrimaryColor(hex);
+  const accents = computeAccentColors(hex);
   
   const root = document.documentElement;
   root.style.setProperty("--bg-main", hex);
   root.style.setProperty("--bg-card", cardHex);
   root.style.setProperty("--text-main", textMain);
   root.style.setProperty("--text-muted", textMuted);
-  root.style.setProperty("--primary-color", primaryHex);
+  
+  root.style.setProperty("--primary-color", accents.primary);
+  root.style.setProperty("--primary-color-dark", accents.primaryDark);
+  root.style.setProperty("--accent-color", accents.accent);
+  root.style.setProperty("--accent-color-soft", accents.accentSoft);
+  root.style.setProperty("--bronze-dark-color", accents.bronzeDark);
 }
 
 // Remove custom color overrides when switching back to light or dark
@@ -105,4 +130,8 @@ export function removeCustomThemeColor() {
   root.style.removeProperty("--text-main");
   root.style.removeProperty("--text-muted");
   root.style.removeProperty("--primary-color");
+  root.style.removeProperty("--primary-color-dark");
+  root.style.removeProperty("--accent-color");
+  root.style.removeProperty("--accent-color-soft");
+  root.style.removeProperty("--bronze-dark-color");
 }

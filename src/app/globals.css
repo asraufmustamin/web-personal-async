@@ -9,6 +9,10 @@
   --text-main: #111111;
   --text-muted: #555555;
   --primary-color: #F89D0A;
+  --primary-color-dark: #DD6202;
+  --accent-color: #FCD560;
+  --accent-color-soft: #FCE99D;
+  --bronze-dark-color: #621501;
 }
 
 .dark {
@@ -17,6 +21,10 @@
   --text-main: #EDEDED;
   --text-muted: #A1A1A1;
   --primary-color: #F89D0A;
+  --primary-color-dark: #DD6202;
+  --accent-color: #FCD560;
+  --accent-color-soft: #FCE99D;
+  --bronze-dark-color: #621501;
 }
 
 .custom {
@@ -25,6 +33,10 @@
   --text-main: #FDF2F8;
   --text-muted: #FBCFE8;
   --primary-color: #F89D0A;
+  --primary-color-dark: #DD6202;
+  --accent-color: #FCD560;
+  --accent-color-soft: #FCE99D;
+  --bronze-dark-color: #621501;
 }
 
 .vibrant-gradient-text {
@@ -49,10 +61,10 @@
 
   /* Shared Palette */
   --color-primary: var(--primary-color);
-  --color-primary-dark: #DD6202;
-  --color-accent: #FCD560;
-  --color-accent-soft: #FCE99D;
-  --color-bronze-dark: #621501;
+  --color-primary-dark: var(--primary-color-dark);
+  --color-accent: var(--accent-color);
+  --color-accent-soft: var(--accent-color-soft);
+  --color-bronze-dark: var(--bronze-dark-color);
 
   /* Keep legacy colors temporarily to prevent build errors during transition */
   --color-burgundy-50: #faebeb;
@@ -124,14 +136,14 @@
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #FCE99D 0%, #F89D0A 35%, #DD6202 70%, #621501 100%);
+    background: linear-gradient(135deg, var(--accent-color-soft) 0%, var(--primary-color) 35%, var(--primary-color-dark) 70%, var(--bronze-dark-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .gradient-bg {
-    background: linear-gradient(135deg, #FCE99D 0%, #F89D0A 35%, #DD6202 70%, #621501 100%);
+    background: linear-gradient(135deg, var(--accent-color-soft) 0%, var(--primary-color) 35%, var(--primary-color-dark) 70%, var(--bronze-dark-color) 100%);
 }
 
 @layer base {
