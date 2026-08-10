@@ -45,9 +45,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 lg:px-12 flex flex-col lg:flex-row items-center justify-center relative transition-all duration-500">
           
           {/* Logo and Desktop Nav Container */}
-          <div className="flex items-center justify-center gap-0 lg:gap-6 w-full lg:w-auto relative z-50 transition-all duration-500">
+          <div className="flex items-center justify-between lg:justify-center gap-4 lg:gap-6 w-full lg:w-auto relative z-50 transition-all duration-500">
             {/* Logo */}
-            <div className={`flex-none transition-all duration-500 overflow-hidden flex items-center justify-center ${
+            <div className={`flex-none transition-all duration-500 overflow-hidden flex items-center justify-start lg:justify-center ${
               isScrolled ? 'w-[160px] md:w-[180px] lg:w-[150px] h-10 lg:h-10' : 'w-[190px] md:w-[220px] lg:w-[180px] h-12 lg:h-12'
             }`}>
               <a className="hover:opacity-80 transition-opacity flex justify-center items-center w-full h-full" href="/">
@@ -60,6 +60,13 @@ export default function Navbar() {
                   }}
                 />
               </a>
+            </div>
+
+            {/* Toggles on Tablet (Right side of Logo) */}
+            <div className="hidden md:flex lg:hidden items-center gap-2 bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 px-2 py-1.5 rounded-full">
+              <LanguageToggle />
+              <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10" />
+              <ThemeToggle />
             </div>
 
             {/* Desktop Nav (Fixed, always visible) */}
@@ -85,11 +92,6 @@ export default function Navbar() {
               activeColor="text-white bg-gradient-to-r from-primary to-[#cc7a00] shadow-md" 
               className="border-black/5 dark:border-white/10 shadow-lg shadow-black/10 bg-bg-card/90 backdrop-blur-xl text-text-muted grid grid-cols-3 w-full p-3 gap-2 mx-auto"
             />
-            <div className="bg-bg-card/90 shadow-lg shadow-black/10 backdrop-blur-xl border border-black/5 dark:border-white/10 px-1 py-1 rounded-2xl flex items-center justify-center gap-2">
-              <LanguageToggle />
-              <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10" />
-              <ThemeToggle />
-            </div>
           </div>
 
         </div>

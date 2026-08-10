@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Home, User, Sparkles, Briefcase, Folder, Mail } from 'lucide-react';
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageToggle } from '@/components/ui/LanguageToggle';
 import { Typewriter } from '@/components/ui/typewriter';
 
 const tabs = [
@@ -73,6 +74,8 @@ export default function HeroSection() {
                 ))}
                 <div className="mx-1 border-l border-gray-200 dark:border-gray-800 h-5"></div>
                 <div className="scale-90 flex items-center justify-center gap-1">
+                  <LanguageToggle />
+                  <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10 mx-1" />
                   <ThemeToggle />
                 </div>
               </div>
