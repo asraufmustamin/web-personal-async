@@ -56,7 +56,7 @@ export default function HeroSection() {
             {/* Mobile Logo & Nav Container */}
             <div className="md:hidden flex flex-col items-center w-full relative z-40 mb-10">
               {/* Mobile Logo */}
-              <div className="w-[180px] h-10 mb-6">
+              <div className="w-[240px] h-16 mb-8">
                 <img 
                   src="/logo-async-gold.png" 
                   alt="ASYNC Logo" 
@@ -65,17 +65,21 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Mobile Nav: Icons only */}
-              <div className="flex justify-between items-center w-full max-w-[320px] bg-bg-card shadow-sm border border-black/5 dark:border-white/5 rounded-full px-2 py-1">
-                {tabs.map((tab) => (
-                  <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/5 p-2 sm:p-2.5 rounded-full transition-colors active:scale-95">
-                    <tab.icon size={20} />
-                  </a>
-                ))}
-                <div className="mx-1 border-l border-gray-200 dark:border-gray-800 h-5"></div>
-                <div className="scale-90 flex items-center justify-center gap-1">
+              {/* Mobile Nav & Toggles Card */}
+              <div className="flex flex-col items-center w-[92%] max-w-[340px] bg-bg-card shadow-md shadow-black/5 dark:shadow-white/5 border border-black/5 dark:border-white/10 rounded-[28px] p-2 gap-2">
+                <div className="flex justify-around items-center w-full px-1">
+                  {tabs.map((tab) => (
+                    <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/10 p-2.5 rounded-full transition-all active:scale-95">
+                      <tab.icon size={22} />
+                    </a>
+                  ))}
+                </div>
+                
+                <div className="w-[90%] h-[1px] bg-black/5 dark:bg-white/10 rounded-full"></div>
+                
+                <div className="flex justify-center items-center gap-4 w-full py-1.5 pb-2">
                   <LanguageToggle />
-                  <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10 mx-1" />
+                  <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10" />
                   <ThemeToggle />
                 </div>
               </div>

@@ -4,6 +4,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import { caseStudyLocales } from "./caseStudyLocales";
 
 const caseStudies: Record<string, CaseStudy> = {
   cenrana: {
@@ -357,7 +358,7 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
 }
 
 export default function CaseStudyDetail({ projectId }: { projectId: string }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activePhase, setActivePhase] = useState(0);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -369,7 +370,8 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
   }, []);
 
   const studyRaw = caseStudies[projectId];
-  const localizedData = (t.caseStudy as any)?.[projectId];
+  const localizedData = (caseStudyLocales as any)[language]?.[projectId];
+  const extendedData = (t.extended as any)?.[`${projectId}Extended`];
 
   const study = studyRaw ? {
     ...studyRaw,
@@ -394,6 +396,22 @@ export default function CaseStudyDetail({ projectId }: { projectId: string }) {
       roleFocus: localizedData?.phases?.[i]?.roleFocus || ph.roleFocus,
       desc: localizedData?.phases?.[i]?.desc || ph.desc,
       outputs: localizedData?.phases?.[i]?.outputs || ph.outputs,
+    })),
+    diagrams: studyRaw.diagrams?.map((d, i) => ({
+      ...d,
+      title: extendedData?.diagrams?.[i]?.title || d.title,
+    })),
+    screenshots: studyRaw.screenshots?.map((s, i) => ({
+      ...s,
+      title: extendedData?.screenshots?.[i]?.title || s.title,
+      category: extendedData?.screenshots?.[i]?.category || s.category,
+      desc: extendedData?.screenshots?.[i]?.desc || s.desc,
+    })),
+    fieldPhotos: studyRaw.fieldPhotos?.map((f, i) => ({
+      ...f,
+      title: extendedData?.fieldPhotos?.[i]?.title || f.title,
+      category: extendedData?.fieldPhotos?.[i]?.category || f.category,
+      desc: extendedData?.fieldPhotos?.[i]?.desc || f.desc,
     })),
   } : null;
 

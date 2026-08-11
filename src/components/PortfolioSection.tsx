@@ -177,9 +177,30 @@ const allPortfolios = [
   },
 ];
 
+const categoryTranslations: Record<string, string[]> = {
+  id: ["Sistem & Web", "Desain", "Manajemen Data", "Lainnya"],
+  en: ["Systems & Web", "Design", "Data Management", "Others"],
+  es: ["Sistemas y Web", "Diseño", "Gestión de Datos", "Otros"],
+  fr: ["Systèmes & Web", "Design", "Gestion des Données", "Autres"],
+  de: ["Systeme & Web", "Design", "Datenmanagement", "Andere"],
+  zh: ["系统与网络", "设计", "数据管理", "其他"],
+  ja: ["システムとWeb", "デザイン", "データ管理", "その他"],
+  ar: ["الأنظمة والويب", "تصميم", "إدارة البيانات", "أخرى"],
+};
+
 export default function PortfolioSection() {
-  const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState("Sistem & Web");
+  const { t, language } = useLanguage();
+  const currentCategories = categoryTranslations[language] || categories;
+  
+  const localizedPortfolios = allPortfolios.map((p, i) => ({
+    ...p,
+    title: t.extended?.portfolioList?.[i]?.title || p.title,
+    desc: t.extended?.portfolioList?.[i]?.desc || p.desc,
+    categoryIndex: categories.indexOf(p.category),
+    category: currentCategories[categories.indexOf(p.category)] || p.category
+  }));
+
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
@@ -191,14 +212,15 @@ export default function PortfolioSection() {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
-  // Filter items based on selected category
-  const filteredItems = allPortfolios.filter(item => item.category === activeCategory);
+  // Filter items based on selected category index
+  const filteredItems = localizedPortfolios.filter(item => item.categoryIndex === activeCategoryIndex);
 
   // Handle category change
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
+  const handleCategoryChange = (index: number) => {
+    setActiveCategoryIndex(index);
     setActiveItemIndex(0); // Reset active item to first when changing category
   };
+
 
   return (
     <motion.section 
@@ -243,17 +265,17 @@ export default function PortfolioSection() {
           className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-8 md:mb-12 relative z-20"
           variants={fadeUpBlur}
         >
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <button
               key={category}
-              onClick={() => handleCategoryChange(category)}
+              onClick={() => handleCategoryChange(index)}
               className={`shrink-0 px-6 py-2.5 md:px-8 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 border ${
-                activeCategory === category 
-                  ? 'bg-primary border-primary text-white shadow-md shadow-primary/20 scale-105' 
-                  : 'bg-bg-card border-black/10 dark:border-white/10 text-text-muted hover:text-text-main hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm'
+                activeCategoryIndex === index 
+                  ? "bg-primary text-white border-primary shadow-lg shadow-primary/25" 
+                  : "bg-bg-main border-black/10 dark:border-white/10 text-text-muted hover:text-text-main hover:border-primary/50"
               }`}
             >
-              {category}
+              {currentCategories[index] || category}
             </button>
           ))}
         </motion.div>

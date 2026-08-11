@@ -1,3 +1,4 @@
+import { extendedData } from "./extendedData";
 import { Dictionary } from "./types";
 
 export const zh: Dictionary = {
@@ -372,5 +373,6 @@ export const zh: Dictionary = {
         }
       ]
     }
-  }
+  },
+  extended: extendedData.zh
 };

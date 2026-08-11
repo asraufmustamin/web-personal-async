@@ -127,4 +127,5 @@ export type Dictionary = {
       phases: { title: string; period: string; roleFocus?: string; desc: string; outputs: string[] }[];
     };
   };
+  extended?: any;
 };

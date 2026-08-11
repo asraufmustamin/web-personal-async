@@ -252,17 +252,37 @@ export default function ExperienceSection() {
   
   const categories = t.experience.categories || categoriesRaw;
 
-  const allExperiences = allExperiencesRaw.map((exp, index) => ({
-    ...exp,
-    role: t.experience.items[index]?.role || exp.role,
-    company: t.experience.items[index]?.company || exp.company,
-    date: t.experience.items[index]?.date || exp.date,
-    description: t.experience.items[index]?.description || exp.description,
-    activities: t.experience.items[index]?.activities || exp.activities,
-    label: t.experience.items[index]?.label || exp.label,
-    categoryIndex: categoriesRaw.indexOf(exp.category),
-    category: t.experience.categories[categoriesRaw.indexOf(exp.category)] || exp.category
-  }));
+  const allExperiences = allExperiencesRaw.map((exp, index) => {
+    let translatedProofSection = exp.proofSection;
+    if (index === 2 && t.extended?.beaCukaiProof) {
+      translatedProofSection = {
+        ...exp.proofSection,
+        metrics: exp.proofSection?.metrics?.map((m, i) => ({ ...m, label: t.extended.beaCukaiProof.metrics[i] || m.label })),
+        workflow: exp.proofSection?.workflow?.map((w, i) => ({ ...w, ...t.extended.beaCukaiProof.workflow[i] })),
+        proofs: exp.proofSection?.proofs?.map((p, i) => ({ ...p, ...t.extended.beaCukaiProof.proofs[i] }))
+      } as any;
+    } else if (index === 3 && t.extended?.bpjsProof) {
+      translatedProofSection = {
+        ...exp.proofSection,
+        metrics: exp.proofSection?.metrics?.map((m, i) => ({ ...m, label: t.extended.bpjsProof.metrics[i] || m.label })),
+        workflow: exp.proofSection?.workflow?.map((w, i) => ({ ...w, ...t.extended.bpjsProof.workflow[i] })),
+        proofs: exp.proofSection?.proofs?.map((p, i) => ({ ...p, ...t.extended.bpjsProof.proofs[i] }))
+      } as any;
+    }
+
+    return {
+      ...exp,
+      role: t.experience.items[index]?.role || exp.role,
+      company: t.experience.items[index]?.company || exp.company,
+      date: t.experience.items[index]?.date || exp.date,
+      description: t.experience.items[index]?.description || exp.description,
+      activities: t.experience.items[index]?.activities || exp.activities,
+      label: t.experience.items[index]?.label || exp.label,
+      categoryIndex: categoriesRaw.indexOf(exp.category),
+      category: t.experience.categories[categoriesRaw.indexOf(exp.category)] || exp.category,
+      proofSection: translatedProofSection
+    };
+  });
 
   const highlights = highlightsRaw.map((hl, index) => ({
     title: t.experience.highlights[index]?.title || hl.title,
@@ -408,9 +428,9 @@ export default function ExperienceSection() {
                     </span>
                     <span className={`flex items-center gap-1.5 transition-colors ${item.relatedProject ? 'text-primary group-hover:translate-x-1 transition-transform' : 'group-hover:text-text-main'}`}>
                       {item.relatedProject ? (
-                        <>Buka Portofolio <span className="material-symbols-outlined text-[16px]">arrow_forward</span></>
+                        <>{t.extended?.experienceUI?.openPortfolioButton || "Buka Portofolio"} <span className="material-symbols-outlined text-[16px]">arrow_forward</span></>
                       ) : (
-                        <>Detail <span className="material-symbols-outlined text-[16px]">open_in_new</span></>
+                        <>{t.extended?.experienceUI?.detailButton || "Detail"} <span className="material-symbols-outlined text-[16px]">open_in_new</span></>
                       )}
                     </span>
                   </div>
@@ -562,13 +582,13 @@ export default function ExperienceSection() {
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mb-12">
                      <div className="lg:col-span-2 space-y-8">
                        <div>
-                         <h3 className="text-lg font-bold text-text-main mb-3 font-serif">Tentang Peran</h3>
+                         <h3 className="text-lg font-bold text-text-main mb-3 font-serif">{t.extended?.experienceUI?.aboutRole || "Tentang Peran"}</h3>
                          <p className="text-text-muted leading-relaxed text-[15px]">{allExperiences[selectedExpIndex].description}</p>
                        </div>
                        <div>
                           <h3 className="text-lg font-bold text-text-main mb-4 font-serif flex items-center gap-2">
                             <span className="material-symbols-outlined text-primary">check_circle</span> 
-                            Aktivitas Utama
+                            {t.extended?.experienceUI?.mainActivities || "Aktivitas Utama"}
                           </h3>
                           <ul className="space-y-3">
                             {allExperiences[selectedExpIndex].activities.map((act, i) => (
@@ -584,7 +604,7 @@ export default function ExperienceSection() {
                      <div className="bg-bg-card p-6 rounded-[2rem] border border-black/5 dark:border-white/5 h-fit">
                         <h3 className="text-lg font-bold text-text-main mb-5 font-serif flex items-center gap-2">
                           <span className="material-symbols-outlined text-primary">psychology</span> 
-                          Kompetensi
+                          {t.extended?.experienceUI?.competencies || "Kompetensi"}
                         </h3>
                         <div className="flex flex-wrap gap-2.5">
                           {allExperiences[selectedExpIndex].competencies.map((comp, i) => (
@@ -600,10 +620,10 @@ export default function ExperienceSection() {
                     <div className="mt-10 pt-8 border-t border-black/10 dark:border-white/10 space-y-8">
                       <div>
                         <span className="px-3 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-full uppercase tracking-wider mb-2 inline-block">
-                          Bukti & Alur Kerja Analis (BA & PM)
+                          {t.extended?.experienceUI?.proofAndWorkflow || "Bukti & Alur Kerja Analis (BA & PM)"}
                         </span>
                         <h3 className="text-xl md:text-2xl font-bold text-text-main font-serif">
-                          Dokumentasi & Ringkasan Kontribusi Real
+                          {t.extended?.experienceUI?.docsAndRealContribution || "Dokumentasi & Ringkasan Kontribusi Real"}
                         </h3>
                       </div>
 
@@ -620,7 +640,7 @@ export default function ExperienceSection() {
                       <div>
                         <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
                           <span className="material-symbols-outlined text-primary text-lg">account_tree</span>
-                          Alur Kerja & Fokus Peran
+                          {t.extended?.experienceUI?.workflowAndRoleFocus || "Alur Kerja & Fokus Peran"}
                         </h4>
                         <div className="space-y-3">
                           {(allExperiences[selectedExpIndex] as any).proofSection.workflow.map((w: any, i: number) => (
@@ -643,7 +663,7 @@ export default function ExperienceSection() {
                       <div>
                         <h4 className="text-sm font-bold text-text-main font-serif mb-3 flex items-center gap-2">
                           <span className="material-symbols-outlined text-primary text-lg">verified</span>
-                          Bukti Otentik Dokumentasi & Log Instansi
+                          {t.extended?.experienceUI?.authenticDocsAndLogs || "Bukti Otentik Dokumentasi & Log Instansi"}
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           {(allExperiences[selectedExpIndex] as any).proofSection.proofs.map((p: any, i: number) => (
