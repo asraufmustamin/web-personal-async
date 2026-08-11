@@ -65,21 +65,20 @@ export default function HeroSection() {
                 />
               </div>
 
-              {/* Mobile Nav & Toggles Card */}
-              <div className="flex flex-col items-center w-[92%] max-w-[340px] bg-bg-card shadow-md shadow-black/5 dark:shadow-white/5 border border-black/5 dark:border-white/10 rounded-[28px] p-2 gap-2">
-                <div className="flex justify-around items-center w-full px-1">
+              {/* Mobile Nav & Toggles Card (Single Row) */}
+              <div className="flex justify-between items-center w-[98%] max-w-[420px] bg-bg-card shadow-md shadow-black/5 dark:shadow-white/5 border border-black/5 dark:border-white/10 rounded-full px-2 py-1.5">
+                <div className="flex justify-around items-center flex-1 px-1">
                   {tabs.map((tab) => (
-                    <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/10 p-2.5 rounded-full transition-all active:scale-95">
-                      <tab.icon size={22} />
+                    <a key={tab.title} href={tab.href} className="flex justify-center items-center text-text-muted hover:text-primary hover:bg-primary/10 p-2 sm:p-2.5 rounded-full transition-all active:scale-95">
+                      <tab.icon size={20} />
                     </a>
                   ))}
                 </div>
                 
-                <div className="w-[90%] h-[1px] bg-black/5 dark:bg-white/10 rounded-full"></div>
+                <div className="mx-1 sm:mx-2 h-6 w-[1px] bg-black/10 dark:bg-white/10 shrink-0"></div>
                 
-                <div className="flex justify-center items-center gap-4 w-full py-1.5 pb-2">
+                <div className="flex items-center justify-end gap-0.5 sm:gap-1 shrink-0">
                   <LanguageToggle />
-                  <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10" />
                   <ThemeToggle />
                 </div>
               </div>
