@@ -56,11 +56,11 @@ export default function HeroSection() {
             {/* Mobile Logo & Nav Container */}
             <div className="md:hidden flex flex-col items-center w-full relative z-40 mb-10">
               {/* Mobile Logo */}
-              <div className="w-[240px] h-16 mb-8">
+              <div className="w-[280px] sm:w-[320px] h-20 sm:h-24 mb-6 sm:mb-8 flex justify-center items-center">
                 <img 
                   src="/logo-async-gold.png" 
                   alt="ASYNC Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain scale-125"
                   onError={(e) => { (e.target as HTMLImageElement).src = '/logo-async.png'; }}
                 />
               </div>
