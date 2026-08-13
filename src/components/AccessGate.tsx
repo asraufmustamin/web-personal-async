@@ -138,7 +138,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
 
   // ─── KONFIGURASI ───
   // GANTI NOMOR WHATSAPP DAN PASSWORD DI SINI
-  const WHATSAPP_NUMBER = "6281234567890";
+  const WHATSAPP_NUMBER = "6285189666794";
   const CORRECT_PASSCODE = "ASRAUF2025";
 
   useEffect(() => {
