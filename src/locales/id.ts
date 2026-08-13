@@ -374,5 +374,15 @@ export const id: Dictionary = {
       ]
     }
   },
+  journey: {
+    triggerText: "Ingin melihat perjalanan ini dari sudut pandang yang berbeda?",
+    triggerButton: "Mulai Perjalanan Virtual",
+    greeting: [
+      "Halo, selamat datang.",
+      "Ini adalah ruang memori dan perjalanan saya.",
+      "Setiap langkah adalah proses belajar yang berharga.",
+      "Mari berjalan-jalan sejenak menyusuri lintasan ini..."
+    ]
+  },
   extended: extendedData.id
 };

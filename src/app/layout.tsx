@@ -70,6 +70,7 @@ export const metadata: Metadata = {
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
+import AccessGate from "@/components/AccessGate";
 
 import { LanguageProvider } from "@/context/LanguageContext";
 
@@ -125,7 +126,9 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} themes={["light", "dark", "custom"]}>
             <InteractiveBackground />
             <SmoothScroll>
-              {children}
+              <AccessGate>
+                {children}
+              </AccessGate>
             </SmoothScroll>
           </ThemeProvider>
         </LanguageProvider>

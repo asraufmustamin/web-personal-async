@@ -374,5 +374,15 @@ export const en: Dictionary = {
       ]
     }
   },
+  journey: {
+    triggerText: "Want to see this journey from a different perspective?",
+    triggerButton: "Start Virtual Journey",
+    greeting: [
+      "Hello, welcome.",
+      "This is my space of memories and journey.",
+      "Every step is a valuable learning process.",
+      "Let's take a short walk along this path..."
+    ]
+  },
   extended: extendedData.en
 };

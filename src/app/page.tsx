@@ -7,6 +7,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { VirtualJourneyWrapper } from "@/components/VirtualJourneyWrapper";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <SkillsSection />
         <ExperienceSection />
         <ContactSection />
+        <VirtualJourneyWrapper />
         <Footer />
       </div>
     </main>
