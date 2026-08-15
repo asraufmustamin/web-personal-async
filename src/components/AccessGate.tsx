@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, Send, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { Send, ArrowRight, Eye, EyeOff } from 'lucide-react';
 
 // ─── Floating Particles Background ───
 function FloatingParticles() {
@@ -81,28 +81,24 @@ function RunningText() {
   );
 }
 
-// ─── Animated Lock Icon ───
-function AnimatedLock() {
+// ─── Elegant Orb Visual ───
+function ElegantOrb() {
   return (
     <motion.div
-      className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center"
-      animate={{ rotateY: [0, 360] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+      className="relative w-24 h-24 flex items-center justify-center"
+      animate={{ scale: [1, 1.05, 1] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     >
-      {/* Glow ring */}
+      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/30 to-transparent blur-xl" />
       <motion.div
-        className="absolute inset-0 rounded-full border border-primary/20"
-        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute inset-2 rounded-full border border-primary/10"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0, 0.2] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-      />
-      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary-dark/20 border border-primary/30 flex items-center justify-center backdrop-blur-sm">
-        <Lock className="text-primary" size={28} />
-      </div>
+        className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary/80 to-primary-dark/80 shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] flex items-center justify-center overflow-hidden border border-white/20 backdrop-blur-md"
+        animate={{ rotate: [0, 180, 360] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.3)_0%,transparent_60%)] pointer-events-none" />
+      </motion.div>
+      <div className="absolute inset-[-8px] rounded-full border border-primary/20" />
+      <div className="absolute inset-[-16px] rounded-full border border-primary/10 border-dashed animate-[spin_20s_linear_infinite]" />
     </motion.div>
   );
 }
@@ -139,7 +135,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
   // ─── KONFIGURASI ───
   // GANTI NOMOR WHATSAPP DAN PASSWORD DI SINI
   const WHATSAPP_NUMBER = "6285189666794";
-  const CORRECT_PASSCODE = "ASRAUF2025";
+  const CORRECT_PASSCODE = "ASYNC22";
 
   useEffect(() => {
     setIsMounted(true);
@@ -195,32 +191,32 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             <FloatingParticles />
 
             {/* Radial gradient overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-main)_70%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--bg-main)_80%)] pointer-events-none" />
 
             {/* Main content */}
-            <div className="relative z-10 flex flex-col items-center gap-8 md:gap-10 px-6 py-12 max-w-lg w-full">
+            <div className="relative z-10 flex flex-col items-center gap-8 md:gap-10 px-8 py-16 max-w-[28rem] w-full bg-text-main/[0.02] backdrop-blur-2xl border border-text-main/[0.08] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] rounded-[2.5rem]">
 
-              {/* Lock animation */}
+              {/* Icon animation */}
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <AnimatedLock />
+                <ElegantOrb />
               </motion.div>
 
               {/* Title */}
               <motion.div
-                className="flex flex-col items-center gap-3 text-center"
+                className="flex flex-col items-center gap-4 text-center"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-3xl md:text-5xl font-black font-serif tracking-tight gradient-text leading-tight">
-                  Akses Terbatas
+                <h1 className="text-4xl md:text-5xl font-light tracking-tight text-text-main leading-tight font-sans">
+                  Akses <span className="font-serif font-black italic gradient-text">Terbatas</span>
                 </h1>
-                <p className="text-text-muted text-sm md:text-base max-w-sm leading-relaxed">
-                  Portofolio ini dilindungi untuk menjaga privasi. Verifikasi identitas Anda untuk melanjutkan.
+                <p className="text-text-muted/80 text-sm md:text-base max-w-[280px] leading-relaxed">
+                  Ruang privat eksklusif. Verifikasi identitas Anda untuk mengeksplorasi portofolio.
                 </p>
               </motion.div>
 
@@ -254,16 +250,10 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                       <div className="relative group">
                         <input
                           type="text"
-                          placeholder="Nama Anda"
+                          placeholder="Nama Lengkap"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full bg-transparent border-b-2 border-text-muted/15 focus:border-primary px-1 py-3 text-text-main text-base placeholder:text-text-muted/30 focus:outline-none transition-colors duration-300"
-                        />
-                        <motion.div
-                          className="absolute bottom-0 left-0 h-[2px] bg-primary origin-left"
-                          initial={{ scaleX: 0 }}
-                          whileHover={{ scaleX: 1 }}
-                          transition={{ duration: 0.3 }}
+                          className="w-full bg-text-main/[0.03] hover:bg-text-main/[0.05] border border-text-main/10 focus:border-primary/50 focus:bg-text-main/[0.05] rounded-xl px-4 py-3.5 text-text-main text-sm md:text-base placeholder:text-text-muted/40 focus:outline-none transition-all duration-300"
                         />
                       </div>
 
@@ -271,10 +261,10 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                       <div className="relative group">
                         <input
                           type="text"
-                          placeholder="Tujuan (misal: Rekrutmen, Lihat Proyek)"
+                          placeholder="Tujuan (misal: Rekrutmen, dll)"
                           value={purpose}
                           onChange={(e) => setPurpose(e.target.value)}
-                          className="w-full bg-transparent border-b-2 border-text-muted/15 focus:border-primary px-1 py-3 text-text-main text-base placeholder:text-text-muted/30 focus:outline-none transition-colors duration-300"
+                          className="w-full bg-text-main/[0.03] hover:bg-text-main/[0.05] border border-text-main/10 focus:border-primary/50 focus:bg-text-main/[0.05] rounded-xl px-4 py-3.5 text-text-main text-sm md:text-base placeholder:text-text-muted/40 focus:outline-none transition-all duration-300"
                         />
                       </div>
 
@@ -284,10 +274,10 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                         disabled={!name || !purpose}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="mt-4 w-full bg-[#25D366] disabled:opacity-30 disabled:cursor-not-allowed text-white font-semibold rounded-2xl px-6 py-4 flex items-center justify-center gap-3 transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40"
+                        className="mt-4 w-full bg-text-main text-bg-main disabled:opacity-30 disabled:cursor-not-allowed font-medium rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.3)]"
                       >
                         <Send size={18} />
-                        Minta Akses via WhatsApp
+                        Minta Akses
                       </motion.button>
 
                       {/* Switch to unlock */}
@@ -312,17 +302,17 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                         <div className="relative">
                           <input
                             type={showPassword ? "text" : "password"}
-                            placeholder="Masukkan Kode Akses"
+                            placeholder="Kode Akses"
                             value={passcode}
                             onChange={(e) => setPasscode(e.target.value)}
-                            className={`w-full bg-transparent border-b-2 ${error ? 'border-red-500' : 'border-text-muted/15 focus:border-primary'} px-1 py-3 pr-10 text-text-main text-xl text-center tracking-[0.3em] font-mono placeholder:text-text-muted/30 placeholder:text-base placeholder:tracking-normal focus:outline-none transition-colors duration-300`}
+                            className={`w-full bg-text-main/[0.03] hover:bg-text-main/[0.05] border ${error ? 'border-red-500/50 focus:border-red-500' : 'border-text-main/10 focus:border-primary/50'} focus:bg-text-main/[0.05] rounded-xl px-4 py-4 pr-12 text-text-main text-xl md:text-2xl text-center tracking-[0.4em] font-mono placeholder:text-text-muted/40 placeholder:text-sm placeholder:tracking-normal focus:outline-none transition-all duration-300`}
                           />
                           <button
                             type="button"
                             onClick={() => setShowPassword(!showPassword)}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 text-text-muted/40 hover:text-text-main transition-colors"
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted/40 hover:text-text-main transition-colors"
                           >
-                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                           </button>
                         </div>
 
@@ -345,9 +335,9 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                           type="submit"
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="mt-2 w-full gradient-bg text-white font-bold rounded-2xl px-6 py-4 flex items-center justify-center gap-3 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 group"
+                          className="mt-4 w-full bg-text-main text-bg-main font-medium rounded-xl px-6 py-4 flex items-center justify-center gap-3 transition-all hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.3)] group"
                         >
-                          Buka Portofolio
+                          Akses Portofolio
                           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </motion.button>
 
