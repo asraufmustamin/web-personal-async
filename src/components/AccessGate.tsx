@@ -64,35 +64,35 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Orange-Gold Character Background ─── */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-              {/* Radial Golden Ambient Glow */}
+            {/* ─── Orange-Gold Character Background at Bottom-Right ─── */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+              {/* Ambient Warm Golden Glow in bottom-right area */}
               <motion.div
-                className="absolute w-[80vw] h-[80vw] max-w-[700px] max-h-[700px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.18)_0%,rgba(252,213,96,0.08)_40%,transparent_70%)] blur-2xl"
+                className="absolute -right-20 -bottom-20 w-[75vw] h-[75vw] max-w-[650px] max-h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.22)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none"
                 animate={{
                   scale: [1, 1.15, 1],
-                  opacity: [0.7, 1, 0.7],
+                  opacity: [0.6, 0.9, 0.6],
                 }}
                 transition={{
-                  duration: 6,
+                  duration: 7,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
               />
 
-              {/* Zoomed Floating Character Mascot with Golden Tint & Glow */}
+              {/* Large Half-Body & Head Mascot in Bottom-Right */}
               <motion.div
-                className="relative w-[340px] sm:w-[460px] md:w-[580px] lg:w-[640px] aspect-square flex items-center justify-center opacity-25 dark:opacity-20 select-none"
+                className="absolute -right-10 -bottom-28 sm:-right-16 sm:-bottom-36 md:-right-20 md:-bottom-52 lg:-right-28 lg:-bottom-64 w-[380px] sm:w-[520px] md:w-[680px] lg:w-[840px] aspect-[4/5] flex items-start justify-center opacity-30 dark:opacity-25 pointer-events-none"
                 style={{
-                  filter: "drop-shadow(0 0 45px rgba(248, 157, 10, 0.45))",
+                  filter: "drop-shadow(0 0 50px rgba(248, 157, 10, 0.45))",
                 }}
                 animate={{
-                  y: [-12, 12, -12],
-                  rotate: [-1.5, 1.5, -1.5],
-                  scale: [1.15, 1.25, 1.15],
+                  y: [-8, 8, -8],
+                  rotate: [-1, 1, -1],
+                  scale: [1, 1.03, 1],
                 }}
                 transition={{
-                  duration: 9,
+                  duration: 8,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
@@ -100,11 +100,11 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                 <img
                   src="/pixelneboo.png"
                   alt="Background Mascot"
-                  className="w-full h-full object-contain filter contrast-125"
+                  className="w-full h-full object-cover object-top filter contrast-110 brightness-105"
                 />
                 
-                {/* Soft Orange/Gold Duotone Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#F89D0A]/30 via-[#FCD560]/20 to-transparent mix-blend-color pointer-events-none rounded-full" />
+                {/* Soft Orange/Gold Duotone Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#F89D0A]/25 via-[#FCD560]/10 to-transparent mix-blend-color pointer-events-none" />
               </motion.div>
             </div>
 
@@ -124,15 +124,15 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                       onClick={handleRequestAccess}
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full bg-text-main text-bg-main font-semibold rounded-2xl px-7 py-4.5 flex items-center justify-center gap-3 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_40px_-15px_rgba(248,157,10,0.15)] border border-text-main/10 hover:border-primary/40 transition-all cursor-pointer group"
+                      className="w-full bg-gradient-to-r from-[#F89D0A] via-[#F59E0B] to-[#DD6202] text-white font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_15px_35px_-5px_rgba(248,157,10,0.45)] hover:shadow-[0_20px_45px_-5px_rgba(248,157,10,0.6)] transition-all cursor-pointer group"
                     >
-                      <span>Minta Akses via WhatsApp</span>
-                      <Send size={18} className="text-primary group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                      <span className="tracking-wide">Minta Akses via WhatsApp</span>
+                      <Send size={18} className="text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                     </motion.button>
                     
                     <button
                       onClick={() => setStep('unlock')}
-                      className="text-text-muted/50 hover:text-primary text-xs uppercase tracking-[0.25em] font-medium transition-colors mt-8 py-2 px-3 cursor-pointer"
+                      className="text-text-muted/50 hover:text-primary text-xs uppercase tracking-[0.25em] font-semibold transition-colors mt-8 py-2 px-3 cursor-pointer"
                     >
                       Sudah punya kode?
                     </button>
@@ -165,16 +165,16 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                         disabled={!passcode}
                         whileHover={{ scale: 1.03, y: -2 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full bg-text-main text-bg-main disabled:opacity-30 disabled:cursor-not-allowed font-semibold rounded-2xl px-7 py-4.5 flex items-center justify-center gap-3 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all cursor-pointer group"
+                        className="w-full bg-gradient-to-r from-[#F89D0A] via-[#F59E0B] to-[#DD6202] text-white disabled:opacity-40 disabled:cursor-not-allowed font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_15px_35px_-5px_rgba(248,157,10,0.45)] transition-all cursor-pointer group"
                       >
-                        <span>Buka Portofolio</span>
-                        <ArrowRight size={18} className="text-primary group-hover:translate-x-1 transition-transform" />
+                        <span className="tracking-wide">Buka Portofolio</span>
+                        <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
                       </motion.button>
 
                       <button
                         type="button"
                         onClick={() => setStep('request')}
-                        className="text-text-muted/50 hover:text-text-main text-xs uppercase tracking-[0.25em] font-medium transition-colors mt-3 py-1 px-3 cursor-pointer"
+                        className="text-text-muted/50 hover:text-text-main text-xs uppercase tracking-[0.25em] font-semibold transition-colors mt-3 py-1 px-3 cursor-pointer"
                       >
                         Kembali
                       </button>
