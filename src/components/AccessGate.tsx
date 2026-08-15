@@ -64,19 +64,21 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Interactive Left/Right Mascot Background ─── */}
-            <div className={`absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-end ${step === 'request' ? 'justify-end' : 'justify-start'} px-2 sm:px-4 md:px-8 pb-4 sm:pb-8 md:pb-10 lg:pb-14`}>
+            {/* ─── Interactive Gliding Left/Right Mascot Background ─── */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
               <motion.div
-                layout
+                initial={false}
+                animate={{
+                  left: step === 'unlock' ? '0%' : '100%',
+                  x: step === 'unlock' ? '-24px' : 'calc(-100% + 24px)',
+                }}
                 transition={{
                   type: "spring",
-                  stiffness: 85,
-                  damping: 18,
+                  stiffness: 60,
+                  damping: 14,
                   mass: 0.8,
                 }}
-                className={`relative w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden ${
-                  step === 'request' ? '-mr-6 sm:-mr-10 md:-mr-14' : '-ml-6 sm:-ml-10 md:-ml-14'
-                }`}
+                className="absolute bottom-4 sm:bottom-8 md:bottom-10 lg:bottom-14 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-none"
               >
                 {/* Ambient Golden Glow */}
                 <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
@@ -89,7 +91,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                     y: [-6, 6, -6],
                   }}
                   transition={{
-                    scaleX: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+                    scaleX: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
                     y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
                   }}
                 >
