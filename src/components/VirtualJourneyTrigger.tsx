@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Lock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface VirtualJourneyTriggerProps {
@@ -34,14 +34,17 @@ export function VirtualJourneyTrigger({ onTrigger }: VirtualJourneyTriggerProps)
           onClick={onTrigger}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="group relative px-8 py-4 bg-bg-card border border-primary/30 rounded-full overflow-hidden shadow-[0_0_40px_-10px_rgba(204,122,0,0.5)] transition-all hover:border-primary/60 hover:shadow-[0_0_60px_-15px_rgba(204,122,0,0.8)]"
+          className="group relative px-8 py-4 bg-bg-card border border-primary/30 rounded-full overflow-hidden shadow-[0_0_40px_-10px_rgba(204,122,0,0.5)] transition-all hover:border-primary/60 hover:shadow-[0_0_60px_-15px_rgba(204,122,0,0.8)] cursor-pointer"
         >
           {/* Animated glow inside button */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
           
-          <span className="relative z-10 font-bold text-text-main group-hover:text-primary transition-colors tracking-wide flex items-center gap-2">
-            {t.journey?.triggerButton || "Mulai Perjalanan Virtual"}
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          <span className="relative z-10 font-bold text-text-main group-hover:text-primary transition-colors tracking-wide flex items-center gap-2.5">
+            <Lock className="w-4 h-4 text-primary/80" />
+            <span>{t.journey?.triggerButton || "Mulai Perjalanan Virtual"}</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20">
+              Segera
+            </span>
           </span>
         </motion.button>
       </motion.div>
