@@ -30,14 +30,15 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
     return () => { document.body.style.overflow = ''; };
   }, []);
 
-  // Sync mascot position with current interaction step
+  // ─── Otomatis Berpindah Sisi Kanan-Kiri Tiap 3 Detik ───
   useEffect(() => {
-    if (step === 'unlock') {
-      setMascotSide('left');
-    } else {
-      setMascotSide('right');
-    }
-  }, [step]);
+    if (isUnlocked) return;
+    const interval = setInterval(() => {
+      setMascotSide((prev) => (prev === 'right' ? 'left' : 'right'));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isUnlocked]);
 
   const handleUnlock = useCallback((e: React.FormEvent) => {
     e.preventDefault();
@@ -74,7 +75,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Interactive Gliding Left/Right Mascot Background ─── */}
+            {/* ─── Interactive Gliding Left/Right Mascot Background (Auto-slides every 3s) ─── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
               <div
                 className="absolute left-0 bottom-2 sm:bottom-6 md:bottom-8 lg:bottom-12 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-auto cursor-pointer transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] select-none"
