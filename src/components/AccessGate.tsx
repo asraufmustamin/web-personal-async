@@ -73,30 +73,30 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden px-4"
           >
-            {/* ─── Interactive Gliding Left/Right Mascot Background (Auto-slides every 3s) ─── */}
+            {/* ─── Interactive Gliding Mascot Background ─── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
               <div
-                className="absolute left-0 bottom-2 sm:bottom-6 md:bottom-8 lg:bottom-12 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-auto cursor-pointer transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] select-none"
+                className="absolute left-0 bottom-0 sm:bottom-4 md:bottom-6 lg:bottom-10 w-[260px] sm:w-[360px] md:w-[480px] lg:w-[620px] h-[240px] sm:h-[320px] md:h-[440px] lg:h-[540px] overflow-hidden pointer-events-auto cursor-pointer transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] select-none"
                 style={{
                   transform:
                     mascotSide === 'left'
-                      ? 'translateX(-20px) scaleX(-1)'
-                      : 'translateX(calc(100vw - 100% + 20px)) scaleX(1)',
+                      ? 'translateX(-15px) scaleX(-1)'
+                      : 'translateX(calc(100vw - 100% + 15px)) scaleX(1)',
                   transformOrigin: 'center center',
                 }}
                 onClick={() => setMascotSide((prev) => (prev === 'right' ? 'left' : 'right'))}
                 title="Klik untuk memindahkan karakter"
               >
                 {/* Ambient Golden Glow */}
-                <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
+                <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.22)_0%,rgba(252,213,96,0.06)_45%,transparent_70%)] blur-2xl md:blur-3xl pointer-events-none" />
 
                 {/* Idle Floating Animation */}
                 <motion.div
                   className="w-full h-full relative"
                   animate={{
-                    y: [-8, 8, -8],
+                    y: [-6, 6, -6],
                     rotate: [-1, 1, -1],
                   }}
                   transition={{
@@ -108,14 +108,14 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                   <img
                     src="/pixelneboo.png"
                     alt="Mascot Half Body"
-                    className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)] pointer-events-none"
+                    className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-35 dark:opacity-25 filter contrast-110 drop-shadow-[0_0_35px_rgba(248,157,10,0.4)] pointer-events-none"
                   />
                 </motion.div>
               </div>
             </div>
 
             {/* ─── Centered Foreground Interactive Content ─── */}
-            <div className="relative z-10 flex flex-col items-center px-6 max-w-sm w-full">
+            <div className="relative z-10 flex flex-col items-center max-w-[340px] sm:max-w-sm w-full mx-auto">
               <AnimatePresence mode="wait">
                 {step === 'request' ? (
                   <motion.div
@@ -130,15 +130,15 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                       onClick={handleRequestAccess}
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] hover:shadow-[0_16px_35px_-5px_rgba(221,98,2,0.6)] transition-all cursor-pointer group"
+                      className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white font-bold rounded-2xl px-6 sm:px-8 py-4 sm:py-4.5 flex items-center justify-center gap-2.5 sm:gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] hover:shadow-[0_16px_35px_-5px_rgba(221,98,2,0.6)] transition-all cursor-pointer group"
                     >
-                      <span className="tracking-wide text-white text-base">Minta Akses via WhatsApp</span>
+                      <span className="tracking-wide text-white text-sm sm:text-base font-semibold">Minta Akses via WhatsApp</span>
                       <Send size={18} className="text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                     </motion.button>
                     
                     <button
                       onClick={() => setStep('unlock')}
-                      className="text-text-muted/50 hover:text-primary text-xs uppercase tracking-[0.25em] font-semibold transition-colors mt-8 py-2 px-3 cursor-pointer"
+                      className="text-text-muted/60 hover:text-primary text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold transition-colors mt-7 sm:mt-8 py-2 px-3 cursor-pointer"
                     >
                       Sudah punya kode?
                     </button>
@@ -152,8 +152,8 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     className="w-full"
                   >
-                    <form onSubmit={handleUnlock} className="flex flex-col gap-6 items-center w-full">
-                      {/* Code Access Input: Fully visible as text, not hidden */}
+                    <form onSubmit={handleUnlock} className="flex flex-col gap-5 sm:gap-6 items-center w-full">
+                      {/* Code Access Input: Fully visible as text, responsive font & tracking */}
                       <input
                         type="text"
                         placeholder="KODE AKSES"
@@ -166,7 +166,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                           error
                             ? 'border-red-500 text-red-500 placeholder:text-red-300'
                             : 'border-text-muted/20 focus:border-primary text-text-main'
-                        } px-2 py-3.5 text-center tracking-[0.4em] font-mono text-xl uppercase placeholder:text-text-muted/30 placeholder:tracking-[0.2em] placeholder:text-sm focus:outline-none transition-all duration-300`}
+                        } px-2 py-3 sm:py-3.5 text-center tracking-[0.3em] sm:tracking-[0.4em] font-mono text-lg sm:text-xl uppercase placeholder:text-text-muted/30 placeholder:tracking-[0.15em] sm:placeholder:tracking-[0.2em] placeholder:text-xs sm:placeholder:text-sm focus:outline-none transition-all duration-300`}
                       />
                       
                       <motion.button
@@ -174,9 +174,9 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                         disabled={!passcode}
                         whileHover={{ scale: 1.03, y: -2 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white disabled:opacity-40 disabled:cursor-not-allowed font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] transition-all cursor-pointer group"
+                        className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white disabled:opacity-40 disabled:cursor-not-allowed font-bold rounded-2xl px-6 sm:px-8 py-4 sm:py-4.5 flex items-center justify-center gap-2.5 sm:gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] transition-all cursor-pointer group"
                       >
-                        <span className="tracking-wide text-white text-base">Buka Portofolio</span>
+                        <span className="tracking-wide text-white text-sm sm:text-base font-semibold">Buka Portofolio</span>
                         <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
                       </motion.button>
 
@@ -186,7 +186,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                           setStep('request');
                           setError(false);
                         }}
-                        className="text-text-muted/50 hover:text-text-main text-xs uppercase tracking-[0.25em] font-semibold transition-colors mt-3 py-1 px-3 cursor-pointer"
+                        className="text-text-muted/60 hover:text-text-main text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold transition-colors mt-2 sm:mt-3 py-1 px-3 cursor-pointer"
                       >
                         Kembali
                       </button>
