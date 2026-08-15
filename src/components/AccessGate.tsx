@@ -64,31 +64,16 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Orange-Gold Character Background at Bottom-Right ─── */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
-              {/* Ambient Warm Golden Glow in bottom-right area */}
-              <motion.div
-                className="absolute -right-20 -bottom-20 w-[75vw] h-[75vw] max-w-[650px] max-h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.22)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none"
-                animate={{
-                  scale: [1, 1.15, 1],
-                  opacity: [0.6, 0.9, 0.6],
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
+            {/* ─── Bottom-Right Cropped Half-Body Character Background ─── */}
+            <div className="absolute right-0 bottom-0 w-[300px] sm:w-[420px] md:w-[540px] lg:w-[660px] h-[280px] sm:h-[380px] md:h-[480px] lg:h-[580px] overflow-hidden pointer-events-none select-none z-0">
+              {/* Ambient Golden Glow */}
+              <div className="absolute right-0 bottom-0 w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
 
-              {/* Large Half-Body & Head Mascot in Bottom-Right */}
+              {/* Character: Scaled & Positioned so only Head & Upper Half (Torso) are visible */}
               <motion.div
-                className="absolute -right-10 -bottom-28 sm:-right-16 sm:-bottom-36 md:-right-20 md:-bottom-52 lg:-right-28 lg:-bottom-64 w-[380px] sm:w-[520px] md:w-[680px] lg:w-[840px] aspect-[4/5] flex items-start justify-center opacity-30 dark:opacity-25 pointer-events-none"
-                style={{
-                  filter: "drop-shadow(0 0 50px rgba(248, 157, 10, 0.45))",
-                }}
+                className="w-full h-full relative"
                 animate={{
-                  y: [-8, 8, -8],
-                  rotate: [-1, 1, -1],
+                  y: [-6, 6, -6],
                   scale: [1, 1.03, 1],
                 }}
                 transition={{
@@ -99,12 +84,9 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
               >
                 <img
                   src="/pixelneboo.png"
-                  alt="Background Mascot"
-                  className="w-full h-full object-cover object-top filter contrast-110 brightness-105"
+                  alt="Mascot Half Body"
+                  className="absolute top-0 right-0 w-full h-[180%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
                 />
-                
-                {/* Soft Orange/Gold Duotone Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#F89D0A]/25 via-[#FCD560]/10 to-transparent mix-blend-color pointer-events-none" />
               </motion.div>
             </div>
 
@@ -124,9 +106,9 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                       onClick={handleRequestAccess}
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full bg-gradient-to-r from-[#F89D0A] via-[#F59E0B] to-[#DD6202] text-white font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_15px_35px_-5px_rgba(248,157,10,0.45)] hover:shadow-[0_20px_45px_-5px_rgba(248,157,10,0.6)] transition-all cursor-pointer group"
+                      className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] hover:shadow-[0_16px_35px_-5px_rgba(221,98,2,0.6)] transition-all cursor-pointer group"
                     >
-                      <span className="tracking-wide">Minta Akses via WhatsApp</span>
+                      <span className="tracking-wide text-white text-base">Minta Akses via WhatsApp</span>
                       <Send size={18} className="text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                     </motion.button>
                     
@@ -165,9 +147,9 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                         disabled={!passcode}
                         whileHover={{ scale: 1.03, y: -2 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full bg-gradient-to-r from-[#F89D0A] via-[#F59E0B] to-[#DD6202] text-white disabled:opacity-40 disabled:cursor-not-allowed font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_15px_35px_-5px_rgba(248,157,10,0.45)] transition-all cursor-pointer group"
+                        className="w-full bg-[#F89D0A] hover:bg-[#DD6202] text-white disabled:opacity-40 disabled:cursor-not-allowed font-bold rounded-2xl px-8 py-4.5 flex items-center justify-center gap-3 shadow-[0_12px_30px_-5px_rgba(248,157,10,0.5)] transition-all cursor-pointer group"
                       >
-                        <span className="tracking-wide">Buka Portofolio</span>
+                        <span className="tracking-wide text-white text-base">Buka Portofolio</span>
                         <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform shrink-0" />
                       </motion.button>
 
