@@ -10,6 +10,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
   const [passcode, setPasscode] = useState('');
   const [error, setError] = useState(false);
   const [step, setStep] = useState<'request' | 'unlock'>('request');
+  const [mascotSide, setMascotSide] = useState<'right' | 'left'>('right');
   const [successAnim, setSuccessAnim] = useState(false);
 
   // ─── KONFIGURASI ───
@@ -28,6 +29,15 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
     }
     return () => { document.body.style.overflow = ''; };
   }, []);
+
+  // Sync mascot position with current interaction step
+  useEffect(() => {
+    if (step === 'unlock') {
+      setMascotSide('left');
+    } else {
+      setMascotSide('right');
+    }
+  }, [step]);
 
   const handleUnlock = useCallback((e: React.FormEvent) => {
     e.preventDefault();
@@ -66,42 +76,41 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
           >
             {/* ─── Interactive Gliding Left/Right Mascot Background ─── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
-              <motion.div
-                initial={false}
-                animate={{
-                  left: step === 'unlock' ? '0%' : '100%',
-                  x: step === 'unlock' ? '-24px' : 'calc(-100% + 24px)',
+              <div
+                className="absolute left-0 bottom-2 sm:bottom-6 md:bottom-8 lg:bottom-12 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-auto cursor-pointer transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] select-none"
+                style={{
+                  transform:
+                    mascotSide === 'left'
+                      ? 'translateX(-20px) scaleX(-1)'
+                      : 'translateX(calc(100vw - 100% + 20px)) scaleX(1)',
+                  transformOrigin: 'center center',
                 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 60,
-                  damping: 14,
-                  mass: 0.8,
-                }}
-                className="absolute bottom-4 sm:bottom-8 md:bottom-10 lg:bottom-14 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-none"
+                onClick={() => setMascotSide((prev) => (prev === 'right' ? 'left' : 'right'))}
+                title="Klik untuk memindahkan karakter"
               >
                 {/* Ambient Golden Glow */}
                 <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
 
-                {/* Character: Smooth horizontal flip so the hand points towards the center in both positions */}
+                {/* Idle Floating Animation */}
                 <motion.div
                   className="w-full h-full relative"
                   animate={{
-                    scaleX: step === 'unlock' ? -1 : 1,
-                    y: [-6, 6, -6],
+                    y: [-8, 8, -8],
+                    rotate: [-1, 1, -1],
                   }}
                   transition={{
-                    scaleX: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
-                    y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                   }}
                 >
                   <img
                     src="/pixelneboo.png"
                     alt="Mascot Half Body"
-                    className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
+                    className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)] pointer-events-none"
                   />
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
 
             {/* ─── Centered Foreground Interactive Content ─── */}
