@@ -64,14 +64,14 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Bottom-Right Cropped Half-Body Character Background ─── */}
-            <div className="absolute right-0 bottom-0 w-[300px] sm:w-[420px] md:w-[540px] lg:w-[660px] h-[280px] sm:h-[380px] md:h-[480px] lg:h-[580px] overflow-hidden pointer-events-none select-none z-0">
+            {/* ─── Bottom-Right Cropped Half-Body Character Background (Adjusted higher & to the right) ─── */}
+            <div className="absolute -right-4 sm:-right-8 md:-right-12 lg:-right-16 bottom-4 sm:bottom-8 md:bottom-10 lg:bottom-14 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-none select-none z-0">
               {/* Ambient Golden Glow */}
               <div className="absolute right-0 bottom-0 w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
 
-              {/* Character: Scaled & Positioned so only Head & Upper Half (Torso) are visible */}
+              {/* Character: Scaled, raised higher, and shifted towards right edge */}
               <motion.div
-                className="w-full h-full relative"
+                className="w-full h-full relative translate-x-2 md:translate-x-4"
                 animate={{
                   y: [-6, 6, -6],
                   scale: [1, 1.03, 1],
@@ -85,7 +85,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                 <img
                   src="/pixelneboo.png"
                   alt="Mascot Half Body"
-                  className="absolute top-0 right-0 w-full h-[180%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
+                  className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
                 />
               </motion.div>
             </div>
