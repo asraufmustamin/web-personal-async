@@ -31,7 +31,7 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
 
   const handleUnlock = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    if (passcode === CORRECT_PASSCODE) {
+    if (passcode.trim().toUpperCase() === CORRECT_PASSCODE) {
       setError(false);
       setSuccessAnim(true);
       setTimeout(() => {
@@ -64,29 +64,41 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-bg-main overflow-hidden"
           >
-            {/* ─── Bottom-Right Cropped Half-Body Character Background (Adjusted higher & to the right) ─── */}
-            <div className="absolute -right-4 sm:-right-8 md:-right-12 lg:-right-16 bottom-4 sm:bottom-8 md:bottom-10 lg:bottom-14 w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden pointer-events-none select-none z-0">
-              {/* Ambient Golden Glow */}
-              <div className="absolute right-0 bottom-0 w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
-
-              {/* Character: Scaled, raised higher, and shifted towards right edge */}
+            {/* ─── Interactive Left/Right Mascot Background ─── */}
+            <div className={`absolute inset-0 pointer-events-none overflow-hidden select-none z-0 flex items-end ${step === 'request' ? 'justify-end' : 'justify-start'} px-2 sm:px-4 md:px-8 pb-4 sm:pb-8 md:pb-10 lg:pb-14`}>
               <motion.div
-                className="w-full h-full relative translate-x-2 md:translate-x-4"
-                animate={{
-                  y: [-6, 6, -6],
-                  scale: [1, 1.03, 1],
-                }}
+                layout
                 transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 85,
+                  damping: 18,
+                  mass: 0.8,
                 }}
+                className={`relative w-[320px] sm:w-[440px] md:w-[560px] lg:w-[680px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden ${
+                  step === 'request' ? '-mr-6 sm:-mr-10 md:-mr-14' : '-ml-6 sm:-ml-10 md:-ml-14'
+                }`}
               >
-                <img
-                  src="/pixelneboo.png"
-                  alt="Mascot Half Body"
-                  className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
-                />
+                {/* Ambient Golden Glow */}
+                <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(248,157,10,0.25)_0%,rgba(252,213,96,0.08)_45%,transparent_70%)] blur-3xl pointer-events-none" />
+
+                {/* Character: Smooth horizontal flip so the hand points towards the center in both positions */}
+                <motion.div
+                  className="w-full h-full relative"
+                  animate={{
+                    scaleX: step === 'unlock' ? -1 : 1,
+                    y: [-6, 6, -6],
+                  }}
+                  transition={{
+                    scaleX: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+                    y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+                  }}
+                >
+                  <img
+                    src="/pixelneboo.png"
+                    alt="Mascot Half Body"
+                    className="absolute top-0 right-0 w-full h-[175%] object-cover object-top opacity-40 dark:opacity-30 filter contrast-110 drop-shadow-[0_0_40px_rgba(248,157,10,0.45)]"
+                  />
+                </motion.div>
               </motion.div>
             </div>
 
@@ -129,17 +141,20 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
                     className="w-full"
                   >
                     <form onSubmit={handleUnlock} className="flex flex-col gap-6 items-center w-full">
+                      {/* Code Access Input: Fully visible as text, not hidden */}
                       <input
-                        type="password"
+                        type="text"
                         placeholder="KODE AKSES"
                         value={passcode}
-                        onChange={(e) => setPasscode(e.target.value)}
+                        onChange={(e) => setPasscode(e.target.value.toUpperCase())}
                         autoFocus
+                        autoComplete="off"
+                        spellCheck={false}
                         className={`w-full bg-transparent border-b-2 ${
                           error
                             ? 'border-red-500 text-red-500 placeholder:text-red-300'
                             : 'border-text-muted/20 focus:border-primary text-text-main'
-                        } px-2 py-3.5 text-center tracking-[0.4em] font-mono text-xl placeholder:text-text-muted/30 placeholder:tracking-[0.2em] placeholder:text-sm focus:outline-none transition-all duration-300`}
+                        } px-2 py-3.5 text-center tracking-[0.4em] font-mono text-xl uppercase placeholder:text-text-muted/30 placeholder:tracking-[0.2em] placeholder:text-sm focus:outline-none transition-all duration-300`}
                       />
                       
                       <motion.button
@@ -155,7 +170,10 @@ export default function AccessGate({ children }: { children: React.ReactNode }) 
 
                       <button
                         type="button"
-                        onClick={() => setStep('request')}
+                        onClick={() => {
+                          setStep('request');
+                          setError(false);
+                        }}
                         className="text-text-muted/50 hover:text-text-main text-xs uppercase tracking-[0.25em] font-semibold transition-colors mt-3 py-1 px-3 cursor-pointer"
                       >
                         Kembali
